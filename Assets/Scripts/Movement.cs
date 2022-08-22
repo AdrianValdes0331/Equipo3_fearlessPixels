@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class RamonMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
 
-    public float MaxSpeed = 1;
-    public float Acceleration = 1;
-    public float JumpSpeed = 4;
+    public float MaxSpeed;
+    public float Acceleration;
+    public float JumpSpeed;
     public float JumpDuration;
 
     private float LastShoot;
-    public static float ramon_health;
+    public static float health;
     public GameObject Bullet;
     private Animator Animator;
     private Rigidbody2D Rigidbody2D;
@@ -29,7 +29,7 @@ public class RamonMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ramon_health = 1;
+        health = 1;
         Rigidbody2D = GetComponent<Rigidbody2D>();
         //Animator = GetComponent<Animator>();
     }
@@ -47,15 +47,13 @@ public class RamonMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
-        //Animator.SetBool("running", Horizontal != 0.0f);
-
-        /*if (Input.GetKey(KeyCode.LeftShift) && Time.time > LastShoot + 0.25f)
+        if (Input.GetKey(KeyCode.LeftShift) && Time.time > LastShoot + 0.25f)
         {
-            Animator.SetTrigger("shoot");
+            //Animator.SetTrigger("shoot");
             Shoot();
+            print("Hit");
             LastShoot = Time.time;
-        }*/
-
+        }
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal < -0.1f)
         {
@@ -160,10 +158,10 @@ public class RamonMovement : MonoBehaviour
 
     }
 
-    /*private void Shoot()
+    private void Shoot()
     {
         Vector3 direction;
-        if (transform.localScale.x == 1.0f)
+        if (transform.localScale.x == 100.0f)
         {
             direction = Vector2.right;
         }
@@ -171,15 +169,15 @@ public class RamonMovement : MonoBehaviour
         {
             direction = Vector2.left;
         }
-        GameObject bullet = Instantiate(Bullet, transform.position + direction * 0.1f, Quaternion.identity);
+        GameObject bullet = Instantiate(Bullet, transform.position + direction * 1.0f, Quaternion.identity);
         bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
-    }*/
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy_Bullet" || collision.gameObject.tag == "LV2_Punches")
         {
-            ramon_health -= 0.1f;
+            health -= 0.1f;
         }
     }
 
@@ -187,7 +185,7 @@ public class RamonMovement : MonoBehaviour
     {
         if (trig.gameObject.tag == "Acid_Drops")
         {
-            ramon_health -= 0.1f;
+            health -= 0.1f;
         }
     }
 
