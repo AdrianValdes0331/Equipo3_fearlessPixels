@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
     {
         health = 1;
         Rigidbody2D = GetComponent<Rigidbody2D>();
-        //Animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,11 +41,11 @@ public class Movement : MonoBehaviour
 
         if (Horizontal < 0.0f)
         {
-            transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+            transform.localScale = new Vector3(-0.07f, 0.07f, 0.07f);
         }
         else if (Horizontal > 0.0f)
         {
-            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
         }
         if (Input.GetKey(KeyCode.LeftShift) && Time.time > LastShoot + 0.25f)
         {
@@ -53,6 +53,12 @@ public class Movement : MonoBehaviour
             Shoot();
             print("Hit");
             LastShoot = Time.time;
+        }
+        if (Input.GetKey(KeyCode.Z))
+        {
+            print("kick");
+            Animator.SetTrigger("Chinkick");
+            Shoot();
         }
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal < -0.1f)
@@ -161,13 +167,13 @@ public class Movement : MonoBehaviour
     private void Shoot()
     {
         Vector3 direction;
-        if (transform.localScale.x == 100.0f)
+        if (transform.localScale.x == 0.07f)
         {
-            direction = Vector2.right;
+            direction = Vector2.left;
         }
         else
         {
-            direction = Vector2.left;
+            direction = Vector2.right;
         }
         GameObject bullet = Instantiate(Bullet, transform.position + direction * 1.0f, Quaternion.identity);
         bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
