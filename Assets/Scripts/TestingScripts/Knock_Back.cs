@@ -27,7 +27,7 @@ public class Knock_Back : MonoBehaviour
 
             hitCooldown = true;
             Invoke("Cooldown", 0.8f);
-            health = health - 25;
+            //health = health - 25;
 
             if(health <= 0)
             {

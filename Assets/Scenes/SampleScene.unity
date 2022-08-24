@@ -409,6 +409,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &135189678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 135189679}
+  m_Layer: 6
+  m_Name: Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &135189679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135189678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 153581071}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &153581064
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,12 +450,13 @@ GameObject:
   m_Component:
   - component: {fileID: 153581071}
   - component: {fileID: 153581070}
-  - component: {fileID: 153581069}
-  - component: {fileID: 153581068}
-  - component: {fileID: 153581067}
   - component: {fileID: 153581066}
+  - component: {fileID: 153581068}
+  - component: {fileID: 153581072}
+  - component: {fileID: 153581069}
+  - component: {fileID: 153581067}
   - component: {fileID: 153581065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,12 +614,34 @@ Transform:
   m_GameObject: {fileID: 153581064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.8, y: -1.18, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 135189679}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &153581072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153581064}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057a3e8b6e9a18d40930475624ceb441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  hitbox: {fileID: 135189679}
+  hitboxRadius: 0.5
+  damageSource:
+    serializedVersion: 2
+    m_Bits: 64
+  rb: {fileID: 153581069}
+  knockBackForce: 10
+  knockBackForceUp: 1
 --- !u!1 &505123031
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,9 +657,9 @@ GameObject:
   - component: {fileID: 505123037}
   - component: {fileID: 505123038}
   - component: {fileID: 505123039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerOne
-  m_TagString: Untagged
+  m_TagString: WEAPON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,7 +746,7 @@ Transform:
   m_GameObject: {fileID: 505123031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.66, y: -1.18, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
