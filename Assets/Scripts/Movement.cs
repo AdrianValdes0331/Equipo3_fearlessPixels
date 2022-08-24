@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     private Animator Animator;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
+    public float pSize = 0.05f;
 
 
     public bool EnableDoubleJump = true;
@@ -41,24 +42,24 @@ public class Movement : MonoBehaviour
 
         if (Horizontal < 0.0f)
         {
-            transform.localScale = new Vector3(-0.07f, 0.07f, 0.07f);
+            transform.localScale = new Vector3(-pSize, pSize, pSize);
         }
         else if (Horizontal > 0.0f)
         {
-            transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
+            transform.localScale = new Vector3(pSize, pSize, pSize);
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Time.time > LastShoot + 0.25f)
+        /*if (Input.GetKey(KeyCode.LeftShift) && Time.time > LastShoot + 0.25f)
         {
             //Animator.SetTrigger("shoot");
             Shoot();
             print("Hit");
             LastShoot = Time.time;
-        }
-        if (Input.GetKey(KeyCode.Z))
+        }*/
+        if (Input.GetKey(KeyCode.Z) && Time.time > LastShoot + 0.25f)
         {
             print("kick");
             Animator.SetTrigger("Chinkick");
-            Shoot();
+            //Shoot();
         }
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal < -0.1f)
@@ -164,10 +165,10 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void Shoot()
+    /*private void Shoot()
     {
         Vector3 direction;
-        if (transform.localScale.x == 0.07f)
+        if (transform.localScale.x == pSize)
         {
             direction = Vector2.left;
         }
@@ -177,7 +178,7 @@ public class Movement : MonoBehaviour
         }
         GameObject bullet = Instantiate(Bullet, transform.position + direction * 1.0f, Quaternion.identity);
         bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
