@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
+        //Player#1
         //Better to move to another script
         if (name == "PlayerOne")
         {
@@ -60,6 +61,7 @@ public class Movement : MonoBehaviour
             }
         }
 
+        //Player#2
         if (name == "PlayerTwo" && Input.anyKey)
         {
             if (Input.GetKey(KeyCode.J))
@@ -79,16 +81,15 @@ public class Movement : MonoBehaviour
                 print("kick");
                 Animator.SetTrigger("Chinkick");
             }           
-            else if (!Input.anyKey)
-            {
-                print("none");
-                dirX = 0.0f;
-            }
+        }
+        else if (name == "PlayerTwo" && !Input.anyKey)
+        {
+            print("none");
+            dirX = 0.0f;
         }
 
         //Define ground to avoid infinite jump
         bool onTheGround = isOnGround();
-
         if (onTheGround)
         {
             canDoubleJump = true;
