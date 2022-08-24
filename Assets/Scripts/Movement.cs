@@ -2,204 +2,141 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using System;
 
 public class Movement : MonoBehaviour
 {
 
-    public float MaxSpeed;
-    public float Acceleration;
+    public float MaxSpeed;   
     public float JumpSpeed;
-    public float JumpDuration;
-
+    private float dirX;
+    
     private float LastShoot;
-    public static float health;
+    public static float P1health;
     public GameObject Bullet;
     private Animator Animator;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
     public float pSize = 0.05f;
 
-
     public bool EnableDoubleJump = true;
-    public bool wallHitDoubleJumpOverride = true;
 
     bool canDoubleJump = true;
-    float jmpDuration;
     bool jumpKeyDown = false;
-    bool canVariableJump = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-        health = 1;
+        P1health = 100;
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        MaxSpeed = 10.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Horizontal < 0.0f)
+        //Better to move to another script
+        if (name == "PlayerOne")
         {
-            transform.localScale = new Vector3(-pSize, pSize, pSize);
-        }
-        else if (Horizontal > 0.0f)
-        {
-            transform.localScale = new Vector3(pSize, pSize, pSize);
-        }
-        /*if (Input.GetKey(KeyCode.LeftShift) && Time.time > LastShoot + 0.25f)
-        {
-            //Animator.SetTrigger("shoot");
-            Shoot();
-            print("Hit");
-            LastShoot = Time.time;
-        }*/
-        if (Input.GetKey(KeyCode.Z) && Time.time > LastShoot + 0.25f)
-        {
-            print("kick");
-            Animator.SetTrigger("Chinkick");
-            //Shoot();
-        }
-        float horizontal = Input.GetAxis("Horizontal");
-        if (horizontal < -0.1f)
-        {
-            if (GetComponent<Rigidbody2D>().velocity.x > -this.MaxSpeed)
+            //Change direction
+            Horizontal = Input.GetAxisRaw("Horizontal");
+            if (Horizontal < 0.0f)
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(-this.Acceleration, 0.0f));
+                transform.localScale = new Vector3(-pSize, pSize, pSize);
             }
-            else
+            else if (Horizontal > 0.0f)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-this.MaxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                transform.localScale = new Vector3(pSize, pSize, pSize);
             }
-        }
-        else if (horizontal > 0.1f)
-        {
-            if (GetComponent<Rigidbody2D>().velocity.x < this.MaxSpeed)
+
+            dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
+            //kick
+            if (Input.GetKey(KeyCode.Z))
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(this.Acceleration, 0.0f));
-            }
-            else
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(this.MaxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                print("kick");
+                Animator.SetTrigger("Chinkick");
             }
         }
 
+        if (name == "PlayerTwo" && Input.anyKey)
+        {
+            if (Input.GetKey(KeyCode.J))
+            {
+                dirX = -MaxSpeed;
+                transform.localScale = new Vector3(-pSize, pSize, pSize);
+                print("left");
+            }
+            if (Input.GetKey(KeyCode.L))
+            {
+                dirX = MaxSpeed;
+                transform.localScale = new Vector3(pSize, pSize, pSize);
+                print("right");
+            }
+            if (Input.GetKey(KeyCode.N))
+            {
+                print("kick");
+                Animator.SetTrigger("Chinkick");
+            }           
+            else if (!Input.anyKey)
+            {
+                print("none");
+                dirX = 0.0f;
+            }
+        }
+
+        //Define ground to avoid infinite jump
         bool onTheGround = isOnGround();
-
-        //float vertical = Input.GetAxis("Vertical");
 
         if (onTheGround)
         {
             canDoubleJump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)/*vertical > 0.1f*/)
+        //Jump/doubleJump
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!jumpKeyDown)
             {
                 jumpKeyDown = true;
-
-                if (onTheGround || (canDoubleJump && EnableDoubleJump) || wallHitDoubleJumpOverride)
-                {
-                    bool wallHit = false;
-                    int wallHitDirection = 0;
-
-                    bool leftWallHit = isOnWallLeft();
-                    bool rightWallHit = isOnWallRight();
-
-                    if (horizontal != 0)
-                    {
-                        if (leftWallHit)
-                        {
-                            wallHit = true;
-                            wallHitDirection = 1;
-                        }
-                        else if (rightWallHit)
-                        {
-                            wallHit = true;
-                            wallHitDirection = -1;
-                        }
-                    }
-
-
-                    if (!wallHit)
-                    {
-                        if (onTheGround || (canDoubleJump && EnableDoubleJump))
-                        {
-                            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
-
-                            JumpDuration = 0.0f;
-                            canVariableJump = true;
-
-                        }
-                    }
-                    else
-                    {
-                        GetComponent<Rigidbody2D>().velocity = new Vector2(this.JumpSpeed * wallHitDirection, this.JumpSpeed);
-
-                        jmpDuration = 0.0f;
-                        canVariableJump = true;
-                    }
-                    if (!onTheGround && !wallHit)
-                    {
-                        canDoubleJump = false;
-                    }
-                }
-            }
-            else if (canVariableJump)
-            {
-                jmpDuration += Time.deltaTime;
-
-                if (jmpDuration < this.JumpDuration / 1000)
+                
+                if (onTheGround || (canDoubleJump && EnableDoubleJump))
                 {
                     GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
+                }     
+                else
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(this.JumpSpeed, this.JumpSpeed);
+                }
+                if (!onTheGround)
+                {
+                    canDoubleJump = false;
                 }
             }
         }
         else
         {
-            jumpKeyDown = false;
-            canVariableJump = false;
+            jumpKeyDown = false;         
         }
-
     }
 
-    /*private void Shoot()
-    {
-        Vector3 direction;
-        if (transform.localScale.x == pSize)
-        {
-            direction = Vector2.left;
-        }
-        else
-        {
-            direction = Vector2.right;
-        }
-        GameObject bullet = Instantiate(Bullet, transform.position + direction * 1.0f, Quaternion.identity);
-        bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
-    }*/
-
+    //ReduceHealth
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy_Bullet" || collision.gameObject.tag == "LV2_Punches")
+        if (collision.gameObject.tag == "Enemy_Punch")
         {
-            health -= 0.1f;
+            P1health -= 1.0f;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D trig)
-    {
-        if (trig.gameObject.tag == "Acid_Drops")
-        {
-            health -= 0.1f;
-        }
-    }
-
+    //Speed
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = new Vector2(Horizontal, Rigidbody2D.velocity.y);
+        Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);    
     }
+
+    //Validate Ground
     private bool isOnGround()
     {
         float lengthToSearch = 0.1f;
@@ -210,43 +147,4 @@ public class Movement : MonoBehaviour
         return hit;
     }
 
-    private bool isOnWallLeft()
-    {
-        bool retVal = false;
-        float lengthToSearch = 0.1f;
-        float colliderThreshhold = 0.001f;
-        Vector2 linestart = new Vector2(this.transform.position.x - this.GetComponent<Renderer>().bounds.extents.x - colliderThreshhold, this.transform.position.y);
-        Vector2 vectorToSearch = new Vector2(linestart.x - lengthToSearch, this.transform.position.y);
-
-        RaycastHit2D hitLeft = Physics2D.Linecast(linestart, vectorToSearch);
-        retVal = hitLeft;
-        if (retVal)
-        {
-            if (hitLeft.collider)
-            {
-                retVal = false;
-            }
-        }
-        return retVal;
-    }
-
-    private bool isOnWallRight()
-    {
-        bool retVal = false;
-        float lengthToSearch = 0.1f;
-        float colliderThreshhold = 0.001f;
-        Vector2 linestart = new Vector2(this.transform.position.x + this.GetComponent<Renderer>().bounds.extents.x + colliderThreshhold, this.transform.position.y);
-        Vector2 vectorToSearch = new Vector2(linestart.x + lengthToSearch, this.transform.position.y);
-
-        RaycastHit2D hitRight = Physics2D.Linecast(linestart, vectorToSearch);
-        retVal = hitRight;
-        if (retVal)
-        {
-            if (hitRight.collider)
-            {
-                retVal = false;
-            }
-        }
-        return retVal;
-    }
 }
