@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     private Animator Animator;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
-    public float pSize = 0.05f;
+    public float pSize = 0.15f;
 
     public bool EnableDoubleJump = true;
 
@@ -113,6 +113,10 @@ public class Movement : MonoBehaviour
     {
         //Change direction
         Horizontal = Input.GetAxisRaw("Horizontal");
+        if (Horizontal > 0.0f || Horizontal < 0.0f)
+        {
+            Animator.SetTrigger("walk");
+        }
         if (Horizontal < 0.0f)
         {
             transform.localScale = new Vector3(-pSize, pSize, pSize);
@@ -132,15 +136,17 @@ public class Movement : MonoBehaviour
 
     //P2
     private void P2movements()
-    {
+    {    
         if (Input.GetKey(KeyCode.J))
         {
             dirX = -MaxSpeed;
+            Animator.SetTrigger("walk");
             transform.localScale = new Vector3(-pSize, pSize, pSize);         
         }
         if (Input.GetKey(KeyCode.L))
         {
             dirX = MaxSpeed;
+            Animator.SetTrigger("walk");
             transform.localScale = new Vector3(pSize, pSize, pSize);          
         }
         if (Input.GetKey(KeyCode.N))
