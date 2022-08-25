@@ -38,53 +38,18 @@ public class Movement : MonoBehaviour
     {
 
         //Player#1
-        //Better to move to another script
         if (name == "PlayerOne")
         {
-            //Change direction
-            Horizontal = Input.GetAxisRaw("Horizontal");
-            if (Horizontal < 0.0f)
-            {
-                transform.localScale = new Vector3(-pSize, pSize, pSize);
-            }
-            else if (Horizontal > 0.0f)
-            {
-                transform.localScale = new Vector3(pSize, pSize, pSize);
-            }
-
-            dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
-            //kick
-            if (Input.GetKey(KeyCode.Z))
-            {
-                print("kick");
-                Animator.SetTrigger("Chinkick");
-            }
+            P1movements();
         }
 
         //Player#2
         if (name == "PlayerTwo" && Input.anyKey)
         {
-            if (Input.GetKey(KeyCode.J))
-            {
-                dirX = -MaxSpeed;
-                transform.localScale = new Vector3(-pSize, pSize, pSize);
-                print("left");
-            }
-            if (Input.GetKey(KeyCode.L))
-            {
-                dirX = MaxSpeed;
-                transform.localScale = new Vector3(pSize, pSize, pSize);
-                print("right");
-            }
-            if (Input.GetKey(KeyCode.N))
-            {
-                print("kick");
-                Animator.SetTrigger("Chinkick");
-            }           
+            P2movements();           
         }
         else if (name == "PlayerTwo" && !Input.anyKey)
-        {
-            print("none");
+        {         
             dirX = 0.0f;
         }
 
@@ -98,23 +63,7 @@ public class Movement : MonoBehaviour
         //Jump/doubleJump
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!jumpKeyDown)
-            {
-                jumpKeyDown = true;
-                
-                if (onTheGround || (canDoubleJump && EnableDoubleJump))
-                {
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
-                }     
-                else
-                {
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(this.JumpSpeed, this.JumpSpeed);
-                }
-                if (!onTheGround)
-                {
-                    canDoubleJump = false;
-                }
-            }
+            jump(onTheGround);
         }
         else
         {
@@ -135,6 +84,69 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);    
+    }
+
+    //jump/dopublejump
+    private void jump(bool onTheGround)
+    {
+        if (!jumpKeyDown)
+        {
+            jumpKeyDown = true;
+
+            if (onTheGround || (canDoubleJump && EnableDoubleJump))
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
+            }
+            /*else
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(this.JumpSpeed, this.JumpSpeed);
+            }*/
+            if (!onTheGround)
+            {
+                canDoubleJump = false;
+            }
+        }
+    }
+
+    //P1
+    private void P1movements()
+    {
+        //Change direction
+        Horizontal = Input.GetAxisRaw("Horizontal");
+        if (Horizontal < 0.0f)
+        {
+            transform.localScale = new Vector3(-pSize, pSize, pSize);
+        }
+        else if (Horizontal > 0.0f)
+        {
+            transform.localScale = new Vector3(pSize, pSize, pSize);
+        }
+
+        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
+        //kick
+        if (Input.GetKey(KeyCode.Z))
+        {         
+            Animator.SetTrigger("Chinkick");
+        }
+    }
+
+    //P2
+    private void P2movements()
+    {
+        if (Input.GetKey(KeyCode.J))
+        {
+            dirX = -MaxSpeed;
+            transform.localScale = new Vector3(-pSize, pSize, pSize);         
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            dirX = MaxSpeed;
+            transform.localScale = new Vector3(pSize, pSize, pSize);          
+        }
+        if (Input.GetKey(KeyCode.N))
+        {         
+            Animator.SetTrigger("Chinkick");
+        }
     }
 
     //Validate Ground
