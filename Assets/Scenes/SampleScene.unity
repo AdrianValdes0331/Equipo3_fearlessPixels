@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271cddba026231848a5977221dcf4eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 15
+  MaxSpeed: 5
   JumpSpeed: 15
   Bullet: {fileID: 5306044783963147629, guid: f3f8a12250ca5e641a38c8ea164a20e8, type: 3}
   pSize: 0.15
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271cddba026231848a5977221dcf4eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 15
+  MaxSpeed: 5
   JumpSpeed: 15
   Bullet: {fileID: 5306044783963147629, guid: f3f8a12250ca5e641a38c8ea164a20e8, type: 3}
   pSize: 0.15

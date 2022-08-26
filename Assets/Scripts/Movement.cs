@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
         P1health = 100;
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-        MaxSpeed = 10.0f;
+        MaxSpeed = 5.0f;
     }
 
     // Update is called once per frame
@@ -97,10 +97,7 @@ public class Movement : MonoBehaviour
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
             }
-            /*else
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(this.JumpSpeed, this.JumpSpeed);
-            }*/
+            
             if (!onTheGround)
             {
                 canDoubleJump = false;
@@ -111,12 +108,27 @@ public class Movement : MonoBehaviour
     //P1
     private void P1movements()
     {
+        //Animation
+        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
+        if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
+        {
+            Animator.SetBool("Walk", true);
+        }
+        else
+        {
+            Animator.SetBool("Walk", false);
+        }
+
+        //kick
+        if (Input.GetKey(KeyCode.Z) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
+        {
+            Animator.SetBool("Walk", false);
+            Animator.SetTrigger("Chinkick");
+        }
+
         //Change direction
         Horizontal = Input.GetAxisRaw("Horizontal");
-        if (Horizontal > 0.0f || Horizontal < 0.0f)
-        {
-            Animator.SetTrigger("walk");
-        }
+        //Move
         if (Horizontal < 0.0f)
         {
             transform.localScale = new Vector3(-pSize, pSize, pSize);
@@ -125,33 +137,43 @@ public class Movement : MonoBehaviour
         {
             transform.localScale = new Vector3(pSize, pSize, pSize);
         }
-
-        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
-        //kick
-        if (Input.GetKey(KeyCode.Z))
-        {         
-            Animator.SetTrigger("Chinkick");
-        }
     }
 
     //P2
     private void P2movements()
-    {    
+    {
+
+        //Animation
+        /*if (Input.GetKey(KeyCode.J) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
+        {
+            Animator.SetBool("Walk", true);
+        }
+        else if (Input.GetKey(KeyCode.L) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
+        {
+            Animator.SetBool("Walk", true);
+        }
+        else
+        {
+            Animator.SetBool("Walk", false);
+        }
+
+        //kick
+        if (Input.GetKey(KeyCode.N) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
+        {
+            Animator.SetBool("Walk", false);
+            Animator.SetTrigger("Chinkick");
+        }*/
+
+        //Move/Change direction
         if (Input.GetKey(KeyCode.J))
         {
-            dirX = -MaxSpeed;
-            Animator.SetTrigger("walk");
+            dirX = -MaxSpeed;          
             transform.localScale = new Vector3(-pSize, pSize, pSize);         
         }
         if (Input.GetKey(KeyCode.L))
         {
-            dirX = MaxSpeed;
-            Animator.SetTrigger("walk");
+            dirX = MaxSpeed;          
             transform.localScale = new Vector3(pSize, pSize, pSize);          
-        }
-        if (Input.GetKey(KeyCode.N))
-        {         
-            Animator.SetTrigger("Chinkick");
         }
     }
 
