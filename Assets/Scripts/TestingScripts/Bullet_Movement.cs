@@ -18,7 +18,7 @@ public class Bullet_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Rigidbody2D.velocity = Direction * Speed;
-        Destroy(this.gameObject, 0.05f);
+        //Destroy(this.gameObject, 0.05f);
     }
 
     public void SetDirection(Vector2 direction)

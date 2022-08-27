@@ -126,6 +126,15 @@ public class Movement : MonoBehaviour
             Animator.SetTrigger("Chinkick");
         }
 
+        //Misil
+        if (Input.GetKey(KeyCode.X) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") && Time.time > LastShoot + 0.5f)
+        {
+            Animator.SetBool("Walk", false);
+            Animator.SetTrigger("Chinmisil");
+            Shoot();
+            LastShoot = Time.time;          
+        }
+
         //Change direction
         Horizontal = Input.GetAxisRaw("Horizontal");
         //Move
@@ -137,6 +146,7 @@ public class Movement : MonoBehaviour
         {
             transform.localScale = new Vector3(pSize, pSize, pSize);
         }
+
     }
 
     //P2
@@ -175,6 +185,21 @@ public class Movement : MonoBehaviour
             dirX = MaxSpeed;          
             transform.localScale = new Vector3(pSize, pSize, pSize);          
         }
+    }
+
+    private void Shoot()
+    {
+        Vector3 direction;
+        if (transform.localScale.x == 0.15f)
+        {
+            direction = Vector2.right;
+        }
+        else
+        {
+            direction = Vector2.left;
+        }
+        GameObject bullet = Instantiate(Bullet, transform.position + direction * 0.5f, Quaternion.identity);
+        bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
     }
 
     //Validate Ground
