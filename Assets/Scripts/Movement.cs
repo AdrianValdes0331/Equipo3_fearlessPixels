@@ -63,6 +63,7 @@ public class Movement : MonoBehaviour
         //Jump/doubleJump
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Animator.SetTrigger("brinco");
             jump(onTheGround);
         }
         else
@@ -110,7 +111,7 @@ public class Movement : MonoBehaviour
     {
         //Animation
         dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
-        if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
+        if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick") && !Animator.GetCurrentAnimatorStateInfo(0).IsName("brinco"))
         {
             Animator.SetBool("Walk", true);
         }
