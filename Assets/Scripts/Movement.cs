@@ -199,7 +199,7 @@ public class Movement : MonoBehaviour
         {
             direction = Vector2.left;
         }
-        GameObject bullet = Instantiate(Bullet, transform.position + direction * 0.5f, Quaternion.identity);
+        GameObject bullet = Instantiate(Bullet, transform.position + direction * 1.0f, Quaternion.identity);
         bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
     }
 
