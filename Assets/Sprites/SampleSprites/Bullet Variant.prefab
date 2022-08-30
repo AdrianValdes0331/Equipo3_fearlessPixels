@@ -9,7 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 982854723399043419, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
       propertyPath: Speed
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 982854723399043419, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: force
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 982854723399043419, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: radio
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4059359000029886988, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
       propertyPath: m_Radius

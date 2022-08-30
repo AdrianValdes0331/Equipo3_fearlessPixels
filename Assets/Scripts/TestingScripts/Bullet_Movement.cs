@@ -7,6 +7,8 @@ public class Bullet_Movement : MonoBehaviour
     public float Speed;
     private Rigidbody2D Rigidbody2D;
     private Vector2 Direction;
+    [SerializeField] private float radio;
+    [SerializeField] private float force;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +31,32 @@ public class Bullet_Movement : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player")
         {
-            Debug.Log("Activate");
-            DestroyBullet();
+            print("HITTTT");
+            Explosion();
         }
     }
-  
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radio);
+    }
+    public void Explosion()
+    {
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, radio);
+        foreach (Collider2D collisionador in objects)
+        {
+            Rigidbody2D rb2D = collisionador.GetComponent<Rigidbody2D>();
+            if (rb2D != null)
+            {
+                Vector2 direction = collisionador.transform.position - transform.position;
+                float distance = 1 + direction.magnitude;
+                float finalForce = force / distance;
+                rb2D.AddForce(direction * finalForce);
+            }
+
+        }
+        DestroyBullet();
+    }
     public void DestroyBullet()
     {
         Destroy(gameObject);
