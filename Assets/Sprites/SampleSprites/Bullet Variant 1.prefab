@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2147265729368600717
+--- !u!1001 &1159800368941655749
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.800162
+      value: 3.1060822
       objectReference: {fileID: 0}
     - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.5276321
       objectReference: {fileID: 0}
     - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77,23 +77,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7731773350660913256, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
       propertyPath: m_Name
-      value: Bullet Variant
+      value: Bullet Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913256, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913256, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4059359000029886988, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
---- !u!1 &8538921822527883493 stripped
+--- !u!1 &8886928830545780397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7731773350660913256, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
-  m_PrefabInstance: {fileID: 2147265729368600717}
+  m_PrefabInstance: {fileID: 1159800368941655749}
   m_PrefabAsset: {fileID: 0}
---- !u!70 &4299476979964504977
+--- !u!70 &7093502361822501408
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8538921822527883493}
+  m_GameObject: {fileID: 8886928830545780397}
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
@@ -103,20 +111,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.23287457, y: 0.019864667}
   m_Size: {x: 2.6745763, y: 0.94155556}
   m_Direction: 1
---- !u!61 &-4888824806627456164
+--- !u!61 &7348897013167667949
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8538921822527883493}
+  m_GameObject: {fileID: 8886928830545780397}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09043884, y: 0.58785534}
+  m_Offset: {x: -0.15800834, y: 0.01352492}
   m_SpriteTilingProperty:
     border: {x: 5.6, y: 5.6299996, z: 5.37, w: 6.64}
     pivot: {x: 0.49354008, y: 0.45917672}
@@ -127,5 +135,19 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14, y: 14.4}
+  m_Size: {x: 3.1890674, y: 1.0890384}
   m_EdgeRadius: 0
+--- !u!114 &211670087138927007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886928830545780397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rot: 0
+  maskName: Hurtbox
