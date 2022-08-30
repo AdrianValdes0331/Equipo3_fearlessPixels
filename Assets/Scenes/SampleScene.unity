@@ -836,7 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 5
   JumpSpeed: 15
-  Bullet: {fileID: 7731773350660913256, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+  Bullet: {fileID: 8538921822527883493, guid: 815457b0c55fff44cbc4c76a0f11a210, type: 3}
   pSize: 0.15
   EnableDoubleJump: 1
 --- !u!70 &505123037

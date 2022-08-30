@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2147265729368600717
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 982854723399043419, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059359000029886988, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_Radius
+      value: 1.2776736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059359000029886988, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.18638094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059359000029886988, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0052116313
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.800162
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913253, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7731773350660913256, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+      propertyPath: m_Name
+      value: Bullet Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4059359000029886988, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+--- !u!1 &8538921822527883493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7731773350660913256, guid: c3aff493c284fe645be1fe12ff08a273, type: 3}
+  m_PrefabInstance: {fileID: 2147265729368600717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &4299476979964504977
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538921822527883493}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.23287457, y: 0.019864667}
+  m_Size: {x: 2.6745763, y: 0.94155556}
+  m_Direction: 1

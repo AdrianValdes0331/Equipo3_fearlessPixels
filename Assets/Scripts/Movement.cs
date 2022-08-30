@@ -153,28 +153,6 @@ public class Movement : MonoBehaviour
     //P2
     private void P2movements()
     {
-
-        //Animation
-        /*if (Input.GetKey(KeyCode.J) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
-        {
-            Animator.SetBool("Walk", true);
-        }
-        else if (Input.GetKey(KeyCode.L) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
-        {
-            Animator.SetBool("Walk", true);
-        }
-        else
-        {
-            Animator.SetBool("Walk", false);
-        }
-
-        //kick
-        if (Input.GetKey(KeyCode.N) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick"))
-        {
-            Animator.SetBool("Walk", false);
-            Animator.SetTrigger("Chinkick");
-        }*/
-
         //Move/Change direction
         if (Input.GetKey(KeyCode.J))
         {
