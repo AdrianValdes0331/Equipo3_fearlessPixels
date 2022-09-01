@@ -41,13 +41,14 @@ public class Bullet_Movement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radio);
     }
     public void Explosion()
-    {
+    {       
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, radio);
         foreach (Collider2D collisionador in objects)
         {
             Rigidbody2D rb2D = collisionador.GetComponent<Rigidbody2D>();
             if (rb2D != null)
             {
+                print("negatoive");
                 Vector2 direction = collisionador.transform.position - transform.position;
                 float distance = 1 + direction.magnitude;
                 float finalForce = force / distance;
@@ -57,6 +58,7 @@ public class Bullet_Movement : MonoBehaviour
         }
         DestroyBullet();
     }
+
     public void DestroyBullet()
     {
         Destroy(gameObject);
