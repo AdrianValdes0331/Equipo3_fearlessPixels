@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.Playables;
 using System;
 
-public class Movement : MonoBehaviour
+public class ControllerTest : MonoBehaviour
 {
+    @P1Controls controls;
 
     public float MaxSpeed;
     public float JumpSpeed;
 
-    private float dirX;
+    Vector2 move;
+    Vector2 dirX;
 
     private float LastShoot;
     public static float P1health;
@@ -35,6 +37,15 @@ public class Movement : MonoBehaviour
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         MaxSpeed = 5.0f;
+    }
+
+    void Awake()
+    {
+        controls = new @P1Controls();
+
+        controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
+        controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
+
     }
 
     // Update is called once per frame
@@ -75,12 +86,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //Speed
-    private void FixedUpdate()
-    {
-        Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);
-    }
-
     //jump/dopublejump
     private void jump(bool onTheGround)
     {
@@ -90,7 +95,7 @@ public class Movement : MonoBehaviour
 
             if (onTheGround || (canDoubleJump && EnableDoubleJump))
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(move.x, this.JumpSpeed);
             }
 
             if (!onTheGround)
@@ -106,10 +111,11 @@ public class Movement : MonoBehaviour
         //Animation
         if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") || !GameObject.FindWithTag("scope"))
         {
-            dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
+            dirX = new Vector2(move.x, 0f) * MaxSpeed * Time.deltaTime;
+            transform.Translate(dirX, Space.World);
             Animator.SetBool("Chinmisil", false);
         }
-        if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick") && !Animator.GetCurrentAnimatorStateInfo(0).IsName("brinco"))
+        if (dirX != Vector2.zero && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick") && !Animator.GetCurrentAnimatorStateInfo(0).IsName("brinco"))
         {
             Animator.SetBool("Walk", true);
         }
@@ -174,4 +180,14 @@ public class Movement : MonoBehaviour
         return hit;
     }
 
+    //Controls
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
 }

@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.Playables;
 using System;
 
-public class Movement : MonoBehaviour
+public class MoveBCP : MonoBehaviour
 {
-
     public float MaxSpeed;
     public float JumpSpeed;
 
@@ -78,7 +77,7 @@ public class Movement : MonoBehaviour
     //Speed
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);
+        Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);    
     }
 
     //jump/dopublejump
@@ -105,7 +104,7 @@ public class Movement : MonoBehaviour
     {
         //Animation
         if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") || !GameObject.FindWithTag("scope"))
-        {
+        {         
             dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
             Animator.SetBool("Chinmisil", false);
         }
