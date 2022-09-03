@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     public static float P1health;
     public GameObject Scope;
     public GameObject Misile;
-    private Animator Animator;
+    public Animator Animator;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
     public float pSize = 0.15f;
@@ -42,17 +42,7 @@ public class Movement : MonoBehaviour
         if (name == "PlayerOne")
         {
             P1movements();
-        }
-
-        //Player#2
-        if (name == "PlayerTwo" && Input.anyKey)
-        {
-            P2movements();           
-        }
-        else if (name == "PlayerTwo" && !Input.anyKey)
-        {         
-            dirX = 0.0f;
-        }
+        }   
 
         //Define ground to avoid infinite jump
         bool onTheGround = isOnGround();
@@ -110,8 +100,12 @@ public class Movement : MonoBehaviour
     //P1
     private void P1movements()
     {
-        //Animation             
-        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;      
+        //Animation
+        if (!Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") || !GameObject.FindWithTag("scope"))
+        {
+            dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
+            Animator.SetBool("Chinmisil", false);
+        }     
         if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick") && !Animator.GetCurrentAnimatorStateInfo(0).IsName("brinco"))
         {
             Animator.SetBool("Walk", true);
@@ -129,10 +123,10 @@ public class Movement : MonoBehaviour
         }       
 
         //Misil
-        if (Input.GetKey(KeyCode.X) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil"))
+        if (Input.GetKey(KeyCode.X) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") && !GameObject.FindWithTag("scope"))
         { 
             Animator.SetBool("Walk", false);
-            Animator.SetTrigger("Chinmisil");
+            Animator.SetBool("Chinmisil", true);
             Shoot();
         }
         
@@ -150,22 +144,6 @@ public class Movement : MonoBehaviour
 
     }
 
-    //P2
-    private void P2movements()
-    {
-        //Move/Change direction
-        if (Input.GetKey(KeyCode.J))
-        {
-            dirX = -MaxSpeed;          
-            transform.localScale = new Vector3(-pSize, pSize, pSize);         
-        }
-        if (Input.GetKey(KeyCode.L))
-        {
-            dirX = MaxSpeed;          
-            transform.localScale = new Vector3(pSize, pSize, pSize);          
-        }
-    }
-
     private void Shoot()
     {
         Vector3 direction;
@@ -178,8 +156,7 @@ public class Movement : MonoBehaviour
             direction = Vector2.left;
         }
         GameObject scope = Instantiate(Scope, transform.position + direction * 1.0f, Quaternion.identity);
-        GameObject misile = Instantiate(Misile, transform.position + direction * -1.5f, Quaternion.identity);
-        //bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
+        GameObject misile = Instantiate(Misile, transform.position + direction * -1.5f, Quaternion.identity);      
     }
 
     //Validate Ground

@@ -7,6 +7,9 @@ public class MisilFalling : MonoBehaviour
     //public float Speed;
     private Rigidbody2D Rigidbody2D;
     private Vector2 Direction;
+    
+    public GameObject Cabooommmmm;
+
     [SerializeField] private float radio;
     [SerializeField] private float force;
 
@@ -14,14 +17,8 @@ public class MisilFalling : MonoBehaviour
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    /*private void FixedUpdate()
-    {
-        Rigidbody2D.velocity = Direction * Speed;
-        //Destroy(this.gameObject, 0.05f);
-    }*/
+        //Animator = GetComponent<Animator>();
+    }   
 
     public void SetDirection(Vector2 direction)
     {
@@ -29,7 +26,7 @@ public class MisilFalling : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "scope")
+        if (col.gameObject.tag != "Player" && col.gameObject.tag != "scope")
         {
             print("HITTTT");
             Explosion();
@@ -55,11 +52,14 @@ public class MisilFalling : MonoBehaviour
             }
 
         }
-        //DestroyBullet();
+        DestroyBullet();
     }
 
     public void DestroyBullet()
-    {
+    {        
+        GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation);
         Destroy(gameObject);
+        Destroy(cabom, 2.0f);
+        Destroy(GameObject.FindWithTag("scope"));
     }
 }

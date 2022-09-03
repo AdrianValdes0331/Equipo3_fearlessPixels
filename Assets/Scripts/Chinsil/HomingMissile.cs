@@ -34,10 +34,4 @@ public class HomingMissile : MonoBehaviour
 
         rb.velocity = (transform.right * -1) * speed;
     }
-
-    /*void OnTriggerEnter2D()
-	{
-		// Put a particle effect here
-		Destroy(gameObject);
-	}*/
 }

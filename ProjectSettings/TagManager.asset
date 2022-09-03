@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - wall
-  - Gunsword_Bullet
-  - WEAPON
+  - Shootable
   - scope
+  - Undefined
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -15,11 +15,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - Hurtbox
   - 
   - 
-  - 
+  - Lighting
+  - Ground
+  - Postprocessing
   - 
   - 
   - 
@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fire
+    uniqueID: 3804908061
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
