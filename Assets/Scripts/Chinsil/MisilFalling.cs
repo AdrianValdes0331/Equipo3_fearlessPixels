@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MisilFalling : MonoBehaviour
 {
-    public float Speed;
+    //public float Speed;
     private Rigidbody2D Rigidbody2D;
     private Vector2 Direction;
     [SerializeField] private float radio;
@@ -17,11 +17,11 @@ public class MisilFalling : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         Rigidbody2D.velocity = Direction * Speed;
         //Destroy(this.gameObject, 0.05f);
-    }
+    }*/
 
     public void SetDirection(Vector2 direction)
     {
@@ -47,8 +47,7 @@ public class MisilFalling : MonoBehaviour
         {
             Rigidbody2D rb2D = collisionador.GetComponent<Rigidbody2D>();
             if (rb2D != null)
-            {
-                print("negatoive");
+            {              
                 Vector2 direction = collisionador.transform.position - transform.position;
                 float distance = 1 + direction.magnitude;
                 float finalForce = force / distance;
@@ -56,7 +55,7 @@ public class MisilFalling : MonoBehaviour
             }
 
         }
-        DestroyBullet();
+        //DestroyBullet();
     }
 
     public void DestroyBullet()

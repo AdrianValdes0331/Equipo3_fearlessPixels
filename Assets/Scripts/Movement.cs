@@ -13,7 +13,8 @@ public class Movement : MonoBehaviour
     
     private float LastShoot;
     public static float P1health;
-    public GameObject Bullet;
+    public GameObject Scope;
+    public GameObject Misile;
     private Animator Animator;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
@@ -109,8 +110,8 @@ public class Movement : MonoBehaviour
     //P1
     private void P1movements()
     {
-        //Animation
-        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
+        //Animation             
+        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;      
         if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinkick") && !Animator.GetCurrentAnimatorStateInfo(0).IsName("brinco"))
         {
             Animator.SetBool("Walk", true);
@@ -125,17 +126,16 @@ public class Movement : MonoBehaviour
         {
             Animator.SetBool("Walk", false);
             Animator.SetTrigger("Chinkick");
-        }
+        }       
 
         //Misil
-        if (Input.GetKey(KeyCode.X) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") && Time.time > LastShoot + 0.5f)
-        {
+        if (Input.GetKey(KeyCode.X) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil"))
+        { 
             Animator.SetBool("Walk", false);
             Animator.SetTrigger("Chinmisil");
             Shoot();
-            LastShoot = Time.time;          
         }
-
+        
         //Change direction
         Horizontal = Input.GetAxisRaw("Horizontal");
         //Move
@@ -177,8 +177,9 @@ public class Movement : MonoBehaviour
         {
             direction = Vector2.left;
         }
-        GameObject bullet = Instantiate(Bullet, transform.position + direction * 1.0f, Quaternion.identity);
-        bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
+        GameObject scope = Instantiate(Scope, transform.position + direction * 1.0f, Quaternion.identity);
+        GameObject misile = Instantiate(Misile, transform.position + direction * -1.5f, Quaternion.identity);
+        //bullet.GetComponent<Bullet_Movement>().SetDirection(direction);
     }
 
     //Validate Ground
