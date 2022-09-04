@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2071701424864858744}
   m_Layer: 0
   m_Name: RegMisil
-  m_TagString: Untagged
+  m_TagString: Chinsil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
