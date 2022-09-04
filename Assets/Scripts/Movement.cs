@@ -6,7 +6,6 @@ using System;
 
 public class Movement : MonoBehaviour
 {
-
     public float MaxSpeed;
     public float JumpSpeed;
 
@@ -40,25 +39,19 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Player#1    
+        P1movements();
 
-        //Player#1
-        if (name == "PlayerOne")
-        {
-            P1movements();
-        }
-
-        //Define ground to avoid infinite jump
+        //Jump/doubleJump
         bool onTheGround = isOnGround();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jump(onTheGround);
+        }
+        //Define ground to avoid infinite jump
         if (onTheGround)
         {
             canDoubleJump = true;
-        }
-
-        //Jump/doubleJump
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Animator.SetTrigger("brinco");
-            jump(onTheGround);
         }
         else
         {
@@ -66,41 +59,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //ReduceHealth
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy_Punch")
-        {
-            P1health -= 1.0f;
-        }
-    }
-
-    //Speed
-    private void FixedUpdate()
-    {
-        Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);
-    }
-
-    //jump/dopublejump
-    private void jump(bool onTheGround)
-    {
-        if (!jumpKeyDown)
-        {
-            jumpKeyDown = true;
-
-            if (onTheGround || (canDoubleJump && EnableDoubleJump))
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
-            }
-
-            if (!onTheGround)
-            {
-                canDoubleJump = false;
-            }
-        }
-    }
-
-    //P1
+    //P1 Keyboard
     private void P1movements()
     {
         //Animation
@@ -126,7 +85,7 @@ public class Movement : MonoBehaviour
         }
 
         //Misil
-        if (Input.GetKey(KeyCode.X) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") && !GameObject.FindWithTag("scope"))
+        if (Input.GetKey(KeyCode.X) && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Chinmisil") && !Animator.GetCurrentAnimatorStateInfo(0).IsName("Walk") && !GameObject.FindWithTag("scope"))
         {
             Animator.SetBool("Walk", false);
             Animator.SetBool("Chinmisil", true);
@@ -147,6 +106,27 @@ public class Movement : MonoBehaviour
 
     }
 
+    //jump/dopublejump
+    private void jump(bool onTheGround)
+    {
+        if (!jumpKeyDown)
+        {
+            jumpKeyDown = true;
+
+            if (onTheGround || (canDoubleJump && EnableDoubleJump))
+            {
+                Animator.SetTrigger("brinco");
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
+            }
+
+            if (!onTheGround)
+            {
+                canDoubleJump = false;
+            }
+        }
+    }
+
+    //Shoot misile
     private void Shoot()
     {
         Vector3 direction;
@@ -174,4 +154,18 @@ public class Movement : MonoBehaviour
         return hit;
     }
 
+    //ReduceHealth
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy_Punch")
+        {
+            P1health -= 1.0f;
+        }
+    }
+
+    //Speed
+    private void FixedUpdate()
+    {
+        Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);
+    }
 }
