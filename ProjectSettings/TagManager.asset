@@ -8,6 +8,9 @@ TagManager:
   - scope
   - Undefined
   - ground
+  - WEAPON
+  - Chinsil
+  - Enemy
   layers:
   - Default
   - TransparentFX
