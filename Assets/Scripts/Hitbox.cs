@@ -10,6 +10,10 @@ public class Hitbox : MonoBehaviour
     public float rot;
     public string maskName;
     private int mask;
+    private IHitboxResponder _responder = null;
+    public bool isSphere;
+    public bool isProjectile;
+    private State _state;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +31,20 @@ public class Hitbox : MonoBehaviour
     void Update()
     {
 
-        pos = transform.position;
+        if (isProjectile) { pos = transform.position; }
+        if (_state == State.Closed) { return; }
         Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, sz/2, rot, 1<<mask);
 
-        if (colliders.Length > 0) {
+        for (int i = 0; i < colliders.Length; i++) {
 
+            Collider2D iCollider = colliders[i];
+            _responder?.CollisionedWith(iCollider);
             Debug.Log(colliders.Length);
             Debug.Log(colliders[0]);
             Debug.Log("se detecto golpe");
 
         }
+        _state = (colliders.Length > 0)? State.Colliding : State.Open;
 
     }
 
@@ -47,5 +55,27 @@ public class Hitbox : MonoBehaviour
         Gizmos.DrawCube(Vector3.zero, new Vector3(sz.x * 2, sz.y * 2)); // Because size is halfExtents
     }
 
+    public void openCollissionCheck()
+    {
+        _state = State.Open;
+    }
+
+    public void closeCollissionCheck()
+    {
+        _state = State.Closed;
+    }
+
+    public void setResponder(IHitboxResponder responder)
+    {
+        _responder = responder;
+    }
+
+    public enum State { 
+        
+        Closed,
+        Open,
+        Colliding
+    
+    }
 
 }
