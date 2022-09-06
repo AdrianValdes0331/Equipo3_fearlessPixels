@@ -15,6 +15,7 @@ public class Generic_Movements : MonoBehaviour
     public string AnimJumpName;
     public string AnimWalk;
 
+
     bool canDoubleJump = true;
     bool jumpKeyDown = false;
     // Start is called before the first frame update
@@ -22,7 +23,7 @@ public class Generic_Movements : MonoBehaviour
     {       
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-        MaxSpeed = 5.0f;
+        //MaxSpeed = 5.0f;
     }
 
     // Update is called once per frame

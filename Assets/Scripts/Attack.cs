@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour, IHitboxResponder
+public class Attack : MonoBehaviour, IHitboxResponder
 {
 
-    public int dmg;
+    public float dmg;
     public Hitbox hitbox;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        hitbox = Instantiate(hitbox, gameObject.transform, false);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixUpdate()
     {
-        
+     
+        hitbox.hitboxUpdate();
+
     }
 
     public void attack() {

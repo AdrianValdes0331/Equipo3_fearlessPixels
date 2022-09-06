@@ -58,5 +58,6 @@ public class Chinsil : MonoBehaviour
 
         GameObject scope = Instantiate(Scope, ScopeSpawn.position, Quaternion.identity);
         GameObject misile = Instantiate(Misile, FirePoint.position, Quaternion.identity);
+
     }
 }

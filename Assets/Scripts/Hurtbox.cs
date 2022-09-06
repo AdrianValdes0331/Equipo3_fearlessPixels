@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Hurtbox : MonoBehaviour
 {
 
-    public Collider2D hcollider;
+    private Collider2D hcollider;
+    private float dmgPercent = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        hcollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -18,9 +21,11 @@ public class Hurtbox : MonoBehaviour
         
     }
 
-    public bool getHitBy(int damage)
+    public bool getHitBy(float damage)
     {
 
+        dmgPercent+=damage;
+        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name].GetComponent<TextMeshProUGUI>().text = dmgPercent+"%";
         return true;
 
     }

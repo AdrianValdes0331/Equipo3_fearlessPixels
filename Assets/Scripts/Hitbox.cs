@@ -19,8 +19,9 @@ public class Hitbox : MonoBehaviour
     void Start()
     {
 
-        objectRenderer = gameObject.GetComponent<Renderer>();
-        sz = objectRenderer.bounds.extents;
+        // objectRenderer = gameObject.GetComponent<Renderer>();
+        // sz = objectRenderer.bounds.extents;
+        sz = Vector2.one;
         mask = LayerMask.NameToLayer(maskName);
         Debug.Log(mask);
         Debug.Log(sz);
@@ -28,12 +29,14 @@ public class Hitbox : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void hitboxUpdate()
     {
 
         if (isProjectile) { pos = transform.position; }
         if (_state == State.Closed) { return; }
         Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, sz/2, rot, 1<<mask);
+
+        Debug.Log(pos);
 
         for (int i = 0; i < colliders.Length; i++) {
 
