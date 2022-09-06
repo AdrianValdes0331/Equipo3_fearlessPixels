@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 505123042}
   - component: {fileID: 505123038}
   - component: {fileID: 505123043}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: PlayerOne
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -675,7 +675,6 @@ MonoBehaviour:
   ScopeSpawn: {fileID: 2086668391}
   Scope: {fileID: 2958596743105387105, guid: 16e0fbce0eb11d0499f3d6d6881e50a7, type: 3}
   Misile: {fileID: 2071701424864858739, guid: afb4e37ab1aa3bc428ed5acf0a0cf624, type: 3}
-  hitbox: {fileID: 7051719264131873581, guid: 5e54b16dfaa7b5b49afa27126cff3fd8, type: 3}
   SearchForTag: scope
   AnimChinsil: Chinmisil
   GMove: {fileID: 505123041}
@@ -1477,7 +1476,7 @@ GameObject:
   - component: {fileID: 897937176}
   - component: {fileID: 897937180}
   - component: {fileID: 897937181}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerTwo
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1640,7 +1639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1017831700}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FirePoint_Chinsil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2324,7 +2323,7 @@ GameObject:
   - component: {fileID: 1851718051}
   - component: {fileID: 1851718048}
   - component: {fileID: 1851718050}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2603,7 +2602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2086668391}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FirePoint_Scope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
