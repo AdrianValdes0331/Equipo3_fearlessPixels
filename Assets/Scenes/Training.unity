@@ -492,7 +492,8 @@ GameObject:
   - component: {fileID: 505123034}
   - component: {fileID: 505123032}
   - component: {fileID: 505123040}
-  - component: {fileID: 505123036}
+  - component: {fileID: 505123041}
+  - component: {fileID: 505123042}
   - component: {fileID: 505123038}
   m_Layer: 6
   m_Name: PlayerOne
@@ -591,27 +592,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &505123036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505123031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271cddba026231848a5977221dcf4eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxSpeed: 5
-  JumpSpeed: 15
-  Scope: {fileID: 2958596743105387105, guid: 16e0fbce0eb11d0499f3d6d6881e50a7, type: 3}
-  Misile: {fileID: 2071701424864858739, guid: afb4e37ab1aa3bc428ed5acf0a0cf624, type: 3}
-  Animator: {fileID: 0}
-  FirePoint: {fileID: 1017831700}
-  ScopeSpawn: {fileID: 2086668391}
-  pSize: 0.15
-  EnableDoubleJump: 1
 --- !u!95 &505123038
 Animator:
   serializedVersion: 4
@@ -658,6 +638,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 8.7}
   m_EdgeRadius: 0
+--- !u!114 &505123041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505123031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c79ef25c1ecb3b4e963a1c02603ec5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 5
+  JumpSpeed: 15
+  dirX: 0
+  Animator: {fileID: 0}
+  pSize: 0.15
+  EnableDoubleJump: 1
+  AnimJumpName: brinco
+  AnimWalk: Walk
+--- !u!114 &505123042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505123031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71be3ef7c778e0f4793dcd3c7f9a4007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 1017831700}
+  ScopeSpawn: {fileID: 2086668391}
+  Scope: {fileID: 2958596743105387105, guid: 16e0fbce0eb11d0499f3d6d6881e50a7, type: 3}
+  Misile: {fileID: 2071701424864858739, guid: afb4e37ab1aa3bc428ed5acf0a0cf624, type: 3}
+  SearchForTag: scope
+  AnimChinsil: Chinmisil
+  GMove: {fileID: 505123041}
+  CSAnim: {fileID: 0}
 --- !u!1 &508718197
 GameObject:
   m_ObjectHideFlags: 0
