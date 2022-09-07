@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class Generic_Movements : MonoBehaviour
 {
@@ -15,12 +16,11 @@ public class Generic_Movements : MonoBehaviour
     public string AnimJumpName;
     public string AnimWalk;
 
-
     bool canDoubleJump = true;
     bool jumpKeyDown = false;
     // Start is called before the first frame update
     void Start()
-    {       
+    {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
     }

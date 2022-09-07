@@ -6,15 +6,6 @@
             "id": "2f277a75-5091-4c24-a1b7-af233fd5168f",
             "actions": [
                 {
-                    "name": "Chinsil",
-                    "type": "Button",
-                    "id": "c6762858-e391-4a72-8d43-e3cb8c916b3e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "06cd1ec5-6c41-423f-8dd4-548b66dd7670",
@@ -27,6 +18,15 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "db99a5e8-a46c-4d0a-9647-c1a44f4aaa81",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Chinsil",
+                    "type": "Button",
+                    "id": "c6762858-e391-4a72-8d43-e3cb8c916b3e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -56,8 +56,85 @@
                 },
                 {
                     "name": "",
+                    "id": "15edc905-c105-47f6-b590-15eb2778e24b",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chinsil",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb296657-eb7c-45e6-86cf-9fbed60ca051",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chinkick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1012fafd-517e-49ff-ac04-51e0bf743050",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chinkick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "21d56d3f-e891-45c6-86cd-1760536a6db9",
                     "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d48b371-e583-41d0-b7c6-5baeffce1622",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "adb2d3f3-19ef-4a2e-97a4-c9f393b262c3",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b9d9f66-3c1b-455d-8ce3-cc770b46a48a",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfb3b566-d7bc-4007-b229-af86cfe2cb0b",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -78,12 +155,12 @@
                 },
                 {
                     "name": "",
-                    "id": "cb296657-eb7c-45e6-86cf-9fbed60ca051",
-                    "path": "<Gamepad>/buttonWest",
+                    "id": "206f3603-ba9c-4146-bd49-af905bc55945",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Chinkick",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
