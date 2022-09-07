@@ -29,7 +29,7 @@ public class Chinsil : MonoBehaviour
     void Update()
     {  
         //Misil
-        if (Input.GetKey(KeyCode.X) && !CSAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinsil) && !GMove.Animator.GetCurrentAnimatorStateInfo(0).IsName(GMove.AnimWalk) && !GameObject.FindWithTag(SearchForTag))
+        if ((Input.GetButton("Fire1") || Input.GetKey(KeyCode.X)) && !CSAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinsil) && !GMove.Animator.GetCurrentAnimatorStateInfo(0).IsName(GMove.AnimWalk) && !GameObject.FindWithTag(SearchForTag))
         {
             GMove.Animator.SetBool(GMove.AnimWalk, false);
             GMove.Animator.SetBool(AnimChinsil, true);

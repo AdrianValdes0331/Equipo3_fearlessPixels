@@ -23,7 +23,6 @@ public class Generic_Movements : MonoBehaviour
     {       
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-        //MaxSpeed = 5.0f;
     }
 
     // Update is called once per frame
@@ -33,7 +32,7 @@ public class Generic_Movements : MonoBehaviour
 
         //Jump/doubleJump
         bool onTheGround = isOnGround();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
         {
             jump(onTheGround);
         }
@@ -52,14 +51,17 @@ public class Generic_Movements : MonoBehaviour
     private void Movements()
     {
         //Animation     
-        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;    
-        if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName(AnimJumpName))
+        dirX = Input.GetAxisRaw("Horizontal") * MaxSpeed;
+        if (AnimJumpName != "" && AnimJumpName != "")
         {
-            Animator.SetBool(AnimWalk, true);
-        }
-        else
-        {
-            Animator.SetBool(AnimWalk, false);
+            if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName(AnimJumpName))
+            {
+                Animator.SetBool(AnimWalk, true);
+            }
+            else
+            {
+                Animator.SetBool(AnimWalk, false);
+            }
         }
 
         //Change direction
@@ -84,7 +86,10 @@ public class Generic_Movements : MonoBehaviour
 
             if (onTheGround || (canDoubleJump && EnableDoubleJump))
             {
-                Animator.SetTrigger(AnimJumpName);
+                if (AnimJumpName != "")
+                {
+                    Animator.SetTrigger(AnimJumpName);
+                }
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
             }
 
