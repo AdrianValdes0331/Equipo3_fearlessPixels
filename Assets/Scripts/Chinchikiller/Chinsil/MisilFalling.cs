@@ -7,17 +7,21 @@ public class MisilFalling : MonoBehaviour
     //public float Speed;
     private Rigidbody2D Rigidbody2D;
     private Vector2 Direction;
+    private Renderer rend;
     
     public GameObject Cabooommmmm;
 
     [SerializeField] private float radio;
     [SerializeField] private float force;
+    [SerializeField] private Color colorToTurnTo = Color.red;
 
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         //Animator = GetComponent<Animator>();
+        Invoke("ChangeColor", 5.0f);
+        Invoke("DestroyBullet", 7.0f);
     }   
 
     public void SetDirection(Vector2 direction)
@@ -53,6 +57,12 @@ public class MisilFalling : MonoBehaviour
 
         }
         DestroyBullet();
+    }
+
+    public void ChangeColor()
+    {
+        rend = GetComponent<Renderer>();
+        rend.material.color = colorToTurnTo;
     }
 
     public void DestroyBullet()
