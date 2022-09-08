@@ -14,7 +14,7 @@ public class Chinsil : MonoBehaviour
     public GameObject Misile;
     public string SearchForTag;
     public string AnimChinsil;  
-    public Generic_Movements GMove;
+    public NewMovement GMove;
     private float prevMax;
     [HideInInspector] public Animator CSAnim;
 

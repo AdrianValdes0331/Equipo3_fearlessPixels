@@ -6,7 +6,7 @@ using System;
 
 public class Chinkick : MonoBehaviour
 {
-    public Generic_Movements GMove;
+    public NewMovement GMove;
     [HideInInspector] public Animator CKAnim;
     public string AnimChinkick;
     // Start is called before the first frame update
