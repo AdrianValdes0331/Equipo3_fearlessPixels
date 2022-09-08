@@ -23,7 +23,7 @@ public class PlayerDmg : MonoBehaviour
         float a = canvasTransform.rect.width/-2;
         float b = canvasTransform.rect.width/2;
         Vector3 pos = transform.position;
-        pos.y=-127;
+        pos.y=-175;
         Debug.Log(d);
         Debug.Log(a);
         Debug.Log(b);
