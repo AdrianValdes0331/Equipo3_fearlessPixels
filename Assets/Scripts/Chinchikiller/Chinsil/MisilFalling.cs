@@ -1,6 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
+using System.Collections;
 using UnityEngine;
+using System;
 
 public class MisilFalling : MonoBehaviour
 {
@@ -48,7 +50,9 @@ public class MisilFalling : MonoBehaviour
         {
             Rigidbody2D rb2D = collisionador.GetComponent<Rigidbody2D>();
             if (rb2D != null)
-            {              
+            {
+                //Vector2 direction = collisionador.transform.position - transform.position;
+                //collisionador.GetComponent<Rigidbody2D>().AddForce(direction * force);
                 Vector2 direction = collisionador.transform.position - transform.position;
                 float distance = 1 + direction.magnitude;
                 float finalForce = force / distance;

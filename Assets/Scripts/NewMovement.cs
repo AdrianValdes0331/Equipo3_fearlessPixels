@@ -116,7 +116,7 @@ public class NewMovement : MonoBehaviour
     private bool isOnGround()
     {
         float lengthToSearch = 0.1f;
-        float colliderThreshhold = 0.001f;
+        float colliderThreshhold = 0.1f;
         Vector2 linestart = new Vector2(this.transform.position.x, this.transform.position.y - this.GetComponent<Renderer>().bounds.extents.y - colliderThreshhold);
         Vector2 vectorToSearch = new Vector2(this.transform.position.x, linestart.y - lengthToSearch);
         RaycastHit2D hit = Physics2D.Linecast(linestart, vectorToSearch);
