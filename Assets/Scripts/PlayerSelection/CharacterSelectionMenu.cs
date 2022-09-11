@@ -9,7 +9,7 @@ public class CharacterSelectionMenu : MonoBehaviour
 {
     private int index;
     [SerializeField] private Image image;
-    [SerializeField] private TextMeshProUGUI name;
+    [SerializeField] private new TextMeshProUGUI name;
     private SelectPlayers selectPlayers;
 
     private void Start()
@@ -41,7 +41,7 @@ public class CharacterSelectionMenu : MonoBehaviour
         index = 0;
         ChangeScreen();
     }
-
+    
     public void StartGame()
     {
         SceneManager.LoadScene("Training");

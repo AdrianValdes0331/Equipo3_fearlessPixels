@@ -9,7 +9,7 @@ public class DisplayCharacter : MonoBehaviour
 {
     [HideInInspector] public int index;
     [HideInInspector] [SerializeField] public Image image;
-    [HideInInspector] [SerializeField] public TextMeshProUGUI name;
+    [HideInInspector] [SerializeField] public new TextMeshProUGUI name;
     [HideInInspector] public SelectPlayers selectPlayers;
 
     private void Start()

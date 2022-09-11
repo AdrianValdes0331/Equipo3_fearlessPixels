@@ -5,9 +5,21 @@ using UnityEngine;
 public class CameraFight : MonoBehaviour
 {
     private Transform[] playerTransforms;
+    private IEnumerator coroutine, cameraCoroutine;
 
     // Start is called before the first frame update
     private void Start()
+    {
+        coroutine = WaitAndPrint(0.1f);
+        StartCoroutine(coroutine);
+    }
+
+    public float yOffset = 0.0f;
+    public float minDistance = 7.5f;
+
+    private float xMin, xMax, yMin, yMax;
+
+    private void runScript()
     {
         GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
         playerTransforms = new Transform[allPlayers.Length];
@@ -17,24 +29,21 @@ public class CameraFight : MonoBehaviour
         }
     }
 
-    public float yOffset = 0.0f;
-    public float minDistance = 7.5f;
-
-    private float xMin, xMax, yMin, yMax;
-
     private void LateUpdate()
     {
-        if(playerTransforms.Length == 0)
+        try
         {
-            Debug.Log("Si no lo encuentras, checa el Tag del personaje");          
-            return;
-        }
+            if (playerTransforms.Length == 0)
+            {
+                Debug.Log("Si no lo encuentras, checa el Tag del personaje");
+                return;
+            }
 
-        xMin = xMax = playerTransforms[0].position.x;
-        yMin = yMax = playerTransforms[0].position.y;
-        for (int i = 1; i < playerTransforms.Length; i++)
-        {
-                if(playerTransforms[i].position.x < xMin)
+            xMin = xMax = playerTransforms[0].position.x;
+            yMin = yMax = playerTransforms[0].position.y;
+            for (int i = 1; i < playerTransforms.Length; i++)
+            {
+                if (playerTransforms[i].position.x < xMin)
                 {
                     xMin = playerTransforms[i].position.x;
                 }
@@ -60,6 +69,17 @@ public class CameraFight : MonoBehaviour
                 }
                 transform.position = new Vector3(xMiddle, yMiddle + yOffset, -distance);
             }
+        }
+        catch {}
+    }
+
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            runScript();
+        }
     }
 
     // Update is called once per frame
