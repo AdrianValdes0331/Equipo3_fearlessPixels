@@ -26,7 +26,7 @@ public class CameraFight : MonoBehaviour
     {
         if(playerTransforms.Length == 0)
         {
-            Debug.Log("Si no lo encuentras, checa el Tag del personaje");
+            Debug.Log("Si no lo encuentras, checa el Tag del personaje");          
             return;
         }
 

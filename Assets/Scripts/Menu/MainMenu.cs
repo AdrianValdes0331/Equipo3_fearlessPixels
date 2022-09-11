@@ -17,10 +17,15 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    public void EscenaGame()
+    public void EscenaGameHost()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameHost");
     }
+
+    /*public void EscenaGame()
+    {
+        SceneManager.LoadScene("FreePlay");
+    }*/
 
     public void EscenaMainMenu()
     {
@@ -37,15 +42,15 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Extras");
     }
 
+    public void EscenaFreePlaySeleccionPersonajes()
+    {
+        SceneManager.LoadScene("CharacterSelect");
+    }
+
     public void EscenaEntrenamientoSeleccionPersonajes()
     {
         SceneManager.LoadScene("TrainingCharacterSelect");
     }
-
-    /*public void EscenaEntrenamiento()
-    {
-        SceneManager.LoadScene("Training");
-    }*/
 
     public void EscenaStory()
     {
