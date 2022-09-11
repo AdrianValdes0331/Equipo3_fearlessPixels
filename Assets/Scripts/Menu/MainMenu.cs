@@ -37,10 +37,15 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Extras");
     }
 
-    public void EscenaEntrenamiento()
+    public void EscenaEntrenamientoSeleccionPersonajes()
+    {
+        SceneManager.LoadScene("TrainingCharacterSelect");
+    }
+
+    /*public void EscenaEntrenamiento()
     {
         SceneManager.LoadScene("Training");
-    }
+    }*/
 
     public void EscenaStory()
     {
