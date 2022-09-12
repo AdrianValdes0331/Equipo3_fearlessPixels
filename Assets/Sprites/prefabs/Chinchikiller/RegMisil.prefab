@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 2071701424864858738}
   - component: {fileID: 2071701424864858741}
   - component: {fileID: -3706849681495677319}
-  - component: {fileID: 2071701424864858745}
   - component: {fileID: -5446292229338961948}
   - component: {fileID: 2071701424864858742}
   - component: {fileID: 2071701424864858743}
   - component: {fileID: 2071701424864858740}
   - component: {fileID: 2071701424864858744}
   - component: {fileID: -1074044123889540631}
+  - component: {fileID: 7284894075776378296}
   m_Layer: 0
   m_Name: RegMisil
   m_TagString: Chinsil
@@ -107,37 +107,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 5
   rotateSpeed: 200
---- !u!114 &2071701424864858745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071701424864858739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dfb8c0a6468fc94e91a03d0b1ba970b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cabooommmmm: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
-    type: 3}
-  radio: 1
-  force: 5000
 --- !u!114 &-5446292229338961948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071701424864858739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb41f9ff2ca7024d936ca7794f623d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 10.5
-  hitbox: {fileID: 8559031959508840042, guid: 5e54b16dfaa7b5b49afa27126cff3fd8, type: 3}
---- !u!114 &2071701424864858742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,13 +116,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2071701424864858739}
   m_Enabled: 0
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb41f9ff2ca7024d936ca7794f623d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 10.5
+  hitbox: {fileID: 2071701424864858742}
+--- !u!114 &2071701424864858742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071701424864858739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rot: 0
   maskName: Hurtbox
   isSphere: 0
-  isProjectile: 0
+  isProjectile: 1
 --- !u!61 &2071701424864858743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -316,3 +300,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7284894075776378296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071701424864858739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfb8c0a6468fc94e91a03d0b1ba970b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cabooommmmm: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
+    type: 3}
+  dmg: 10.5
+  radio: 1
+  force: 20
+  colorToTurnTo: {r: 1, g: 0, b: 0, a: 1}

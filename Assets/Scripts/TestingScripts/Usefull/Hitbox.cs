@@ -32,6 +32,7 @@ public class Hitbox : MonoBehaviour
     public void hitboxUpdate()
     {
 
+        Debug.Log(_state);  
         if (isProjectile) { pos = transform.position; }
         if (_state == State.Closed) { return; }
         Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, sz/2, rot, 1<<mask);
@@ -41,7 +42,7 @@ public class Hitbox : MonoBehaviour
         for (int i = 0; i < colliders.Length; i++) {
 
             Collider2D iCollider = colliders[i];
-            _responder?.CollisionedWith(iCollider);
+            if(_state!=State.Colliding){_responder?.CollisionedWith(iCollider);}
             Debug.Log(colliders.Length);
             Debug.Log(colliders[0]);
             Debug.Log("se detecto golpe");

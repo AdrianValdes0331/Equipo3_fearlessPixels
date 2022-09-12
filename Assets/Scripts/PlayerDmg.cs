@@ -48,11 +48,9 @@ public class PlayerDmg : MonoBehaviour
 
     private IEnumerator WaitAndPrint(float waitTime)
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(waitTime);
-            runScript();
-        }
+
+        yield return new WaitForSeconds(waitTime);
+        runScript();
     }
 
 }

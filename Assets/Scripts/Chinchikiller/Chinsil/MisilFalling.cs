@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using System;
 
-public class MisilFalling : MonoBehaviour
+public class MisilFalling : MonoBehaviour, IHitboxResponder
 {
     //public float Speed;
     private Rigidbody2D Rigidbody2D;
@@ -12,6 +12,7 @@ public class MisilFalling : MonoBehaviour
     private Renderer rend;
     
     public GameObject Cabooommmmm;
+    [SerializeField] private float dmg;
 
     [SerializeField] private float radio;
     [SerializeField] private float force;
@@ -76,4 +77,13 @@ public class MisilFalling : MonoBehaviour
         Destroy(cabom, 2.0f);
         Destroy(GameObject.FindWithTag("scope"));
     }
+
+    public void CollisionedWith(Collider2D collider)
+    {
+
+        Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
+        hurtbox?.getHitBy(dmg);
+
+    }
+
 }

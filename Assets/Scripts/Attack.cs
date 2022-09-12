@@ -11,11 +11,12 @@ public class Attack : MonoBehaviour, IHitboxResponder
     // Start is called before the first frame update
     void Start()
     {
-        hitbox = Instantiate(hitbox, gameObject.transform, false);
+        //hitbox = Instantiate(hitbox, gameObject.transform, false);
+        attack();
     }
 
     // Update is called once per frame
-    void FixUpdate()
+    void Update()
     {
      
         hitbox.hitboxUpdate();
@@ -24,6 +25,7 @@ public class Attack : MonoBehaviour, IHitboxResponder
 
     public void attack() {
 
+        hitbox.openCollissionCheck();
         hitbox.setResponder(this);
     
     }

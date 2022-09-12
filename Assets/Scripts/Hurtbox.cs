@@ -25,7 +25,7 @@ public class Hurtbox : MonoBehaviour
     {
 
         dmgPercent+=damage;
-        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name].GetComponent<TextMeshProUGUI>().text = dmgPercent+"%";
+        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.name].GetComponent<TextMeshProUGUI>().text = dmgPercent+"%";
         return true;
 
     }
