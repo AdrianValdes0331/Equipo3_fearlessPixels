@@ -27,9 +27,9 @@ public class Chinsil : MonoBehaviour
 
     // Update is called once per frame
     void OnSpecial()
-    {  
+    {
         //Misil
-        if ((Input.GetButton("Fire1") || Input.GetKey(KeyCode.X)) && !CSAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinsil) && !GMove.Animator.GetCurrentAnimatorStateInfo(0).IsName(GMove.AnimWalk) && !GameObject.FindWithTag(SearchForTag))
+        if (!CSAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinsil) && !GMove.Animator.GetCurrentAnimatorStateInfo(0).IsName(GMove.AnimWalk) && !GameObject.FindWithTag(SearchForTag))
         {
             GMove.Animator.SetBool(GMove.AnimWalk, false);
             GMove.Animator.SetBool(AnimChinsil, true);
@@ -37,6 +37,15 @@ public class Chinsil : MonoBehaviour
             Shoot();
         }
         else if (!GameObject.FindWithTag(SearchForTag))
+        {
+            CSAnim.SetBool(AnimChinsil, false);
+            GMove.MaxSpeed = prevMax;
+        }
+    }
+
+    private void Update()
+    {
+        if (!GameObject.FindWithTag(SearchForTag))
         {
             CSAnim.SetBool(AnimChinsil, false);
             GMove.MaxSpeed = prevMax;

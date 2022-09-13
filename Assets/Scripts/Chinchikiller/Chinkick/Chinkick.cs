@@ -19,7 +19,7 @@ public class Chinkick : MonoBehaviour
     void OnStrongKick()
     {
         //kick
-        if ((Input.GetButton("Fire3") || Input.GetKey(KeyCode.Z)) && !CKAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinkick))
+        if (!CKAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinkick))
         {
             GMove.Animator.SetBool(GMove.AnimWalk, false);
             GMove.Animator.SetTrigger(AnimChinkick);
