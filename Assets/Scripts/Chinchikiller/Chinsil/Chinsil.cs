@@ -26,7 +26,7 @@ public class Chinsil : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnSpecial()
     {  
         //Misil
         if ((Input.GetButton("Fire1") || Input.GetKey(KeyCode.X)) && !CSAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinsil) && !GMove.Animator.GetCurrentAnimatorStateInfo(0).IsName(GMove.AnimWalk) && !GameObject.FindWithTag(SearchForTag))

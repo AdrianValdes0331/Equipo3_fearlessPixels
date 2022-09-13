@@ -6,7 +6,9 @@ public class AimScope : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb;
-    private Vector2 moveDirection; 
+    private Vector2 moveDirection;
+    //Vector2 i_movement;
+
 
     // Update is called once per frame
     void Update()

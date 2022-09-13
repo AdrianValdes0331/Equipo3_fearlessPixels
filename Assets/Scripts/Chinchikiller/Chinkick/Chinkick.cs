@@ -16,7 +16,7 @@ public class Chinkick : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnStrongKick()
     {
         //kick
         if ((Input.GetButton("Fire3") || Input.GetKey(KeyCode.Z)) && !CKAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinkick))
