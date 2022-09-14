@@ -1673,7 +1673,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &987373505
 MonoBehaviour:
@@ -1957,7 +1957,7 @@ Transform:
   - {fileID: 1120679729}
   - {fileID: 940780427}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167770875
 GameObject:
@@ -2266,6 +2266,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1276969072 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2834719443097043751, guid: a8a418229c4fb76458af16952b5811a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2086783642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1386135052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +2688,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6198035394745140384, guid: a8a418229c4fb76458af16952b5811a9,
+        type: 3}
+      propertyPath: FirePoint
+      value: 
+      objectReference: {fileID: 1276969072}
+    - target: {fileID: 2834719443097043751, guid: a8a418229c4fb76458af16952b5811a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834719443097043751, guid: a8a418229c4fb76458af16952b5811a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036428322617076483, guid: a8a418229c4fb76458af16952b5811a9,
+        type: 3}
+      propertyPath: m_Name
+      value: FirePoint_Bang
+      objectReference: {fileID: 0}
     - target: {fileID: 7380361777015331648, guid: a8a418229c4fb76458af16952b5811a9,
         type: 3}
       propertyPath: m_RootOrder
@@ -2766,7 +2792,12 @@ PrefabInstance:
     - target: {fileID: 8102953108323609053, guid: a8a418229c4fb76458af16952b5811a9,
         type: 3}
       propertyPath: offset.x
-      value: 1
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102953108323609053, guid: a8a418229c4fb76458af16952b5811a9,
+        type: 3}
+      propertyPath: offset.y
+      value: -0.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

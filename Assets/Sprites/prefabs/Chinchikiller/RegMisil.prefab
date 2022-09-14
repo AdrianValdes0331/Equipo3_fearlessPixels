@@ -108,6 +108,8 @@ MonoBehaviour:
   rotateSpeed: 200
   Cabooommmmm: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
+  TimeToChangeColor: 5
+  TimeToExplode: 7
   dmg: 10.5
   hitbox: {fileID: 2071701424864858742}
   radio: 1

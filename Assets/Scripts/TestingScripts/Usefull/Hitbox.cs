@@ -38,8 +38,9 @@ public class Hitbox : MonoBehaviour
     public void hitboxUpdate()
     {
 
-        Debug.Log(_state);  
-        pos = transform.position + new Vector3(offset.x, offset.y, 0);
+        Debug.Log(_state);
+        Debug.Log(transform.localScale);
+        pos = transform.position + new Vector3((transform.localScale.x>0)? offset.x : -offset.x, offset.y, 0);
         if (_state == State.Closed) { return; }
         Collider2D[] colliders = (isSphere)? Physics2D.OverlapCircleAll(pos, radius, mask) : Physics2D.OverlapBoxAll(pos, sz/2, rot, mask);
 

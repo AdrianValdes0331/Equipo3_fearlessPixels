@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2958596743105387108}
   - component: {fileID: 2958596743105387107}
   - component: {fileID: 2958596743105387106}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Scope
   m_TagString: scope
   m_Icon: {fileID: 0}
@@ -138,4 +138,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 2958596743105387108}
-  dirX: 0

@@ -76,11 +76,11 @@ public class NewMovement : MonoBehaviour
         //Change direction
         Horizontal = Input.GetAxisRaw("Horizontal");
         //Move
-        if (Horizontal < 0.0f)
+        if (i_movement.x < 0.0f)
         {
             transform.localScale = new Vector3(-pSize, pSize, pSize);
         }
-        else if (Horizontal > 0.0f)
+        else if (i_movement.x > 0.0f)
         {
             transform.localScale = new Vector3(pSize, pSize, pSize);
         }

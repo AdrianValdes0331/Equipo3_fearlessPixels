@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5138934573481070773
+--- !u!1 &2842701128288544449
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8004829947617367627}
-  - component: {fileID: 3712678757761530033}
-  - component: {fileID: 887332412937421972}
+  - component: {fileID: 3523882755743024440}
+  - component: {fileID: 2637077286465384280}
+  - component: {fileID: 7645406238959252347}
   m_Layer: 6
   m_Name: ChinchiHurtbox
-  - component: {fileID: 3600290930522562162}
-  m_Layer: 0
-  m_Name: FirePoint_Bang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3600290930522562162
+--- !u!4 &3523882755743024440
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906905201572674879}
+  m_GameObject: {fileID: 2842701128288544449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_GameObject: {fileID: 5138934573481070773}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7380361777015331648}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3712678757761530033
+--- !u!61 &2637077286465384280
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906905201572674879}
+  m_GameObject: {fileID: 2842701128288544449}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -64,19 +59,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.3, y: 8.7}
   m_EdgeRadius: 0
---- !u!114 &887332412937421972
+--- !u!114 &7645406238959252347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906905201572674879}
+  m_GameObject: {fileID: 2842701128288544449}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &7036428322617076483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2834719443097043751}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2834719443097043751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036428322617076483}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.520571, y: 2.038134, z: -0.059417665}
+  m_LocalScale: {x: 6.666666, y: 6.666666, z: 6.666666}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7380361777015331648}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7380361775434499069
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,8 +204,8 @@ Transform:
   m_Children:
   - {fileID: 7380361776504760975}
   - {fileID: 7380361775434499068}
-  - {fileID: 8004829947617367627}
-  - {fileID: 3600290930522562162}
+  - {fileID: 3523882755743024440}
+  - {fileID: 2834719443097043751}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -225,7 +250,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 04a9af7dfcad00c4bae8439c8d2b35ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 853329937d4b8064e82818d66dcb4126, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -354,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57395ec5df4df1c42934c8117c62191d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoint: {fileID: 3600290930522562162}
+  FirePoint: {fileID: 7380361776504760975}
   ScopeSpawn: {fileID: 7380361775434499068}
   Scope: {fileID: 2958596743105387105, guid: 16e0fbce0eb11d0499f3d6d6881e50a7, type: 3}
   Misile: {fileID: 2071701424864858739, guid: fd3958873a15a814aa9bfd181e5be85a, type: 3}
@@ -463,8 +488,8 @@ MonoBehaviour:
   isSphere: 0
   isProjectile: 0
   radius: 0
-  sz: {x: 5, y: 5}
+  sz: {x: 1, y: 2}
   colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
   colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
   colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
-  offset: {x: 0, y: 0}
+  offset: {x: 0.8, y: -0.2}

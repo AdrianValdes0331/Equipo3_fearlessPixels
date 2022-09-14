@@ -14,7 +14,9 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
 	private Rigidbody2D rb;
 
 	public GameObject Cabooommmmm;
-	[SerializeField] private float dmg;
+    [SerializeField] private float TimeToChangeColor;
+    [SerializeField] private float TimeToExplode;
+    [SerializeField] private float dmg;
 	[SerializeField] private Hitbox hitbox;
 	[SerializeField] private float radio;
 	[SerializeField] private int force;
@@ -29,6 +31,8 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
 		rb = GetComponent<Rigidbody2D>();
         hitbox.openCollissionCheck();
         hitbox.setResponder(this);
+        Invoke("ChangeColor", TimeToChangeColor);
+        Invoke("DestroyBullet", TimeToExplode);
     }
 
 	void FixedUpdate()
