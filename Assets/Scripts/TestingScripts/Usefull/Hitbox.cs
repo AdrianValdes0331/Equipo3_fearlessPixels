@@ -6,13 +6,20 @@ public class Hitbox : MonoBehaviour
 {
 
     private Renderer objectRenderer;
-    private Vector2 pos, sz;
+    private Vector2 pos;
     public float rot;
-    public string maskName;
+    public string[] maskNames;
     private int mask;
     private IHitboxResponder _responder = null;
     public bool isSphere;
     public bool isProjectile;
+    public float radius;
+    public Vector2 sz;
+    public Color colorOpen;
+    public Color colorClosed;
+    public Color colorColliding;
+    public Vector2 offset;
+    private Color currColor;
     private State _state;
 
     // Start is called before the first frame update
@@ -21,8 +28,7 @@ public class Hitbox : MonoBehaviour
 
         // objectRenderer = gameObject.GetComponent<Renderer>();
         // sz = objectRenderer.bounds.extents;
-        sz = Vector2.one;
-        mask = LayerMask.NameToLayer(maskName);
+        mask = LayerMask.GetMask(maskNames);
         Debug.Log(mask);
         Debug.Log(sz);
 
@@ -33,9 +39,9 @@ public class Hitbox : MonoBehaviour
     {
 
         Debug.Log(_state);  
-        if (isProjectile) { pos = transform.position; }
+        pos = transform.position + new Vector3(offset.x, offset.y, 0);
         if (_state == State.Closed) { return; }
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, sz/2, rot, 1<<mask);
+        Collider2D[] colliders = (isSphere)? Physics2D.OverlapCircleAll(pos, radius, mask) : Physics2D.OverlapBoxAll(pos, sz/2, rot, mask);
 
         Debug.Log(pos);
 
@@ -49,23 +55,33 @@ public class Hitbox : MonoBehaviour
 
         }
         _state = (colliders.Length > 0)? State.Colliding : State.Open;
+        currColor = (_state == State.Colliding)? colorColliding : colorOpen;
 
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
-        Gizmos.DrawCube(Vector3.zero, new Vector3(sz.x * 2, sz.y * 2)); // Because size is halfExtents
+        Gizmos.color = currColor;
+        Gizmos.matrix = Matrix4x4.TRS(pos, transform.rotation, transform.localScale);
+        if (!isSphere)
+        {
+            Gizmos.DrawCube(Vector3.zero, new Vector3(sz.x * 2, sz.y * 2, 0)); // Because size is halfExtents
+        }
+        else
+        {
+            Gizmos.DrawSphere(Vector3.zero, radius);
+        }
     }
 
     public void openCollissionCheck()
     {
+        currColor = colorOpen;
         _state = State.Open;
     }
 
     public void closeCollissionCheck()
     {
+        currColor = colorClosed;
         _state = State.Closed;
     }
 

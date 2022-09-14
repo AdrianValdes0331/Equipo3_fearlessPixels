@@ -5,8 +5,10 @@ using UnityEngine;
 public class Attack : MonoBehaviour, IHitboxResponder
 {
 
-    public float dmg;
-    public Hitbox hitbox;
+    [SerializeField] private float dmg;
+    [SerializeField] private Hitbox hitbox;
+    [SerializeField] private int force;
+    [SerializeField] private int angle;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public class Attack : MonoBehaviour, IHitboxResponder
     {
 
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
-        hurtbox?.getHitBy(dmg);
+        //hurtbox?.getHitBy(dmg);
 
     }
 

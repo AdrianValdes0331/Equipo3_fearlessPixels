@@ -4,15 +4,30 @@ using System.Collections;
 using UnityEngine;
 using System;
 
-public class Chinkick : MonoBehaviour
+public class Chinkick : MonoBehaviour, IHitboxResponder
 {
     public NewMovement GMove;
     [HideInInspector] public Animator CKAnim;
     public string AnimChinkick;
+    [SerializeField] private float dmg;
+    [SerializeField] private Hitbox hitbox;
+    [SerializeField] private int force;
+    [SerializeField] private int angle;
+    private bool uHitbox;
     // Start is called before the first frame update
     void Start()
     {
         CKAnim = GetComponent<Animator>();
+        hitbox.setResponder(this);
+    }
+
+    void Update() {
+
+        if (uHitbox)
+        {
+            hitbox.hitboxUpdate();
+        }
+    
     }
 
     // Update is called once per frame
@@ -21,8 +36,28 @@ public class Chinkick : MonoBehaviour
         //kick
         if (!CKAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinkick))
         {
+            hitbox.openCollissionCheck();
+            uHitbox = true;
             GMove.Animator.SetBool(GMove.AnimWalk, false);
             GMove.Animator.SetTrigger(AnimChinkick);
+        }
+    }
+
+    void DisableKick() {
+
+        uHitbox = false;
+        hitbox.closeCollissionCheck();
+
+    }
+
+    public void CollisionedWith(Collider2D collider)
+    {
+        if (collider.name == "ChinchiHurtbox") { return; }
+        Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
+        if (hurtbox != null)
+        {
+            Debug.Log("Hit player");
+            hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }
     }
 }

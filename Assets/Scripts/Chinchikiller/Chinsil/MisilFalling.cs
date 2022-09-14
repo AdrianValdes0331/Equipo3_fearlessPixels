@@ -13,7 +13,7 @@ public class MisilFalling : MonoBehaviour, IHitboxResponder
     
     public GameObject Cabooommmmm;
     [SerializeField] private float dmg;
-
+    [SerializeField] private Hitbox hitbox;
     [SerializeField] private float radio;
     [SerializeField] private float force;
     [SerializeField] private Color colorToTurnTo = Color.red;
@@ -31,14 +31,14 @@ public class MisilFalling : MonoBehaviour, IHitboxResponder
     {
         Direction = direction;
     }
-    private void OnTriggerEnter2D(Collider2D col)
+/*    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag != "Player" && col.gameObject.tag != "scope")
         {
             print("HITTTT");
             Explosion();
         }
-    }
+    }*/
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -57,6 +57,8 @@ public class MisilFalling : MonoBehaviour, IHitboxResponder
                 Vector2 direction = collisionador.transform.position - transform.position;
                 float distance = 1 + direction.magnitude;
                 float finalForce = force / distance;
+                Debug.Log(rb2D.name);
+                Debug.Log(finalForce);
                 rb2D.AddForce(direction * finalForce);
             }
 
@@ -81,8 +83,10 @@ public class MisilFalling : MonoBehaviour, IHitboxResponder
     public void CollisionedWith(Collider2D collider)
     {
 
+        print("HITTTT");
+        Explosion();
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
-        hurtbox?.getHitBy(dmg);
+        //hurtbox?.getHitBy(dmg);
 
     }
 
