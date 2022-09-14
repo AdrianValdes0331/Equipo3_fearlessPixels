@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 2071701424864858744}
   - component: {fileID: -1074044123889540631}
   - component: {fileID: 7284894075776378296}
-  m_Layer: 7
-  m_Name: RegMisil
-  m_TagString: Chinsil
+  m_Layer: 0
+  m_Name: ChinchiBang
+  m_TagString: ChinchiBang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 2071701424864858739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,16 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccb13f73dc246e4b824d4092186ce1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  rotateSpeed: 200
-  Cabooommmmm: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
-    type: 3}
-  dmg: 10.5
-  hitbox: {fileID: 2071701424864858742}
-  radio: 1
-  force: 5000
-  colorToTurnTo: {r: 1, g: 0, b: 0, a: 1}
-  angle: 15
+  target: {fileID: 0}
+  speed: 2
+  rotateSpeed: 100
 --- !u!114 &-5446292229338961948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 10.5
   hitbox: {fileID: 2071701424864858742}
-  force: 0
-  angle: 0
 --- !u!114 &2071701424864858742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,17 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rot: 0
-  maskNames:
-  - Default
-  - Hurtbox
+  maskName: Hurtbox
   isSphere: 0
   isProjectile: 1
-  radius: 0
-  sz: {x: 1.6, y: 0.8}
-  colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
-  colorClosed: {r: 0.9622642, g: 0.19517623, b: 0.19517623, a: 0.50980395}
-  colorColliding: {r: 0.3529412, g: 0.3941065, b: 0.84313726, a: 0.50980395}
-  offset: {x: 0.15, y: 0}
 --- !u!61 &2071701424864858743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,13 +144,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071701424864858739}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14720422, y: 0}
+  m_Offset: {x: 0.32176447, y: 0.06732246}
   m_SpriteTilingProperty:
     border: {x: 5.6, y: 5.6299996, z: 5.37, w: 6.64}
     pivot: {x: 0.49354008, y: 0.45917672}
@@ -178,7 +161,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.168707, y: 1.6985056}
+  m_Size: {x: 3.1739326, y: 1.376436}
   m_EdgeRadius: 0
 --- !u!50 &2071701424864858740
 Rigidbody2D:
@@ -231,7 +214,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 14c91dc332ef16b41a117b7c096dbe78, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c77b63a8d52f7f743b3d7a1e41aaa877, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1.05
@@ -324,17 +307,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071701424864858739}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dfb8c0a6468fc94e91a03d0b1ba970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToChangeColor: 5
-  TimeToExplode: 7
-  Cabooommmmm: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
+  TimeToChangeColor: 15
+  TimeToExplode: 20
+  Cabooommmmm: {fileID: 1121192042590650, guid: 0aef66389c85cb242aab533d347a7c79,
     type: 3}
   dmg: 10.5
-  hitbox: {fileID: 0}
-  radio: 1
-  force: 5000
+  radio: 5
+  force: 10000
   colorToTurnTo: {r: 1, g: 0, b: 0, a: 1}

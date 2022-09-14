@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Bang",
+                    "type": "Button",
+                    "id": "36be5b3e-e665-4741-a98f-98cf71aa2bc1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -79,7 +88,7 @@
                 {
                     "name": "up",
                     "id": "eb029ffc-76b8-4ed4-bd9f-73f02c1aa822",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -90,7 +99,7 @@
                 {
                     "name": "down",
                     "id": "0fd2c19d-4eca-4679-b31a-0219a34e254e",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -101,7 +110,7 @@
                 {
                     "name": "left",
                     "id": "ab579729-4cbc-4cf2-a68e-6ce2eac730c3",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -112,7 +121,7 @@
                 {
                     "name": "right",
                     "id": "ed5479fa-e923-473a-b543-0c714db57c0f",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -172,6 +181,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b2e1c3d7-4b72-44bd-99f1-59be11adbe44",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Bang",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7aef846-e402-4627-be22-aae654a27901",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Bang",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

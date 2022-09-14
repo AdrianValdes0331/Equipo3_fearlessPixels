@@ -10,7 +10,9 @@ public class MisilFalling : MonoBehaviour, IHitboxResponder
     private Rigidbody2D Rigidbody2D;
     private Vector2 Direction;
     private Renderer rend;
-    
+    public float TimeToChangeColor;
+    public float TimeToExplode;   
+
     public GameObject Cabooommmmm;
     [SerializeField] private float dmg;
     [SerializeField] private Hitbox hitbox;
@@ -23,8 +25,8 @@ public class MisilFalling : MonoBehaviour, IHitboxResponder
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
         //Animator = GetComponent<Animator>();
-        Invoke("ChangeColor", 5.0f);
-        Invoke("DestroyBullet", 7.0f);
+        Invoke("ChangeColor", TimeToChangeColor);
+        Invoke("DestroyBullet", TimeToExplode);
     }   
 
     public void SetDirection(Vector2 direction)
@@ -74,9 +76,10 @@ public class MisilFalling : MonoBehaviour, IHitboxResponder
 
     public void DestroyBullet()
     {        
-        GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation);
+        GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation);     
         Destroy(gameObject);
         Destroy(cabom, 2.0f);
+
         Destroy(GameObject.FindWithTag("scope"));
     }
 
