@@ -497,6 +497,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1402869828760120973, guid: dc6de36e348ef79488cf9f3ec77ec749,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1402869828760121072, guid: dc6de36e348ef79488cf9f3ec77ec749,
         type: 3}
       propertyPath: m_RootOrder
@@ -2773,6 +2778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chinchikiller
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380361777015331660, guid: a8a418229c4fb76458af16952b5811a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7380361777015331710, guid: a8a418229c4fb76458af16952b5811a9,
         type: 3}

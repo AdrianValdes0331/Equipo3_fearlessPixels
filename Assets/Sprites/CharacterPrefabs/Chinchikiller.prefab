@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7380361777015331648}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2637077286465384280
 BoxCollider2D:
@@ -81,7 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2834719443097043751}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FirePoint_Bang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,12 +95,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7036428322617076483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.520571, y: 2.038134, z: -0.059417665}
-  m_LocalScale: {x: 6.666666, y: 6.666666, z: 6.666666}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7380361777015331648}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7380361775434499069
 GameObject:
@@ -204,8 +204,8 @@ Transform:
   m_Children:
   - {fileID: 7380361776504760975}
   - {fileID: 7380361775434499068}
-  - {fileID: 3523882755743024440}
   - {fileID: 2834719443097043751}
+  - {fileID: 3523882755743024440}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57395ec5df4df1c42934c8117c62191d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirePoint: {fileID: 7380361776504760975}
+  FirePoint: {fileID: 2834719443097043751}
   ScopeSpawn: {fileID: 7380361775434499068}
   Scope: {fileID: 2958596743105387105, guid: 16e0fbce0eb11d0499f3d6d6881e50a7, type: 3}
   Misile: {fileID: 2071701424864858739, guid: fd3958873a15a814aa9bfd181e5be85a, type: 3}
@@ -466,7 +466,7 @@ MonoBehaviour:
     m_ActionId: f93c0fdc-a596-472c-9d78-8a8e617bdf0c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
