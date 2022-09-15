@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrainingCharacterSelect.unity
     guid: a7ac28289b2878649bb3ece2348ba65e
+  - enabled: 1
+    path: Assets/Scenes/Extras/CL4R174.unity
+    guid: ad89d0ebbca6e0946ae164582a7b8bbb
+  - enabled: 1
+    path: Assets/Scenes/Extras/Cowhuahua.unity
+    guid: a6ace7360c5c0db48a5ef9fc2667497f
+  - enabled: 1
+    path: Assets/Scenes/Extras/Fox Hunter.unity
+    guid: e09e8e81cb9a5c34985305648254e373
   m_configObjects: {}

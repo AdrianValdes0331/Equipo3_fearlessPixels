@@ -62,6 +62,26 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("ChinchiKiller");
     }
 
+    public void BrujorgeExtras()
+    {
+        SceneManager.LoadScene("Brujorge");
+    }
+
+    public void CL4R174Extras()
+    {
+        SceneManager.LoadScene("CL4R174");
+    }
+
+    public void CowhuahuaExtras()
+    {
+        SceneManager.LoadScene("Cowhuahua");
+    }
+
+    public void FoxHunterExtras()
+    {
+        SceneManager.LoadScene("Fox Hunter");
+    }
+
     public void CustomScene()
     {
         SceneManager.LoadScene("Personalizacion");
