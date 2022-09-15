@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 320604788415190737}
   - component: {fileID: 320604788415190739}
   - component: {fileID: 320604788415190738}
+  - component: {fileID: 6635335009666949270}
   m_Layer: 3
   m_Name: Cowhuahua
   m_TagString: Player
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -940183664, guid: 11cbd63045a8bb941b2c594ecc37d825, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 800d1af5eed6b464a90f87354516b621, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.21, y: 5.68}
+    oldSize: {x: 8, y: 8}
     newSize: {x: 9.38, y: 6.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,7 +169,7 @@ MonoBehaviour:
   pSize: 0.15
   EnableDoubleJump: 1
   AnimJumpName: 
-  AnimWalk: 
+  AnimWalk: CowhuahuaWalk
 --- !u!114 &320604788415190738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,10 +205,30 @@ MonoBehaviour:
     m_ActionId: f93c0fdc-a596-472c-9d78-8a8e617bdf0c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Controller
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &6635335009666949270
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320604788415190747}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b2ddafc8bf3f9c41a1e9ba76b54f0c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &320604789058388049
 GameObject:
   m_ObjectHideFlags: 0
