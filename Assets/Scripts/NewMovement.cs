@@ -13,12 +13,12 @@ public class NewMovement : MonoBehaviour
     private float Horizontal;
     public float pSize = 0.15f;
     public bool EnableDoubleJump = true;
-    public string AnimJumpName;
-    public string AnimWalk;
+    public string AnimJumpName = "none";
+    public string AnimWalk = "none";
 
     bool canDoubleJump = true;
     bool jumpKeyDown = false;
-    Vector2 i_movement;
+    [HideInInspector] public Vector2 i_movement;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,7 @@ public class NewMovement : MonoBehaviour
         }
     }
 
-    private void OnMovement(InputValue val){
+    public void OnMovement(InputValue val){
 
         i_movement = val.Get<Vector2>();
         Debug.Log(i_movement);
@@ -61,17 +61,16 @@ public class NewMovement : MonoBehaviour
     {
         //Animation     
         dirX = i_movement.x * MaxSpeed;
-        if (AnimJumpName != "" && AnimJumpName != "")
+        
+        if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName(AnimJumpName))
         {
-            if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName(AnimJumpName))
-            {
-                Animator.SetBool(AnimWalk, true);
-            }
-            else
-            {
-                Animator.SetBool(AnimWalk, false);
-            }
+            Animator.SetBool(AnimWalk, true);
         }
+        else
+        {
+            Animator.SetBool(AnimWalk, false);
+        }
+       
 
         //Change direction
         Horizontal = Input.GetAxisRaw("Horizontal");
