@@ -86,4 +86,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Personalizacion");
     }
+
+    public void PistaChinchikiller()
+    {
+        SceneManager.LoadScene("ChinchikillerStage");
+    }
 }

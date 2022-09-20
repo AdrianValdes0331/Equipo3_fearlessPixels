@@ -44,6 +44,11 @@ public class CharacterSelectionMenu : MonoBehaviour
     
     public void StartGame()
     {
+        SceneManager.LoadScene("ChinchikillerStage");
+    }
+
+    public void StartTraining()
+    {
         SceneManager.LoadScene("Training");
     }
 }
