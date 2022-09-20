@@ -42,11 +42,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Extras/Cowhuahua.unity
     guid: b2e6f37993f79b345b6a0bda0e786188
   - enabled: 1
+    path: Assets/Scenes/CharacterStages/ChinchikillerStage.unity
+    guid: 64393994a3b0fd043962246de006a578
+  - enabled: 1
     path: Assets/Scenes/Extras/Fox Hunter.unity
     guid: 97704a3c33fe60c4e907263e30d48b60
-  - enabled: 1
-    path: Assets/Scenes/CharacterStages/ChinchikillerStage.unity
-    guid: 9093c451ce4818c46a6af735ca1108da
   - enabled: 1
     path: Assets/Scenes/Modo Libre/CharacterSelect.unity
     guid: 44dc9221353d22649a41c0dc088402d6
