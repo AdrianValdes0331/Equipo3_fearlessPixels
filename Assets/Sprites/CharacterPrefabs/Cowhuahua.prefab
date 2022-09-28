@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 320604788415190740}
   - component: {fileID: 320604788415190737}
   - component: {fileID: 320604788415190739}
+  - component: {fileID: 2527735740517119826}
+  - component: {fileID: 4110097922306552568}
   - component: {fileID: 320604788415190738}
   - component: {fileID: 6635335009666949270}
   - component: {fileID: 8933054639548188268}
@@ -126,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.69057703, y: 0}
+  m_Offset: {x: 0.70282507, y: -0.50222063}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -137,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8558931, y: 6.12}
+  m_Size: {x: 5.644286, y: 4.4785976}
   m_EdgeRadius: 0
 --- !u!114 &320604788415190737
 MonoBehaviour:
@@ -172,6 +174,47 @@ MonoBehaviour:
   AnimJumpName: Salto
   AnimWalk: Walk
   i_movement: {x: 0, y: 0}
+--- !u!114 &2527735740517119826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320604788415190747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rot: 0
+  maskNames: []
+  isSphere: 0
+  isProjectile: 0
+  radius: 0
+  sz: {x: 0, y: 0}
+  colorOpen: {r: 0, g: 0, b: 0, a: 0}
+  colorClosed: {r: 0, g: 0, b: 0, a: 0}
+  colorColliding: {r: 0, g: 0, b: 0, a: 0}
+  offset: {x: 0, y: 0}
+--- !u!114 &4110097922306552568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320604788415190747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23141cfbfa727314c8425469d6911884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GMove: {fileID: 320604788415190739}
+  MordAnim: {fileID: 0}
+  AnimMordida: CowMordida
+  dmg: 5
+  hitbox: {fileID: 2527735740517119826}
+  force: 5000
+  angle: 45
 --- !u!114 &320604788415190738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,8 +249,8 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f93c0fdc-a596-472c-9d78-8a8e617bdf0c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonNorth]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

@@ -180,9 +180,9 @@ GameObject:
   - component: {fileID: 7380361777015331705}
   - component: {fileID: 7380361777015331711}
   - component: {fileID: -6198035394745140384}
+  - component: {fileID: 8102953108323609053}
   - component: {fileID: 7380361777015331653}
   - component: {fileID: 7380361777015331710}
-  - component: {fileID: 8102953108323609053}
   m_Layer: 3
   m_Name: Chinchikiller
   m_TagString: Player
@@ -388,6 +388,29 @@ MonoBehaviour:
   AnimChinsil: Chinmisil
   GMove: {fileID: 7380361777015331709}
   CSAnim: {fileID: 0}
+--- !u!114 &8102953108323609053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380361777015331660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rot: 0
+  maskNames:
+  - Hurtbox
+  isSphere: 0
+  isProjectile: 0
+  radius: 0
+  sz: {x: 1, y: 2}
+  colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+  colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+  colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
+  offset: {x: 0.8, y: -0.2}
 --- !u!95 &7380361777015331653
 Animator:
   serializedVersion: 4
@@ -471,26 +494,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8102953108323609053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rot: 0
-  maskNames:
-  - Hurtbox
-  isSphere: 0
-  isProjectile: 0
-  radius: 0
-  sz: {x: 1, y: 2}
-  colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
-  colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
-  colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
-  offset: {x: 0.8, y: -0.2}
