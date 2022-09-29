@@ -17,6 +17,7 @@ public class Chinkick : MonoBehaviour, IHitboxResponder
     // Start is called before the first frame update
     void Start()
     {
+        uHitbox = false;
         CKAnim = GetComponent<Animator>();
         hitbox.setResponder(this);
     }
@@ -53,11 +54,11 @@ public class Chinkick : MonoBehaviour, IHitboxResponder
     public void CollisionedWith(Collider2D collider)
     {
 
-        if (collider.name == "ChinchiHurtbox") { return; }
+        if(collider.transform.parent.transform.parent == transform.parent) { return; }
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         if (hurtbox != null)
         {
-            BangLvl bang = gameObject.GetComponent<BangLvl>();
+            BangLvl bang = transform.parent.GetComponent<BangLvl>();
             bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);

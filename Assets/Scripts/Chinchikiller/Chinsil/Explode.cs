@@ -57,7 +57,9 @@ public class Explode : MonoBehaviour, IHitboxResponder
         if (hurtbox != null)
         {
             BangLvl bang = gameObject.transform.parent.GetComponent<BangLvl>();
-            bang.bangUpdate(finalDmg, true);
+            if(collider.transform.parent.transform.parent != transform.parent){
+                bang.bangUpdate(finalDmg, true);
+            }
             hurtbox.getHitBy(finalDmg, (int)finalForce, angle, transform.position.x);
         }
     }

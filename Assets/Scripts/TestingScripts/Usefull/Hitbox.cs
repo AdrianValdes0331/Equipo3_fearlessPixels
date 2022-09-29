@@ -38,21 +38,23 @@ public class Hitbox : MonoBehaviour
     public void hitboxUpdate()
     {
 
-        Debug.Log(_state);
-        Debug.Log(transform.localScale);
+        //Debug.Log(_state);
+        //Debug.Log(transform.localScale);
         pos = transform.position + new Vector3((transform.localScale.x>0)? offset.x : -offset.x, offset.y, 0);
         if (_state == State.Closed) { return; }
         Collider2D[] colliders = (isSphere)? Physics2D.OverlapCircleAll(pos, radius, mask) : Physics2D.OverlapBoxAll(pos, sz/2, rot, mask);
 
-        Debug.Log(pos);
+        //Debug.Log(pos);
 
         for (int i = 0; i < colliders.Length; i++) {
 
             Collider2D iCollider = colliders[i];
-            if(_state!=State.Colliding){_responder?.CollisionedWith(iCollider);}
-            Debug.Log(colliders.Length);
-            Debug.Log(colliders[0]);
-            Debug.Log("se detecto golpe");
+            if(_state!=State.Colliding){
+                _responder?.CollisionedWith(iCollider);
+                Debug.Log(colliders.Length);
+                Debug.Log(colliders[0]);
+                Debug.Log("se detecto golpe");
+            }
 
         }
         _state = (colliders.Length > 0)? State.Colliding : State.Open;

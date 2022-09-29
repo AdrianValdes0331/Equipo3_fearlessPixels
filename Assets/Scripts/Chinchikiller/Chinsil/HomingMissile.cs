@@ -100,7 +100,7 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
 
     public void CollisionedWith(Collider2D collider)
     {
-        if(collider.name == "ChinchiHurtbox") { return; }
+        if(collider.transform.parent.transform.parent == transform.parent) { return; }
         Destroy(gameObject);
         Destroy(GameObject.FindWithTag("scope"));
         print("HITTTT");

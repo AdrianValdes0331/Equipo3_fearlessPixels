@@ -11,7 +11,7 @@ public class NewMovement : MonoBehaviour
     [HideInInspector] public Animator Animator;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
-    public float pSize = 0.15f;
+    private float pSize;
     public bool EnableDoubleJump = true;
     public string AnimJumpName = "none";
     public string AnimWalk = "none";
@@ -23,6 +23,7 @@ public class NewMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pSize = transform.localScale.x;
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
     }
@@ -52,7 +53,7 @@ public class NewMovement : MonoBehaviour
     public void OnMovement(InputValue val){
 
         i_movement = val.Get<Vector2>();
-        Debug.Log(i_movement);
+        //Debug.Log(i_movement);
 
     }
 

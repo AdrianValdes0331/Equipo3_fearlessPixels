@@ -38,7 +38,7 @@ public class DisplayCharacter : MonoBehaviour
 
     public void SelectCowhuahua()
     {
-        index = 0;
+        index = 2;
         ChangeScreen();
     }
 

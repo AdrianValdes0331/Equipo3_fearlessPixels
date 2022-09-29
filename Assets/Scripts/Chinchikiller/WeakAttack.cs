@@ -33,6 +33,7 @@ public class WeakAttack : MonoBehaviour, IHitboxResponder
     void OnWeakAttack()
     {
         //kick
+        Debug.Log("weak attack");
         if (!SWAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimSword))
         {
             hitbox.openCollissionCheck();

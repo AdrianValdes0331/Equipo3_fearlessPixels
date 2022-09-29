@@ -6,13 +6,15 @@ using TMPro;
 public class BangLvl : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int bangLvl = 0;
-    private float totalDmgDiff = 0;
-    private bool isAvailable = true ;
+    private int bangLvl;
+    private float totalDmgDiff;
+    private bool isAvailable;
     public int cd;
     void Start()
     {
-        
+        bangLvl = 0;
+        totalDmgDiff = 0;
+        isAvailable = true;
     }
 
     // Update is called once per frame
@@ -24,14 +26,14 @@ public class BangLvl : MonoBehaviour
     private void updateBangText(string str)
     {
 
-        Debug.Log(GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name]);
-        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name].transform.Find("bangLvl").GetComponent<TextMeshProUGUI>().text = str;
+        //Debug.Log(GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name]);
+        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.GetChild(0).name].transform.Find("bangLvl").GetComponent<TextMeshProUGUI>().text = str;
 
     }
 
     public void bangUpdate(float dmg, bool done)
     {
-
+        float currDmg = totalDmgDiff;
         if (!isAvailable) { return; }
 
         if (done)
@@ -75,8 +77,6 @@ public class BangLvl : MonoBehaviour
         if(bangLvl != 0)
         {
             StartCoroutine(cooldown());
-            bangLvl = 0;
-            totalDmgDiff = 0;
             updateBangText("!!!");
             return true;
         }
@@ -86,6 +86,9 @@ public class BangLvl : MonoBehaviour
 
     public float bangModifier(float baseDmg) {
 
+        Debug.Log(bangLvl);
+        Debug.Log(baseDmg);
+        Debug.Log(baseDmg+((bangLvl-1)*(baseDmg*0.25f)));
         return baseDmg+((bangLvl-1)*(baseDmg*0.25f));
 
     }
@@ -94,6 +97,8 @@ public class BangLvl : MonoBehaviour
     {
         isAvailable = false;
         yield return new WaitForSeconds(cd);
+        bangLvl = 0;
+        totalDmgDiff = 0;
         isAvailable = true;
         updateBangText("");
     }

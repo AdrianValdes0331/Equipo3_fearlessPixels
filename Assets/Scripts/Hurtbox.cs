@@ -24,7 +24,7 @@ public class Hurtbox : MonoBehaviour
     public bool getHitBy(float damage, int force, int angle, float xPos)
     {
 
-        BangLvl bang = transform.parent.GetComponent<BangLvl>();
+        BangLvl bang = transform.parent.transform.parent.GetComponent<BangLvl>();
         bang.bangUpdate(damage, false);
         //alreveza el angulo dependiendo si el ataque esta a la derecha o izquierda
         if (transform.position.x - xPos < 0) { angle = 180-angle; }
@@ -35,7 +35,8 @@ public class Hurtbox : MonoBehaviour
         print("angulo = " + angle);
         print("Fuerza final = "+finalForce);
         dmgPercent += damage;
-        transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*(dmgPercent/100));
+        transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*((dmgPercent/100)/2));
+        Debug.Log(transform.parent);
         GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.name].transform.Find("dmgPercent").GetComponent<TextMeshProUGUI>().text = dmgPercent+"%";
         return true;
 
