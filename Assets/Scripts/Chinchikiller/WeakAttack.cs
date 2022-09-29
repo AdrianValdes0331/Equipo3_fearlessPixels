@@ -57,6 +57,8 @@ public class WeakAttack : MonoBehaviour, IHitboxResponder
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         if (hurtbox != null)
         {
+            BangLvl bang = transform.parent.GetComponent<BangLvl>();
+            bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }
