@@ -56,7 +56,7 @@ public class Explode : MonoBehaviour, IHitboxResponder
         Debug.Log("Explosion");
         if (hurtbox != null)
         {
-            BangLvl bang = gameObject.GetComponent<BangLvl>();
+            BangLvl bang = gameObject.transform.parent.GetComponent<BangLvl>();
             bang.bangUpdate(finalDmg, true);
             hurtbox.getHitBy(finalDmg, (int)finalForce, angle, transform.position.x);
         }

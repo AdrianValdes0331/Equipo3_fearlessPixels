@@ -109,17 +109,17 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
         if (hurtbox != null)
         {
             Debug.Log("Hit player");
-            GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation);
+            GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation, transform.parent);
             cabom.GetComponent<Explode>().enabled = false;
             Destroy(cabom, 2.0f);
-            BangLvl bang = gameObject.GetComponent<BangLvl>();
+            BangLvl bang = gameObject.transform.parent.GetComponent<BangLvl>();
             bang.bangUpdate(dmg, true);
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }
         else
         {
             Debug.Log("Hit obstacle");
-            Instantiate(Cabooommmmm, transform.position, transform.rotation).GetComponent<Explode>().enabled = true;
+            Instantiate(Cabooommmmm, transform.position, transform.rotation, transform.parent).GetComponent<Explode>().enabled = true;
         }
     }
 }
