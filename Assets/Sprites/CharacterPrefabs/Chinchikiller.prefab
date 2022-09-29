@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 7380361777015331711}
   - component: {fileID: -6198035394745140384}
   - component: {fileID: 8102953108323609053}
+  - component: {fileID: 8375543191964759204}
   - component: {fileID: 7380361777015331653}
   - component: {fileID: 7380361777015331710}
   m_Layer: 3
@@ -411,6 +412,25 @@ MonoBehaviour:
   colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
   colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
   offset: {x: 0.8, y: -0.2}
+--- !u!114 &8375543191964759204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380361777015331660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef02961654e2ebe42a651303c339bac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GMove: {fileID: 7380361777015331709}
+  SWAnim: {fileID: 0}
+  AnimSword: GolpeBasicoCK
+  dmg: 3
+  hitbox: {fileID: 8102953108323609053}
+  force: 4000
+  angle: 35
 --- !u!95 &7380361777015331653
 Animator:
   serializedVersion: 4
