@@ -52,10 +52,13 @@ public class Chinkick : MonoBehaviour, IHitboxResponder
 
     public void CollisionedWith(Collider2D collider)
     {
+
         if (collider.name == "ChinchiHurtbox") { return; }
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         if (hurtbox != null)
         {
+            BangLvl bang = gameObject.GetComponent<BangLvl>();
+            bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }

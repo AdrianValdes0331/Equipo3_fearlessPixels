@@ -41,7 +41,7 @@ public class PlayerDmg : MonoBehaviour
             pos.x = a + (i + 1) * d;
             Debug.Log(pos.x);
             GameObject instance = Instantiate(prefab, pos * canvasTransform.localScale.x, Quaternion.identity, gameObject.transform);
-            instance.name = players[i].name + "Dmg";          
+            instance.name = players[i].name + "Profile";          
             playerProfile.Add(players[i].name, instance);          
         }
     }

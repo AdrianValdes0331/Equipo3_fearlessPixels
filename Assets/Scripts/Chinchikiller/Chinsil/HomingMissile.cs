@@ -14,6 +14,7 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
 	private Rigidbody2D rb;
 
 	public GameObject Cabooommmmm;
+    [SerializeField] private bool isBang;
     [SerializeField] private float TimeToChangeColor;
     [SerializeField] private float TimeToExplode;
     [SerializeField] private float dmg;
@@ -22,10 +23,16 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
 	[SerializeField] private int force;
 	[SerializeField] private Color colorToTurnTo = Color.red;
     [SerializeField] private int angle;
+    private BangLvl bang; 
 
 	// Use this for initialization
 	void Start()
 	{
+        bang = transform.parent.GetComponent<BangLvl>();
+        if (isBang)
+        {
+            dmg = bang.bangModifier(dmg);
+        }
 		target = GameObject.FindGameObjectWithTag("scope").transform;
 		transform.Rotate(Vector3.forward * -90);
 		rb = GetComponent<Rigidbody2D>();
@@ -105,6 +112,8 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
             GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation);
             cabom.GetComponent<Explode>().enabled = false;
             Destroy(cabom, 2.0f);
+            BangLvl bang = gameObject.GetComponent<BangLvl>();
+            bang.bangUpdate(dmg, true);
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }
         else

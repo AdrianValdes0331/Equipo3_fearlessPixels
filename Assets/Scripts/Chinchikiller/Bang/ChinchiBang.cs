@@ -27,7 +27,9 @@ public class ChinchiBang : MonoBehaviour
     void OnBang()
     {
         //Misil
-        if (!CSAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinsil) && !GMove.Animator.GetCurrentAnimatorStateInfo(0).IsName(GMove.AnimWalk) && !GameObject.FindWithTag(SearchForTag))
+        BangLvl bang = gameObject.GetComponent<BangLvl>();
+
+        if (!CSAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimChinsil) && !GMove.Animator.GetCurrentAnimatorStateInfo(0).IsName(GMove.AnimWalk) && !GameObject.FindWithTag(SearchForTag) && bang.tryBang())
         {
             GMove.Animator.SetBool(GMove.AnimWalk, false);
             GMove.Animator.SetBool(AnimChinsil, true);
@@ -64,7 +66,7 @@ public class ChinchiBang : MonoBehaviour
         }
 
         GameObject scope = Instantiate(Scope, ScopeSpawn.position, Quaternion.identity);
-        GameObject misile = Instantiate(Misile, FirePoint.position, Quaternion.identity);
+        GameObject misile = Instantiate(Misile, FirePoint.position, Quaternion.identity, gameObject.transform);
 
     }
 }

@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 8102953108323609053}
   - component: {fileID: 7380361777015331653}
   - component: {fileID: 7380361777015331710}
+  - component: {fileID: 1152052443330942353}
   m_Layer: 3
   m_Name: Chinchikiller
   m_TagString: Player
@@ -494,3 +495,16 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1152052443330942353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380361777015331660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cd: 5
