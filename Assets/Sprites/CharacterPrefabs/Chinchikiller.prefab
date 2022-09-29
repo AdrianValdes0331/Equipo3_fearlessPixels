@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 7380361777015331653}
   - component: {fileID: 7380361777015331710}
   - component: {fileID: 8102953108323609053}
+  - component: {fileID: 146499576771405792}
   m_Layer: 3
   m_Name: Chinchikiller
   m_TagString: Player
@@ -494,3 +495,18 @@ MonoBehaviour:
   colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
   colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
   offset: {x: 0.8, y: -0.2}
+--- !u!114 &146499576771405792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380361777015331660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfd6589dd5d35f4796bb44b439cc92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7380361777015331660}
+  spawnPoint: {fileID: 0}
+  spawnValue: 0

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 320604788415190738}
   - component: {fileID: 6635335009666949270}
   - component: {fileID: 8933054639548188268}
+  - component: {fileID: -5169483243564592092}
   m_Layer: 3
   m_Name: Cowhuahua
   m_TagString: Player
@@ -327,6 +328,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5169483243564592092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320604788415190747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfd6589dd5d35f4796bb44b439cc92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 320604788415190747}
+  spawnPoint: {fileID: 0}
+  spawnValue: 0
 --- !u!1 &320604789058388049
 GameObject:
   m_ObjectHideFlags: 0
