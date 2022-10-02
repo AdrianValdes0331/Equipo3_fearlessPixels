@@ -1,6 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
+using System.Collections;
 using UnityEngine;
+using System;
 
 public class WeakAttack : MonoBehaviour, IHitboxResponder
 {
@@ -15,6 +17,7 @@ public class WeakAttack : MonoBehaviour, IHitboxResponder
     // Start is called before the first frame update
     void Start()
     {
+        uHitbox = false;
         SWAnim = GetComponent<Animator>();
         hitbox.setResponder(this);
     }
@@ -26,20 +29,22 @@ public class WeakAttack : MonoBehaviour, IHitboxResponder
         {
             hitbox.hitboxUpdate();
         }
-
+        /*if (!SWAnim.GetCurrentAnimatorStateInfo(0).IsName("GolpeBasicoCK"))
+        {
+            uHitbox = false;
+        }*/
     }
 
     // Update is called once per frame
     void OnWeakAttack()
     {
         //kick
-        Debug.Log("weak attack");
         if (!SWAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimSword))
         {
             hitbox.openCollissionCheck();
             uHitbox = true;
-            GMove.Animator.SetBool(GMove.AnimWalk, false);
             GMove.Animator.SetTrigger(AnimSword);
+            GMove.Animator.SetBool(GMove.AnimWalk, false);
         }
     }
 
@@ -53,7 +58,8 @@ public class WeakAttack : MonoBehaviour, IHitboxResponder
 
     public void CollisionedWith(Collider2D collider)
     {
-        if (collider.name == "ChinchiHurtbox") { return; }
+
+        if (collider.transform.parent.transform.parent == transform.parent) { return; }
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         if (hurtbox != null)
         {

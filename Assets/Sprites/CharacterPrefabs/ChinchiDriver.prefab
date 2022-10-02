@@ -225,11 +225,11 @@ GameObject:
   - component: {fileID: 7312956393361201485}
   - component: {fileID: 7312956393361201481}
   - component: {fileID: 7312956393361201487}
+  - component: {fileID: 8587081216298710676}
   - component: {fileID: 3093057408407386448}
   - component: {fileID: 8314735753585191917}
-  - component: {fileID: 8587081216298710676}
-  - component: {fileID: 3337077727600431072}
   - component: {fileID: 916544361273405254}
+  - component: {fileID: 3337077727600431072}
   - component: {fileID: 7312956393361201525}
   - component: {fileID: 7312956393361201486}
   m_Layer: 3
@@ -413,9 +413,28 @@ MonoBehaviour:
   CKAnim: {fileID: 0}
   AnimChinkick: Chinkick
   dmg: 5
-  hitbox: {fileID: 8314735753585191917}
+  hitbox: {fileID: 916544361273405254}
   force: 12000
   angle: 45
+--- !u!114 &8587081216298710676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312956393361201532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef02961654e2ebe42a651303c339bac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GMove: {fileID: 7312956393361201485}
+  SWAnim: {fileID: 0}
+  AnimSword: GolpeBasicoCK
+  dmg: 3
+  hitbox: {fileID: 8314735753585191917}
+  force: 7000
+  angle: 35
 --- !u!114 &3093057408407386448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +470,7 @@ MonoBehaviour:
   rot: 0
   maskNames:
   - Hurtbox
+  Animator: {fileID: 0}
   isSphere: 0
   isProjectile: 0
   radius: 0
@@ -459,40 +479,6 @@ MonoBehaviour:
   colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
   colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
   offset: {x: 0.8, y: -0.2}
---- !u!114 &8587081216298710676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7312956393361201532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef02961654e2ebe42a651303c339bac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GMove: {fileID: 7312956393361201485}
-  SWAnim: {fileID: 0}
-  AnimSword: GolpeBasicoCK
-  dmg: 3
-  hitbox: {fileID: 916544361273405254}
-  force: 7000
-  angle: 35
---- !u!114 &3337077727600431072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7312956393361201532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 7312956393361201532}
-  spawnPoint: {fileID: 0}
-  spawnValue: 0
 --- !u!114 &916544361273405254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +494,7 @@ MonoBehaviour:
   rot: 0
   maskNames:
   - Hurtbox
+  Animator: {fileID: 0}
   isSphere: 0
   isProjectile: 0
   radius: 0
@@ -516,6 +503,21 @@ MonoBehaviour:
   colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
   colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
   offset: {x: 0.8, y: -0.2}
+--- !u!114 &3337077727600431072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312956393361201532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7312956393361201532}
+  spawnPoint: {fileID: 0}
+  spawnValue: 0
 --- !u!95 &7312956393361201525
 Animator:
   serializedVersion: 4
