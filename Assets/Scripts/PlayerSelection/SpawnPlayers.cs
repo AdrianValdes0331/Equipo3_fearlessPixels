@@ -12,15 +12,12 @@ public class SpawnPlayers : MonoBehaviour
         int player2Index = PlayerPrefs.GetInt("PlayerIndex2");
         Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
         Instantiate(SelectPlayers.Instance.players[player2Index].playablePlayer, Postition2.position, Quaternion.identity);
-        
-        if (player2Index == null)
+        /*try
         {
-            try
-            {
-                //Instantiate dummy in training area
-                Instantiate(SelectPlayers.Instance.players[2].playablePlayer, Postition2.position, Quaternion.identity);
-            }
-            catch { }
+            //Instantiate dummy in training area
+            Instantiate(SelectPlayers.Instance.players[2].playablePlayer, Postition2.position, Quaternion.identity);
         }
+        catch { }*/
+        
     }
 }

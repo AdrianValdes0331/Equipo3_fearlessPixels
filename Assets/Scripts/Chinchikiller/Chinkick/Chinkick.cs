@@ -39,8 +39,8 @@ public class Chinkick : MonoBehaviour, IHitboxResponder
         {
             hitbox.openCollissionCheck();
             uHitbox = true;
-            GMove.Animator.SetBool(GMove.AnimWalk, false);
             GMove.Animator.SetTrigger(AnimChinkick);
+            GMove.Animator.SetBool(GMove.AnimWalk, false);
         }
     }
 

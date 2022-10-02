@@ -62,8 +62,7 @@ public class NewMovement : MonoBehaviour
     {
         //Animation     
         dirX = i_movement.x * MaxSpeed;
-        
-        if (dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName(AnimJumpName))
+        if(dirX != 0 && !Animator.GetCurrentAnimatorStateInfo(0).IsName(AnimJumpName) && !Animator.GetCurrentAnimatorStateInfo(0).IsTag("1"))
         {
             Animator.SetBool(AnimWalk, true);
         }

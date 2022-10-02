@@ -57,8 +57,21 @@ public class Hitbox : MonoBehaviour
             }
 
         }
-        _state = (colliders.Length > 0)? State.Colliding : State.Open;
-        currColor = (_state == State.Colliding)? colorColliding : colorOpen;
+        if (colliders.Length > 0) {
+            _state = State.Colliding;
+        }
+        else
+        {
+            if (gameObject.layer == 7) 
+            {
+                _state = State.Open; 
+            } 
+            else 
+            {
+                _state = State.Closed; 
+            }
+        }
+        currColor = (_state == State.Colliding)? colorColliding : colorClosed;
 
     }
 

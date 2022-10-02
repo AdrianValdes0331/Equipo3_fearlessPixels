@@ -12,7 +12,7 @@ public class CharacterSelectionMenu : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private new TextMeshProUGUI name;
     [SerializeField] private Image image2;
-    [SerializeField] private new TextMeshProUGUI name2;
+    [SerializeField] private TextMeshProUGUI name2;
     private SelectPlayers selectPlayers;
 
     private void Start()
