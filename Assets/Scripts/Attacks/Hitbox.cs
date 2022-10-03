@@ -10,7 +10,6 @@ public class Hitbox : MonoBehaviour
     public float rot;
     public string[] maskNames;
     private int mask;
-    [HideInInspector] public Animator Animator;
     private IHitboxResponder _responder = null;
     public bool isSphere;
     public bool isProjectile;
@@ -29,7 +28,6 @@ public class Hitbox : MonoBehaviour
 
         // objectRenderer = gameObject.GetComponent<Renderer>();
         // sz = objectRenderer.bounds.extents;
-        Animator = GetComponent<Animator>();
         mask = LayerMask.GetMask(maskNames);
         Debug.Log(mask);
         Debug.Log(sz);
@@ -43,7 +41,7 @@ public class Hitbox : MonoBehaviour
         //Debug.Log(_state);
         //Debug.Log(transform.localScale);
         pos = transform.position + new Vector3((transform.localScale.x>0)? offset.x : -offset.x, offset.y, 0);
-        //if (_state == State.Closed) { return; }
+        if (_state == State.Closed) { return; }
         Collider2D[] colliders = (isSphere)? Physics2D.OverlapCircleAll(pos, radius, mask) : Physics2D.OverlapBoxAll(pos, sz/2, rot, mask);
 
         //Debug.Log(pos);
@@ -51,8 +49,7 @@ public class Hitbox : MonoBehaviour
         for (int i = 0; i < colliders.Length; i++) {
 
             Collider2D iCollider = colliders[i];
-            if(_state!=State.Colliding)
-            {
+            if(_state!=State.Colliding){
                 _responder?.CollisionedWith(iCollider);
                 Debug.Log(colliders.Length);
                 Debug.Log(colliders[0]);
@@ -60,32 +57,8 @@ public class Hitbox : MonoBehaviour
             }
 
         }
-        if (colliders.Length > 0) {
-            _state = State.Colliding;
-        }
-        else
-        {
-            if (gameObject.layer == 7 || Animator.GetCurrentAnimatorStateInfo(0).IsTag("1")) 
-            {
-                _state = State.Open; 
-            } 
-            else
-            {
-                _state = State.Closed;
-            }
-        }
-        if (_state == State.Colliding)
-        {
-            currColor = colorColliding;
-        }
-        if (Animator.GetCurrentAnimatorStateInfo(0).IsTag("1"))
-        {
-            currColor = colorOpen;
-        }
-        else
-        {
-            currColor = colorClosed;
-        }
+        _state = (colliders.Length > 0)? State.Colliding : State.Open;
+        currColor = (_state == State.Colliding)? colorColliding : colorOpen;
 
     }
 
