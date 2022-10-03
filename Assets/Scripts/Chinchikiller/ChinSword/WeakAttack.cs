@@ -48,7 +48,7 @@ public class WeakAttack : MonoBehaviour, IHitboxResponder
         }
     }
 
-    void DisableKick()
+    void DisableSword()
     {
 
         uHitbox = false;
