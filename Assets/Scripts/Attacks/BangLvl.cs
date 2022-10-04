@@ -74,7 +74,7 @@ public class BangLvl : MonoBehaviour
     public bool tryBang()
     {
 
-        if(bangLvl != 0)
+        if(bangLvl != 0 && isAvailable)
         {
             StartCoroutine(cooldown());
             updateBangText("!!!");

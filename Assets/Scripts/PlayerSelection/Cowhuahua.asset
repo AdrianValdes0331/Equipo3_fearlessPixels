@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d8629f462d3a54cb8c535f45218d28, type: 3}
   m_Name: Cowhuahua
   m_EditorClassIdentifier: 
-  playablePlayer: {fileID: 320604788415190747, guid: 43128456aad750644b0f1acc4feef5fe,
+  playablePlayer: {fileID: 1852462224302812658, guid: c977d5067ab2b6e4ba2a41eb4841aa9c,
     type: 3}
   image: {fileID: 21300000, guid: dab7c9362841a084a88ba5f99c866e19, type: 3}
   name: Cowhuahua

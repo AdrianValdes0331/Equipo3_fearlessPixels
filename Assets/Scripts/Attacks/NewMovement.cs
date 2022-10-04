@@ -125,6 +125,8 @@ public class NewMovement : MonoBehaviour
     //Speed
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);
+        if(dirX!=0){
+            Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);
+        }
     }
 }
