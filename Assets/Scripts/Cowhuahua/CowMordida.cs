@@ -1,12 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
+using System.Collections;
 using UnityEngine;
+using System;
 
 public class CowMordida : MonoBehaviour, IHitboxResponder
 {
     public NewMovement GMove;
-    [HideInInspector] public Animator MordAnim;
-    public string AnimMordida;
+    [HideInInspector] public Animator CWAnim;
+    public string AnimCowBite;
     [SerializeField] private float dmg;
     [SerializeField] private Hitbox hitbox;
     [SerializeField] private int force;
@@ -15,7 +17,8 @@ public class CowMordida : MonoBehaviour, IHitboxResponder
     // Start is called before the first frame update
     void Start()
     {
-        MordAnim = GetComponent<Animator>();
+        uHitbox = false;
+        CWAnim = GetComponent<Animator>();
         hitbox.setResponder(this);
     }
 
@@ -33,16 +36,16 @@ public class CowMordida : MonoBehaviour, IHitboxResponder
     void OnStrongKick()
     {
         //kick
-        if (!MordAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimMordida))
+        if (!CWAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimCowBite))
         {
             hitbox.openCollissionCheck();
             uHitbox = true;
+            GMove.Animator.SetTrigger(AnimCowBite);
             GMove.Animator.SetBool(GMove.AnimWalk, false);
-            GMove.Animator.SetTrigger(AnimMordida);
         }
     }
 
-    void DisableKick()
+    void DisableBite()
     {
 
         uHitbox = false;
@@ -52,12 +55,15 @@ public class CowMordida : MonoBehaviour, IHitboxResponder
 
     public void CollisionedWith(Collider2D collider)
     {
-        if (collider.name == "CowhuaHurtbox") { return; }
+
+        if (collider.transform.parent.transform.parent == transform.parent) { return; }
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
-        if (hurtbox != null)
+        /*if (hurtbox != null)
         {
+            BangLvl bang = transform.parent.GetComponent<BangLvl>();
+            bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
-        }
+        }*/
     }
 }

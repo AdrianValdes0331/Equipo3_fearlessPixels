@@ -4279,9 +4279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
-  - {fileID: 11400000, guid: a3704fe7e8de7fc43858d463b7e15c49, type: 2}
-  - {fileID: 11400000, guid: 53dbc5fc6e3fa69488b87f8e4c25b203, type: 2}
   - {fileID: 11400000, guid: 5145fff23c613904597953c71bc33505, type: 2}
+  - {fileID: 11400000, guid: 53dbc5fc6e3fa69488b87f8e4c25b203, type: 2}
+  - {fileID: 11400000, guid: a3704fe7e8de7fc43858d463b7e15c49, type: 2}
 --- !u!1 &1492220517
 GameObject:
   m_ObjectHideFlags: 0
