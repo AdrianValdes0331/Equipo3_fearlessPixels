@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Modo Libre/CharacterSelect.unity
     guid: 44dc9221353d22649a41c0dc088402d6
+  - enabled: 1
+    path: Assets/Scenes/CharacterStages/CowawaStage.unity
+    guid: 6ec9feec1691a4343b30de600c482e5b
   m_configObjects: {}
