@@ -42,6 +42,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Extras");
     }
 
+    public void EscenaFreePlaySeleccionStage()
+    {
+        SceneManager.LoadScene("StageSelect");
+    }
+
     public void EscenaFreePlaySeleccionPersonajes()
     {
         SceneManager.LoadScene("CharacterSelect");

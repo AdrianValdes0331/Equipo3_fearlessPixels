@@ -20,7 +20,6 @@ public class StageSelectionMenu : MonoBehaviour
         {
             index = 0;
         }
-        ChangeScreen();
     }
 
     private void ChangeScreen()
@@ -32,21 +31,18 @@ public class StageSelectionMenu : MonoBehaviour
 
     public void SelectStageChinchikiller()
     {
-        index = 1;    
+        index = 1;
+        ChangeScreen();
     }
 
     public void SelectStageCowhuahua()
     {
-        index = 0;               
+        index = 0;
+        ChangeScreen();
     }
 
     public void StartStageGame()
     {
         SceneManager.LoadScene("CharacterSelect");
-    }
-
-    public void StartStageTraining()
-    {
-        SceneManager.LoadScene("TrainingCharacterSelect");
     }
 }

@@ -78,7 +78,8 @@ public class CharacterSelectionMenu : MonoBehaviour
     
     public void StartGame()
     {
-        SceneManager.LoadScene("CowawaStage");
+        int stageIndex = PlayerPrefs.GetInt("StageIndex");
+        SceneManager.LoadScene(SelectStage.Instance.stages[stageIndex].StageName);
     }
 
     public void StartTraining()

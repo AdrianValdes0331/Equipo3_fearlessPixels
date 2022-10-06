@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chinsity
   m_EditorClassIdentifier: 
   StageName: ChinchikillerStage
-  image: {fileID: 21300000, guid: 72e05e8f8935dd24eb721e83cfe015a1, type: 3}
+  image: {fileID: 21300000, guid: 537b87aa2d9041f40937199dc918dfed, type: 3}
   name: Chinsity
