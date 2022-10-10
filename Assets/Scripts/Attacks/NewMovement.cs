@@ -90,6 +90,7 @@ public class NewMovement : MonoBehaviour
     private void OnJump()
     {
         bool onTheGround = isOnGround();
+        Debug.Log(onTheGround);
 
         if (!jumpKeyDown)
         {
