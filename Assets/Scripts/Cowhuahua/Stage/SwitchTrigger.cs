@@ -7,6 +7,7 @@ public class SwitchTrigger : MonoBehaviour
     GameObject switchPivot, sewer;
     BoxCollider2D wholeFloorCollider, leftFloorCollider, rightFloorCollider;
     bool switchActivated = false;
+    bool timerOn;
     Vector3 activatedSwitchRotation = new Vector3(0, 0, 30.5f);
     Vector3 disabledSwitchRotation = new Vector3(0, 0, -26.5f);
     Vector3 activatedSewerRotation = new Vector3(15f, 0, 0);
@@ -28,25 +29,27 @@ public class SwitchTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D element)
     {
-        if (element.CompareTag("Player"))
+        if (element.tag == "Player" && timerOn == false && !switchActivated) //element.CompareTag("Player"))
         {
-            if (!switchActivated)
-            {
-                switchUsageSound.Play();
-                switchPivot.transform.localEulerAngles = activatedSwitchRotation;
-                sewer.transform.localEulerAngles = activatedSewerRotation;
-                switchActivated = true;
-                leftFloorCollider.enabled = true;
-                rightFloorCollider.enabled = true;
-                wholeFloorCollider.enabled = false;
-            }
+            
+            Debug.Log(gameObject.name);
+            switchUsageSound.Play();
+            switchPivot.transform.localEulerAngles = activatedSwitchRotation;
+            sewer.transform.localEulerAngles = activatedSewerRotation;
+            switchActivated = true;
+            leftFloorCollider.enabled = true;
+            rightFloorCollider.enabled = true;
+            wholeFloorCollider.enabled = false;
+            
             StartCoroutine(returnSwitchToNormal());
+            timerOn = true;
         }
     }
 
     IEnumerator returnSwitchToNormal()
     {
         yield return new WaitForSeconds(5);
+        timerOn = false;
         sewerClosingSound.Play();
         switchPivot.transform.localEulerAngles = disabledSwitchRotation;
         sewer.transform.localEulerAngles = disabledSewerRotation;
