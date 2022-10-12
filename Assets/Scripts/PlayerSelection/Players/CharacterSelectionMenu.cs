@@ -78,12 +78,14 @@ public class CharacterSelectionMenu : MonoBehaviour
     
     public void StartGame()
     {
+        Time.timeScale = 1f;
         int stageIndex = PlayerPrefs.GetInt("StageIndex");
         SceneManager.LoadScene(SelectStage.Instance.stages[stageIndex].StageName);
     }
 
     public void StartTraining()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Training");
     }
 }
