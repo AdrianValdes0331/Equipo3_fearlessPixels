@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.00033252695, g: 0.00012851928, b: 0.000009020783,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0.0018040492, g: 0.0012786804, b: 0.00036652462, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8458279}
   - component: {fileID: 8458280}
+  - component: {fileID: 8458281}
   m_Layer: 0
   m_Name: SpotLightR
   m_TagString: Untagged
@@ -302,6 +302,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &8458281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96c87034099a0a45b8bec47120c13a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitSeconds: 10
+  produceSound: 0
+  blinkLightSound: {fileID: 0}
 --- !u!1 &146318471
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374139684}
   - component: {fileID: 374139685}
+  - component: {fileID: 374139686}
   m_Layer: 0
   m_Name: SpotLightL
   m_TagString: Untagged
@@ -897,6 +913,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &374139686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374139683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96c87034099a0a45b8bec47120c13a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitSeconds: 10
+  produceSound: 1
+  blinkLightSound: {fileID: 2097776026}
 --- !u!1 &379942421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,14 +1779,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.22202152, y: -0.4547993, z: 0.012596168, w: -0.8623836}
+  m_LocalRotation: {x: 0.17096654, y: -0.3607319, z: 0.009196411, w: -0.9168197}
   m_LocalPosition: {x: -21.2, y: 0, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -21.807, y: 58.31, z: 346.059}
+  m_LocalEulerAnglesHint: {x: -17.87, y: 44.29, z: 351.529}
 --- !u!1 &728638535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,6 +3094,7 @@ Transform:
   m_Children:
   - {fileID: 393132932}
   - {fileID: 2064029345}
+  - {fileID: 2097776025}
   m_Father: {fileID: 8186927664984148393}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3206,6 +3238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813018880}
   - component: {fileID: 1813018881}
+  - component: {fileID: 1813018882}
   m_Layer: 0
   m_Name: SpotLightR (1)
   m_TagString: Untagged
@@ -3220,14 +3253,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813018879}
-  m_LocalRotation: {x: -0.35040268, y: 0.25150657, z: -0.044914834, w: 0.90108}
-  m_LocalPosition: {x: 3.55, y: -3.02, z: 30.18}
+  m_LocalRotation: {x: -0.34813496, y: 0.29020324, z: -0.06001219, w: 0.8893721}
+  m_LocalPosition: {x: 3.550027, y: -3.0201073, z: 30.180107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2580614326737227173}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -37.509, y: 37.667, z: -18.919}
+  m_LocalEulerAnglesHint: {x: -35.761, y: 43.443, z: -22.368}
 --- !u!108 &1813018881
 Light:
   m_ObjectHideFlags: 0
@@ -3290,6 +3323,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1813018882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813018879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96c87034099a0a45b8bec47120c13a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitSeconds: 20
+  produceSound: 0
+  blinkLightSound: {fileID: 0}
 --- !u!1 &1824036757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,6 +3704,134 @@ Transform:
   m_Father: {fileID: 8186927664984148393}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2097776024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2097776025}
+  - component: {fileID: 2097776026}
+  m_Layer: 0
+  m_Name: BlinkLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2097776025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097776024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.62, y: -12.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1761629233}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2097776026
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097776024}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eb32d5f40c8dfbd46bd2ffaa78dffb77, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.85
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2103113866
 GameObject:
   m_ObjectHideFlags: 0
@@ -3666,6 +3842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103113867}
   - component: {fileID: 2103113868}
+  - component: {fileID: 2103113869}
   m_Layer: 0
   m_Name: SpotLightL (1)
   m_TagString: Untagged
@@ -3680,14 +3857,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103113866}
-  m_LocalRotation: {x: -0.42521197, y: -0.22548024, z: 0.1054038, w: 0.8701974}
-  m_LocalPosition: {x: 9.400316, y: -2.9106846, z: 30.320726}
+  m_LocalRotation: {x: -0.41252154, y: -0.31147692, z: 0.14744909, w: 0.8432479}
+  m_LocalPosition: {x: 9.400405, y: -2.91086, z: 30.320908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2580614326737227173}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -43.829, y: -41.93, z: 31.338}
+  m_LocalEulerAnglesHint: {x: -37.147, y: -54.257, z: 39.374}
 --- !u!108 &2103113868
 Light:
   m_ObjectHideFlags: 0
@@ -3750,6 +3927,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2103113869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103113866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96c87034099a0a45b8bec47120c13a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitSeconds: 20
+  produceSound: 1
+  blinkLightSound: {fileID: 2097776026}
 --- !u!23 &18217245947658198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3994,7 +4186,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4465a7c05db10548b73f2bcd472b900, type: 2}
+  - {fileID: 2100000, guid: a1a3f704a046a2e4fa3bd4214ce10410, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
