@@ -29,10 +29,8 @@ public class SwitchTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D element)
     {
-        if (element.tag == "Player" && timerOn == false && !switchActivated) //element.CompareTag("Player"))
+        if (element.tag == "Player" && timerOn == false && !switchActivated)
         {
-            
-            Debug.Log(gameObject.name);
             switchUsageSound.Play();
             switchPivot.transform.localEulerAngles = activatedSwitchRotation;
             sewer.transform.localEulerAngles = activatedSewerRotation;
