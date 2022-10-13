@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PortalTrigger : MonoBehaviour
 {
-    public float xTarget, yTarget;
+    public float xTarget, yTarget, zTarget;
     public AudioSource portalUsageSound;
     Vector3 targetPosition = new Vector3();
 
@@ -12,7 +12,7 @@ public class PortalTrigger : MonoBehaviour
         if (element.CompareTag("Player")){
             targetPosition.x = xTarget;
             targetPosition.y = yTarget;
-            targetPosition.z = 0f;
+            targetPosition.z = zTarget;
             element.transform.position = targetPosition;
             portalUsageSound.Play();
         }
