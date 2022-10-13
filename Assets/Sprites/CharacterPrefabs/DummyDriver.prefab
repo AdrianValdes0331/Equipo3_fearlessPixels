@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3534391390186649305}
   m_Layer: 0
   m_Name: DummyDriver
-  m_TagString: Untagged
+  m_TagString: Driver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,3 +554,4 @@ MonoBehaviour:
   player: {fileID: 7901658210412213037}
   spawnPoint: {fileID: 0}
   spawnValue: 0
+  lives: 2

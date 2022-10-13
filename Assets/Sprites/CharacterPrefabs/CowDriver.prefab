@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7654766051254027661}
   m_Layer: 0
   m_Name: CowDriver
-  m_TagString: Untagged
+  m_TagString: Driver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   player: {fileID: 4647920126043395744}
   spawnPoint: {fileID: 0}
   spawnValue: 0
+  lives: 2
 --- !u!114 &4647920126043395753
 MonoBehaviour:
   m_ObjectHideFlags: 0

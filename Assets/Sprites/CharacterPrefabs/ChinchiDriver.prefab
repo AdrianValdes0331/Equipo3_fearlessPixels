@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 5312814456470056724}
   m_Layer: 0
   m_Name: ChinchiDriver
-  m_TagString: Untagged
+  m_TagString: Driver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,6 +516,7 @@ MonoBehaviour:
   player: {fileID: 7312956393361201532}
   spawnPoint: {fileID: 0}
   spawnValue: 0
+  lives: 2
 --- !u!95 &7312956393361201525
 Animator:
   serializedVersion: 4
