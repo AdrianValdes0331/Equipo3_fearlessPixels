@@ -76,6 +76,7 @@ public class LiftPath : MonoBehaviour
         liftStopped = true;
         liftStartSound.Stop();
         liftStopSound.Play();
+        currentSpeed = 0;
         yield return new WaitForSeconds(4);
         liftStartSound.Play();
         liftStopped = false;
@@ -84,6 +85,7 @@ public class LiftPath : MonoBehaviour
     IEnumerator startWait()
     {
         liftStopped = true;
+        currentSpeed = 0;
         yield return new WaitForSeconds(4);
         liftStartSound.Play();
         liftStopped = false;

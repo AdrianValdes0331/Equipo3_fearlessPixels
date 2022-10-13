@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlinkLight : MonoBehaviour
 {
-    Light light;
+    new Light light;
     bool timerOn = false;
     public float waitSeconds;
     public bool produceSound;

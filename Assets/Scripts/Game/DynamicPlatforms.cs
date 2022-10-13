@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DynamicPlatforms : MonoBehaviour
 {
+    GameObject collisionObject;
+
     private void OnCollisionEnter2D(Collision2D collisionDetected)
     {
-        GameObject collisionObject = collisionDetected.gameObject;
+        collisionObject = collisionDetected.gameObject;
         if (collisionObject.CompareTag("Player"))
         {
-            Debug.Log("Aquí entra");
             collisionObject.transform.parent.parent = transform;
         }
     }
@@ -19,7 +20,6 @@ public class DynamicPlatforms : MonoBehaviour
         GameObject collisionObject = collisionDetected.gameObject;
         if (collisionObject.CompareTag("Player"))
         {
-            Debug.Log("Aquí se va");
             collisionObject.transform.parent.parent = null;
         }
     }
