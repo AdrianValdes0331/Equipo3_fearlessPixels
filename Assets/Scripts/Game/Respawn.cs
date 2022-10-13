@@ -29,6 +29,6 @@ public class Respawn : MonoBehaviour
 
     void RespawnPoint()
     {
-        player.transform.position = new Vector2(-10,10);
+        player.transform.position = new Vector2(-2,10);
     }
 }

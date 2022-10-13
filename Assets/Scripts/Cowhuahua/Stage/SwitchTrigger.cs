@@ -8,7 +8,7 @@ public class SwitchTrigger : MonoBehaviour
     BoxCollider2D wholeFloorCollider, leftFloorCollider, rightFloorCollider;
     bool switchActivated = false;
     bool timerOn;
-    Vector3 activatedSwitchRotation = new Vector3(0, 0, 30.5f);
+    Vector3 activatedSwitchRotation = new Vector3(0, 0, 27.5f);
     Vector3 disabledSwitchRotation = new Vector3(0, 0, -26.5f);
     Vector3 activatedSewerRotation = new Vector3(15f, 0, 0);
     Vector3 disabledSewerRotation = new Vector3(-90f, 0, 0);
