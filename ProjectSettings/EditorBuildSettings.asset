@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/StageSelect.unity
     guid: 322c4945825b9c74a9a44deb0e89921a
+  - enabled: 1
+    path: Assets/Scenes/CharacterStages/CowawaStage.unity
+    guid: 645e7431fb683ba4796397455dae146b
   m_configObjects: {}
