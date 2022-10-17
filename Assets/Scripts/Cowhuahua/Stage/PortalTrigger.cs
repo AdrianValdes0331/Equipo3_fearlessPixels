@@ -9,12 +9,13 @@ public class PortalTrigger : MonoBehaviour
     Vector3 targetPosition = new Vector3();
 
     private void OnTriggerEnter2D(Collider2D element) {
-        //if (element.CompareTag("Player")){
+        if (!element.CompareTag("Driver") && !element.CompareTag("Untagged"))
+        {
             targetPosition.x = xTarget;
             targetPosition.y = yTarget;
             targetPosition.z = zTarget;
             element.transform.position = targetPosition;
             portalUsageSound.Play();
-        //}
+        }
     }
 }
