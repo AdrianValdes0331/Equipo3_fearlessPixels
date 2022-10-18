@@ -6,29 +6,94 @@ public class Respawn : MonoBehaviour
 {
 
     [SerializeField] public GameObject player;
-    [SerializeField] public Transform spawnPoint;
-    [SerializeField] float spawnValue;
+    List<Transform> respawnPoints = new List<Transform>();
+    float upperLimit, bottomLimit, leftLimit, rightLimit; 
+    Vector3 playerPos = new Vector3();
+    GameObject respawnPositions;
+    Rigidbody2D playerRigidbody;
+    BoxCollider2D playerHurtbox;
+    AudioSource lostLifeSound, respawnSound;
+    int randomSpawnn;
     public int lives = 2;
 
+    void Start()
+    {
+        playerRigidbody = player.GetComponent<Rigidbody2D>();
+        foreach (Transform child in player.transform)
+        {
+            if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
+            {
+                playerHurtbox = child.gameObject.GetComponent<BoxCollider2D>();
+                break;
+            }
+        }
+
+        respawnPositions = GameObject.Find("RespawnPositions");
+        if (respawnPoints != null)
+        {
+            foreach (Transform child in respawnPositions.transform)
+            {
+                respawnPoints.Add(child);
+            }
+        }
+
+        upperLimit = GameObject.Find("EdgeLimits/UpperLimit").transform.position.y;
+        bottomLimit = GameObject.Find("EdgeLimits/BottomLimit").transform.position.y;
+        leftLimit = GameObject.Find("EdgeLimits/LeftLimit").transform.position.x;
+        rightLimit = GameObject.Find("EdgeLimits/RightLimit").transform.position.x;
+
+        lostLifeSound = GameObject.Find("Scenery/Sounds/LostLife").GetComponent<AudioSource>();
+        respawnSound = GameObject.Find("Scenery/Sounds/Respawn").GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (((player.transform.position.y < -8 || player.transform.position.y > 20) || (player.transform.position.x < -20 || player.transform.position.x > 20)) && lives > 0)
+        if (upperLimit != 0f && bottomLimit != 0f && leftLimit != 0f && rightLimit != 0f)
         {
-            RespawnPoint();
-            lives--;
-            Debug.Log(lives);
+            playerPos = player.transform.position;
+            if ((playerPos.y < bottomLimit || playerPos.y > upperLimit || playerPos.x < leftLimit || playerPos.x > rightLimit) && lives > 0)
+            {
+                lives  --;
+                lostLifeSound.Play();
+                StartCoroutine(RespawnPoint());
+            }
         }
+
         if (lives <= 0)
         {
-            Debug.Log("asdf");
             Destroy(transform.parent.gameObject);
         }
     }
 
-    void RespawnPoint()
+    IEnumerator RespawnPoint()
     {
-        player.transform.position = new Vector2(-2,10);
+        playerHurtbox.enabled = false;
+
+        if (respawnPoints.Count > 0)
+        {
+            randomSpawnn = Random.Range(0, respawnPoints.Count);
+            player.transform.position = respawnPoints[randomSpawnn].position;
+        }
+        else
+        {
+            player.transform.position = new Vector2(0, 10);
+        }
+
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+        yield return new WaitForSeconds(2.5f);
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+        playerRigidbody.WakeUp();
+        respawnSound.Play();
+        yield return new WaitForSeconds(1);
+        playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+        StartCoroutine(SpawnProtection());
+    }
+
+    IEnumerator SpawnProtection()
+    {
+        yield return new WaitForSeconds(5);
+        playerHurtbox.enabled = true;
     }
 }
