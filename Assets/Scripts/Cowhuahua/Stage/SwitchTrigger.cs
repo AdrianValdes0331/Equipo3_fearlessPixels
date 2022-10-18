@@ -12,7 +12,7 @@ public class SwitchTrigger : MonoBehaviour
     Vector3 disabledSwitchRotation = new Vector3(0, 0, -26.5f);
     Vector3 activatedSewerRotation = new Vector3(15f, 0, 0);
     Vector3 disabledSewerRotation = new Vector3(-90f, 0, 0);
-    string path = "/Scenary/";
+    string path = "/Scenery/";
     public AudioSource switchUsageSound, sewerClosingSound;
     // Start is called before the first frame update
     void Start()

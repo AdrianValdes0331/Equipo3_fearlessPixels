@@ -12,18 +12,29 @@ public class Respawn : MonoBehaviour
     GameObject respawnPositions;
     Rigidbody2D playerRigidbody;
     BoxCollider2D playerHurtbox;
+    PolygonCollider2D dummyHurtbox;
     AudioSource lostLifeSound, respawnSound;
+    SpriteRenderer playerSprite;
+    Color spawnProtectionColor = new Color(1f, 1f, 1f, 0.3f);
+    Color normalPlayerColor = new Color(1f, 1f, 1f, 1f);
     int randomSpawnn;
     public int lives = 2;
 
     void Start()
     {
         playerRigidbody = player.GetComponent<Rigidbody2D>();
+        playerSprite = player.GetComponent<SpriteRenderer>();
         foreach (Transform child in player.transform)
         {
             if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
             {
                 playerHurtbox = child.gameObject.GetComponent<BoxCollider2D>();
+                if (!playerHurtbox)
+                {
+                    dummyHurtbox = child.gameObject.GetComponent<PolygonCollider2D>();
+                    spawnProtectionColor = new Color(1f, 0f, 0f, 0.3f);
+                    normalPlayerColor = new Color(1f, 0f, 0f, 1f);
+                }
                 break;
             }
         }
@@ -68,7 +79,14 @@ public class Respawn : MonoBehaviour
 
     IEnumerator RespawnPoint()
     {
-        playerHurtbox.enabled = false;
+        if (playerHurtbox)
+        {
+            playerHurtbox.enabled = false;
+        }
+        else
+        {
+            dummyHurtbox.enabled = false;
+        }
 
         if (respawnPoints.Count > 0)
         {
@@ -93,7 +111,28 @@ public class Respawn : MonoBehaviour
 
     IEnumerator SpawnProtection()
     {
-        yield return new WaitForSeconds(5);
-        playerHurtbox.enabled = true;
+        float count = 0;
+        while (count < 4)
+        {
+            if (playerSprite.color == normalPlayerColor)
+            {
+                playerSprite.color = spawnProtectionColor;
+            }
+            else
+            {
+                playerSprite.color = normalPlayerColor;
+            }
+            count += 0.25f;
+            yield return new WaitForSeconds(0.25f);
+        }
+
+        if (playerHurtbox)
+        {
+            playerHurtbox.enabled = true;
+        }
+        else
+        {
+            dummyHurtbox.enabled = true;
+        }
     }
 }
