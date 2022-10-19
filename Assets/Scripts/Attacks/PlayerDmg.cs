@@ -9,15 +9,17 @@ public class PlayerDmg : MonoBehaviour
     private int playerCount;
     private RectTransform canvasTransform;
     public GameObject prefab;
+    public GameObject vida;
     private IEnumerator coroutine;
     [HideInInspector]
     public Dictionary<string, GameObject> playerProfile = new Dictionary<string, GameObject>();
+    private int Fixedx;
 
     // Start is called before the first frame update
     void Start()
     {
         coroutine = WaitAndPrint(0.2f);
-        StartCoroutine(coroutine);  
+        StartCoroutine(coroutine);
     }
 
     void runScript()
@@ -29,20 +31,30 @@ public class PlayerDmg : MonoBehaviour
         float a = canvasTransform.rect.width / -2;
         float b = canvasTransform.rect.width / 2;
         Vector3 pos = transform.position;
+        Vector3 Livepos = transform.position;
         pos.y = -175;
+        Livepos.y = -150;
         Debug.Log(d);
         Debug.Log(a);
         Debug.Log(b);
 
         for (int i = 0; i < playerCount; i++)
         {
-
+            Fixedx = -20;
+            int lives = players[0].GetComponent<Respawn>().lives;
             Debug.Log(a + (i + 1) * d);
             pos.x = a + (i + 1) * d;
             Debug.Log(pos.x);
             GameObject instance = Instantiate(prefab, pos * canvasTransform.localScale.x, Quaternion.identity, gameObject.transform);
-            instance.name = players[i].name + "Profile";          
-            playerProfile.Add(players[i].name, instance);          
+            instance.name = players[i].name + "Profile";
+            playerProfile.Add(players[i].name, instance);
+            for (int j = 0; j < lives; j++)
+            {
+                Livepos.x = a + (i + 1) * d + Fixedx;
+                GameObject live = Instantiate(vida, Livepos * canvasTransform.localScale.x, Quaternion.identity, instance.transform);
+                live.name = "vida" + j;
+                Fixedx = Fixedx + 10;
+            }         
         }
     }
 

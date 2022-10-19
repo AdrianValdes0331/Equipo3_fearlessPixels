@@ -514,9 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7312956393361201532}
-  spawnPoint: {fileID: 0}
-  spawnValue: 0
-  lives: 3
+  lives: 10
 --- !u!95 &7312956393361201525
 Animator:
   serializedVersion: 4

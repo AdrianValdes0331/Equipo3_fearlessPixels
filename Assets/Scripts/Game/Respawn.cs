@@ -7,7 +7,7 @@ public class Respawn : MonoBehaviour
 
     [SerializeField] public GameObject player;
     List<Transform> respawnPoints = new List<Transform>();
-    float upperLimit, bottomLimit, leftLimit, rightLimit; 
+    float upperLimit, bottomLimit, leftLimit, rightLimit;
     Vector3 playerPos = new Vector3();
     GameObject respawnPositions;
     Rigidbody2D playerRigidbody;
@@ -70,6 +70,7 @@ public class Respawn : MonoBehaviour
                 StartCoroutine(RespawnPoint());
                 Transform removeLives = GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name].transform.Find("vida"+lives);
                 Debug.Log(removeLives);
+
                 Destroy(removeLives.gameObject);
             }
         }
