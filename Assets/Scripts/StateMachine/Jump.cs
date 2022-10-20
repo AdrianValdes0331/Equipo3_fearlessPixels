@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public void EnterState(PlayerController player){
+
+
+
+    }
+    public void Update(PlayerController player){
+
+
+
+    }
+    public void OnTriggerEnter(PlayerController player, Collider2D col){
+
+
+
+    }
+    public void OnCollisionEnter(PlayerController player, Collider2D col){
+
+
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
