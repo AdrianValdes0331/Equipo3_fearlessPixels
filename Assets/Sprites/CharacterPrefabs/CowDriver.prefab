@@ -262,9 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4647920126043395744}
-  spawnPoint: {fileID: 0}
-  spawnValue: 0
-  lives: 2
+  lives: 3
 --- !u!114 &4647920126043395753
 MonoBehaviour:
   m_ObjectHideFlags: 0

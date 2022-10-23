@@ -554,9 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7901658210412213037}
-  spawnPoint: {fileID: 0}
-  spawnValue: 0
-  lives: 2
+  lives: 3
 --- !u!114 &1584175010196136758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,7 +567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78cc06eac68adde4fa39fdd2a93ac050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 7090656750421965099, guid: 3ffbe73b028b02d4abbcbd0e1c15484d, type: 3}
   activateDistance: 50
   pathUpdateSeconds: 0.5
   speed: 5000
