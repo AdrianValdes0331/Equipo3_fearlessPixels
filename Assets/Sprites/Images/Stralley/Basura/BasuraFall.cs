@@ -25,6 +25,7 @@ public class BasuraFall : MonoBehaviour
         if (Time.time > i)
         {
             int rInt = Random.Range(0, 4);
+            int spawnran = Random.Range(20, 35);
             //Random r = new Random();
             //int rInt = r.Next(0, 4);
             if (rInt == 0)
@@ -48,7 +49,9 @@ public class BasuraFall : MonoBehaviour
                 Instantiate(basura, Postition5.position, Quaternion.identity);
             }
 
-            i += 20;
+            Destroy(GameObject.FindWithTag("Basura"), 5);
+
+            i += spawnran;
         }
     }
 }
