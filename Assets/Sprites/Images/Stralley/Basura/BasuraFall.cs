@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BasuraFall : MonoBehaviour
 {
-    //int randomSpawn = Random.Range(0, 5);
     public Transform Postition1;
     public Transform Postition2;
     public Transform Postition3;
@@ -26,8 +25,7 @@ public class BasuraFall : MonoBehaviour
         {
             int rInt = Random.Range(0, 4);
             int spawnran = Random.Range(20, 35);
-            //Random r = new Random();
-            //int rInt = r.Next(0, 4);
+
             if (rInt == 0)
             {
                 Instantiate(basura, Postition1.position, Quaternion.identity);
@@ -54,4 +52,6 @@ public class BasuraFall : MonoBehaviour
             i += spawnran;
         }
     }
+
+ 
 }
