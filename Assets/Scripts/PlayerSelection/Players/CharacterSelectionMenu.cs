@@ -13,6 +13,10 @@ public class CharacterSelectionMenu : MonoBehaviour
     [SerializeField] private new TextMeshProUGUI name;
     [SerializeField] private Image image2;
     [SerializeField] private TextMeshProUGUI name2;
+    [SerializeField] private Image image3;
+    [SerializeField] private new TextMeshProUGUI name3;
+    [SerializeField] private Image image4;
+    [SerializeField] private TextMeshProUGUI name4;
     private SelectPlayers selectPlayers;
 
     private void Start()
@@ -40,6 +44,20 @@ public class CharacterSelectionMenu : MonoBehaviour
         name2.text = selectPlayers.players[index].name;
     }
 
+    private void ChangeScreenP3()
+    {
+        PlayerPrefs.SetInt("PlayerIndex3", index);
+        image3.sprite = selectPlayers.players[index].image;
+        name3.text = selectPlayers.players[index].name;
+    }
+
+    private void ChangeScreenP4()
+    {
+        PlayerPrefs.SetInt("PlayerIndex3", index);
+        image4.sprite = selectPlayers.players[index].image;
+        name4.text = selectPlayers.players[index].name;
+    }
+
     public void SelectP1()
     {
         PlayerNum = 1;
@@ -48,6 +66,16 @@ public class CharacterSelectionMenu : MonoBehaviour
     public void SelectP2()
     {
         PlayerNum = 2;
+    }
+
+    public void SelectP3()
+    {
+        PlayerNum = 3;
+    }
+
+    public void SelectP4()
+    {
+        PlayerNum = 4;
     }
 
     public void SelectChinchikiller()
@@ -60,6 +88,14 @@ public class CharacterSelectionMenu : MonoBehaviour
         else if (PlayerNum == 2)
         {
             ChangeScreenP2();
+        }
+        else if (PlayerNum == 3)
+        {
+            ChangeScreenP3();
+        }
+        else if (PlayerNum == 4)
+        {
+            ChangeScreenP4();
         }
     }
 
@@ -74,8 +110,58 @@ public class CharacterSelectionMenu : MonoBehaviour
         {
             ChangeScreenP2();
         }
+        else if (PlayerNum == 3)
+        {
+            ChangeScreenP3();
+        }
+        else if (PlayerNum == 4)
+        {
+            ChangeScreenP4();
+        }
     }
-    
+
+    public void SelectFoxHunter()
+    {
+        index = 2;
+        if (PlayerNum == 1)
+        {
+            ChangeScreenP1();
+        }
+        else if (PlayerNum == 2)
+        {
+            ChangeScreenP2();
+        }
+        else if (PlayerNum == 3)
+        {
+            ChangeScreenP3();
+        }
+        else if (PlayerNum == 4)
+        {
+            ChangeScreenP4();
+        }
+    }
+
+    public void SelectBrujorge()
+    {
+        index = 3;
+        if (PlayerNum == 1)
+        {
+            ChangeScreenP1();
+        }
+        else if (PlayerNum == 2)
+        {
+            ChangeScreenP2();
+        }
+        else if (PlayerNum == 3)
+        {
+            ChangeScreenP3();
+        }
+        else if (PlayerNum == 4)
+        {
+            ChangeScreenP4();
+        }
+    }
+
     public void StartGame()
     {
         Time.timeScale = 1f;
