@@ -3093,10 +3093,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7371780813645477133, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: -7371780813645477133, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5310105209126317939, guid: 8df32d2fca2319f4fa97be23a2980a11,
         type: 3}
       propertyPath: m_Name
       value: ChinchiDriverSM
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026932628281615307, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7940068445227844124, guid: 8df32d2fca2319f4fa97be23a2980a11,
         type: 3}

@@ -23,16 +23,14 @@ public class Idle : IPlayerBaseState
 
     public void Update(PlayerController player)
     {
-        
+        if (player.rb.velocity.x != 0) { player.rb.velocity = new Vector2(0, player.rb.velocity.y); }
     }
 
     public void LateUpdate(PlayerController player) { }
 
     public void Move(PlayerController player, InputValue val, float speed)
     {
-        player.rb.velocity = new Vector2(val.Get<Vector2>().x * speed, 0);
         player.TransitionToState(player.WalkState);
-        Debug.Log(val.Get<Vector2>().x);
     }
 
     public void Jump(PlayerController player, float speed)

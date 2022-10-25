@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private InputValue i_value;
+    public Vector2 i_movement;
     public float speed;
     public float jspeed;
     public Animator animator;
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnMovement(InputValue val) {
-        i_value = val;
+        i_movement = val.Get<Vector2>();
         currState.Move(this, val, speed);
     }
 

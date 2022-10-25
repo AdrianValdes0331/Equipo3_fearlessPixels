@@ -33,6 +33,10 @@ public class Jump : IPlayerBaseState
     
     public void Update(PlayerController player)
     {
+
+        i_movement = player.i_movement;
+        player.rb.velocity = new Vector2(i_movement.x*player.speed, player.rb.velocity.y);
+
         if (i_movement.x < 0.0f)
         {
             player.transform.localScale = new Vector3(-pSize, pSize, pSize);
@@ -47,8 +51,7 @@ public class Jump : IPlayerBaseState
 
     public void Move(PlayerController player, InputValue val, float speed)
     {
-        i_movement = val.Get<Vector2>() * speed;
-        player.rb.velocity = new Vector2(i_movement.x, player.rb.velocity.y);
+        
     }
 
     void IPlayerBaseState.Jump(PlayerController player, float speed)
