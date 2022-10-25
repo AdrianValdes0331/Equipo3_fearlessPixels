@@ -132,7 +132,7 @@ public class NewMovement : MonoBehaviour
 
             isGrounded = true;
 
-        };
+        }
 
     }
 

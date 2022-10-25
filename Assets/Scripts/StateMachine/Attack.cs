@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public abstract class Attack : PlayerBaseState, IHitboxResponder
+public abstract class Attack : IPlayerBaseState, IHitboxResponder
 {
     private float dmg;
     private Hitbox hitbox;
@@ -12,8 +13,11 @@ public abstract class Attack : PlayerBaseState, IHitboxResponder
 
     public abstract void EnterState(PlayerController player);
     public abstract void Update(PlayerController player);
+    public abstract void LateUpdate(PlayerController player);
     public abstract void OnTriggerEnter(PlayerController player, Collider2D col);
-    public abstract void OnCollisionEnter(PlayerController player, Collider2D col);
+    public abstract void OnCollisionEnter(PlayerController player, Collision2D col);
+    public abstract void Move(PlayerController player, InputValue val, float speed);
+    public abstract void Jump(PlayerController player, float speed);
     public abstract void OnCollisionEffects(); //Things to do after an attack hits dependent on implementation
     //All attacks have the same implementation for CollisionedWith
     public void CollisionedWith(Collider2D collider){
@@ -31,4 +35,5 @@ public abstract class Attack : PlayerBaseState, IHitboxResponder
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }
     }
+
 }
