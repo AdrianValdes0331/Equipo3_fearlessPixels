@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5684642480910207388}
   - component: {fileID: 7608125607237908021}
   - component: {fileID: -7371780813645477133}
+  - component: {fileID: 7849389558609637215}
   m_Layer: 0
   m_Name: ChinchiDriverSM
   m_TagString: Untagged
@@ -104,6 +105,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7849389558609637215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cd: 60
+  normal: {fileID: 21300000, guid: d1a0018a044de3941b02311a32f44669, type: 3}
+  Bang1: {fileID: 21300000, guid: 3eb92e12eb7cb1f4f92a2122bfb28a35, type: 3}
+  Bang2: {fileID: 21300000, guid: b2b0a8bb39357c64b89745e8893ec28b, type: 3}
+  Bang3: {fileID: 21300000, guid: d845e214432761245bfe48fbba120159, type: 3}
 --- !u!1001 &3877520826910734517
 PrefabInstance:
   m_ObjectHideFlags: 0

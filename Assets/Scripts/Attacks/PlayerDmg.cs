@@ -33,14 +33,14 @@ public class PlayerDmg : MonoBehaviour
         Vector3 pos = transform.position;
         Vector3 Livepos = transform.position;
         pos.y = -175;
-        Livepos.y = -150;
+        Livepos.y = -190;
         Debug.Log(d);
         Debug.Log(a);
         Debug.Log(b);
 
         for (int i = 0; i < playerCount; i++)
         {
-            Fixedx = -20;
+            Fixedx = -10;
             int lives = players[0].GetComponent<Respawn>().lives;
             Debug.Log(a + (i + 1) * d);
             pos.x = a + (i + 1) * d;

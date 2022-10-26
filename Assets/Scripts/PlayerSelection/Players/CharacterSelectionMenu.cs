@@ -53,7 +53,7 @@ public class CharacterSelectionMenu : MonoBehaviour
 
     private void ChangeScreenP4()
     {
-        PlayerPrefs.SetInt("PlayerIndex3", index);
+        PlayerPrefs.SetInt("PlayerIndex4", index);
         image4.sprite = selectPlayers.players[index].image;
         name4.text = selectPlayers.players[index].name;
     }

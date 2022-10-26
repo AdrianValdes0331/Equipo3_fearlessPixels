@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class BangLvl : MonoBehaviour
@@ -10,6 +11,11 @@ public class BangLvl : MonoBehaviour
     private float totalDmgDiff;
     private bool isAvailable;
     public int cd;
+    public Sprite normal;
+    public Sprite Bang1;
+    public Sprite Bang2;
+    public Sprite Bang3;
+
     void Start()
     {
         bangLvl = 0;
@@ -23,11 +29,12 @@ public class BangLvl : MonoBehaviour
         
     }
 
-    private void updateBangText(string str)
+    private void updateBangImage(Sprite img)
     {
 
         //Debug.Log(GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name]);
-        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.GetChild(0).name].transform.Find("bangLvl").GetComponent<TextMeshProUGUI>().text = str;
+        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.GetChild(0).name].transform.Find("bangLvl").GetComponent<Image>().sprite = img;
+        //nImg = img;
 
     }
 
@@ -50,23 +57,23 @@ public class BangLvl : MonoBehaviour
         if (totalDmgDiff >= 70 && totalDmgDiff<115) {
 
             bangLvl = 1;
-            updateBangText("-");
+            updateBangImage(Bang1);
         
         }
         else if(totalDmgDiff >= 115 && totalDmgDiff < 200)
         {
             bangLvl = 2;
-            updateBangText("--");
+            updateBangImage(Bang2);
         }
         else if(totalDmgDiff >= 200)
         {
             bangLvl = 3;
-            updateBangText("---");
+            updateBangImage(Bang3);
         }
         else
         {
             bangLvl = 0;
-            updateBangText("");
+            updateBangImage(normal);
         }
 
     }
@@ -77,7 +84,7 @@ public class BangLvl : MonoBehaviour
         if(bangLvl != 0 && isAvailable)
         {
             StartCoroutine(cooldown());
-            updateBangText("!!!");
+            updateBangImage(normal);
             return true;
         }
         return false;
@@ -100,7 +107,7 @@ public class BangLvl : MonoBehaviour
         bangLvl = 0;
         totalDmgDiff = 0;
         isAvailable = true;
-        updateBangText("");
+        updateBangImage(normal);
     }
 
 }
