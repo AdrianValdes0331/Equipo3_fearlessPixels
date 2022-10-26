@@ -15,13 +15,13 @@ public class BasuraFall : MonoBehaviour
 // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > i)
+        
+        if (Time.timeSinceLevelLoad > i && (GameObject.FindWithTag("Basura") == null))
         {
             int rInt = Random.Range(0, 4);
             int spawnran = Random.Range(20, 35);
@@ -51,7 +51,10 @@ public class BasuraFall : MonoBehaviour
 
             i += spawnran;
         }
+        
     }
+
+
 
  
 }
