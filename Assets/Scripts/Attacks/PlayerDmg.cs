@@ -33,14 +33,14 @@ public class PlayerDmg : MonoBehaviour
         Vector3 pos = transform.position;
         Vector3 Livepos = transform.position;
         pos.y = -475;
-        Livepos.y = -190;
+        Livepos.y = -505;
         Debug.Log(d);
         Debug.Log(a);
         Debug.Log(b);
 
         for (int i = 0; i < playerCount; i++)
         {
-            Fixedx = -10;
+            Fixedx = -20;
             int lives = players[0].GetComponent<Respawn>().lives;
             Debug.Log(a);
             Debug.Log(b);
@@ -56,7 +56,7 @@ public class PlayerDmg : MonoBehaviour
                 Livepos.x = a + (i + 1) * d + Fixedx;
                 GameObject live = Instantiate(vida, Livepos + transform.position, Quaternion.identity, instance.transform);
                 live.name = "vida" + j;
-                Fixedx = Fixedx + 10;
+                Fixedx = Fixedx + 20;
             }         
         }
     }
