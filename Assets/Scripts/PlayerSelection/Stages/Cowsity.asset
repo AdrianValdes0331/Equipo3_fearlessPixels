@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cowsity
   m_EditorClassIdentifier: 
   StageName: CowawaStage
-  image: {fileID: 21300000, guid: 72e05e8f8935dd24eb721e83cfe015a1, type: 3}
+  image: {fileID: 21300000, guid: e5e22115d15a9064f95d0422f9a066a6, type: 3}
   name: Cowsity
