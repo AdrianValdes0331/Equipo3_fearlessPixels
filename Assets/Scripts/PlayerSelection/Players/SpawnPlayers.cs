@@ -21,8 +21,8 @@ public class SpawnPlayers : MonoBehaviour
         if (sceneName != "Training")
         {
             Instantiate(SelectPlayers.Instance.players[player2Index].playablePlayer, Postition2.position, Quaternion.identity);
-            Instantiate(SelectPlayers.Instance.players[player3Index].playablePlayer, Postition3.position, Quaternion.identity);
-            Instantiate(SelectPlayers.Instance.players[player4Index].playablePlayer, Postition4.position, Quaternion.identity);
+            //Instantiate(SelectPlayers.Instance.players[player3Index].playablePlayer, Postition3.position, Quaternion.identity);
+            //Instantiate(SelectPlayers.Instance.players[player4Index].playablePlayer, Postition4.position, Quaternion.identity);
         }
         else
         {

@@ -166,6 +166,7 @@ public class CharacterSelectionMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         int stageIndex = PlayerPrefs.GetInt("StageIndex");
+        Debug.Log(stageIndex);
         SceneManager.LoadScene(SelectStage.Instance.stages[stageIndex].StageName);
     }
 

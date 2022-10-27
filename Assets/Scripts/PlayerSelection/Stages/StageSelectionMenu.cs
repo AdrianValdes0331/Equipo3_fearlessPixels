@@ -28,6 +28,11 @@ public class StageSelectionMenu : MonoBehaviour
         image.sprite = selectStage.stages[index].image;
         name.text = selectStage.stages[index].name;
     }
+    public void SelectStageFoxHunter()
+    {
+        index = 2;
+        ChangeScreen();
+    }
 
     public void SelectStageChinchikiller()
     {
