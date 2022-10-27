@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Respawn : MonoBehaviour
 {
@@ -12,18 +13,21 @@ public class Respawn : MonoBehaviour
     GameObject respawnPositions;
     Rigidbody2D playerRigidbody;
     BoxCollider2D playerHurtbox;
+    PlayerInput playerInput;
     PolygonCollider2D dummyHurtbox;
     AudioSource lostLifeSound, respawnSound;
     SpriteRenderer playerSprite;
     Color spawnProtectionColor = new Color(1f, 1f, 1f, 0.3f);
     Color normalPlayerColor = new Color(1f, 1f, 1f, 1f);
-    int randomSpawnn;
+    int randomSpawn;
+    bool keepCoroutine;
     public int lives = 2;
 
     void Start()
     {
         playerRigidbody = player.GetComponent<Rigidbody2D>();
         playerSprite = player.GetComponent<SpriteRenderer>();
+        playerInput = player.GetComponent<PlayerInput>();
         foreach (Transform child in player.transform)
         {
             if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
@@ -83,6 +87,7 @@ public class Respawn : MonoBehaviour
 
     IEnumerator RespawnPoint()
     {
+        keepCoroutine = false;
         if (playerHurtbox)
         {
             playerHurtbox.enabled = false;
@@ -94,12 +99,17 @@ public class Respawn : MonoBehaviour
 
         if (respawnPoints.Count > 0)
         {
-            randomSpawnn = Random.Range(0, respawnPoints.Count);
-            player.transform.position = respawnPoints[randomSpawnn].position;
+            randomSpawn = Random.Range(0, respawnPoints.Count);
+            player.transform.position = respawnPoints[randomSpawn].position;
         }
         else
         {
             player.transform.position = new Vector2(0, 10);
+        }
+
+        if (playerInput)
+        {
+            playerInput.enabled = false;
         }
 
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
@@ -108,15 +118,22 @@ public class Respawn : MonoBehaviour
         playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
         playerRigidbody.WakeUp();
         respawnSound.Play();
-        yield return new WaitForSeconds(1);
-        playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+        yield return new WaitForSeconds(0.5f);
+
+        if (playerInput)
+        {
+            playerInput.enabled = true;
+        }
+
+        keepCoroutine = true;
         StartCoroutine(SpawnProtection());
     }
 
     IEnumerator SpawnProtection()
     {
         float count = 0;
-        while (count < 4)
+
+        while (count < 4 && keepCoroutine)
         {
             if (playerSprite.color == normalPlayerColor)
             {
@@ -130,13 +147,18 @@ public class Respawn : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
 
-        if (playerHurtbox)
+        playerSprite.color = normalPlayerColor;
+
+        if (keepCoroutine)
         {
-            playerHurtbox.enabled = true;
-        }
-        else
-        {
-            dummyHurtbox.enabled = true;
+            if (playerHurtbox)
+            {
+                playerHurtbox.enabled = true;
+            }
+            else
+            {
+                dummyHurtbox.enabled = true;
+            }
         }
     }
 }
