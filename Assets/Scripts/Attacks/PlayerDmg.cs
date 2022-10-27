@@ -32,7 +32,7 @@ public class PlayerDmg : MonoBehaviour
         float b = canvasTransform.rect.width / 2;
         Vector3 pos = transform.position;
         Vector3 Livepos = transform.position;
-        pos.y = -175;
+        pos.y = -475;
         Livepos.y = -190;
         Debug.Log(d);
         Debug.Log(a);
@@ -42,16 +42,19 @@ public class PlayerDmg : MonoBehaviour
         {
             Fixedx = -10;
             int lives = players[0].GetComponent<Respawn>().lives;
+            Debug.Log(a);
+            Debug.Log(b);
             Debug.Log(a + (i + 1) * d);
             pos.x = a + (i + 1) * d;
             Debug.Log(pos.x);
-            GameObject instance = Instantiate(prefab, pos * canvasTransform.localScale.x, Quaternion.identity, gameObject.transform);
+            GameObject instance = Instantiate(prefab, pos+transform.position, Quaternion.identity, gameObject.transform);
+            instance.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             instance.name = players[i].name + "Profile";
             playerProfile.Add(players[i].name, instance);
             for (int j = 0; j < lives; j++)
             {
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                GameObject live = Instantiate(vida, Livepos * canvasTransform.localScale.x, Quaternion.identity, instance.transform);
+                GameObject live = Instantiate(vida, Livepos + transform.position, Quaternion.identity, instance.transform);
                 live.name = "vida" + j;
                 Fixedx = Fixedx + 10;
             }         
