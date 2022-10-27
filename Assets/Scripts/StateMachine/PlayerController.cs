@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public readonly Idle IdleState = new Idle();
     [HideInInspector] public readonly Walk WalkState = new Walk();
     [HideInInspector] public readonly Jump JumpState = new Jump();
-
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +66,8 @@ public class PlayerController : MonoBehaviour
         Neutral = 3,
         Charge = 4,
         Special = 5,
-        Bang = 6
+        Bang = 6,
+        Hitreact =7
     }
 
     public void SetAnimatorTrigger(AnimStates state) {
