@@ -68,10 +68,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24ddbcb709b8634e91efaf8e4a4ee65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  i_movement: {x: 0, y: 0}
   speed: 5
   jspeed: 15
   animator: {fileID: 6026932628281615344}
   rb: {fileID: 0}
+  NeutralAState:
+    dmg: 3
+    hitbox:
+      rot: 0
+      maskNames:
+      - Hurtbox
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 1, y: 2}
+      colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+      colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
+      offset: {x: 0.8, y: -0.2}
+    force: 7000
+    angle: 35
 --- !u!114 &-7371780813645477133
 MonoBehaviour:
   m_ObjectHideFlags: 0

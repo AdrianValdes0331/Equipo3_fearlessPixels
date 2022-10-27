@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 
 public abstract class Attack : IPlayerBaseState, IHitboxResponder
 {
-    private float dmg;
-    private Hitbox hitbox;
-    private int force;
-    private int angle;
-    private Transform transform;
+    [SerializeField] private float dmg;
+    [SerializeField] protected NHitbox hitbox;
+    [SerializeField] private int force;
+    [SerializeField] private int angle;
+    protected Transform transform;
 
     public abstract void EnterState(PlayerController player);
     public abstract void Update(PlayerController player);

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Vector2 i_movement;
+    [HideInInspector] public Vector2 i_movement;
     public float speed;
     public float jspeed;
     public Animator animator;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public readonly Idle IdleState = new Idle();
     [HideInInspector] public readonly Walk WalkState = new Walk();
     [HideInInspector] public readonly Jump JumpState = new Jump();
+    public NeutralAttack NeutralAState = new NeutralAttack();
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,10 @@ public class PlayerController : MonoBehaviour
     public void OnJump()
     {
         currState.Jump(this, jspeed);
+    }
+
+    public void OnWeakAttack(){
+        currState.OnNeutral(this);
     }
 
     internal void TransitionToState(IPlayerBaseState state) {

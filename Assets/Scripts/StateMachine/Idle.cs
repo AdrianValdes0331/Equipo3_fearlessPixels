@@ -39,4 +39,8 @@ public class Idle : IPlayerBaseState
         player.TransitionToState(player.JumpState);
     }
 
+    public void OnNeutral(PlayerController player){
+        player.TransitionToState(player.NuetralAState);
+    }
+
 }

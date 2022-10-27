@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hitbox : MonoBehaviour
+[System.Serializable]
+public class NHitbox
 {
 
     private Renderer objectRenderer;
@@ -21,6 +22,7 @@ public class Hitbox : MonoBehaviour
     public Vector2 offset;
     private Color currColor;
     private State _state;
+    [HideInInspector] public Transform transform;
 
     // Start is called before the first frame update
     void Start()
@@ -62,19 +64,19 @@ public class Hitbox : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = currColor;
-        Gizmos.matrix = Matrix4x4.TRS(pos, transform.rotation, transform.localScale);
-        if (!isSphere)
-        {
-            Gizmos.DrawCube(Vector3.zero, new Vector3(sz.x * 2, sz.y * 2, 0)); // Because size is halfExtents
-        }
-        else
-        {
-            Gizmos.DrawSphere(Vector3.zero, radius);
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = currColor;
+    //     Gizmos.matrix = Matrix4x4.TRS(pos, transform.rotation, transform.localScale);
+    //     if (!isSphere)
+    //     {
+    //         Gizmos.DrawCube(Vector3.zero, new Vector3(sz.x * 2, sz.y * 2, 0)); // Because size is halfExtents
+    //     }
+    //     else
+    //     {
+    //         Gizmos.DrawSphere(Vector3.zero, radius);
+    //     }
+    // }
 
     public void openCollissionCheck()
     {
