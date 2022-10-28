@@ -17,24 +17,21 @@ public class SpawnPlayers : MonoBehaviour
         int player2Index = PlayerPrefs.GetInt("PlayerIndex2");
         int player3Index = PlayerPrefs.GetInt("PlayerIndex3");
         int player4Index = PlayerPrefs.GetInt("PlayerIndex4");
-        Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
         if (sceneName != "Training")
         {
+            Debug.Log(playerIndex);
+            Debug.Log(player2Index);
+            Debug.Log(player3Index);
+            Debug.Log(player4Index);
+            Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
             Instantiate(SelectPlayers.Instance.players[player2Index].playablePlayer, Postition2.position, Quaternion.identity);
-            //Instantiate(SelectPlayers.Instance.players[player3Index].playablePlayer, Postition3.position, Quaternion.identity);
-            //Instantiate(SelectPlayers.Instance.players[player4Index].playablePlayer, Postition4.position, Quaternion.identity);
+            Instantiate(SelectPlayers.Instance.players[player3Index].playablePlayer, Postition3.position, Quaternion.identity);
+            Instantiate(SelectPlayers.Instance.players[player4Index].playablePlayer, Postition4.position, Quaternion.identity);
         }
         else
         {
+            Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
             Instantiate(SelectPlayers.Instance.players[5].playablePlayer, Postition2.position, Quaternion.identity);
         }
-
-        /*try
-        {
-            //Instantiate dummy in training area
-            Instantiate(SelectPlayers.Instance.players[2].playablePlayer, Postition2.position, Quaternion.identity);
-        }
-        catch { }*/
-        
     }
 }

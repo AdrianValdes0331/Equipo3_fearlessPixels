@@ -22,12 +22,13 @@ public class CharacterSelectionMenu : MonoBehaviour
     private void Start()
     {
         selectPlayers = SelectPlayers.Instance;
-        index = PlayerPrefs.GetInt("PlayerIndex");
+        ChangeScreenNULL();
+        /*index = PlayerPrefs.GetInt("PlayerIndex");
         if (index > selectPlayers.players.Count - 1)
         {
             index = 0;
         }
-        ChangeScreenP1();
+        ChangeScreenP1();*/
     }
 
     private void ChangeScreenP1()
@@ -56,6 +57,15 @@ public class CharacterSelectionMenu : MonoBehaviour
         PlayerPrefs.SetInt("PlayerIndex4", index);
         image4.sprite = selectPlayers.players[index].image;
         name4.text = selectPlayers.players[index].name;
+    }
+
+    private void ChangeScreenNULL()
+    {
+        index = 6;
+        PlayerPrefs.SetInt("PlayerIndex", index);
+        PlayerPrefs.SetInt("PlayerIndex2", index);
+        PlayerPrefs.SetInt("PlayerIndex3", index);
+        PlayerPrefs.SetInt("PlayerIndex4", index);
     }
 
     public void SelectP1()
