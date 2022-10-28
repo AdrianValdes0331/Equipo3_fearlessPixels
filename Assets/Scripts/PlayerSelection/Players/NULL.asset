@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d8629f462d3a54cb8c535f45218d28, type: 3}
   m_Name: NULL
   m_EditorClassIdentifier: 
-  playablePlayer: {fileID: 0}
+  playablePlayer: {fileID: 3463307651975927359, guid: e1b14b1862bf3464a8439fb0fcb2c76d,
+    type: 3}
   image: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   name: NULL

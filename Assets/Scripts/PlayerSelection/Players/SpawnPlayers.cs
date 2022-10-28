@@ -23,10 +23,14 @@ public class SpawnPlayers : MonoBehaviour
             Debug.Log(player2Index);
             Debug.Log(player3Index);
             Debug.Log(player4Index);
-            Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
-            Instantiate(SelectPlayers.Instance.players[player2Index].playablePlayer, Postition2.position, Quaternion.identity);
-            Instantiate(SelectPlayers.Instance.players[player3Index].playablePlayer, Postition3.position, Quaternion.identity);
-            Instantiate(SelectPlayers.Instance.players[player4Index].playablePlayer, Postition4.position, Quaternion.identity);
+            GameObject instance1 = Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
+            instance1.name = "Player1";
+            GameObject instance2 = Instantiate(SelectPlayers.Instance.players[player2Index].playablePlayer, Postition2.position, Quaternion.identity);
+            instance2.name = "Player2";
+            GameObject instance3 = Instantiate(SelectPlayers.Instance.players[player3Index].playablePlayer, Postition3.position, Quaternion.identity);
+            instance3.name = "Player3";
+            GameObject instance4 = Instantiate(SelectPlayers.Instance.players[player4Index].playablePlayer, Postition4.position, Quaternion.identity);
+            instance4.name = "Player4";
         }
         else
         {
