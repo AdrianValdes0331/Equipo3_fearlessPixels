@@ -34,8 +34,10 @@ public class SpawnPlayers : MonoBehaviour
         }
         else
         {
-            Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
-            Instantiate(SelectPlayers.Instance.players[5].playablePlayer, Postition2.position, Quaternion.identity);
+            GameObject instance1 = Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer, Postition1.position, Quaternion.identity);
+            instance1.name = "Player1";
+            GameObject DummyInstance = Instantiate(SelectPlayers.Instance.players[5].playablePlayer, Postition2.position, Quaternion.identity);
+            DummyInstance.name = "Dummy";
         }
     }
 }

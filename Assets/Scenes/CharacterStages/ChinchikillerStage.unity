@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 711102577160232309, guid: eed9f34b81e976948a2aa608f1dab3b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 711102577160232309, guid: eed9f34b81e976948a2aa608f1dab3b8,
         type: 3}
@@ -2998,7 +2998,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6590,7 +6590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5775c930f1d00d449820afcad3c50f51, type: 3}
+  m_Texture: {fileID: 2800000, guid: 51a48417b286bdc458da12f0bbb4decd, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -6641,7 +6641,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 83.457016, y: -9.067501}
-  m_SizeDelta: {x: 434.66, y: 434.66}
+  m_SizeDelta: {x: 820, y: 435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &726398964421575176
 CanvasRenderer:
@@ -19925,7 +19925,7 @@ Canvas:
   m_GameObject: {fileID: 5441494387989489095}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 963194227}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -19945,8 +19945,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5441494387989489095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 726398963313023790}
@@ -19964,8 +19964,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 799.99994, y: 449.99997}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &5441494387989489102
 MonoBehaviour:
   m_ObjectHideFlags: 0
