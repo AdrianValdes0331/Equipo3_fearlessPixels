@@ -33,7 +33,7 @@ public class BangLvl : MonoBehaviour
     {
 
         //Debug.Log(GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name]);
-        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.GetChild(0).name].transform.Find("bangLvl").GetComponent<Image>().sprite = img;
+        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name].transform.Find("bangLvl").GetComponent<Image>().sprite = img;
         //nImg = img;
 
     }

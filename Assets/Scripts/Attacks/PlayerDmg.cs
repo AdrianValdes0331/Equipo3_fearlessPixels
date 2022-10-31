@@ -49,8 +49,8 @@ public class PlayerDmg : MonoBehaviour
             Debug.Log(pos.x);
             GameObject instance = Instantiate(prefab, pos+transform.position, Quaternion.identity, gameObject.transform);
             instance.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-            instance.name = players[i].name + "Profile";
-            playerProfile.Add(players[i].name, instance);
+            instance.name = players[i].name + "Profile" + i;
+            playerProfile.Add(players[i].transform.parent.name, instance);
             for (int j = 0; j < lives; j++)
             {
                 Livepos.x = a + (i + 1) * d + Fixedx;
