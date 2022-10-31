@@ -16,7 +16,6 @@ public class FastSpiningCactus : MonoBehaviour
     void Update()
     {      
         y = Mathf.PingPong(Time.time * speed, 4) -1 - 5;
-        transform.position = new Vector3(0, y, 15);
         transform.Rotate(Vector3.up * 700 * Time.deltaTime, Space.Self);
     }
 }
