@@ -49,10 +49,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cd: 60
-  normal: {fileID: 0}
-  Bang1: {fileID: 0}
-  Bang2: {fileID: 0}
-  Bang3: {fileID: 0}
+  normal: {fileID: 21300000, guid: 103ab687fd6814b46a3a65e9626c197d, type: 3}
+  Bang1: {fileID: 21300000, guid: a6650993338f147d691c2e068016ecbf, type: 3}
+  Bang2: {fileID: 21300000, guid: 9cb832538c65b47ddb20b6fb81fa0e45, type: 3}
+  Bang3: {fileID: 21300000, guid: 794b19e2e642c4acd93e895577af0017, type: 3}
 --- !u!50 &4148514257663119144
 Rigidbody2D:
   serializedVersion: 4
