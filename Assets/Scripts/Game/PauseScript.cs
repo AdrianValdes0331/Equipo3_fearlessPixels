@@ -46,6 +46,11 @@ public class PauseScript : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        GameObject[] splayers = GameObject.FindGameObjectsWithTag("SPlayes");
+        foreach (GameObject splay in splayers)
+        {
+            GameObject.Destroy(splay);
+        }
         SceneManager.LoadScene("MainMenu");
     }
 }

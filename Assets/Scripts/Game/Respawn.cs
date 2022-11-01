@@ -72,7 +72,7 @@ public class Respawn : MonoBehaviour
                 lives --;
                 lostLifeSound.Play();
                 StartCoroutine(RespawnPoint());
-                Transform removeLives = GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name].transform.Find("vida"+lives);
+                Transform removeLives = GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.name].transform.Find("vida"+lives);
                 Debug.Log(removeLives);
 
                 Destroy(removeLives.gameObject);

@@ -14,7 +14,7 @@ public class CharacterSelectionMenu : MonoBehaviour
     [SerializeField] private Image image2;
     [SerializeField] private TextMeshProUGUI name2;
     [SerializeField] private Image image3;
-    [SerializeField] private new TextMeshProUGUI name3;
+    [SerializeField] private TextMeshProUGUI name3;
     [SerializeField] private Image image4;
     [SerializeField] private TextMeshProUGUI name4;
     private SelectPlayers selectPlayers;
@@ -22,12 +22,13 @@ public class CharacterSelectionMenu : MonoBehaviour
     private void Start()
     {
         selectPlayers = SelectPlayers.Instance;
-        index = PlayerPrefs.GetInt("PlayerIndex");
+        ChangeScreenNULL();
+        /*index = PlayerPrefs.GetInt("PlayerIndex");
         if (index > selectPlayers.players.Count - 1)
         {
             index = 0;
         }
-        ChangeScreenP1();
+        ChangeScreenP1();*/
     }
 
     private void ChangeScreenP1()
@@ -49,6 +50,7 @@ public class CharacterSelectionMenu : MonoBehaviour
         PlayerPrefs.SetInt("PlayerIndex3", index);
         image3.sprite = selectPlayers.players[index].image;
         name3.text = selectPlayers.players[index].name;
+        Debug.Log(index);
     }
 
     private void ChangeScreenP4()
@@ -56,6 +58,15 @@ public class CharacterSelectionMenu : MonoBehaviour
         PlayerPrefs.SetInt("PlayerIndex4", index);
         image4.sprite = selectPlayers.players[index].image;
         name4.text = selectPlayers.players[index].name;
+    }
+
+    private void ChangeScreenNULL()
+    {
+        index = 6;
+        PlayerPrefs.SetInt("PlayerIndex", index);
+        PlayerPrefs.SetInt("PlayerIndex2", index);
+        PlayerPrefs.SetInt("PlayerIndex3", index);
+        PlayerPrefs.SetInt("PlayerIndex4", index);
     }
 
     public void SelectP1()

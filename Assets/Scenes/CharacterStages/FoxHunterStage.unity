@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15875667, g: 0.18305203, b: 0.20027444, a: 1}
+  m_IndirectSpecularColor: {r: 0.16734967, g: 0.19761115, b: 0.2283176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 33997110}
   - component: {fileID: 33997112}
   - component: {fileID: 33997111}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BigRockFirstPlatformCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &175904275
 GameObject:
@@ -1291,7 +1291,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118358
+  m_Name: pb_Mesh98878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 184678887}
   - component: {fileID: 184678889}
   - component: {fileID: 184678888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SheriffOfficeThirdFloorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 235553429}
   - component: {fileID: 235553430}
   - component: {fileID: 235553431}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1869,6 +1869,39 @@ Transform:
   - {fileID: 738156312}
   m_Father: {fileID: 331743473}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &272322440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272322441}
+  m_Layer: 0
+  m_Name: FocusLimits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272322441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272322440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.3, y: 17.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1551308321}
+  - {fileID: 1723631498}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277110709
 GameObject:
@@ -2206,7 +2239,7 @@ GameObject:
   - component: {fileID: 335835264}
   - component: {fileID: 335835263}
   - component: {fileID: 335835265}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CloudRightCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2514,7 +2547,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1659008242}
         m_TargetAssemblyTypeName: Switch, Assembly-CSharp
         m_MethodName: ON
         m_Mode: 1
@@ -2687,7 +2720,7 @@ GameObject:
   - component: {fileID: 368045796}
   - component: {fileID: 368045798}
   - component: {fileID: 368045797}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BigRockTopPlatformCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2765,7 +2798,7 @@ GameObject:
   - component: {fileID: 384077950}
   - component: {fileID: 384077952}
   - component: {fileID: 384077951}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2843,7 +2876,7 @@ GameObject:
   - component: {fileID: 385741227}
   - component: {fileID: 385741229}
   - component: {fileID: 385741228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3332,7 +3365,7 @@ GameObject:
   - component: {fileID: 553790107}
   - component: {fileID: 553790109}
   - component: {fileID: 553790108}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3434,6 +3467,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &612266226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612266227}
+  - component: {fileID: 612266228}
+  m_Layer: 0
+  m_Name: StageFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &612266227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612266226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.3, y: 17.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &612266228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612266226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af739213b5f4084d8e6ae85db377e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  halfXBounds: 0
+  halfYBounds: 0
+  halfZBounds: 0
+  focusBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!1 &623475618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,7 +3560,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &668291759
 GameObject:
@@ -3768,7 +3851,7 @@ GameObject:
   - component: {fileID: 703323183}
   - component: {fileID: 703323185}
   - component: {fileID: 703323184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3870,8 +3953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83.457016, y: -9.067501}
-  m_SizeDelta: {x: 434.66, y: 434.66}
+  m_AnchoredPosition: {x: 84.485, y: -9.067501}
+  m_SizeDelta: {x: 820, y: 435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711211372
 MonoBehaviour:
@@ -3893,7 +3976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5775c930f1d00d449820afcad3c50f51, type: 3}
+  m_Texture: {fileID: 2800000, guid: 51a48417b286bdc458da12f0bbb4decd, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4003,7 +4086,7 @@ GameObject:
   - component: {fileID: 738156312}
   - component: {fileID: 738156314}
   - component: {fileID: 738156313}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4216,7 +4299,7 @@ GameObject:
   - component: {fileID: 772700090}
   - component: {fileID: 772700089}
   - component: {fileID: 772700091}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CloudTopCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4319,7 +4402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812319737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 26.5, z: -6.25}
+  m_LocalPosition: {x: 10, y: 27, z: -6.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4337,6 +4420,7 @@ GameObject:
   - component: {fileID: 840683403}
   - component: {fileID: 840683402}
   - component: {fileID: 840683401}
+  - component: {fileID: 840683404}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4403,7 +4487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840683400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.25, y: 19.1, z: -40.5}
+  m_LocalPosition: {x: 12.25, y: 19.1, z: -50}
   m_LocalScale: {x: 0.96143246, y: 0.96143246, z: 0.96143246}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4411,6 +4495,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &840683404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840683400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7e7b845167d6043930fa37e43e0ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FocusPoint: {fileID: 612266228}
+  Players: []
+  depthUpdateSpeed: 7
+  positionUpdateSpeed: 5
+  maxDepth: -23
+  minDepth: -37
 --- !u!1 &856691670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,7 +4582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865186214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17, y: 26.5, z: -6.25}
+  m_LocalPosition: {x: -17, y: 27, z: -6.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4498,7 +4600,7 @@ GameObject:
   - component: {fileID: 865476613}
   - component: {fileID: 865476615}
   - component: {fileID: 865476614}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4576,7 +4678,7 @@ GameObject:
   - component: {fileID: 872490234}
   - component: {fileID: 872490236}
   - component: {fileID: 872490235}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4699,7 +4801,7 @@ GameObject:
   - component: {fileID: 953165662}
   - component: {fileID: 953165663}
   - component: {fileID: 953165664}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SheriffOfficeSecondFloorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5269,7 +5371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030140765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.11, y: 26.5, z: -6.25}
+  m_LocalPosition: {x: -12.11, y: 27, z: -6.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5582,14 +5684,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082182007}
-  m_LocalRotation: {x: -0.013226413, y: 0.6085301, z: -0.092830986, w: 0.7879712}
+  m_LocalRotation: {x: 0.040183563, y: 0.5339366, z: -0.06564545, w: 0.842014}
   m_LocalPosition: {x: 12.15, y: 31.32, z: -0.9779005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 5.287, y: 74.922, z: -9.386}
+  m_LocalEulerAnglesHint: {x: 7.919, y: 64.488, z: -3.916}
 --- !u!1 &1113118829
 GameObject:
   m_ObjectHideFlags: 0
@@ -5600,7 +5702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113118830}
   - component: {fileID: 1113118831}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RightGroundCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5988,7 +6090,7 @@ Transform:
   m_GameObject: {fileID: 1193819552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12.87, y: 4.4, z: 6.31}
-  m_LocalScale: {x: 3.7950823, y: 4.078513, z: 3.7482293}
+  m_LocalScale: {x: 4.009231, y: 4.304666, z: 3.9108486}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652059149255}
@@ -6438,7 +6540,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1310900352
 GameObject:
@@ -6464,7 +6566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310900352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18, y: 26.5, z: -6.25}
+  m_LocalPosition: {x: 18, y: 27, z: -6.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6483,7 +6585,7 @@ GameObject:
   - component: {fileID: 1345755613}
   - component: {fileID: 1345755612}
   - component: {fileID: 1345755614}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CloudLeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6573,7 +6675,7 @@ GameObject:
   - component: {fileID: 1348601642}
   - component: {fileID: 1348601644}
   - component: {fileID: 1348601643}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7216,7 +7318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1659008242}
         m_TargetAssemblyTypeName: Switch, Assembly-CSharp
         m_MethodName: OFF
         m_Mode: 1
@@ -7358,7 +7460,7 @@ GameObject:
   - component: {fileID: 1459586760}
   - component: {fileID: 1459586762}
   - component: {fileID: 1459586761}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7572,7 +7674,7 @@ GameObject:
   - component: {fileID: 1477560671}
   - component: {fileID: 1477560673}
   - component: {fileID: 1477560672}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BigRockThirdPlatformCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8079,6 +8181,37 @@ Transform:
   m_Father: {fileID: 331743473}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &1551308320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1551308321}
+  m_Layer: 0
+  m_Name: UpperLeftPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1551308321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551308320}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30, y: 25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 272322441}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566297220
 GameObject:
   m_ObjectHideFlags: 0
@@ -8090,7 +8223,7 @@ GameObject:
   - component: {fileID: 1566297221}
   - component: {fileID: 1566297223}
   - component: {fileID: 1566297222}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BigRockSecondPlatformCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20055,6 +20188,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659008241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659008243}
+  - component: {fileID: 1659008242}
+  m_Layer: 0
+  m_Name: Switch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1659008242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659008241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab5ef60910e79641bfd464ae639861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  On: {fileID: 356896589}
+  Off: {fileID: 1439339397}
+  ImgOn: {fileID: 711211372}
+  ImgOff: {fileID: 1807989368}
+--- !u!4 &1659008243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659008241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673076638
 GameObject:
   m_ObjectHideFlags: 0
@@ -20666,6 +20847,37 @@ Transform:
   m_Father: {fileID: 331743473}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &1723631497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1723631498}
+  m_Layer: 0
+  m_Name: BottomRightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1723631498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723631497}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30, y: -20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 272322441}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748151366
 GameObject:
   m_ObjectHideFlags: 0
@@ -20774,7 +20986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752539412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.5, y: 5, z: 0}
+  m_LocalPosition: {x: -30, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21018,7 +21230,7 @@ GameObject:
   - component: {fileID: 1892998731}
   - component: {fileID: 1892998733}
   - component: {fileID: 1892998732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21109,7 +21321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903392794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.850002, y: 5, z: 0}
+  m_LocalPosition: {x: 30, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21639,7 +21851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1990719454}
   - component: {fileID: 1990719453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftGroundCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21997,7 +22209,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023672085
 GameObject:
@@ -22442,7 +22654,7 @@ Canvas:
   m_GameObject: {fileID: 2084591387}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -22461,9 +22673,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084591387}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
-  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1771781379}
@@ -22481,8 +22693,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 450}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &2147471789
 GameObject:
   m_ObjectHideFlags: 0
@@ -22495,7 +22707,7 @@ GameObject:
   - component: {fileID: 2147471793}
   - component: {fileID: 2147471792}
   - component: {fileID: 2147471791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CloudRightCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,12 @@ public class PortalTrigger : MonoBehaviour
             targetPosition.x = xTarget;
             targetPosition.y = yTarget;
             targetPosition.z = zTarget;
-            element.transform.position = targetPosition;
+            if (element.CompareTag("Player")){
+                element.transform.parent.transform.position = targetPosition;
+            }
+            else {
+                element.transform.position = targetPosition;
+            }
             portalUsageSound.Play();
         }
     }
