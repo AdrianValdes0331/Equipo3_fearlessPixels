@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
             Gizmos.matrix = Matrix4x4.TRS(g.pos, transform.rotation, transform.localScale);
             if (!g.isSphere)
             {
-                Gizmos.DrawCube(Vector3.zero, new Vector3(g.sz.x * 2, g.sz.y * 2, 0)); // Because size is halfExtents
+                Gizmos.DrawCube(Vector3.zero, new Vector3(g.sz.x, g.sz.y, 0)); // Because size is halfExtents
             }
             else
             {

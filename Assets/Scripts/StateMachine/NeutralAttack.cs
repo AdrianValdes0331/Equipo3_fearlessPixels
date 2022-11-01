@@ -36,6 +36,10 @@ public class NeutralAttack : Attack
     public override void Update(PlayerController player)
     {
         hitbox.hitboxUpdate();
+        g.sz = hitbox.sz;
+        g.isSphere = hitbox.isSphere;
+        g.radius = hitbox.radius;
+        g.pos = hitbox.pos;
         g.color = hitbox.currColor;
     }
     public override void LateUpdate(PlayerController player) { }

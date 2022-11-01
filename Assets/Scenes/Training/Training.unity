@@ -3118,6 +3118,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7339755273625972375, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339755273625972375, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339755273625972375, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7608125607237908021, guid: 8df32d2fca2319f4fa97be23a2980a11,
         type: 3}
       propertyPath: NeutralAState.hitbox.sz.x
