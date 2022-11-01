@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5a71cd5839cf224bab5dd28d18128c5
+guid: f917cd6ef2ff5204098d164761df16ff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Salto espada frente v2_00003_0
+      name: Agacharse_00000_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 134
-        width: 606
-        height: 651
+        x: 1030
+        y: 267
+        width: 635
+        height: 919
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22dd5881f544cb34e955cfd39f00f2dd
-      internalID: -1473777206
+      spriteID: 0a4061b52d4e5024fb3a2c5824170755
+      internalID: -1717569869
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Salto espada frente v2_00003_0: -1473777206
+      Agacharse_00000_0: -1717569869
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

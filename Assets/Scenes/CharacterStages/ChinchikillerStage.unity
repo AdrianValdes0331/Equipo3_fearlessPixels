@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.025444817, g: 0.019264331, b: 0.012249343, a: 1}
+  m_IndirectSpecularColor: {r: 0.02548714, g: 0.019297887, b: 0.012265193, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 318995646}
   - component: {fileID: 318995648}
   - component: {fileID: 318995649}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Elevator Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369232849}
   - component: {fileID: 369232850}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 401053173}
   - component: {fileID: 401053172}
   - component: {fileID: 401053174}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lowerplat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 566524045}
   - component: {fileID: 566524044}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Central Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1823,7 +1823,7 @@ GameObject:
   - component: {fileID: 728638537}
   - component: {fileID: 728638536}
   - component: {fileID: 728638538}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UpperPlat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2355,7 +2355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094457010}
   - component: {fileID: 1094457011}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RightBuildRoofSlide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2705,7 +2705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276397901}
   - component: {fileID: 1276397900}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RightBuildRoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2913,7 +2913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1347923288}
   - component: {fileID: 1347923289}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11543,7 +11543,7 @@ GameObject:
   - component: {fileID: 2463142604372926275}
   - component: {fileID: 2463142604372926274}
   - component: {fileID: 2463142604372926276}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Panel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14580,7 +14580,7 @@ GameObject:
   - component: {fileID: 3696026441545163762}
   - component: {fileID: 3696026441545163761}
   - component: {fileID: 3696026441545163765}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Panel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

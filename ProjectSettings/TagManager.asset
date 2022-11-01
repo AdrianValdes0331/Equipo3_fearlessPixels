@@ -15,6 +15,7 @@ TagManager:
   - ChinchiBang
   - Driver
   - Basura
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Lighting
   - Ground
   - Postprocessing
-  - 
+  - Floor
   - 
   - 
   - 

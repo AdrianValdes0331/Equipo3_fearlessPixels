@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5a71cd5839cf224bab5dd28d18128c5
+guid: 6f95ab0b31d95bc41b7f39273c57b0a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Salto espada frente v2_00003_0
+      name: SALTA_00005_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 134
-        width: 606
-        height: 651
+        x: 1007
+        y: 267
+        width: 647
+        height: 860
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22dd5881f544cb34e955cfd39f00f2dd
-      internalID: -1473777206
+      spriteID: 7347cbed140f32c48b151daccb912d19
+      internalID: -1764199602
       vertices: []
       indices: 
       edges: []
@@ -127,7 +127,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: e99d827fbfddc274385cb7685df9ed2c
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Salto espada frente v2_00003_0: -1473777206
+      SALTA_00005_0: -1764199602
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

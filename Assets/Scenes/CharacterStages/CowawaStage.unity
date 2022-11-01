@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15386681}
   - component: {fileID: 15386682}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BucketRightCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264123256}
   - component: {fileID: 264123257}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TopDoorTopCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327510794}
   - component: {fileID: 327510795}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LampLeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2156,7 +2156,7 @@ GameObject:
   - component: {fileID: 469047368}
   - component: {fileID: 469047369}
   - component: {fileID: 469047370}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BalconySlopeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2634,7 +2634,7 @@ GameObject:
   - component: {fileID: 624284388}
   - component: {fileID: 624284389}
   - component: {fileID: 624284390}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LampCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3772,7 +3772,7 @@ GameObject:
   - component: {fileID: 807906998}
   - component: {fileID: 807906997}
   - component: {fileID: 807906999}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FloorRightCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3882,7 +3882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858236255}
   - component: {fileID: 858236254}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StairsBottomCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4056,7 +4056,7 @@ GameObject:
   - component: {fileID: 971959491}
   - component: {fileID: 971959492}
   - component: {fileID: 971959493}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BalconyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4231,7 +4231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000953934}
   - component: {fileID: 1000953935}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CartonBoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4519,7 +4519,7 @@ GameObject:
   - component: {fileID: 1036185748}
   - component: {fileID: 1036185749}
   - component: {fileID: 1036185750}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FloorWholeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4711,7 +4711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1071842212}
   - component: {fileID: 1071842213}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ContainerRightCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5506,7 +5506,7 @@ GameObject:
   - component: {fileID: 1250553498}
   - component: {fileID: 1250553497}
   - component: {fileID: 1250553499}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FloorLeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6233,7 +6233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1483026381}
   - component: {fileID: 1483026380}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StairsMiddleCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6364,7 +6364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1522032395}
   - component: {fileID: 1522032396}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ContainerLeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7807,7 +7807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1740140594}
   - component: {fileID: 1740140593}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StairsTopCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8243,7 +8243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787405364}
   - component: {fileID: 1787405365}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BucketCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8573,7 +8573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820528009}
   - component: {fileID: 1820528010}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BottomDoorTopCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8664,7 +8664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845843872}
   - component: {fileID: 1845843873}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ContainerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9518,7 +9518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946656077}
   - component: {fileID: 1946656078}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BucketLeftCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
