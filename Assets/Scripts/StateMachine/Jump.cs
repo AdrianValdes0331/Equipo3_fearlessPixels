@@ -62,4 +62,17 @@ public class Jump : IPlayerBaseState
             doubleJump = false;
         }
     }
+
+    public void OnNeutral(PlayerController player)
+    {
+
+    }
+    public bool hasGizmos()
+    {
+        return false;
+    }
+    public gizmo? gz()
+    {
+        return null;
+    }
 }

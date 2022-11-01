@@ -35,5 +35,7 @@ public class SpecialAttack : Attack
     {}
     public override void Jump(PlayerController player, float speed)
     {}
+    public override void OnNeutral(PlayerController player)
+    {}
 
 }

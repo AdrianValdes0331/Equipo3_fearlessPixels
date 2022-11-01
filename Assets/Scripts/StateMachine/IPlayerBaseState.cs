@@ -12,4 +12,16 @@ public interface IPlayerBaseState
     public void OnCollisionEnter(PlayerController player, Collision2D col);
     public void Move(PlayerController player, InputValue val, float speed);
     public void Jump(PlayerController player, float speed);
+    public void OnNeutral(PlayerController player);
+    public bool hasGizmos();
+    public gizmo? gz();
 }
+
+    public struct gizmo
+    {
+        public Color color;
+        public Vector2 pos;
+        public bool isSphere;
+        public float radius;
+        public Vector2 sz;
+    }

@@ -39,8 +39,17 @@ public class Idle : IPlayerBaseState
         player.TransitionToState(player.JumpState);
     }
 
-    public void OnNeutral(PlayerController player){
-        player.TransitionToState(player.NuetralAState);
+    public void OnNeutral(PlayerController player)
+    {
+        player.TransitionToState(player.NeutralAState);
+    }
+    public bool hasGizmos()
+    {
+        return false;
+    }
+    public gizmo? gz()
+    {
+        return null;
     }
 
 }

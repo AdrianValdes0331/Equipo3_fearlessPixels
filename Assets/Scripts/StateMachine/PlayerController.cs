@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     [HideInInspector] public Rigidbody2D rb;
     private IPlayerBaseState currState;
+    private bool draw = false;
+    gizmo g;
 
     [HideInInspector] public readonly Idle IdleState = new Idle();
     [HideInInspector] public readonly Walk WalkState = new Walk();
@@ -27,7 +29,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       currState.Update(this); 
+       currState.Update(this);
+       if(currState.gz() != null)
+        {
+            g = (gizmo) currState.gz();
+        }
     }
 
     private void LateUpdate()
@@ -61,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
     internal void TransitionToState(IPlayerBaseState state) {
         currState = state;
+        draw = currState.hasGizmos();
         currState.EnterState(this);
     }
 
@@ -77,6 +84,21 @@ public class PlayerController : MonoBehaviour
 
     public void SetAnimatorTrigger(AnimStates state) {
         animator.SetInteger("anim", (int)state);
+    }
+
+    private void OnDrawGizmos(){
+        if(draw){
+            Gizmos.color = g.color;
+            Gizmos.matrix = Matrix4x4.TRS(g.pos, transform.rotation, transform.localScale);
+            if (!g.isSphere)
+            {
+                Gizmos.DrawCube(Vector3.zero, new Vector3(g.sz.x * 2, g.sz.y * 2, 0)); // Because size is halfExtents
+            }
+            else
+            {
+                Gizmos.DrawSphere(Vector3.zero, g.radius);
+            }
+        }
     }
 
 }
