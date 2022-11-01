@@ -132,6 +132,7 @@ MonoBehaviour:
   maskNames:
   - Default
   - Hurtbox
+  - Floor
   isSphere: 0
   isProjectile: 1
   radius: 0
