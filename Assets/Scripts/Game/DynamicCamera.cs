@@ -12,6 +12,7 @@ public class DynamicCamera : MonoBehaviour
     public float depthUpdateSpeed = 5f;
     public float positionUpdateSpeed = 5f;
     public float maxDepth, minDepth;
+    [HideInInspector] public int playersCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +65,7 @@ public class DynamicCamera : MonoBehaviour
                 totalPositions += playerPosition;
                 playerBounds.Encapsulate(playerPosition);
 
-                averageCenter = (totalPositions / Players.Count);
+                averageCenter = (totalPositions / playersCount);
 
                 float extents = (playerBounds.extents.x + playerBounds.extents.y);
                 float lerpPercent = Mathf.InverseLerp(0, (FocusPoint.halfXBounds + FocusPoint.halfYBounds) / 2, extents);
@@ -80,5 +81,11 @@ public class DynamicCamera : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         Players.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        playersCount = Players.Count;
+    }
+
+    public void decreasePlayersCountByOne()
+    {
+        playersCount --;
     }
 }

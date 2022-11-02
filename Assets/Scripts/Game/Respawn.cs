@@ -18,6 +18,8 @@ public class Respawn : MonoBehaviour
     AudioSource lostLifeSound, respawnSound;
     SpriteRenderer playerSprite;
     Hurtbox hurtboxScript;
+    DynamicCamera cameraScript;
+    Camera mainCamera;
     Color spawnProtectionColor = new Color(1f, 1f, 1f, 0.3f);
     Color normalPlayerColor = new Color(1f, 1f, 1f, 1f);
     int randomSpawn;
@@ -61,6 +63,8 @@ public class Respawn : MonoBehaviour
 
         lostLifeSound = GameObject.Find("Scenery/Sounds/LostLife").GetComponent<AudioSource>();
         respawnSound = GameObject.Find("Scenery/Sounds/Respawn").GetComponent<AudioSource>();
+
+        cameraScript = GameObject.Find("Main Camera/").GetComponent<DynamicCamera>();
     }
 
     // Update is called once per frame
@@ -85,6 +89,7 @@ public class Respawn : MonoBehaviour
 
         if (lives <= 0)
         {
+            cameraScript.decreasePlayersCountByOne();
             Destroy(transform.parent.gameObject);
         }
     }
