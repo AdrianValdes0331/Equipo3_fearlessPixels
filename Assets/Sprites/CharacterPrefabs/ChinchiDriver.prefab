@@ -714,7 +714,7 @@ MonoBehaviour:
     m_ActionId: f93c0fdc-a596-472c-9d78-8a8e617bdf0c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
