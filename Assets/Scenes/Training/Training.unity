@@ -958,6 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5356780301956614724, guid: 7963bfc74a8fd07479c347854a633506, type: 3}
+  vida: {fileID: 0}
 --- !u!114 &611519663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,6 +1680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Postition1: {fileID: 351979950}
   Postition2: {fileID: 1892166046}
+  Postition3: {fileID: 0}
+  Postition4: {fileID: 0}
 --- !u!1 &1120679728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,6 +2736,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1584175010196136758, guid: 656561f8a8a48c44dbfb89a742a2763b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5886959263386654046, guid: 656561f8a8a48c44dbfb89a742a2763b,
         type: 3}
       propertyPath: m_Name
@@ -3113,6 +3121,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChinchiDriverSM
       objectReference: {fileID: 0}
+    - target: {fileID: 5310105209126317939, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6026932628281615307, guid: 8df32d2fca2319f4fa97be23a2980a11,
         type: 3}
       propertyPath: m_Enabled
@@ -3135,13 +3148,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7608125607237908021, guid: 8df32d2fca2319f4fa97be23a2980a11,
         type: 3}
+      propertyPath: NeutralAState.activeTime
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608125607237908021, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
       propertyPath: NeutralAState.hitbox.sz.x
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7608125607237908021, guid: 8df32d2fca2319f4fa97be23a2980a11,
         type: 3}
       propertyPath: NeutralAState.hitbox.sz.y
-      value: 1
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608125607237908021, guid: 8df32d2fca2319f4fa97be23a2980a11,
+        type: 3}
+      propertyPath: NeutralAState.hitbox.offset.y
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7608125607237908021, guid: 8df32d2fca2319f4fa97be23a2980a11,
         type: 3}
@@ -3306,6 +3329,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312956393361201486, guid: 3ffbe73b028b02d4abbcbd0e1c15484d,
+        type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard
       objectReference: {fileID: 0}
     - target: {fileID: 7312956393361201520, guid: 3ffbe73b028b02d4abbcbd0e1c15484d,
         type: 3}
