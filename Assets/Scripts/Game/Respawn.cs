@@ -17,6 +17,7 @@ public class Respawn : MonoBehaviour
     PolygonCollider2D dummyHurtbox;
     AudioSource lostLifeSound, respawnSound;
     SpriteRenderer playerSprite;
+    Hurtbox hurtboxScript;
     Color spawnProtectionColor = new Color(1f, 1f, 1f, 0.3f);
     Color normalPlayerColor = new Color(1f, 1f, 1f, 1f);
     int randomSpawn;
@@ -33,6 +34,7 @@ public class Respawn : MonoBehaviour
             if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
             {
                 playerHurtbox = child.gameObject.GetComponent<BoxCollider2D>();
+                hurtboxScript = child.gameObject.GetComponent<Hurtbox>();
                 if (!playerHurtbox)
                 {
                     dummyHurtbox = child.gameObject.GetComponent<PolygonCollider2D>();
@@ -71,6 +73,8 @@ public class Respawn : MonoBehaviour
             {
                 lives --;
                 lostLifeSound.Play();
+                hurtboxScript.dmgPercent = 0.0f;
+                hurtboxScript.UpdateDmgPercentText();
                 StartCoroutine(RespawnPoint());
                 Transform removeLives = GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.name].transform.Find("vida"+lives);
                 Debug.Log(removeLives);
