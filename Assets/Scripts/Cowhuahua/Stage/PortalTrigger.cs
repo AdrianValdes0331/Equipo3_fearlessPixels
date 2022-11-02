@@ -15,7 +15,9 @@ public class PortalTrigger : MonoBehaviour
             targetPosition.y = yTarget;
             targetPosition.z = zTarget;
             if (element.CompareTag("Player")){
+                Debug.Log("playerrrr");
                 element.transform.parent.transform.position = targetPosition;
+                element.transform.position = targetPosition;
             }
             else {
                 element.transform.position = targetPosition;
