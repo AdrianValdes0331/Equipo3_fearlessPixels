@@ -113,9 +113,9 @@ MonoBehaviour:
   dmg: 10.5
   hitbox: {fileID: 2071701424864858742}
   radio: 1
-  force: 5000
+  force: 12000
   colorToTurnTo: {r: 1, g: 0, b: 0, a: 1}
-  angle: 15
+  angle: 35
 --- !u!114 &2071701424864858742
 MonoBehaviour:
   m_ObjectHideFlags: 0

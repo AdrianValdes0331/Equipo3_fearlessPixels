@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmgPercent: 0
 --- !u!1 &3750781916421094074
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +714,7 @@ MonoBehaviour:
     m_ActionId: f93c0fdc-a596-472c-9d78-8a8e617bdf0c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

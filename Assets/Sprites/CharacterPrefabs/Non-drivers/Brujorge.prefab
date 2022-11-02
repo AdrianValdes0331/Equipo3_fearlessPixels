@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8904761068495514404}
   - component: {fileID: 8904761068495514406}
   - component: {fileID: 6697775253800946336}
-  - component: {fileID: 5110764313493557002}
   - component: {fileID: 6111656148686561871}
+  - component: {fileID: -8919026226711704134}
   - component: {fileID: 297097411611671454}
   - component: {fileID: 7166850324973491800}
   m_Layer: 3
@@ -107,7 +107,7 @@ BoxCollider2D:
   m_Offset: {x: 0.70282507, y: -0.23295903}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.6002032, y: 0.43754077}
     oldSize: {x: 12, y: 10.8}
     newSize: {x: 9.38, y: 6.12}
     adaptiveTilingThreshold: 0.5
@@ -140,25 +140,6 @@ MonoBehaviour:
   colorClosed: {r: 1, g: 0, b: 0, a: 0}
   colorColliding: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
   offset: {x: 0.8, y: -0.2}
---- !u!114 &5110764313493557002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8904761068495514409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23141cfbfa727314c8425469d6911884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GMove: {fileID: 0}
-  CWAnim: {fileID: 0}
-  AnimCowBite: CowMordida
-  dmg: 5
-  hitbox: {fileID: 6697775253800946336}
-  force: 5000
-  angle: 45
 --- !u!114 &6111656148686561871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +154,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8904761068495514409}
   lives: 3
+--- !u!114 &-8919026226711704134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8904761068495514409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e02096b0a84374aa785aa951814e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GMove: {fileID: 0}
+  CWAnim: {fileID: 0}
+  AnimBrujPunch: GolpeBasico
+  dmg: 7
+  hitbox: {fileID: 6697775253800946336}
+  force: 7000
+  angle: 50
 --- !u!82 &297097411611671454
 AudioSource:
   m_ObjectHideFlags: 0
@@ -473,3 +473,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmgPercent: 0

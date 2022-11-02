@@ -4,11 +4,11 @@ using System.Collections;
 using UnityEngine;
 using System;
 
-public class CowMordida : MonoBehaviour, IHitboxResponder
+public class CowGolpeCargado : MonoBehaviour, IHitboxResponder
 {
     public NewMovement GMove;
     [HideInInspector] public Animator CWAnim;
-    public string AnimCowBite;
+    public string AnimCowChargePunch;
     [SerializeField] private float dmg;
     [SerializeField] private Hitbox hitbox;
     [SerializeField] private int force;
@@ -33,19 +33,19 @@ public class CowMordida : MonoBehaviour, IHitboxResponder
     }
 
     // Update is called once per frame
-    void OnStrongKick()
+    void OnWeakAttack()
     {
         //kick
-        if (!CWAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimCowBite))
+        if (!CWAnim.GetCurrentAnimatorStateInfo(0).IsName(AnimCowChargePunch))
         {
             hitbox.openCollissionCheck();
             uHitbox = true;
-            GMove.Animator.SetTrigger(AnimCowBite);
+            GMove.Animator.SetTrigger(AnimCowChargePunch);
             GMove.Animator.SetBool(GMove.AnimWalk, false);
         }
     }
 
-    void DisableBite()
+    void DisableChargePunch()
     {
 
         uHitbox = false;

@@ -137,6 +137,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1775444079849945241}
     m_Modifications:
+    - target: {fileID: -8919026226711704134, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: AnimBrujPunch
+      value: GolpeBasico
+      objectReference: {fileID: 0}
     - target: {fileID: 8904761068495514404, guid: cf6e3890b318648f29ee80475396bbca,
         type: 3}
       propertyPath: m_FlipX
@@ -202,10 +207,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8904761068495514406, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.4772687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761068495514406, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 9.745625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761068495514406, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 1.1165254
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761068495514406, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.17385983
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761068495514406, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.6002032
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761068495514406, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.43754077
+      objectReference: {fileID: 0}
     - target: {fileID: 8904761068495514409, guid: cf6e3890b318648f29ee80475396bbca,
         type: 3}
       propertyPath: m_Name
       value: Brujorge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761069725859233, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.4325562
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761069725859233, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -4.7564783
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904761069725859233, guid: cf6e3890b318648f29ee80475396bbca,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -2.9829836
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf6e3890b318648f29ee80475396bbca, type: 3}
