@@ -2,38 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor;
 
+[System.Serializable]
 public class NeutralAttack : Attack
 {
+    bool uHitbox = false;
     public override void EnterState(PlayerController player)
     {
-        MonoBehaviour.print("Entering idle");
-        player.SetAnimatorTrigger(PlayerController.AnimStates.Idle);
+        transform = player.transform;
+        hitbox.transform = transform;
+        MonoBehaviour.print("Entering Neutral");
+        player.SetAnimatorTrigger(PlayerController.AnimStates.Neutral);
+        hitbox.Start();
+        hitbox.setResponder(this);
+        hitbox.openCollissionCheck();
+
+        g.sz = hitbox.sz;
+        g.isSphere = hitbox.isSphere;
+        g.radius = hitbox.radius;
+        g.pos = hitbox.pos;
+
     }
 
     public override void OnCollisionEffects()
-    {
-        throw new System.NotImplementedException();
-    }
+    {}
 
     public override void OnCollisionEnter(PlayerController player, Collision2D col)
-    {
-        throw new System.NotImplementedException();
-    }
+    {}
 
     public override void OnTriggerEnter(PlayerController player, Collider2D col)
-    {
-        throw new System.NotImplementedException();
-    }
+    {}
 
     public override void Update(PlayerController player)
     {
-        throw new System.NotImplementedException();
+        hitbox.hitboxUpdate();
+        g.sz = hitbox.sz;
+        g.isSphere = hitbox.isSphere;
+        g.radius = hitbox.radius;
+        g.pos = hitbox.pos;
+        g.color = hitbox.currColor;
     }
     public override void LateUpdate(PlayerController player) { }
     public override void Move(PlayerController player, InputValue val, float speed)
     {}
     public override void Jump(PlayerController player, float speed)
     {}
+    public override void OnNeutral(PlayerController player)
+    {}
+
+    void DisableSword()
+    {
+
+        uHitbox = false;
+        hitbox.closeCollissionCheck();
+
+    }
 
 }

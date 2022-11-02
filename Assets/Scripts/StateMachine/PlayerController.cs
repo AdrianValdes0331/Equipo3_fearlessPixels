@@ -5,17 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Vector2 i_movement;
+    [HideInInspector] public Vector2 i_movement;
     public float speed;
     public float jspeed;
     public Animator animator;
     [HideInInspector] public Rigidbody2D rb;
     private IPlayerBaseState currState;
+    private bool draw = false;
+    gizmo g;
 
     [HideInInspector] public readonly Idle IdleState = new Idle();
     [HideInInspector] public readonly Walk WalkState = new Walk();
     [HideInInspector] public readonly Jump JumpState = new Jump();
-
+    public NeutralAttack NeutralAState = new NeutralAttack();
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       currState.Update(this); 
+       currState.Update(this);
+       if(currState.gz() != null)
+        {
+            g = (gizmo) currState.gz();
+        }
     }
 
     private void LateUpdate()
@@ -55,8 +61,13 @@ public class PlayerController : MonoBehaviour
         currState.Jump(this, jspeed);
     }
 
+    public void OnWeakAttack(){
+        currState.OnNeutral(this);
+    }
+
     internal void TransitionToState(IPlayerBaseState state) {
         currState = state;
+        draw = currState.hasGizmos();
         currState.EnterState(this);
     }
 
@@ -67,11 +78,27 @@ public class PlayerController : MonoBehaviour
         Neutral = 3,
         Charge = 4,
         Special = 5,
-        Bang = 6
+        Bang = 6,
+        Hitreact =7
     }
 
     public void SetAnimatorTrigger(AnimStates state) {
         animator.SetInteger("anim", (int)state);
+    }
+
+    private void OnDrawGizmos(){
+        if(draw){
+            Gizmos.color = g.color;
+            Gizmos.matrix = Matrix4x4.TRS(g.pos, transform.rotation, transform.localScale);
+            if (!g.isSphere)
+            {
+                Gizmos.DrawCube(Vector3.zero, new Vector3(g.sz.x, g.sz.y, 0)); // Because size is halfExtents
+            }
+            else
+            {
+                Gizmos.DrawSphere(Vector3.zero, g.radius);
+            }
+        }
     }
 
 }

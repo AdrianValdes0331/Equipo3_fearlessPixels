@@ -39,5 +39,7 @@ public class ChargeAttack : Attack
     {
         throw new System.NotImplementedException();
     }
+    public override void OnNeutral(PlayerController player)
+    {}
 
 }

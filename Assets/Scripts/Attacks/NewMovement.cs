@@ -13,6 +13,7 @@ public class NewMovement : MonoBehaviour
     private float Horizontal;
     private float pSize;
     public bool EnableDoubleJump = true;
+    private bool isGrounded = false;
     public string AnimJumpName = "none";
     public string AnimWalk = "none";
 
@@ -34,13 +35,13 @@ public class NewMovement : MonoBehaviour
         Movements();
 
         //Jump/doubleJump
-        bool onTheGround = isOnGround();
+        // bool onTheGround = isOnGround();
         // if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
         // {
         //     jump(onTheGround);
         // }
         //Define ground to avoid infinite jump
-        if (onTheGround)
+        if (isGrounded)
         {
             canDoubleJump = true;
         }
@@ -89,13 +90,13 @@ public class NewMovement : MonoBehaviour
 
     private void OnJump()
     {
-        bool onTheGround = isOnGround();
+        //Debug.Log(onTheGround);
 
         if (!jumpKeyDown)
         {
             jumpKeyDown = true;
 
-            if (onTheGround || (canDoubleJump && EnableDoubleJump))
+            if (isGrounded || (canDoubleJump && EnableDoubleJump))
             {
                 if (AnimJumpName != "")
                 {
@@ -104,28 +105,41 @@ public class NewMovement : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.JumpSpeed);
             }
 
-            if (!onTheGround)
+            if (!isGrounded)
             {
                 canDoubleJump = false;
             }
         }
+        if(isGrounded){isGrounded = false;}
     }
 
     //Validate Ground
-    private bool isOnGround()
-    {
-        float lengthToSearch = 0.1f;
-        float colliderThreshhold = 0.1f;
-        Vector2 linestart = new Vector2(this.transform.position.x, this.transform.position.y - this.GetComponent<Renderer>().bounds.extents.y - colliderThreshhold);
-        Vector2 vectorToSearch = new Vector2(this.transform.position.x, linestart.y - lengthToSearch);
-        RaycastHit2D hit = Physics2D.Linecast(linestart, vectorToSearch);
-        return hit;
+    // private bool isOnGround()
+    // {
+    //     float lengthToSearch = 0.1f;
+    //     float colliderThreshhold = 0.1f;
+    //     Vector2 linestart = new Vector2(this.transform.position.x, this.transform.position.y - this.GetComponent<Renderer>().bounds.extents.y - colliderThreshhold);
+    //     Vector2 vectorToSearch = new Vector2(this.transform.position.x, linestart.y - lengthToSearch);
+    //     RaycastHit2D hit = Physics2D.Linecast(linestart, vectorToSearch);
+    //     return hit;
+    // }
+
+    void OnCollisionEnter2D(Collision2D col){
+
+        Debug.Log(col.GetContact(0).normal.y);
+
+        if(col.gameObject.layer == LayerMask.NameToLayer("Floor") && col.GetContact(0).normal.y>=0.9){
+
+            isGrounded = true;
+
+        }
+
     }
 
     //Speed
     private void FixedUpdate()
     {
-        if (dirX != 0 || isOnGround()){
+        if (dirX != 0 || isGrounded){
             Rigidbody2D.velocity = new Vector2(dirX, Rigidbody2D.velocity.y);
         }
     }

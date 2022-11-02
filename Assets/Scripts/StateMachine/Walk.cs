@@ -59,4 +59,17 @@ public class Walk : IPlayerBaseState
         player.rb.velocity = new Vector2(player.rb.velocity.x, speed);
         player.TransitionToState(player.JumpState);
     }
+
+    public void OnNeutral(PlayerController player)
+    {
+
+    }
+    public bool hasGizmos()
+    {
+        return false;
+    }
+    public gizmo? gz()
+    {
+        return null;
+    }
 }
