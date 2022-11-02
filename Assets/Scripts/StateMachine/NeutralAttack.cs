@@ -7,9 +7,17 @@ using UnityEditor;
 [System.Serializable]
 public class NeutralAttack : Attack
 {
-    bool uHitbox = false;
+    //bool uHitbox = false;
+    bool queued;
+    bool done;
+    Vector2 i_movement;
+    float pSize;
+
     public override void EnterState(PlayerController player)
     {
+        pSize = System.Math.Abs(player.transform.localScale.x);
+        queued = false;
+        done = false;
         transform = player.transform;
         hitbox.transform = transform;
         MonoBehaviour.print("Entering Neutral");
@@ -22,6 +30,7 @@ public class NeutralAttack : Attack
         g.isSphere = hitbox.isSphere;
         g.radius = hitbox.radius;
         g.pos = hitbox.pos;
+        player.StartCoroutine(Active(player, activeTime));
 
     }
 
@@ -42,20 +51,61 @@ public class NeutralAttack : Attack
         g.radius = hitbox.radius;
         g.pos = hitbox.pos;
         g.color = hitbox.currColor;
+
+        i_movement = player.i_movement;
+        player.rb.velocity = new Vector2(i_movement.x*player.speed, player.rb.velocity.y);
+
+        if (i_movement.x < 0.0f)
+        {
+            player.transform.localScale = new Vector3(-pSize, pSize, pSize);
+        }
+        else if (i_movement.x > 0.0f)
+        {
+            player.transform.localScale = new Vector3(pSize, pSize, pSize);
+        }
+
+        if(done)
+        {
+            if(queued)
+            {
+                player.TransitionToState(player.NeutralAState);
+            }
+            else if(player.rb.velocity.x == 0)
+            {
+                player.TransitionToState(player.IdleState);
+            }
+            else
+            {
+                player.TransitionToState(player.WalkState);
+            }
+        }
+
     }
     public override void LateUpdate(PlayerController player) { }
     public override void Move(PlayerController player, InputValue val, float speed)
     {}
     public override void Jump(PlayerController player, float speed)
-    {}
-    public override void OnNeutral(PlayerController player)
-    {}
-
-    void DisableSword()
     {
 
-        uHitbox = false;
         hitbox.closeCollissionCheck();
+        player.rb.velocity = new Vector2(player.rb.velocity.x, speed);
+        player.TransitionToState(player.JumpState);
+
+    }
+    public override void OnNeutral(PlayerController player)
+    {
+
+        queued = true;
+
+    }
+
+    IEnumerator Active(PlayerController player, float t)
+    {
+
+        //uHitbox = false;
+        yield return new WaitForSeconds(t);
+        hitbox.closeCollissionCheck();
+        done = true;
 
     }
 

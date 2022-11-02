@@ -62,7 +62,7 @@ public class Walk : IPlayerBaseState
 
     public void OnNeutral(PlayerController player)
     {
-
+        player.TransitionToState(player.NeutralAState);
     }
     public bool hasGizmos()
     {

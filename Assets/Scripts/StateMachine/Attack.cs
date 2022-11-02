@@ -6,10 +6,11 @@ using UnityEngine.InputSystem;
 public abstract class Attack : IPlayerBaseState, IHitboxResponder
 {
     protected gizmo g;
-    [SerializeField] private float dmg;
-    [SerializeField] protected NHitbox hitbox = new NHitbox();
-    [SerializeField] private int force;
+    [SerializeField] protected float dmg;
+    [SerializeField] protected int force;
     [SerializeField] private int angle;
+    [SerializeField] protected float activeTime;
+    [SerializeField] protected NHitbox hitbox = new NHitbox();
     protected Transform transform;
 
 

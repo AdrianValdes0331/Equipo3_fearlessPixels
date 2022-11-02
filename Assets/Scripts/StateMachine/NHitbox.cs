@@ -33,10 +33,10 @@ public class NHitbox
 
         // objectRenderer = gameObject.GetComponent<Renderer>();
         // sz = objectRenderer.bounds.extents;
-        Debug.Log(maskNames);
+        //Debug.Log(maskNames);
         mask = LayerMask.GetMask(maskNames);
-        Debug.Log(mask);
-        Debug.Log(sz);
+        //Debug.Log(mask);
+        //Debug.Log(sz);
         // tRot = transform.rotation;
         // tScale = transform.localScale;
         pos = transform.position + new Vector3((transform.localScale.x>0)? offset.x : -offset.x, offset.y, 0);
