@@ -7,6 +7,7 @@ using UnityEditor;
 [System.Serializable]
 public class NeutralAttack : Attack
 {
+    bool uHitbox = false;
     public override void EnterState(PlayerController player)
     {
         transform = player.transform;
@@ -49,5 +50,13 @@ public class NeutralAttack : Attack
     {}
     public override void OnNeutral(PlayerController player)
     {}
+
+    void DisableSword()
+    {
+
+        uHitbox = false;
+        hitbox.closeCollissionCheck();
+
+    }
 
 }
