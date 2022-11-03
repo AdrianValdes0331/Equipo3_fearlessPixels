@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2867030227923249327}
   - component: {fileID: 1560531301981411767}
   - component: {fileID: 518991624702650575}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345615662745586104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.389, y: -3.751, z: -0.008947029}
-  m_LocalScale: {x: 4.1018786, y: 4.110705, z: 3}
+  m_LocalPosition: {x: -0.389, y: -0.888, z: -0.008947029}
+  m_LocalScale: {x: 4.1018786, y: 9.836916, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7312956393361201520}
