@@ -10,6 +10,10 @@ public class PlayerDmg : MonoBehaviour
     private RectTransform canvasTransform;
     public GameObject prefab;
     public GameObject vida;
+    public GameObject P1;
+    public GameObject P2;
+    public GameObject P3;
+    public GameObject P4;
     private IEnumerator coroutine;
     [HideInInspector]
     public Dictionary<string, GameObject> playerProfile = new Dictionary<string, GameObject>();
@@ -27,37 +31,58 @@ public class PlayerDmg : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         playerCount = players.Length;
         canvasTransform = GetComponent<RectTransform>();
-        float d = canvasTransform.rect.width / (playerCount + 1);
-        float a = canvasTransform.rect.width / -2;
+        float d = (canvasTransform.rect.width / 1.2f) / (playerCount + 1);
+        float a = canvasTransform.rect.width / -2.25f;
         float b = canvasTransform.rect.width / 2;
         Vector3 pos = transform.position;
         Vector3 Livepos = transform.position;
-        pos.y = (canvasTransform.rect.height / (2.5f/canvasTransform.localScale.y)) * -1;
-        Livepos.y = ((canvasTransform.rect.height / (2.5f/canvasTransform.localScale.y)) + 20) * -1;
+        Vector3 PIndexPos = transform.position;
+        pos.y = (canvasTransform.rect.height / (2.0f/canvasTransform.localScale.y)) * -1;
+        Livepos.y = ((canvasTransform.rect.height / (2.0f/canvasTransform.localScale.y)) - 84) * -1;
+        PIndexPos.y = ((canvasTransform.rect.height / (2.0f / canvasTransform.localScale.y)) - 56) * -1;
         Debug.Log(d);
         Debug.Log(a);
         Debug.Log(b);
 
         for (int i = 0; i < playerCount; i++)
         {
-            Fixedx = -canvasTransform.localScale.x*20.0f;
+            GameObject CurrPlayer = P1;
+            if (i == 0)
+            {
+                CurrPlayer = P1;
+            }
+            if (i == 1)
+            {
+                CurrPlayer = P2;
+            }
+            if (i == 2)
+            {
+                CurrPlayer = P3;
+            }
+            if (i == 3)
+            {
+                CurrPlayer = P4;
+            }
+            Fixedx = canvasTransform.localScale.x*100.0f;
             int lives = players[0].GetComponent<Respawn>().lives;
             Debug.Log(a);
             Debug.Log(b);
             Debug.Log(a + (i + 1) * d);
             pos.x = a + (i + 1) * d;
+            PIndexPos.x = a + (i + 1) * d + 70;
             Debug.Log(pos.x);
             GameObject instance = Instantiate(prefab, pos+transform.position, Quaternion.identity, gameObject.transform);
-            instance.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            instance.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
             instance.name = players[i].name + "Profile" + i;
             //instance.transform.SetParent(transform, false);
             playerProfile.Add(players[i].transform.parent.name, instance);
+            GameObject Index = Instantiate(CurrPlayer, PIndexPos + transform.position, Quaternion.identity, instance.transform);
             for (int j = 0; j < lives; j++)
             {
                 Livepos.x = a + (i + 1) * d + Fixedx;
                 GameObject live = Instantiate(vida, Livepos + transform.position, Quaternion.identity, instance.transform);
                 live.name = "vida" + j;
-                Fixedx = Fixedx + canvasTransform.localScale.x*20.0f;
+                Fixedx = Fixedx + canvasTransform.localScale.x*25.0f;
             }         
         }
     }
