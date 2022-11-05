@@ -25,7 +25,7 @@ public class Hitbox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        hitboxUpdate();
         // objectRenderer = gameObject.GetComponent<Renderer>();
         // sz = objectRenderer.bounds.extents;
         mask = LayerMask.GetMask(maskNames);

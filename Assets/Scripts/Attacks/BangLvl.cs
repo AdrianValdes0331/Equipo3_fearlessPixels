@@ -10,6 +10,7 @@ public class BangLvl : MonoBehaviour
     private int bangLvl;
     private float totalDmgDiff;
     private bool isAvailable;
+    private IEnumerator coroutine;
     public int cd;
     public Sprite normal;
     public Sprite Bang1;
@@ -21,6 +22,8 @@ public class BangLvl : MonoBehaviour
         bangLvl = 0;
         totalDmgDiff = 0;
         isAvailable = true;
+        coroutine = WaitAndPrint(0.3f);
+        StartCoroutine(coroutine);
     }
 
     // Update is called once per frame
@@ -107,6 +110,13 @@ public class BangLvl : MonoBehaviour
         bangLvl = 0;
         totalDmgDiff = 0;
         isAvailable = true;
+        updateBangImage(normal);
+    }
+
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+
+        yield return new WaitForSeconds(waitTime);
         updateBangImage(normal);
     }
 
