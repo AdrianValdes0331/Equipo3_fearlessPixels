@@ -26,12 +26,13 @@ public class TagFinder : MonoBehaviour
 
     void runScript()
     {
+        int k = 0;
         players = GameObject.FindGameObjectsWithTag("Player");
         playerCount = players.Length;
         GameObject CurrPlayer;
         for (int i = 0; i < playerCount; i++)
         {
-            if (i == 0)
+            if (k == 0)
             {
                 CurrPlayer = P1;
                 if (GameObject.Find("Player1").transform.childCount > 0)
@@ -44,13 +45,12 @@ public class TagFinder : MonoBehaviour
                 }
                 else
                 {                   
-                    i = 1;
+                    k = 1;
                 }
             }
-            if (i == 1)
+            if (k == 1)
             {
-                CurrPlayer = P2;
-                Debug.Log("0testing");
+                CurrPlayer = P2;               
                 if (GameObject.Find("Player2").transform.childCount > 0)
                 {
                     Transform p2name = GameObject.Find("Player2").transform.GetChild(0).Find("Tag");
@@ -60,12 +60,11 @@ public class TagFinder : MonoBehaviour
                     instance.name = "P2Tag";
                 }
                 else
-                {
-                    Debug.Log("testing");                    
-                    i = 2;
+                {                  
+                    k = 2;
                 }
             }
-            if (i == 2)
+            if (k == 2)
             {
                 CurrPlayer = P3;
                 if (GameObject.Find("Player3").transform.childCount > 0)
@@ -77,11 +76,11 @@ public class TagFinder : MonoBehaviour
                     instance.name = "P3Tag";
                 }
                 else
-                {                  
-                    i = 3;
+                {
+                    k = 3;
                 }
             }
-            if (i == 3)
+            if (k == 3)
             {
                 CurrPlayer = P4;
                 if (GameObject.Find("Player4").transform.childCount > 0)
@@ -93,6 +92,7 @@ public class TagFinder : MonoBehaviour
                     instance.name = "P4Tag";
                 }
             }
+            k++;
         }
     }
 

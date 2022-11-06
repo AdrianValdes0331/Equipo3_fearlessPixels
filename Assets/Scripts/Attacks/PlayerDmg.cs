@@ -14,6 +14,7 @@ public class PlayerDmg : MonoBehaviour
     public GameObject P2;
     public GameObject P3;
     public GameObject P4;
+    public GameObject Dummy;
     private IEnumerator coroutine;
     [HideInInspector]
     public Dictionary<string, GameObject> playerProfile = new Dictionary<string, GameObject>();
@@ -28,6 +29,7 @@ public class PlayerDmg : MonoBehaviour
 
     void runScript()
     {
+        int k = 0;
         players = GameObject.FindGameObjectsWithTag("Player");
         playerCount = players.Length;
         canvasTransform = GetComponent<RectTransform>();
@@ -46,7 +48,6 @@ public class PlayerDmg : MonoBehaviour
 
         for (int i = 0; i < playerCount; i++)
         {
-            int k = i;
             GameObject CurrPlayer = P1;
             if (k == 0)
             {        
@@ -61,7 +62,7 @@ public class PlayerDmg : MonoBehaviour
             }
             if (k == 1)
             {
-                if (GameObject.Find("Player2").transform.childCount > 0)
+                if (GameObject.Find("Player2") && GameObject.Find("Player2").transform.childCount > 0)
                 {
                     CurrPlayer = P2;
                 }
@@ -72,7 +73,7 @@ public class PlayerDmg : MonoBehaviour
             }
             if (k == 2)
             {
-                if (GameObject.Find("Player3").transform.childCount > 0)
+                if (GameObject.Find("Player3") && GameObject.Find("Player3").transform.childCount > 0)
                 {
                     CurrPlayer = P3;
                 }
@@ -83,11 +84,23 @@ public class PlayerDmg : MonoBehaviour
             }
             if (k == 3)
             {
-                if (GameObject.Find("Player4").transform.childCount > 0)
+                if (GameObject.Find("Player4") && GameObject.Find("Player4").transform.childCount > 0)
                 {
                     CurrPlayer = P4;
                 }
+                else
+                {
+                    k = 4;
+                }
             }
+            if (k == 4)
+            {
+                if (GameObject.Find("Dummy") && GameObject.Find("Dummy").transform.childCount > 0)
+                {
+                    CurrPlayer = Dummy;
+                }
+            }
+            k++;
             Fixedx = canvasTransform.localScale.x;
             int lives = players[0].GetComponent<Respawn>().lives;
             Debug.Log(a);
