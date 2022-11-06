@@ -28,30 +28,71 @@ public class TagFinder : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         playerCount = players.Length;
+        GameObject CurrPlayer;
         for (int i = 0; i < playerCount; i++)
         {
-            GameObject CurrPlayer = P1;
             if (i == 0)
             {
                 CurrPlayer = P1;
-                Transform p1name =  GameObject.Find("Player1").transform.Find(name);
-                GameObject instance = Instantiate(CurrPlayer, GameObject.Find("Player1").transform.Find(p1name.ToString()).Find("Tag").position + 
-                    transform.position, Quaternion.identity, gameObject.transform);
-                //Instantiate(CurrPlayer, GameObject.Find("Player1").transform.Find(p1name.ToString()).Find("Tag").position);//, worldPositionStays: false);
+                if (GameObject.Find("Player1").transform.childCount > 0)
+                {
+                    Transform p1name = GameObject.Find("Player1").transform.GetChild(0).Find("Tag");
+                    Debug.Log(p1name);
+                    GameObject instance = Instantiate(CurrPlayer, p1name.transform.position, transform.rotation);
+                    instance.transform.parent = p1name.transform;
+                    instance.name = "P1Tag";
+                }
+                else
+                {                   
+                    i = 1;
+                }
             }
             if (i == 1)
             {
                 CurrPlayer = P2;
+                Debug.Log("0testing");
+                if (GameObject.Find("Player2").transform.childCount > 0)
+                {
+                    Transform p2name = GameObject.Find("Player2").transform.GetChild(0).Find("Tag");
+                    Debug.Log(p2name);
+                    GameObject instance = Instantiate(CurrPlayer, p2name.transform.position, transform.rotation);
+                    instance.transform.parent = p2name.transform;
+                    instance.name = "P2Tag";
+                }
+                else
+                {
+                    Debug.Log("testing");                    
+                    i = 2;
+                }
             }
             if (i == 2)
             {
                 CurrPlayer = P3;
+                if (GameObject.Find("Player3").transform.childCount > 0)
+                {
+                    Transform p3name = GameObject.Find("Player3").transform.GetChild(0).Find("Tag");
+                    Debug.Log(p3name);
+                    GameObject instance = Instantiate(CurrPlayer, p3name.transform.position, transform.rotation);
+                    instance.transform.parent = p3name.transform;
+                    instance.name = "P3Tag";
+                }
+                else
+                {                  
+                    i = 3;
+                }
             }
             if (i == 3)
             {
                 CurrPlayer = P4;
+                if (GameObject.Find("Player4").transform.childCount > 0)
+                {
+                    Transform p4name = GameObject.Find("Player4").transform.GetChild(0).Find("Tag");
+                    Debug.Log(p4name);
+                    GameObject instance = Instantiate(CurrPlayer, p4name.transform.position, transform.rotation);
+                    instance.transform.parent = p4name.transform;
+                    instance.name = "P4Tag";
+                }
             }
-            //Instantiate(CurrPlayer, , worldPositionStays: false);
         }
     }
 

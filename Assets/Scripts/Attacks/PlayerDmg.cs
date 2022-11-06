@@ -46,22 +46,47 @@ public class PlayerDmg : MonoBehaviour
 
         for (int i = 0; i < playerCount; i++)
         {
+            int k = i;
             GameObject CurrPlayer = P1;
-            if (i == 0)
-            {
-                CurrPlayer = P1;
+            if (k == 0)
+            {        
+                if (GameObject.Find("Player1").transform.childCount > 0)
+                {
+                    CurrPlayer = P1;
+                }
+                else
+                {
+                    k = 1;
+                }
             }
-            if (i == 1)
+            if (k == 1)
             {
-                CurrPlayer = P2;
+                if (GameObject.Find("Player2").transform.childCount > 0)
+                {
+                    CurrPlayer = P2;
+                }
+                else
+                {
+                    k = 2;
+                }
             }
-            if (i == 2)
+            if (k == 2)
             {
-                CurrPlayer = P3;
+                if (GameObject.Find("Player3").transform.childCount > 0)
+                {
+                    CurrPlayer = P3;
+                }
+                else
+                {
+                    k = 3;
+                }
             }
-            if (i == 3)
+            if (k == 3)
             {
-                CurrPlayer = P4;
+                if (GameObject.Find("Player4").transform.childCount > 0)
+                {
+                    CurrPlayer = P4;
+                }
             }
             Fixedx = canvasTransform.localScale.x;
             int lives = players[0].GetComponent<Respawn>().lives;
