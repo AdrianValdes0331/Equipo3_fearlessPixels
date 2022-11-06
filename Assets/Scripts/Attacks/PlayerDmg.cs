@@ -31,15 +31,15 @@ public class PlayerDmg : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         playerCount = players.Length;
         canvasTransform = GetComponent<RectTransform>();
-        float d = (canvasTransform.rect.width / 1.2f) / (playerCount + 1);
-        float a = canvasTransform.rect.width / -2.25f;
+        float d = (canvasTransform.rect.width / 1.1f) / (playerCount + 1);
+        float a = canvasTransform.rect.width / -2.2f;
         float b = canvasTransform.rect.width / 2;
         Vector3 pos = transform.position;
         Vector3 Livepos = transform.position;
         Vector3 PIndexPos = transform.position;
         pos.y = (canvasTransform.rect.height / (2.0f/canvasTransform.localScale.y)) * -1;
-        Livepos.y = ((canvasTransform.rect.height / (2.0f/canvasTransform.localScale.y)) - 84) * -1;
-        PIndexPos.y = ((canvasTransform.rect.height / (2.0f / canvasTransform.localScale.y)) - 56) * -1;
+        Livepos.y = (canvasTransform.rect.height / (2.61f/canvasTransform.localScale.y)) * -1;
+        PIndexPos.y = (canvasTransform.rect.height / (2.37f / canvasTransform.localScale.y)) * -1;
         Debug.Log(d);
         Debug.Log(a);
         Debug.Log(b);
@@ -63,13 +63,13 @@ public class PlayerDmg : MonoBehaviour
             {
                 CurrPlayer = P4;
             }
-            Fixedx = canvasTransform.localScale.x*100.0f;
+            Fixedx = canvasTransform.localScale.x;
             int lives = players[0].GetComponent<Respawn>().lives;
             Debug.Log(a);
             Debug.Log(b);
             Debug.Log(a + (i + 1) * d);
             pos.x = a + (i + 1) * d;
-            PIndexPos.x = a + (i + 1) * d + 70;
+            PIndexPos.x = a + (i + 1) * d;
             Debug.Log(pos.x);
             GameObject instance = Instantiate(prefab, pos+transform.position, Quaternion.identity, gameObject.transform);
             instance.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
