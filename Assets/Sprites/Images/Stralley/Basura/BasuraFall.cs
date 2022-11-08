@@ -11,17 +11,14 @@ public class BasuraFall : MonoBehaviour
     public Transform Postition5;
     public Transform basura;
     public int i = 0;
-    
-// Start is called before the first frame update
-    void Start()
-    {
-    }
+    SpriteRenderer trashSprite;
+    Color fadedTrashColor = new Color(1f, 1f, 1f, 0f);
+    Color normalTrashColor = new Color(1f, 1f, 1f, 1f);
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (Time.timeSinceLevelLoad > i && (GameObject.FindWithTag("Basura") == null))
+        if (Time.timeSinceLevelLoad > i && GameObject.FindWithTag("Basura") == null)
         {
             int rInt = Random.Range(0, 4);
             int spawnran = Random.Range(20, 35);
@@ -46,15 +43,23 @@ public class BasuraFall : MonoBehaviour
             {
                 Instantiate(basura, Postition5.position, Quaternion.identity);
             }
-
-            Destroy(GameObject.FindWithTag("Basura"), 5);
-
+            trashSprite = GameObject.FindWithTag("Basura").GetComponent<SpriteRenderer>();
+            StartCoroutine(BlinkAndDestroy());
             i += spawnran;
         }
         
     }
 
-
-
- 
+    IEnumerator BlinkAndDestroy()
+    {
+        yield return new WaitForSeconds(5f);
+        for (int i = 0; i < 4; i++)
+        {
+            trashSprite.color = normalTrashColor;
+            yield return new WaitForSeconds(0.5f);
+            trashSprite.color = fadedTrashColor;
+            yield return new WaitForSeconds(0.25f);
+        }
+        Destroy(GameObject.FindWithTag("Basura"));
+    }
 }
