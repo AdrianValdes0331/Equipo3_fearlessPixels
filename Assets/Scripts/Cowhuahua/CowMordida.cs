@@ -55,7 +55,6 @@ public class CowMordida : MonoBehaviour, IHitboxResponder
 
     public void CollisionedWith(Collider2D collider)
     {
-
         if (collider.transform.parent.transform.parent == transform.parent) { return; }
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         if (hurtbox != null)
@@ -64,6 +63,14 @@ public class CowMordida : MonoBehaviour, IHitboxResponder
             bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
+        }
+        else
+        {
+            NoPlayersHurtbox noPlayersHurtbox = collider.GetComponent<NoPlayersHurtbox>();
+            if (noPlayersHurtbox != null)
+            {
+                noPlayersHurtbox.getHitBy(dmg, force, angle, transform.position.x);
+            }
         }
     }
 }

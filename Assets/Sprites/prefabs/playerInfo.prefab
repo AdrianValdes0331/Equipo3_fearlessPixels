@@ -165,8 +165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 19.150005}
-  m_SizeDelta: {x: 2.55, y: 0.23}
+  m_AnchoredPosition: {x: 5.9, y: 19.150005}
+  m_SizeDelta: {x: 2.25, y: 0.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &8328375615389574213
 SpriteRenderer:
@@ -514,7 +514,12 @@ PrefabInstance:
     - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
       propertyPath: m_fontSize
-      value: 14
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
@@ -534,12 +539,17 @@ PrefabInstance:
     - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4280346367
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6003726073162016691, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
@@ -584,7 +594,7 @@ PrefabInstance:
     - target: {fileID: 7653081883474738256, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 63.1217
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 7653081883474738256, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
@@ -629,7 +639,7 @@ PrefabInstance:
     - target: {fileID: 7653081883474738256, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 13.1
+      value: 19.9
       objectReference: {fileID: 0}
     - target: {fileID: 7653081883474738256, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}

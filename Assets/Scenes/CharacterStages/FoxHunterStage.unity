@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16734967, g: 0.19761115, b: 0.2283176, a: 1}
+  m_IndirectSpecularColor: {r: 0.16735533, g: 0.19762194, b: 0.22833794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1364,7 +1364,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh90918
+  m_Name: pb_Mesh71444
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3578,6 +3578,68 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 0.45}
   m_EdgeRadius: 0
+--- !u!1 &556897333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556897334}
+  - component: {fileID: 556897336}
+  - component: {fileID: 556897337}
+  m_Layer: 0
+  m_Name: Hurtbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &556897334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556897333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: -0, z: 0.06}
+  m_LocalScale: {x: 2.050182, y: 2.050182, z: 2.050182}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4092246418655038954}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &556897336
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556897333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &556897337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556897333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054175f5e9d45f846af3976479ecf313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgPercent: 50
 --- !u!1 &581704863
 GameObject:
   m_ObjectHideFlags: 0
@@ -26463,7 +26525,8 @@ Transform:
   m_LocalPosition: {x: 24.61, y: 11.15, z: -5.91}
   m_LocalScale: {x: 0.96546215, y: 0.2791584, z: 0.96546215}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 556897334}
   m_Father: {fileID: 543450652059149255}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28322,6 +28385,7 @@ GameObject:
   - component: {fileID: 2697468457604199181}
   - component: {fileID: 6765794719532583255}
   - component: {fileID: 6765794719532583256}
+  - component: {fileID: 6765794719532583257}
   m_Layer: 0
   m_Name: CircleRock
   m_TagString: Untagged
@@ -28359,6 +28423,18 @@ CapsuleCollider:
   m_Height: 2.1802824
   m_Direction: 1
   m_Center: {x: 0.012504578, y: 0.090142176, z: 0.038532488}
+--- !u!114 &6765794719532583257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6765794719532583254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca444731ff7f3249bc4bd7da44ecfd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6766032210330337212
 GameObject:
   m_ObjectHideFlags: 0

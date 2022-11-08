@@ -53,7 +53,6 @@ public class Explode : MonoBehaviour, IHitboxResponder
         float finalForce = force / distance;
         float finalDmg = dmg / distance;
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
-        Debug.Log("Explosion");
         if (hurtbox != null)
         {
             BangLvl bang = gameObject.transform.parent.GetComponent<BangLvl>();
@@ -61,6 +60,14 @@ public class Explode : MonoBehaviour, IHitboxResponder
                 bang.bangUpdate(finalDmg, true);
             }
             hurtbox.getHitBy(finalDmg, (int)finalForce, angle, transform.position.x);
+        }
+        else
+        {
+            NoPlayersHurtbox noPlayersHurtbox = collider.GetComponent<NoPlayersHurtbox>();
+            if (noPlayersHurtbox != null)
+            {
+                noPlayersHurtbox.getHitBy(finalDmg, (int)finalForce, angle, transform.position.x);
+            }
         }
     }
 

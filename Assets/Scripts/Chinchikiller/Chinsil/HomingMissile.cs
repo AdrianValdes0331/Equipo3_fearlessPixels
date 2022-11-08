@@ -118,7 +118,11 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
         }
         else
         {
-            Debug.Log("Hit obstacle");
+            NoPlayersHurtbox noPlayersHurtbox = collider.GetComponent<NoPlayersHurtbox>();
+            if (noPlayersHurtbox != null)
+            {
+                noPlayersHurtbox.getHitBy(dmg, force, angle, transform.position.x);
+            }
             Instantiate(Cabooommmmm, transform.position, transform.rotation, transform.parent).GetComponent<Explode>().enabled = true;
         }
     }

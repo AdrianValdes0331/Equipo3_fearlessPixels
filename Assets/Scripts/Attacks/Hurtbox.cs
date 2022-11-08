@@ -9,18 +9,6 @@ public class Hurtbox : MonoBehaviour
     private Collider2D hcollider;
     [HideInInspector] public float dmgPercent = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        hcollider = GetComponent<Collider2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public bool getHitBy(float damage, int force, int angle, float xPos)
     {
 
@@ -44,7 +32,7 @@ public class Hurtbox : MonoBehaviour
 
     public void UpdateDmgPercentText()
     {
-        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.transform.parent.name].transform.Find("dmgPercent").GetComponent<TextMeshProUGUI>().text = dmgPercent + "%";
+        GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.transform.parent.name].transform.Find("dmgPercent").GetComponent<TextMeshProUGUI>().text = System.Math.Round(dmgPercent, 2) + "%";
     }
 
 }

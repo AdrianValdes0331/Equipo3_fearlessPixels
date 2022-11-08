@@ -65,5 +65,13 @@ public class CowGolpeCargado : MonoBehaviour, IHitboxResponder
             Debug.Log("Hit player");
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }
+        else
+        {
+            NoPlayersHurtbox noPlayersHurtbox = collider.GetComponent<NoPlayersHurtbox>();
+            if (noPlayersHurtbox != null)
+            {
+                noPlayersHurtbox.getHitBy(dmg, force, angle, transform.position.x);
+            }
+        }
     }
 }
