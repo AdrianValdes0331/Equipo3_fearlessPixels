@@ -92,6 +92,18 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Personalizacion");
     }
 
+    public void EscenaMultiplayerSeleccionStage()
+    {
+        PlayerPrefs.SetInt("MultiplayerType", 0); // 0 para el host
+        SceneManager.LoadScene("MultiplayerStageSelect");
+    }
+
+    public void EscenaMultiplayerSeleccionPersonajes()
+    {
+        PlayerPrefs.SetInt("MultiplayerType",  1); // 1 para jugador que se une
+        SceneManager.LoadScene("MultiplayerCharacterSelect");
+    }
+
     public void doExitGame()
     {
         Application.Quit();

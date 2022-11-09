@@ -50,4 +50,9 @@ public class StageSelectionMenu : MonoBehaviour
     {
         SceneManager.LoadScene("CharacterSelect");
     }
+
+    public void StartMultiplayerStageGame()
+    {
+        SceneManager.LoadScene("MultiplayerCharacterSelect");
+    }
 }

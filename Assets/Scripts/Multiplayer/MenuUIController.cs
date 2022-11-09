@@ -5,32 +5,34 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
-public class MenuUIController : MonoBehaviourPunCallbacks 
+public class MenuUIController : MonoBehaviourPunCallbacks
 {
 
-
-    public GameObject JoinWindow;
-    public GameObject CreateWindow;
     public GameObject Lobby;
-
-    [Header("Menu Principal")] 
-    public Button createRoomBtn;
-    public Button joinRoomBtn;
+    public GameObject MainWindow;
 
     [Header("Lobby")]
     public Button StartGameBtn;
     public TextMeshProUGUI playertextList;
 
-    public override void OnConnectedToMaster()
+    public void CreateOrJoinRoom()
     {
-        createRoomBtn.interactable = true;
-        joinRoomBtn.interactable = true;
+        int type = PlayerPrefs.GetInt("MultiplayerType");
+        if(type.Equals(0)){
+            CreateRoom();
+        } else {
+            string code = PlayerPrefs.GetString("RoomCode");
+            JoinRoom(code);
+        }
     }
 
-    public void JoinRoom(TMP_InputField _roomName)
+    public void JoinRoom(string _roomName)
     {
-        NetworkManager.instance.JoinRoom(_roomName.text);
+
+        NetworkManager.instance.JoinRoom(_roomName);
+        photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
     }
 
     public void CreateRoom()
@@ -38,18 +40,17 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         NetworkManager.instance.CreateRoom("test");
     }
 
-    public void GetPlayerName()
-    {
-        int playerNumber = PhotonNetwork.PlayerList.Length + 1;
-        PhotonNetwork.NickName = "Player " + playerNumber.ToString();
-    }
 
     public override void OnJoinedRoom()
     {
-        Lobby.SetActive(true);
-        JoinWindow.SetActive(false);
-        CreateWindow.SetActive(false);
+        ActivateLobbyWindow();
 
+        photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
+    }
+
+    private void ActivateLobbyWindow()
+    {
+        Lobby.SetActive(true);
     }
 
     [PunRPC]
@@ -79,6 +80,9 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        NetworkManager.instance.photonView.RPC("LoadScene", RpcTarget.All, "Training"); 
+        Time.timeScale = 1f;
+        int stageIndex = PlayerPrefs.GetInt("StageIndex");
+        Debug.Log(stageIndex);
+        NetworkManager.instance.photonView.RPC("LoadScene", RpcTarget.All, SelectStage.Instance.stages[stageIndex].StageName); 
     }
 }

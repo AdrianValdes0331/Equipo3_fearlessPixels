@@ -24,13 +24,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
-    /*public override void OnConnectedToMaster()
-    {
-        //base.OnConnectedToMaster();
-        Debug.Log("Conectado");
-        CreateRoom("testRoom");
-    }*/
-
     //Conexión 
     public void CreateRoom(string _name)
     {

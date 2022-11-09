@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 613053145}
+      - m_Target: {fileID: 613053146}
         m_TargetAssemblyTypeName: StageSelectionMenu, Assembly-CSharp
         m_MethodName: SelectStageChinchikiller
         m_Mode: 1
@@ -1575,6 +1575,7 @@ GameObject:
   - component: {fileID: 613053142}
   - component: {fileID: 613053144}
   - component: {fileID: 613053145}
+  - component: {fileID: 613053146}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1727,7 +1728,24 @@ MonoBehaviour:
   name3: {fileID: 0}
   image4: {fileID: 0}
   name4: {fileID: 0}
+  Lobby: {fileID: 0}
 --- !u!114 &613053145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613053137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3dc040bd474d4fb0b4f8a547df52675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  image: {fileID: 1492220520}
+  name: {fileID: 2008536546}
+  selectStage: {fileID: 0}
+--- !u!114 &613053146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2349,7 +2367,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 613053145}
+      - m_Target: {fileID: 613053146}
         m_TargetAssemblyTypeName: StageSelectionMenu, Assembly-CSharp
         m_MethodName: SelectStageCowhuahua
         m_Mode: 1
@@ -2883,7 +2901,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 613053145}
+      - m_Target: {fileID: 613053146}
         m_TargetAssemblyTypeName: StageSelectionMenu, Assembly-CSharp
         m_MethodName: SelectStageFoxHunter
         m_Mode: 1
@@ -3329,9 +3347,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 613053145}
+      - m_Target: {fileID: 613053146}
         m_TargetAssemblyTypeName: StageSelectionMenu, Assembly-CSharp
-        m_MethodName: StartStageGame
+        m_MethodName: StartMultiplayerStageGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
