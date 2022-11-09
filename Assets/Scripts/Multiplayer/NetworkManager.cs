@@ -18,6 +18,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public void DestroyBeforeLeave()
+    {
+        PhotonNetwork.Disconnect();
+        Destroy(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
