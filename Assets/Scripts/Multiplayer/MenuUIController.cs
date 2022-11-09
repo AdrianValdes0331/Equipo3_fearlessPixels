@@ -36,15 +36,14 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         if(type.Equals(0)){
             CreateRoom();
         } else {
-            string code = PlayerPrefs.GetString("RoomCode");
-            JoinRoom(code);
+            ActivateLobbyWindow();
         }
     }
 
-    public void JoinRoom(string _roomName)
+    public void JoinRoom(TMP_InputField _roomName)
     {
-
-        NetworkManager.instance.JoinRoom(_roomName);
+        Debug.Log("Conectado a room");
+        NetworkManager.instance.JoinRoom(_roomName.text);
         photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
     }
 
@@ -56,7 +55,10 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        ActivateLobbyWindow();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            ActivateLobbyWindow();
+        }
 
         photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
     }
