@@ -26,8 +26,8 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         createRoomBtn.interactable = true;
         joinRoomBtn.interactable = true;
 
-        GetPlayerName();
-        Debug.Log(PhotonNetwork.NickName);
+        /*GetPlayerName();
+        Debug.Log(PhotonNetwork.NickName);*/
     }
 
     public void CreateOrJoinRoom()
@@ -60,6 +60,9 @@ public class MenuUIController : MonoBehaviourPunCallbacks
             ActivateLobbyWindow();
         }
 
+        GetPlayerName();
+        Debug.Log(PhotonNetwork.NickName);
+
         photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
     }
 
@@ -68,11 +71,6 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         int playerNumber = PhotonNetwork.PlayerList.Length + 1;
         Debug.Log(playerNumber);
         PhotonNetwork.NickName = "Player " + playerNumber.ToString();
-    }
-
-    public void GetRoomCode(TMP_InputField _roomCode)
-    {
-        PlayerPrefs.SetString("RoomCode", _roomCode.text);
     }
 
     private void ActivateLobbyWindow()
