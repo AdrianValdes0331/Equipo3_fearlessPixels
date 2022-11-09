@@ -17,6 +17,8 @@ public class CharacterSelectionMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI name3;
     [SerializeField] private Image image4;
     [SerializeField] private TextMeshProUGUI name4;
+    [SerializeField] private Image imageCPU;
+    [SerializeField] private TextMeshProUGUI nameCPU;
     private SelectPlayers selectPlayers;
 
     private void Start()
@@ -60,6 +62,13 @@ public class CharacterSelectionMenu : MonoBehaviour
         name4.text = selectPlayers.players[index].name;
     }
 
+    private void ChangeScreenCPU()
+    {
+        PlayerPrefs.SetInt("PlayerIndex5", index);
+        imageCPU.sprite = selectPlayers.players[index].image;
+        nameCPU.text = selectPlayers.players[index].name;
+    }
+
     private void ChangeScreenNULL()
     {
         index = 6;
@@ -87,6 +96,10 @@ public class CharacterSelectionMenu : MonoBehaviour
     public void SelectP4()
     {
         PlayerNum = 4;
+    }
+    public void SelectP5()
+    {
+        PlayerNum = 5;
     }
 
     public void SelectChinchikiller()
@@ -131,7 +144,32 @@ public class CharacterSelectionMenu : MonoBehaviour
         }
     }
 
-    public void SelectFoxHunter()
+    public void SelectCPU()
+    {
+        index = 5;
+        if (PlayerNum == 1)
+        {
+            ChangeScreenP1();
+        }
+        else if (PlayerNum == 2)
+        {
+            ChangeScreenP2();
+        }
+        else if (PlayerNum == 3)
+        {
+            ChangeScreenP3();
+        }
+        else if (PlayerNum == 4)
+        {
+            ChangeScreenP4();
+        }
+        else if (PlayerNum == 5)
+        {
+            ChangeScreenCPU();
+        }
+    }
+
+        public void SelectFoxHunter()
     {
         index = 2;
         if (PlayerNum == 1)
