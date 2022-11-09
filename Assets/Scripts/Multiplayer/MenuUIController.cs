@@ -68,7 +68,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     public void GetPlayerName()
     {
-        int playerNumber = PhotonNetwork.PlayerList.Length + 1;
+        int playerNumber = PhotonNetwork.PlayerList.Length;
         Debug.Log(playerNumber);
         PhotonNetwork.NickName = "Player " + playerNumber.ToString();
     }
