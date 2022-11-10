@@ -45,10 +45,6 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            ActivateLobbyWindow();
-        }
 
         GetPlayerName();
         Debug.Log(PhotonNetwork.NickName);
