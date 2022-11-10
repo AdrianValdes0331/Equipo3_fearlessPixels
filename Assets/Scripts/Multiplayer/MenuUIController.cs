@@ -43,8 +43,12 @@ public class MenuUIController : MonoBehaviourPunCallbacks
     public void JoinRoom(TMP_InputField _roomName)
     {
         Debug.Log("Conectado a room");
+        Debug.Log(_roomName != null);
         NetworkManager.instance.JoinRoom(_roomName.text);
-        photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
+        }
     }
 
     public void CreateRoom()
