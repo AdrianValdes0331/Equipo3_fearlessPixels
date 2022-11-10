@@ -81,6 +81,7 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
         instance4.name = "Player4";*/
 
 
+        Debug.Log(instance1.transform.GetChild(0));
         MultiplayerController playScript = instance1.transform.GetChild(0).GetComponent<MultiplayerController>();// Obtener script que controla al jugador
         playScript.photonView.RPC("Init", RpcTarget.All, PhotonNetwork.LocalPlayer); // Mandar ejecutar funcion de inicializador de player
 
