@@ -39,7 +39,7 @@ public class CircleRock : MonoBehaviour
     IEnumerator RespawnAndFreezeRock()
     {
         transform.position = respawnRockPosition;
-        rockRigidbody.constraints = RigidbodyConstraints.FreezePosition;
+        rockRigidbody.constraints = RigidbodyConstraints.FreezeAll;
         yield return new WaitForSeconds(20f);
         rockRigidbody.constraints = originalConstraints;
         rockRigidbody.WakeUp();

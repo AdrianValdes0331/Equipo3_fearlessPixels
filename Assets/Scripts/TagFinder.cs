@@ -40,7 +40,7 @@ public class TagFinder : MonoBehaviour
                     Transform p1name = GameObject.Find("Player1").transform.GetChild(0).Find("Tag");
                     Debug.Log(p1name);
                     GameObject instance = Instantiate(CurrPlayer, p1name.transform.position, transform.rotation);
-                    instance.transform.parent = p1name.transform;
+                    instance.transform.SetParent(p1name.transform);
                     instance.name = "P1Tag";
                 }
                 else
@@ -56,7 +56,7 @@ public class TagFinder : MonoBehaviour
                     Transform p2name = GameObject.Find("Player2").transform.GetChild(0).Find("Tag");
                     Debug.Log(p2name);
                     GameObject instance = Instantiate(CurrPlayer, p2name.transform.position, transform.rotation);
-                    instance.transform.parent = p2name.transform;
+                    instance.transform.SetParent(p2name.transform);
                     instance.name = "P2Tag";
                 }
                 else
@@ -72,7 +72,7 @@ public class TagFinder : MonoBehaviour
                     Transform p3name = GameObject.Find("Player3").transform.GetChild(0).Find("Tag");
                     Debug.Log(p3name);
                     GameObject instance = Instantiate(CurrPlayer, p3name.transform.position, transform.rotation);
-                    instance.transform.parent = p3name.transform;
+                    instance.transform.SetParent(p3name.transform);
                     instance.name = "P3Tag";
                 }
                 else
@@ -88,7 +88,7 @@ public class TagFinder : MonoBehaviour
                     Transform p4name = GameObject.Find("Player4").transform.GetChild(0).Find("Tag");
                     Debug.Log(p4name);
                     GameObject instance = Instantiate(CurrPlayer, p4name.transform.position, transform.rotation);
-                    instance.transform.parent = p4name.transform;
+                    instance.transform.SetParent(p4name.transform);
                     instance.name = "P4Tag";
                 }
             }

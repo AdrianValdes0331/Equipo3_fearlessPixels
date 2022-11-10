@@ -9,7 +9,7 @@ public class AITesting : StateMachineBehaviour
     public float speed = 3f;
     Rigidbody2D enemyBody;
     public bool EnableDoubleJump = true;
-    bool canDoubleJump = true;
+    //bool canDoubleJump = true;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

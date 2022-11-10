@@ -1060,6 +1060,7 @@ GameObject:
   - component: {fileID: 611519663}
   - component: {fileID: 611519662}
   - component: {fileID: 611519667}
+  - component: {fileID: 611519668}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1180,6 +1181,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f98b5acbe1c384c94e46408eac576c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &611519668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611519661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a9572f83252f9438c44639f664954f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeCamera: {fileID: 519420031}
+  targetIndicators: []
+  indicatorPrefabP1: {fileID: 3324198353006223999, guid: 41998b898800dec459158b5d71b56a0d,
+    type: 3}
+  indicatorPrefabP2: {fileID: 437063387983989332, guid: 0d9e5b537eac616448a02d02d6bd8753,
+    type: 3}
+  indicatorPrefabP3: {fileID: 5780671855899908500, guid: 53c4954a5efa16e498476f77e83ce147,
+    type: 3}
+  indicatorPrefabP4: {fileID: 1550833427624675107, guid: 5c55bd362de627d48a96e70869f4f97a,
+    type: 3}
+  checkTime: 0.05
+  offset: {x: 0, y: 0}
 --- !u!1 &621934644
 GameObject:
   m_ObjectHideFlags: 0

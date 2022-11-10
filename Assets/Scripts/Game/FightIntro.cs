@@ -43,6 +43,11 @@ public class FightIntro : MonoBehaviour
             {
                 currentPlayerInput.enabled = false;
             }
+            else
+            {
+                Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
+                playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
         }
     }
 
@@ -84,6 +89,11 @@ public class FightIntro : MonoBehaviour
             if (currentPlayerInput)
             {
                 currentPlayerInput.enabled = true;
+            }
+            else
+            {
+                Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
+                playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
             }
         }
     }
