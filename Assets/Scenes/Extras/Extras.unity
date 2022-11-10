@@ -343,9 +343,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698737563}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: CL4R174Extras
+      - m_Target: {fileID: 698737565}
+        m_TargetAssemblyTypeName: LoadExtras, Assembly-CSharp
+        m_MethodName: loadExtrasCL4R174
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -757,6 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 698737564}
   - component: {fileID: 698737563}
+  - component: {fileID: 698737565}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -791,6 +792,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698737565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698737562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2d09ed26bbbb740b39b2300b9fc59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &718556301
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,9 +889,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698737563}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ChinchikillerExtras
+      - m_Target: {fileID: 698737565}
+        m_TargetAssemblyTypeName: LoadExtras, Assembly-CSharp
+        m_MethodName: loadExtrasChinchikiller
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1347,9 +1360,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698737563}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: FoxHunterExtras
+      - m_Target: {fileID: 698737565}
+        m_TargetAssemblyTypeName: LoadExtras, Assembly-CSharp
+        m_MethodName: loadExtrasFoxHunter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2192,9 +2205,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 698737563}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: CowhuahuaExtras
+      - m_Target: {fileID: 698737565}
+        m_TargetAssemblyTypeName: LoadExtras, Assembly-CSharp
+        m_MethodName: loadExtrasCowawa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
