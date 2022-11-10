@@ -13,7 +13,6 @@ public class MultiplayerController : MonoBehaviourPunCallbacks
     [Header("Components")]
     public Rigidbody2D rig;
     public Player photonPlayer;
-    PhotonView photonView;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +26,6 @@ public class MultiplayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Init(Player player)
     {
-        photonView  = transform.parent.GetComponent<PhotonView>();
         Debug.Log("ola");
         photonPlayer = player;// Asiganar el player actual
         id = player.ActorNumber;//Guardar el id del player
