@@ -4718,7 +4718,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 580682894}
         m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
-        m_MethodName: ActivateLobbyWindow
+        m_MethodName: CreateOrJoinRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
