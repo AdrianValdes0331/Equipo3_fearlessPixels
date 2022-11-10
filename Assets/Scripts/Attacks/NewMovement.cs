@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class NewMovement : MonoBehaviour
 {
@@ -19,10 +21,12 @@ public class NewMovement : MonoBehaviour
     bool canDoubleJump = true;
     bool jumpKeyDown = false;
     [HideInInspector] public Vector2 i_movement;
+    PhotonView photonView;
 
     // Start is called before the first frame update
     void Start()
     {
+        photonView = transform.parent.GetComponent<PhotonView>();
         pSize = transform.localScale.x;
         Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
