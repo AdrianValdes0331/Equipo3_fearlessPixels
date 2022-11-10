@@ -30,16 +30,6 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         Debug.Log(PhotonNetwork.NickName);*/
     }
 
-    public void CreateOrJoinRoom()
-    {
-        int type = PlayerPrefs.GetInt("MultiplayerType");
-        if(type.Equals(0)){
-            CreateRoom();
-        } else {
-            ActivateLobbyWindow();
-        }
-    }
-
     public void JoinRoom(TMP_InputField _roomName)
     {
         Debug.Log("Conectado a room");
@@ -73,7 +63,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = "Player " + playerNumber.ToString();
     }
 
-    private void ActivateLobbyWindow()
+    public void ActivateLobbyWindow()
     {
         Lobby.SetActive(true);
     }

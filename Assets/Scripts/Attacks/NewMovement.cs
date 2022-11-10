@@ -48,6 +48,7 @@ public class NewMovement : MonoBehaviour
         {
             jumpKeyDown = false;
         }
+
     }
 
     public void OnMovement(InputValue val){

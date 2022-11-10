@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 5312814456470056724}
   - component: {fileID: 5350832696766477518}
   - component: {fileID: -7442744789680624345}
+  - component: {fileID: 8521344852894368421}
   m_Layer: 0
   m_Name: ChinchiDriver
   m_TagString: Driver
@@ -264,9 +265,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
-  m_SynchronizeRotation: 0
+  m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &8521344852894368421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953123337545008879}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7b23b29633945fd8ab154395280fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  rig: {fileID: 7312956393361201523}
 --- !u!1 &2622174065994261745
 GameObject:
   m_ObjectHideFlags: 0

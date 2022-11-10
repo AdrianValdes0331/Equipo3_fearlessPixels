@@ -1706,6 +1706,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lobby: {fileID: 1839243419}
+  MainWindow: {fileID: 0}
+  createRoomBtn: {fileID: 0}
+  joinRoomBtn: {fileID: 0}
   StartGameBtn: {fileID: 665299309}
   playertextList: {fileID: 1791402199}
 --- !u!114 &580682895
@@ -4715,7 +4718,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 580682894}
         m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
-        m_MethodName: CreateOrJoinRoom
+        m_MethodName: ActivateLobbyWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
