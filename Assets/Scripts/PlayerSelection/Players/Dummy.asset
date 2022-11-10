@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playablePlayer: {fileID: 5886959263386654046, guid: 656561f8a8a48c44dbfb89a742a2763b,
     type: 3}
-  image: {fileID: 21300000, guid: 283ecef1607f94f5384d789ecd64e508, type: 3}
+  image: {fileID: 21300000, guid: d3c12760143023c4f801ea20a9df1a0a, type: 3}
   name: Dummy

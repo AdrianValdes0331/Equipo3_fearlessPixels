@@ -17,8 +17,6 @@ public class CharacterSelectionMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI name3;
     [SerializeField] private Image image4;
     [SerializeField] private TextMeshProUGUI name4;
-    [SerializeField] private Image imageCPU;
-    [SerializeField] private TextMeshProUGUI nameCPU;
     private SelectPlayers selectPlayers;
 
     private void Start()
@@ -64,9 +62,7 @@ public class CharacterSelectionMenu : MonoBehaviour
 
     private void ChangeScreenCPU()
     {
-        PlayerPrefs.SetInt("PlayerIndex5", index);
-        imageCPU.sprite = selectPlayers.players[index].image;
-        nameCPU.text = selectPlayers.players[index].name;
+        PlayerPrefs.SetInt("PlayerIndex5", index);      
     }
 
     private void ChangeScreenNULL()
