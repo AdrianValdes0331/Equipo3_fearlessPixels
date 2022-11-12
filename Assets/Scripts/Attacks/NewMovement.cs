@@ -7,18 +7,23 @@ public class NewMovement : MonoBehaviour
 {
     public float MaxSpeed;
     public float JumpSpeed;
+    public float RecoverySpeed;
     [HideInInspector] public float dirX;
     [HideInInspector] public Animator Animator;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
     private float pSize;
     public bool EnableDoubleJump = true;
+    public bool EnableRecovery = true;
     public string AnimJumpName = "none";
+    public string AnimRecoveryName = "none";
     public string AnimWalk = "none";
 
     bool canDoubleJump = true;
+    bool canRecovery = true;
     bool jumpKeyDown = false;
-    [HideInInspector] public Vector2 i_movement;
+    bool recoveryKeyDown = false;
+    [HideInInspector] public Vector2 i_movement; 
 
     // Start is called before the first frame update
     void Start()
@@ -43,16 +48,19 @@ public class NewMovement : MonoBehaviour
         if (onTheGround)
         {
             canDoubleJump = true;
+            canRecovery = true;
         }
         else
         {
             jumpKeyDown = false;
+            recoveryKeyDown = false;
         }
     }
 
     public void OnMovement(InputValue val){
 
         i_movement = val.Get<Vector2>();
+        Animator.SetBool(AnimRecoveryName, false);
         //Debug.Log(i_movement);
 
     }
@@ -107,6 +115,30 @@ public class NewMovement : MonoBehaviour
             if (!onTheGround)
             {
                 canDoubleJump = false;
+            }
+        }
+    }
+
+    private void OnRecovery()
+    {
+        bool onTheGround = isOnGround();
+
+        if (!recoveryKeyDown)
+        {
+            recoveryKeyDown = true;
+
+            if (onTheGround || (canRecovery && EnableRecovery))
+            {
+                if (AnimRecoveryName != "")
+                {
+                    Animator.SetBool(AnimRecoveryName, true);
+                }
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, this.RecoverySpeed);
+            }
+
+            if (!onTheGround)
+            {
+                canRecovery = false;
             }
         }
     }
