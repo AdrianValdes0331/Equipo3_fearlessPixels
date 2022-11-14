@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class FightIntro : MonoBehaviour
+public class FightIntro : MonoBehaviourPunCallbacks
 {
     RawImage ready, fight;
     List<GameObject> Drivers = new List<GameObject>();
@@ -14,6 +16,20 @@ public class FightIntro : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {
+        int isOnline = PlayerPrefs.GetInt("isOnline");
+        if (isOnline.Equals(1))
+        {
+            photonView.RPC("ShowReadyFight", RpcTarget.All);
+        }
+        else
+        {
+            ShowReadyFight();
+        }
+    }
+
+    [PunRPC]
+    void ShowReadyFight()
     {
         StartCoroutine(WaitForPlayers());
         ready = GameObject.Find("Main Camera/Canvas/Ready?").GetComponent<RawImage>();
