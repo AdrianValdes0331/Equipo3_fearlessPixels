@@ -209,10 +209,19 @@ public class CharacterSelectionMenu : MonoBehaviour
 
     public void StartGame()
     {
-        Time.timeScale = 1f;
-        int stageIndex = PlayerPrefs.GetInt("StageIndex");
-        Debug.Log(stageIndex);
-        SceneManager.LoadScene(SelectStage.Instance.stages[stageIndex].StageName);
+        int playerIndex = PlayerPrefs.GetInt("PlayerIndex");
+        int player2Index = PlayerPrefs.GetInt("PlayerIndex2");
+        int player3Index = PlayerPrefs.GetInt("PlayerIndex3");
+        int player4Index = PlayerPrefs.GetInt("PlayerIndex4");
+        if ((playerIndex + player2Index + player3Index != 18 && playerIndex + player2Index + player4Index != 18 &&
+            player4Index + player2Index + player3Index != 18 && playerIndex + player3Index + player4Index != 18))
+        {
+            Time.timeScale = 1f;
+            int stageIndex = PlayerPrefs.GetInt("StageIndex");
+            Debug.Log(stageIndex);
+            SceneManager.LoadScene(SelectStage.Instance.stages[stageIndex].StageName);
+        }
+        Debug.Log("Not Enough Players");
     }
 
     public void StartTraining()
