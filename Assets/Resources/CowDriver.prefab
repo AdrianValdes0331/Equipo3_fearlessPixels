@@ -72,6 +72,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 4707557500939081344}
+  - {fileID: 3202666341893657056}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -142,6 +143,7 @@ GameObject:
   - component: {fileID: 1794346800759120109}
   - component: {fileID: 4542772186412123671}
   - component: {fileID: 4707557500939081344}
+  - component: {fileID: 3202666341893657056}
   m_Layer: 3
   m_Name: Cowhuahua
   m_TagString: Player
@@ -553,8 +555,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
+  m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &3202666341893657056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647920126043395744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Walk
+  - Type: 9
+    SynchronizeType: 2
+    Name: Salto
+  - Type: 9
+    SynchronizeType: 2
+    Name: CowMordida
+  - Type: 9
+    SynchronizeType: 2
+    Name: CowColpeCargado
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &4647920126743478314
 GameObject:
   m_ObjectHideFlags: 0

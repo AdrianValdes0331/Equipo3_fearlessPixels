@@ -248,6 +248,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2699470411386728676}
+  - {fileID: 7035532302645960412}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -422,6 +423,7 @@ GameObject:
   - component: {fileID: 7312956393361201525}
   - component: {fileID: 7312956393361201486}
   - component: {fileID: 2699470411386728676}
+  - component: {fileID: 7035532302645960412}
   m_Layer: 3
   m_Name: Chinchikiller
   m_TagString: Player
@@ -786,7 +788,7 @@ MonoBehaviour:
     m_ActionId: f93c0fdc-a596-472c-9d78-8a8e617bdf0c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -804,5 +806,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
+  m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &7035532302645960412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312956393361201532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 2
+    Name: Chinkick
+  - Type: 4
+    SynchronizeType: 2
+    Name: Walk
+  - Type: 9
+    SynchronizeType: 2
+    Name: brinco
+  - Type: 4
+    SynchronizeType: 2
+    Name: Chinmisil
+  - Type: 9
+    SynchronizeType: 2
+    Name: GolpeBasicoCK
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0

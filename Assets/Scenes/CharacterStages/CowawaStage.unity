@@ -8882,10 +8882,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameEnd: 0
   players: []
-  Postition1: {fileID: 2042342219}
-  Postition2: {fileID: 1129265492}
-  Postition3: {fileID: 1278350284}
-  Postition4: {fileID: 786257612}
+  Position1: {fileID: 2042342219}
+  Position2: {fileID: 1129265492}
+  Position3: {fileID: 1278350284}
+  Position4: {fileID: 786257612}
 --- !u!114 &1839365334
 MonoBehaviour:
   m_ObjectHideFlags: 0

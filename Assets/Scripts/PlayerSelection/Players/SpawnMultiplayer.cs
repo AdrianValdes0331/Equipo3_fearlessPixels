@@ -16,10 +16,10 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
 
     private int playerInGame; //Numero de players en el room
 
-    public Transform Postition1;
-    public Transform Postition2;
-    public Transform Postition3;
-    public Transform Postition4;
+    public Transform Position1;
+    public Transform Position2;
+    public Transform Position3;
+    public Transform Position4;
 
     private void Awake()
     {
@@ -50,9 +50,8 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
     void SpawnPlayer()
     {
         int playerIndex = PlayerPrefs.GetInt("PlayerIndex");
-        /*int player2Index = PlayerPrefs.GetInt("PlayerIndex2");
-        int player3Index = PlayerPrefs.GetInt("PlayerIndex3");
-        int player4Index = PlayerPrefs.GetInt("PlayerIndex4");*/
+
+        // Asignar el nombre correcto dependiendo del numero de player
         string playerName = "Player1";
         if (PhotonNetwork.NickName.Equals("Player 2"))
         {
@@ -67,18 +66,24 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
             playerName = "Player4";
         }
 
+        // Obtener una posición de spawn random
+        int positionIndex = Random.Range(1, 5);
+        Vector3 playerPosition = Position1.position;
+        if(positionIndex == 2)
+        {
+            playerPosition = Position2.position;
+        } else if (positionIndex == 3)
+        {
+            playerPosition = Position3.position;
+        } else if (positionIndex == 4)
+        {
+            playerPosition = Position4.position;
+        }
+        Debug.Log(playerPosition);
+
         Debug.Log(playerIndex);
-        /*Debug.Log(player2Index);
-        Debug.Log(player3Index);
-        Debug.Log(player4Index);*/
-        GameObject instance1 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer.name, Postition1.position, Quaternion.identity);
+        GameObject instance1 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer.name, playerPosition, Quaternion.identity);
         instance1.name = playerName;
-        /*GameObject instance2 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[player2Index].playablePlayer.name, Postition2.position, Quaternion.identity);
-        instance2.name = "Player2";
-        GameObject instance3 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[player3Index].playablePlayer.name, Postition3.position, Quaternion.identity);
-        instance3.name = "Player3";
-        GameObject instance4 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[player4Index].playablePlayer.name, Postition4.position, Quaternion.identity);
-        instance4.name = "Player4";*/
 
 
         Debug.Log(instance1.transform.GetChild(0));
