@@ -32,13 +32,13 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
-        for (int i = 0; i < targets.Length; i++)
-        {
-            Debug.Log(i);
-        }
-        target = targets[0].transform; 
-            //GameObject.FindGameObjectWithTag("Player").transform;
+        //GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
+        //for (int i = 0; i < targets.Length; i++)
+        //{
+        //    Debug.Log(i);
+        //}
+        //target = targets[0].transform; 
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
 
