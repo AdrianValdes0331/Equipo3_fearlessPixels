@@ -8,21 +8,19 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public float TimeLeft;
-    public bool TimerOn = false;
     public TextMeshProUGUI TimerTxt;
     public GameObject pauseMenu;
     public static bool isPaused;
+    [HideInInspector] public bool TimerOn = false;
+    FightIntroEnding introEndingScript;
     //public Transform Postition;
 
-    // Start is called before the first frame update
     void Start()
     {
-        TimerOn = true;       
-        //var SPTimer = Instantiate(TimerTxt, Postition.position, Quaternion.identity);
-        //SPTimer.transform.parent = gameObject.transform;
+        TimeLeft -= 1;
+        updateTimer(TimeLeft);
+        introEndingScript = GameObject.Find("Intro&EndingManager").GetComponent<FightIntroEnding>();
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -39,17 +37,22 @@ public class Timer : MonoBehaviour
                 Debug.Log("Time is UP!");
                 TimeLeft = 0;
                 TimerOn = false;
-                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-                foreach (GameObject play in players)
-                {
-                    GameObject.Destroy(play);
-                }
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
-                isPaused = true;
-                SceneManager.LoadScene("MainMenu");
+                introEndingScript.CheckForWinnerWhenTimeUp();
             }
         }
+    }
+
+    public void ReturnToMainMenu()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject play in players)
+        {
+            GameObject.Destroy(play);
+        }
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+        SceneManager.LoadScene("MainMenu");
     }
 
     void updateTimer(float currentTime)

@@ -20,17 +20,20 @@ public class Respawn : MonoBehaviour
     Hurtbox hurtboxScript;
     DynamicCamera cameraScript;
     Camera mainCamera;
+    FightIntroEnding introEndingScript;
     Color spawnProtectionColor = new Color(1f, 1f, 1f, 0.3f);
     Color normalPlayerColor = new Color(1f, 1f, 1f, 1f);
     int randomSpawn;
     bool keepCoroutine;
-    public int lives = 2;
+    public int startingNumberLives;
+    [HideInInspector] public int lives = 3;
 
     void Start()
     {
         playerRigidbody = player.GetComponent<Rigidbody2D>();
         playerSprite = player.GetComponent<SpriteRenderer>();
         playerInput = player.GetComponent<PlayerInput>();
+        startingNumberLives = lives;
         foreach (Transform child in player.transform)
         {
             if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
@@ -64,7 +67,9 @@ public class Respawn : MonoBehaviour
         lostLifeSound = GameObject.Find("Scenery/Sounds/LostLife").GetComponent<AudioSource>();
         respawnSound = GameObject.Find("Scenery/Sounds/Respawn").GetComponent<AudioSource>();
 
-        cameraScript = GameObject.Find("Main Camera/").GetComponent<DynamicCamera>();
+        cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
+
+        introEndingScript = GameObject.Find("Intro&EndingManager").GetComponent<FightIntroEnding>();
     }
 
     // Update is called once per frame
@@ -89,8 +94,9 @@ public class Respawn : MonoBehaviour
 
         if (lives <= 0)
         {
-            cameraScript.decreasePlayersCountByOne();
+            cameraScript.DecreasePlayersCountByOne();
             Destroy(transform.parent.gameObject);
+            introEndingScript.CheckForWinner();
         }
     }
 

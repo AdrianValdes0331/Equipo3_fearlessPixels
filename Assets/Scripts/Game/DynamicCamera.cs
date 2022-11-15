@@ -6,13 +6,13 @@ public class DynamicCamera : MonoBehaviour
 {
     float cameraEulerX;
     Vector3 cameraPosition;
-    private IEnumerator coroutine; 
+    private IEnumerator coroutine;
     public FocusPoint FocusPoint;
-    public List<GameObject> Players;
-    public float depthUpdateSpeed = 5f;
-    public float positionUpdateSpeed = 5f;
-    public float maxDepth, minDepth;
+    public float depthUpdateSpeed;
+    public float positionUpdateSpeed;
+    public float maxDepth, minDepth, endingDepth;
     [HideInInspector] public int playersCount = 0;
+    [HideInInspector] public List<GameObject> Players;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +54,7 @@ public class DynamicCamera : MonoBehaviour
             {
                 Vector3 playerPosition = Players[i].transform.position;
 
-                if (!FocusPoint.focusBounds.Contains(playerPosition))
+                if (FocusPoint && !FocusPoint.focusBounds.Contains(playerPosition))
                 {
                     float playerX = Mathf.Clamp(playerPosition.x, FocusPoint.focusBounds.min.x, FocusPoint.focusBounds.max.x);
                     float playerY = Mathf.Clamp(playerPosition.y, FocusPoint.focusBounds.min.y, FocusPoint.focusBounds.max.y);
@@ -69,10 +69,16 @@ public class DynamicCamera : MonoBehaviour
 
                 float extents = (playerBounds.extents.x + playerBounds.extents.y);
                 float lerpPercent = Mathf.InverseLerp(0, (FocusPoint.halfXBounds + FocusPoint.halfYBounds) / 2, extents);
-
-                float depth = Mathf.Lerp(maxDepth, minDepth, lerpPercent);
-
-                cameraPosition = new Vector3(averageCenter.x, averageCenter.y, depth);
+                
+                if (FocusPoint)
+                {
+                    float depth = Mathf.Lerp(maxDepth, minDepth, lerpPercent);
+                    cameraPosition = new Vector3(averageCenter.x, averageCenter.y, depth);
+                }
+                else
+                {
+                    cameraPosition = new Vector3(averageCenter.x, averageCenter.y, maxDepth);
+                }
             }
         }
     }
@@ -84,8 +90,27 @@ public class DynamicCamera : MonoBehaviour
         playersCount = Players.Count;
     }
 
-    public void decreasePlayersCountByOne()
+    public void DecreasePlayersCountByOne()
     {
         playersCount --;
+    }
+
+    public void FocusWinner(GameObject winner)
+    {
+        if (winner != null)
+        {
+            Players.Clear();
+            Players.Add(winner);
+            playersCount = 1;
+        }
+        else
+        {
+            Players.RemoveAt(0);
+            DecreasePlayersCountByOne();
+        }
+        Destroy(FocusPoint.gameObject);
+        positionUpdateSpeed -= 2;
+        depthUpdateSpeed += 8;
+        maxDepth = endingDepth;
     }
 }
