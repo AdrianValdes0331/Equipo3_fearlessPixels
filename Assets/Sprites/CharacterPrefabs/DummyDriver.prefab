@@ -400,6 +400,8 @@ GameObject:
   - component: {fileID: 687875322999849488}
   - component: {fileID: 6565398227197077917}
   - component: {fileID: 1462748052361791423}
+  - component: {fileID: 3402094877727589751}
+  - component: {fileID: 6638807853674839385}
   m_Layer: 3
   m_Name: Dummy
   m_TagString: Player
@@ -579,6 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7901658210412213037}
+  startingNumberLives: 0
   lives: 3
 --- !u!114 &1584175010196136758
 MonoBehaviour:
@@ -656,3 +659,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 2007690845207845893}
+--- !u!114 &3402094877727589751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901658210412213037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rot: 0
+  maskNames:
+  - Hurtbox
+  isSphere: 0
+  isProjectile: 0
+  radius: 0
+  sz: {x: 0.15, y: 0.3}
+  colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+  colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+  colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
+  offset: {x: 0.8, y: -0.2}
+--- !u!114 &6638807853674839385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901658210412213037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1d4efa8eb9e8941b43395463ee8bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  hitbox: {fileID: 3402094877727589751}
+  force: 2000
+  angle: 50
