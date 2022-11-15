@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class FightIntroEnding : MonoBehaviour
 {
-    RawImage ready, fight, winner, tie;
+    public Image ready, fight, winner, tie;
     List<GameObject> Drivers = new List<GameObject>();
     List<GameObject> Players = new List<GameObject>();
     Color fadedTextColor = new Color(1f, 1f, 1f, 0f);
     Color normalTextColor = new Color(1f, 1f, 1f, 1f);
     DynamicCamera cameraScript;
     Timer timerScript;
-    AudioSource winSound, win2Sound, win3Sound, tieSound;
-    float normalReadyDuration = 0.5f;
+    public AudioSource readySound, fightSound, winSound, win2Sound, win3Sound, tieSound;
+    float normalReadyDuration = 0.75f;
     float fastReadyDuration = 0.1f;
     float normalFightDuration = 0.25f;
-    float fastFightDuration = 0.075f;
-    float normalWinnerDuration = 0.5f;
-    float fastWinnerDuration = 0.1f;
+    float fastFightDuration = 0.05f;
+    float normalWinnerDuration = 0.75f;
+    float fastWinnerDuration = 0.075f;
     int readyTimes = 4;
     int fightTimes = 5;
     int winnerTimes = 7;
@@ -29,19 +30,12 @@ public class FightIntroEnding : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaitForPlayers());
-        ready = GameObject.Find("Main Camera/Canvas/Ready?").GetComponent<RawImage>();
-        fight = GameObject.Find("Main Camera/Canvas/Fight!").GetComponent<RawImage>();
-        winner = GameObject.Find("Main Camera/Canvas/Winner!").GetComponent<RawImage>();
-        tie = GameObject.Find("Main Camera/Canvas/Tie").GetComponent<RawImage>();
         cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
         timerScript = GameObject.Find("Timer").GetComponent<Timer>();
-        winSound = GameObject.Find("Scenery/Sounds/Win").GetComponent<AudioSource>();
-        win2Sound = GameObject.Find("Scenery/Sounds/Win2").GetComponent<AudioSource>();
-        win3Sound = GameObject.Find("Scenery/Sounds/Win3").GetComponent<AudioSource>();
-        tieSound = GameObject.Find("Scenery/Sounds/Tie").GetComponent<AudioSource>();
         ready.color = fadedTextColor;
         fight.color = fadedTextColor;
         winner.color = fadedTextColor;
+        tie.color = fadedTextColor;
         StartCoroutine(PlayIntro());
     }
 
@@ -118,6 +112,17 @@ public class FightIntroEnding : MonoBehaviour
         }
     }
 
+    IEnumerator FadeImage(Image textImage, float normalDuration, float fastDuration, int numberOfTimes)
+    {
+        for (int i = 0; i < numberOfTimes; i++)
+        {
+            textImage.DOFade(1f, fastDuration).SetEase(Ease.InQuint).OnComplete(
+                    () => textImage.DOFade(0f, normalDuration).SetEase(Ease.InQuint)
+                );
+            yield return new WaitForSeconds(normalDuration + fastDuration);
+        }
+    }
+
     public void PlayEndingSound(bool victory)
     {
         if (victory)
@@ -142,43 +147,34 @@ public class FightIntroEnding : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayEnding(bool thereIsWinner)
+    IEnumerator PlayEnding(bool thereIsWinner)
     {
         if (thereIsWinner)
         {
             StartCoroutine(FadeImage(winner, normalWinnerDuration, fastWinnerDuration, winnerTimes));
             PlayEndingSound(true);
-            yield return new WaitForSeconds(winnerTimes * (normalWinnerDuration + fastWinnerDuration));
+            yield return new WaitForSeconds(winnerTimes * (normalWinnerDuration + fastWinnerDuration) + 0.1f);
             winner.color = normalTextColor;
         }
         else
         {
             StartCoroutine(FadeImage(tie, normalWinnerDuration, fastWinnerDuration, winnerTimes));
             PlayEndingSound(false);
-            yield return new WaitForSeconds(winnerTimes * (normalWinnerDuration + fastWinnerDuration));
+            yield return new WaitForSeconds(winnerTimes * (normalWinnerDuration + fastWinnerDuration) + 0.1f);
             tie.color = normalTextColor;
         }
         yield return new WaitForSeconds(3f);
         timerScript.ReturnToMainMenu();
     }
 
-    IEnumerator FadeImage(RawImage textImage, float normalDuration, float fastDuration, int numberOfTimes)
-    {
-        for (int i = 0; i < numberOfTimes; i ++)
-        {
-            textImage.color = normalTextColor;
-            yield return new WaitForSeconds(normalDuration);
-            textImage.color = fadedTextColor;
-            yield return new WaitForSeconds(fastDuration);
-        }
-    }
-
     IEnumerator PlayIntro()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine(FadeImage(ready, normalReadyDuration, fastReadyDuration, readyTimes));
+        readySound.Play();
         yield return new WaitForSeconds(readyTimes * (normalReadyDuration + fastReadyDuration) + 0.1f);
         StartCoroutine(FadeImage(fight, normalFightDuration, fastFightDuration, fightTimes));
+        fightSound.Play();
         yield return new WaitForSeconds(fightTimes * (normalFightDuration + fastFightDuration) + 0.1f);
         timerScript.TimerOn = true;
         for (int i = 0; i < Drivers.Count; i++)

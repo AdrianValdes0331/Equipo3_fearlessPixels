@@ -110,7 +110,7 @@ public class DynamicCamera : MonoBehaviour
         }
         Destroy(FocusPoint.gameObject);
         positionUpdateSpeed -= 2;
-        depthUpdateSpeed += 8;
+        depthUpdateSpeed += 10;
         maxDepth = endingDepth;
     }
 }
