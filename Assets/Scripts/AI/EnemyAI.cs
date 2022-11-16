@@ -7,8 +7,10 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("Pathfinding")]
     private Transform target;
-    //private List<Transform> targets;
-    //private List<Transform> TruePlayers;
+    //private int counter = 0; 
+    private List<Transform> targets = new List<Transform>();
+    private List<Transform> TruePlayers = new List<Transform>();
+    private IEnumerator coroutine;
     public float activateDistance = 50f;
     public float pathUpdateSeconds = 0.5f;
 
@@ -34,36 +36,37 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-        /*GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < players.Length; i++)
         {
-            if (players[i].name == "Dummy")
+            if (players[i] != gameObject)
             {
-                Debug.Log("Hello dummy");
                 targets.Add(players[i].transform);
-                Debug.Log(targets[0]);
             }
-            else
-            {
-                TruePlayers.Add(players[i].transform);
-            }
-        }*/
-        //int randomIndex = Random.Range(0, targets.Count);
-        //target = targets[randomIndex].transform; 
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        int randomIndex = Random.Range(0, targets.Count);
+        target = targets[randomIndex].transform;
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
+        //counter = GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
     }
 
     private void FixedUpdate()
     {
+        float minDist = float.PositiveInfinity;
+        float dist;
+        for(int i = 0; i < targets.Count; i++)
+        {
+            dist = (transform.position - targets[i].position).sqrMagnitude;
+            if(dist < minDist) 
+            { 
+                minDist = dist;
+                target = targets[i];
+            }
+        }
         if (TargetInDistance() && followEnabled)
         {
             PathFollow();
         }
-        /*if (TruePlayers.Count < 1)
-        {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        }*/
     }
 
     private void UpdatePath()
@@ -78,6 +81,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (path == null)
         {
+            Debug.Log(path);
             return;
         }
 
