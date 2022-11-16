@@ -7,6 +7,8 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("Pathfinding")]
     private Transform target;
+    //private List<Transform> targets;
+    //private List<Transform> TruePlayers;
     public float activateDistance = 50f;
     public float pathUpdateSeconds = 0.5f;
 
@@ -32,12 +34,22 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-        //GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
-        //for (int i = 0; i < targets.Length; i++)
-        //{
-        //    Debug.Log(i);
-        //}
-        //target = targets[0].transform; 
+        /*GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i].name == "Dummy")
+            {
+                Debug.Log("Hello dummy");
+                targets.Add(players[i].transform);
+                Debug.Log(targets[0]);
+            }
+            else
+            {
+                TruePlayers.Add(players[i].transform);
+            }
+        }*/
+        //int randomIndex = Random.Range(0, targets.Count);
+        //target = targets[randomIndex].transform; 
         target = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("UpdatePath", 0f, pathUpdateSeconds);
     }
@@ -48,6 +60,10 @@ public class EnemyAI : MonoBehaviour
         {
             PathFollow();
         }
+        /*if (TruePlayers.Count < 1)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }*/
     }
 
     private void UpdatePath()
