@@ -51,6 +51,11 @@ public class PauseScript : MonoBehaviour
         {
             GameObject.Destroy(splay);
         }
+
+        //Destroy network manager
+        NetworkManager networkM = GameObject.FindObjectOfType<NetworkManager>();
+        networkM.DestroyBeforeLeave();
+
         SceneManager.LoadScene("MainMenu");
     }
 }

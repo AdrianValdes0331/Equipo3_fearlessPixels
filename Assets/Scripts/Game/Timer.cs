@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
 
 public class Timer : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class Timer : MonoBehaviour
                 {
                     GameObject.Destroy(play);
                 }
+
+                //Destroy network manager
+                PhotonNetwork.LeaveRoom();
+                NetworkManager.instance.DestroyBeforeLeave();
+
                 pauseMenu.SetActive(true);
                 Time.timeScale = 0f;
                 isPaused = true;

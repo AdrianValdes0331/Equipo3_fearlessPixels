@@ -41,6 +41,8 @@ MonoBehaviour:
   - InGame
   - Init
   - ShowReadyFight
+  - SpawnBasura
+  - SpawnMultiplayerBasura
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

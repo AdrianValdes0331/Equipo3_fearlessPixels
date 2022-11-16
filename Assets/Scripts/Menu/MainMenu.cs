@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void EscenaMainMenu()
     {
+        NetworkManager.instance.DestroyBeforeLeave();
         SceneManager.LoadScene("MainMenu");
     }
 

@@ -1551,6 +1551,7 @@ GameObject:
   - component: {fileID: 580682893}
   - component: {fileID: 580682894}
   - component: {fileID: 580682895}
+  - component: {fileID: 580682896}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1615,6 +1616,19 @@ MonoBehaviour:
   sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &580682896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580682892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f17850119d55142aad7bbd05a341b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codeMenuUI: {fileID: 1839243419}
 --- !u!1 &613053137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,8 +2113,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 580682896}
+        m_TargetAssemblyTypeName: CodeModal, Assembly-CSharp
         m_MethodName: Cerrado
         m_Mode: 1
         m_Arguments:
@@ -3319,6 +3333,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

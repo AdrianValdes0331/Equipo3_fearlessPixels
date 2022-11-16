@@ -47,6 +47,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom(_name);
     }
 
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+        Debug.Log("room was left");
+    }
+
     [PunRPC]
 
     public void LoadScene(string _nameScene)

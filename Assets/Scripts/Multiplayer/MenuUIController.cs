@@ -21,23 +21,36 @@ public class MenuUIController : MonoBehaviourPunCallbacks
     public Button StartGameBtn;
     public TextMeshProUGUI playertextList;
 
+
     public override void OnConnectedToMaster()
     {
-        createRoomBtn.interactable = true;
-        joinRoomBtn.interactable = true;
+        if (createRoomBtn != null && joinRoomBtn != null)
+        {
+            createRoomBtn.interactable = true;
+            joinRoomBtn.interactable = true;
+        }
 
         /*GetPlayerName();
         Debug.Log(PhotonNetwork.NickName);*/
     }
 
+    public override void OnLeftRoom()
+    {
+        gameObject.GetComponent<CodeModal>().Cerrado();
+        photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
+    }
+
     public void CreateOrJoinRoom()
     {
         int type = PlayerPrefs.GetInt("MultiplayerType");
-        if(type.Equals(0)){
-            CreateRoom();
-        } else {
+        if (PhotonNetwork.CurrentRoom != null)
+        {
             ActivateLobbyWindow();
+        } else
+        {
+            CreateRoom();
         }
+       
     }
 
     public void JoinRoom(TMP_InputField _roomName)
@@ -59,6 +72,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+
         if (PhotonNetwork.IsMasterClient)
         {
             ActivateLobbyWindow();
@@ -104,7 +118,8 @@ public class MenuUIController : MonoBehaviourPunCallbacks
     public void LeaveLobby()
     {
         PhotonNetwork.LeaveRoom();
-        Lobby.SetActive(false);
+        //NetworkManager.instance.DestroyBeforeLeave();
+        //Lobby.SetActive(false);
     }
 
     public void StartGame()
