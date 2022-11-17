@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -47,10 +48,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom(_name);
     }
 
-    public override void OnLeftRoom()
+    public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        base.OnLeftRoom();
-        Debug.Log("room was left");
+        Debug.Log("player left");
     }
 
     [PunRPC]
