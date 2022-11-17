@@ -30,6 +30,23 @@ public class CharacterSelectionMenu : MonoBehaviour
         }
         ChangeScreenP1();*/
     }
+    public void Update()
+    {
+        int playerIndex = PlayerPrefs.GetInt("PlayerIndex");
+        int player2Index = PlayerPrefs.GetInt("PlayerIndex2");
+        int player3Index = PlayerPrefs.GetInt("PlayerIndex3");
+        int player4Index = PlayerPrefs.GetInt("PlayerIndex4");
+        if ((playerIndex + player2Index + player3Index != 18 && playerIndex + player2Index + player4Index != 18 &&
+            player4Index + player2Index + player3Index != 18 && playerIndex + player3Index + player4Index != 18))
+        {
+            GameObject.Find("StartButton").transform.GetComponent<Fader>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("StartButton").transform.GetComponent<Fader>().enabled = false;
+        }
+
+    }
 
     private void ChangeScreenP1()
     {

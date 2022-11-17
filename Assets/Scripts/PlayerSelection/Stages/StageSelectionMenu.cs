@@ -30,18 +30,21 @@ public class StageSelectionMenu : MonoBehaviour
     }
     public void SelectStageFoxHunter()
     {
+        GameObject.Find("StartButton").transform.GetComponent<Fader>().enabled = true;
         index = 2;
         ChangeScreen();
     }
 
     public void SelectStageChinchikiller()
     {
+        GameObject.Find("StartButton").transform.GetComponent<Fader>().enabled = true;
         index = 1;
         ChangeScreen();
     }
 
     public void SelectStageCowhuahua()
     {
+        GameObject.Find("StartButton").transform.GetComponent<Fader>().enabled = true;
         index = 0;
         ChangeScreen();
     }
