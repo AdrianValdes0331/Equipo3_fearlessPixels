@@ -20,8 +20,8 @@ public class OnHoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         gameObject.transform.DOScale(initialPos, 1f).SetEase(Ease.OutExpo); // Se hace pequeña(normal) la escala del botón
     }
 
-    public void OnSelect(BaseEventData eventData)
+    public void OnSelect(BaseEventData eventData) // Cuando el botón es seleccionado
     {
-        gameObject.transform.DOScale(initialPos, 1f).SetEase(Ease.OutExpo);
+        gameObject.transform.DOScale(initialPos, 1f).SetEase(Ease.OutExpo); //Se regresa a su escala normal
     }
 }
