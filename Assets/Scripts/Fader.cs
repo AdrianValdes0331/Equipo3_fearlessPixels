@@ -7,24 +7,37 @@ using DG.Tweening;
 
 public class Fader : MonoBehaviour
 {
-    public Image Fight;
-    float fastReadyDuration = 1f;
+    //Declare Variables
+    //Duration and Color
+    public Image Fight;  
     float normalReadyDuration = 1f;
     Color fadedTextColor = new Color(1f, 1f, 1f, 0f);
-    // Start is called before the first frame update
+    
     void Start()
     {
+        //Assign Color and Run Routine
         Fight.color = fadedTextColor;
-        StartCoroutine(FadeImage(Fight, normalReadyDuration, fastReadyDuration));
+        StartCoroutine(FadeImage(Fight, normalReadyDuration));
     }
 
-    IEnumerator FadeImage(Image textImage, float normalDuration, float fastDuration)
+    IEnumerator FadeImage(Image textImage, float normalDuration)
     {
-        while(this.gameObject){
-            textImage.DOFade(1f, fastDuration).SetEase(Ease.InQuint).OnComplete(
+        //After the Call, reduce image scale and slowly bring it back to it's size
+        Fight.transform.localScale = Fight.transform.localScale / 2;
+        Fight.transform.DOScale(1, 2).SetEase(Ease.OutBack).SetDelay(0.2f).SetEase(Ease.OutQuad).OnComplete(Ready);
+
+        //Loop a fading effect on the desired image
+        while (this.gameObject){
+            textImage.DOFade(1f, normalDuration).SetEase(Ease.InQuint).OnComplete(
             () => textImage.DOFade(0f, normalDuration).SetEase(Ease.InQuint)
                 );
-            yield return new WaitForSeconds(normalDuration + fastDuration);
+            yield return new WaitForSeconds(normalDuration + normalDuration);
         }
+    }
+
+    //Didn't really had a use for OnComplete, So I just added a Log call.
+    void Ready()
+    {
+        Debug.Log("DTCompleted");
     }
 }
