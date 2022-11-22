@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 234166995}
   - component: {fileID: 234166994}
   m_Layer: 5
-  m_Name: e (3)
+  m_Name: brujorge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,7 +657,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1472454845}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.756}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -863,7 +863,7 @@ GameObject:
   - component: {fileID: 253102385}
   - component: {fileID: 253102384}
   m_Layer: 5
-  m_Name: a
+  m_Name: chinchikiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -876,14 +876,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253102382}
-  m_LocalRotation: {x: -0, y: -0, z: 0.1563414, w: 0.9877031}
+  m_LocalRotation: {x: 0, y: 0, z: 0.13706425, w: 0.9905622}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1472454845}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.989}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.756}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -150, y: -166}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 427599545}
   - component: {fileID: 427599544}
   m_Layer: 5
-  m_Name: a (1)
+  m_Name: fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1174,14 +1174,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427599542}
-  m_LocalRotation: {x: -0, y: -0, z: 0.1563414, w: 0.9877031}
+  m_LocalRotation: {x: 0, y: 0, z: 0.13706425, w: 0.9905622}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1472454845}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.989}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.756}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 150, y: -166}
@@ -2594,7 +2594,7 @@ GameObject:
   - component: {fileID: 1023019110}
   - component: {fileID: 1023019109}
   m_Layer: 5
-  m_Name: a (2)
+  m_Name: clarita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2607,17 +2607,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023019107}
-  m_LocalRotation: {x: -0, y: -0, z: 0.1563414, w: 0.9877031}
+  m_LocalRotation: {x: 0, y: 0, z: -0.13706425, w: 0.9905622}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1472454845}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.989}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.756}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 335.91, y: -212.71}
+  m_AnchoredPosition: {x: 313, y: -224.58}
   m_SizeDelta: {x: 86.39, y: 212.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1023019109
@@ -3567,7 +3567,7 @@ GameObject:
   - component: {fileID: 1445707970}
   - component: {fileID: 1445707969}
   m_Layer: 5
-  m_Name: e (1)
+  m_Name: cowawa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3580,13 +3580,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445707967}
-  m_LocalRotation: {x: -0, y: -0, z: -0.13706723, w: 0.9905618}
+  m_LocalRotation: {x: 0, y: 0, z: -0.13706425, w: 0.9905622}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1472454845}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.756}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3637,6 +3637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1472454845}
+  - component: {fileID: 1472454846}
   m_Layer: 5
   m_Name: Animalitos
   m_TagString: Untagged
@@ -3656,11 +3657,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1445707968}
   - {fileID: 253102383}
+  - {fileID: 234166993}
   - {fileID: 427599543}
   - {fileID: 1023019108}
-  - {fileID: 1445707968}
-  - {fileID: 234166993}
   m_Father: {fileID: 226786488}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3669,6 +3670,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1472454846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472454844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899d0a2b40bcc4fd8915f4a7d81bffbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carita1: {fileID: 1445707967}
+  carita2: {fileID: 253102382}
+  carita3: {fileID: 234166992}
+  carita4: {fileID: 427599542}
+  carita5: {fileID: 1023019107}
 --- !u!1 &1556235252
 GameObject:
   m_ObjectHideFlags: 0

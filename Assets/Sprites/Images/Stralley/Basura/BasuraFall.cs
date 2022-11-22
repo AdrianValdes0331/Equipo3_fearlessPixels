@@ -49,18 +49,21 @@ public class BasuraFall : MonoBehaviour
             }
 
             SpriteRenderer trashSprite = GameObject.FindWithTag("Basura").GetComponent<SpriteRenderer>();
-            StartCoroutine(BlinkAndDestroy(trashSprite, normalTrashDuration, fastTrashDuration, 4));
+            StartCoroutine(BlinkAndDestroy(trashSprite, normalTrashDuration, fastTrashDuration));
             i += spawnran;
         }
         
     }
 
-    IEnumerator BlinkAndDestroy(SpriteRenderer trashImage, float normalDuration, float fastDuration, int numberOfTimes)
+    IEnumerator BlinkAndDestroy(SpriteRenderer trashImage, float normalDuration, float fastDuration)
     {
         yield return new WaitForSeconds(5f);
 
-        for (int i = 0; i < numberOfTimes; i++)
+        // La animación se repite un total de 4 veces
+        for (int i = 0; i < 4; i++)
         {
+            // Se modifica el alpha del sprite para que vaya de 1 a 0, una vez que
+            //termina la primera parte (alpha en 1) empieza la segunda parte (poner alpha en 0)
             trashImage.DOFade(1f, fastDuration).SetEase(Ease.InQuint).OnComplete(
                     () => trashImage.DOFade(0f, normalDuration).SetEase(Ease.InQuint)
                 );
