@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 54517901389031256}
   m_Layer: 5
   m_Name: playerInfo
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 902908706331273801}
   m_Layer: 5
   m_Name: bangLvl
-  m_TagString: Untagged
+  m_TagString: PlayerImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +326,7 @@ RectTransform:
   m_GameObject: {fileID: 6975683436825935959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 54517901389031256}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -528,6 +528,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
+        type: 3}
       propertyPath: m_fontColor.b
       value: 0.1273585
       objectReference: {fileID: 0}
@@ -549,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4280346367
+      value: 2156287
       objectReference: {fileID: 0}
     - target: {fileID: 4311044286561436518, guid: 6f9aded6ae3df8d42a1d38cbf0fdc262,
         type: 3}

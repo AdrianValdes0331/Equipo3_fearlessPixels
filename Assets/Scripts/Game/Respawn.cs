@@ -69,7 +69,11 @@ public class Respawn : MonoBehaviour
 
         cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
 
-        introEndingScript = GameObject.Find("Intro&EndingManager").GetComponent<FightIntroEnding>();
+        GameObject fightIntroEnding = GameObject.Find("Intro&EndingManager");
+        if (fightIntroEnding)
+        {
+            introEndingScript = GameObject.Find("Intro&EndingManager").GetComponent<FightIntroEnding>();
+        }
     }
 
     // Update is called once per frame
@@ -96,7 +100,10 @@ public class Respawn : MonoBehaviour
         {
             cameraScript.DecreasePlayersCountByOne();
             Destroy(transform.parent.gameObject);
-            introEndingScript.CheckForWinner();
+            if (introEndingScript)
+            {
+                introEndingScript.CheckForWinner();
+            }
         }
     }
 

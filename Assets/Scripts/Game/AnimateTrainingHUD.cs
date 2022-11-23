@@ -6,147 +6,26 @@ using UnityEngine.InputSystem;
 using DG.Tweening;
 using TMPro;
 
-public class FightIntroEnding : MonoBehaviour
+public class AnimateTrainingHUD : MonoBehaviour
 {
-    public Image ready, fight, winner, tie; //BF5959 FFFFFF
-    List<GameObject> Drivers = new List<GameObject>();
-    List<GameObject> Players = new List<GameObject>();
+
     List<GameObject> HUDElements = new List<GameObject>();
     List<GameObject> PlayerImages = new List<GameObject>();
     List<GameObject> LifeImages = new List<GameObject>();
-    Color fadedTextColor = new Color(1f, 1f, 1f, 0f);
-    Color normalTextColor = new Color(1f, 1f, 1f, 1f);
     Color opaqueLifeColor = new Color(0.5f, 0.3f, 0.3f);
     Color brightLifeColor = new Color(1f, 1f, 1f);
-    DynamicCamera cameraScript;
-    Timer timerScript;
-    public AudioSource readySound, fightSound, winSound, win2Sound, win3Sound, tieSound;
-    float normalReadyDuration = 0.75f;
-    float fastReadyDuration = 0.1f;
-    float normalFightDuration = 0.25f;
-    float fastFightDuration = 0.05f;
-    float normalWinnerDuration = 0.75f;
-    float fastWinnerDuration = 0.075f;
-    float introDelay = 1f;
+    float introDelay = 0.5f;
     float scaleHUDDelay = 0.15f;
     float changeColorHUDDelay = 1f;
     float fadeInHUDDuration = 5f;
     float scaleHUDDuration = 1.75f;
     float changeColorHUDDuration = 0.25f;
-    int readyTimes = 4;
-    int fightTimes = 5;
-    int winnerTimes = 7;
     int lifeColorChangeTimes = 11;
     int livesNumber;
 
     void Start()
     {
-        StartCoroutine(WaitForPlayers());
-        cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
-        timerScript = GameObject.Find("Timer").GetComponent<Timer>();
-        ready.color = fadedTextColor;
-        fight.color = fadedTextColor;
-        winner.color = fadedTextColor;
-        tie.color = fadedTextColor;
-        StartCoroutine(PlayFightIntro());
         StartCoroutine(StartingHUDAnimation());
-    }
-
-    IEnumerator WaitForPlayers()
-    {
-        yield return new WaitForSeconds(0.205f);
-        Drivers.AddRange(GameObject.FindGameObjectsWithTag("Driver"));
-        Players.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-        for (int i = 0; i < Drivers.Count; i++)
-        {
-            PlayerInput currentPlayerInput = Drivers[i].GetComponent<PlayerInput>();
-            if (currentPlayerInput)
-            {
-                currentPlayerInput.enabled = false;
-            }
-        }
-        FreezePlayers(Players);
-    }
-
-    public void CheckForWinner()
-    {
-        List<GameObject> AlivedPlayers = new List<GameObject>();
-        AlivedPlayers.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-        if (AlivedPlayers.Count - 1 == 1)
-        {
-            timerScript.TimerOn = false;
-            FreezePlayers(AlivedPlayers);
-            cameraScript.FocusWinner(null);
-            StartCoroutine(PlayEnding(true));
-        }
-    }
-
-    public void CheckForWinnerWhenTimeUp()
-    {
-        List<GameObject> AlivedPlayers = new List<GameObject>();
-        AlivedPlayers.AddRange(GameObject.FindGameObjectsWithTag("Player"));
-        FreezePlayers(AlivedPlayers);
-        livesNumber = AlivedPlayers[0].GetComponent<Respawn>().startingNumberLives;
-        int[] livesOfPlayers = new int[AlivedPlayers.Count];
-        int[] livesCount = new int[livesNumber];
-        for (int i = 0; i < AlivedPlayers.Count; i++)
-        {
-            int currentPlayerLives = AlivedPlayers[i].GetComponent<Respawn>().lives;
-            livesOfPlayers[i] = currentPlayerLives;
-            livesCount[currentPlayerLives - 1]++;
-        }
-
-        for (int i = livesNumber - 1; i >= 0; i--)
-        {
-            if (livesCount[i] == 1)
-            {
-                cameraScript.FocusWinner(AlivedPlayers[System.Array.IndexOf(livesOfPlayers, i + 1)]);
-                StartCoroutine(PlayEnding(true));
-                return;
-            }
-        }
-        StartCoroutine(PlayEnding(false));
-    }
-
-    public void FreezePlayers(List<GameObject> AlivedPlayers)
-    {
-        for (int i = 0; i < AlivedPlayers.Count; i++)
-        {
-            PlayerInput currentPlayerInput = AlivedPlayers[i].GetComponent<PlayerInput>();
-            if (currentPlayerInput)
-            {
-                currentPlayerInput.enabled = false;
-            }
-            else
-            {
-                Rigidbody2D playerRigidbody = AlivedPlayers[i].GetComponent<Rigidbody2D>();
-                playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-            }
-        }
-    }
-
-    public void PlayEndingSound(bool victory)
-    {
-        if (victory)
-        {
-            int randomVictorySound = Random.Range(0, 3);
-            switch (randomVictorySound)
-            {
-                case 0:
-                    winSound.Play();
-                    break;
-                case 1:
-                    win2Sound.Play();
-                    break;
-                case 2:
-                    win3Sound.Play();
-                    break;
-            }
-        }
-        else
-        {
-            tieSound.Play();
-        }
     }
 
     //Corrutina para animar el HUD al comienzo de la partida
@@ -246,7 +125,7 @@ public class FightIntroEnding : MonoBehaviour
         //Se hace una pequeña pausa para aplicar el delay de animación deseado
         yield return new WaitForSeconds(changeColorHUDDelay);
         //La animación se realiza cierto número de veces por medio de un ciclo for
-        for (int i = 0; i < lifeColorChangeTimes; i ++)
+        for (int i = 0; i < lifeColorChangeTimes; i++)
         {
             /*Si el index del for es par, se hace la transición a un color brillante de la vida.
             si es impar, se hace la transición al color opaco de la vida*/
@@ -279,63 +158,6 @@ public class FightIntroEnding : MonoBehaviour
                 );
             //Se hace una pausa después de cada vuelta en el for para darle tiempo a las 2 transiciones antes de repetirlas
             yield return new WaitForSeconds(normalDuration + fastDuration);
-        }
-    }
-
-    IEnumerator PlayEnding(bool thereIsWinner)
-    {
-        if (thereIsWinner)
-        {
-            StartCoroutine(BlinkImage(winner, normalWinnerDuration, fastWinnerDuration, winnerTimes));
-            PlayEndingSound(true);
-            yield return new WaitForSeconds(winnerTimes * (normalWinnerDuration + fastWinnerDuration) + 0.1f);
-            winner.color = normalTextColor;
-        }
-        else
-        {
-            StartCoroutine(BlinkImage(tie, normalWinnerDuration, fastWinnerDuration, winnerTimes));
-            PlayEndingSound(false);
-            yield return new WaitForSeconds(winnerTimes * (normalWinnerDuration + fastWinnerDuration) + 0.1f);
-            tie.color = normalTextColor;
-        }
-        yield return new WaitForSeconds(3f);
-        timerScript.ReturnToMainMenu();
-    }
-
-    IEnumerator PlayFightIntro()
-    {
-        yield return new WaitForSeconds(introDelay);
-        //Se manda a hacer blink a la imagen de Ready!
-        StartCoroutine(BlinkImage(ready, normalReadyDuration, fastReadyDuration, readyTimes));
-        readySound.Play();
-        //Se hace una pausa para darle tiempo al blink de Ready! de terminar
-        yield return new WaitForSeconds(readyTimes * (normalReadyDuration + fastReadyDuration) + 0.1f);
-        //Se manda a hacer blink a la imagen de Fight!
-        StartCoroutine(BlinkImage(fight, normalFightDuration, fastFightDuration, fightTimes));
-        fightSound.Play();
-        //Se hace una pausa para darle tiempo al blink de Fight! de terminar
-        yield return new WaitForSeconds(fightTimes * (normalFightDuration + fastFightDuration) + 0.1f);
-        timerScript.TimerOn = true;
-        for (int i = 0; i < Drivers.Count; i++)
-        {
-            PlayerInput currentPlayerInput = Drivers[i].GetComponent<PlayerInput>();
-            if (currentPlayerInput)
-            {
-                currentPlayerInput.enabled = true;
-            }
-        }
-        for (int i = 0; i < Players.Count; i++)
-        {
-            PlayerInput currentPlayerInput = Players[i].GetComponent<PlayerInput>();
-            if (currentPlayerInput)
-            {
-                currentPlayerInput.enabled = true;
-            }
-            else
-            {
-                Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
-                playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
-            }
         }
     }
 }

@@ -16,6 +16,9 @@ TagManager:
   - Driver
   - Basura
   - Floor
+  - HUD
+  - PlayerImage
+  - LifeImage
   layers:
   - Default
   - TransparentFX
