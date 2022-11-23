@@ -14,7 +14,7 @@ public class DummyKick : MonoBehaviour, IHitboxResponder
     // Start is called before the first frame update
     void Start()
     {
-        uHitbox = false;       
+        uHitbox = true;       
         hitbox.setResponder(this);
     }
 

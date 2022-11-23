@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5496297325144200844}
   - component: {fileID: 7297597683594907467}
   - component: {fileID: -6343050158439572141}
+  - component: {fileID: 395704986809124322}
   m_Layer: 0
   m_Name: Spit
   m_TagString: Untagged
@@ -138,6 +139,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 0}
+  dmg: 0.1
+  hitbox: {fileID: 395704986809124322}
+  force: 0
+  angle: 0
   rbody: {fileID: -8639584803344811873}
   LaunchForce: 20
   SpitName: Sploosh
@@ -161,3 +166,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &395704986809124322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130089573596089491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rot: 0
+  maskNames:
+  - Hurtbox
+  isSphere: 0
+  isProjectile: 1
+  radius: 0
+  sz: {x: 1, y: 0.5}
+  colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+  colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+  colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
+  offset: {x: 0, y: 0}

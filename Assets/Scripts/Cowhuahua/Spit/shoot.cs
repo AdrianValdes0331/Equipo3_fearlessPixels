@@ -18,6 +18,6 @@ public class shoot : MonoBehaviour
 
     void Spit()
     {
-        Instantiate(ToxSpit, point.position, point.rotation);
+        Instantiate(ToxSpit, point.position, point.rotation, transform.parent.transform.parent);
     }
 }
