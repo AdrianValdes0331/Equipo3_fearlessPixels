@@ -913,6 +913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P2Tag
       objectReference: {fileID: 0}
+    - target: {fileID: 830261993182410076, guid: b6d0ef26571444e22baf87f3d92f3c68,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2657504561097674991, guid: b6d0ef26571444e22baf87f3d92f3c68,
         type: 3}
       propertyPath: m_Pivot.x

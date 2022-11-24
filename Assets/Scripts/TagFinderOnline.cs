@@ -72,6 +72,6 @@ public class TagFinderOnline : MonoBehaviourPunCallbacks
     {
 
         yield return new WaitForSeconds(waitTime);
-        //photonView.RPC("runScript", RpcTarget.All);
+        photonView.RPC("runScript", RpcTarget.All);
     }
 }
