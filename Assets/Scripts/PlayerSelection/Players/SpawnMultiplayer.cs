@@ -84,6 +84,7 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
         Debug.Log(playerIndex);
         GameObject instance1 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer.name, playerPosition, Quaternion.identity);
         instance1.name = playerName;
+        
 
 
         MultiplayerController playScript = instance1.GetComponent<MultiplayerController>();// Obtener script que controla al jugador
