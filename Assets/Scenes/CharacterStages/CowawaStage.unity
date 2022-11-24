@@ -2703,6 +2703,7 @@ GameObject:
   - component: {fileID: 612074865}
   - component: {fileID: 612074870}
   - component: {fileID: 612074871}
+  - component: {fileID: 612074873}
   - component: {fileID: 612074872}
   m_Layer: 0
   m_Name: Canvas
@@ -2884,6 +2885,22 @@ MonoBehaviour:
   sceneViewId: 7
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &612074873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612074863}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b719d8ba7cf934b8fa9221f73dd55f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1: {fileID: 2904377079224807297, guid: 0afc3fc9e645d9949a84ddab8779b520, type: 3}
+  P2: {fileID: 830261993182410076, guid: 0b35f7b4b4ccc3243a8ba2cbaaed06eb, type: 3}
+  P3: {fileID: 1650954854260373457, guid: 9c9c9d56cb4d55b4fad2053e7924e312, type: 3}
+  P4: {fileID: 4521976720218679307, guid: 19ef5b3701054c34c8cc477a066803f2, type: 3}
 --- !u!1 &622119603
 GameObject:
   m_ObjectHideFlags: 0
@@ -10457,6 +10474,7 @@ MonoBehaviour:
   MultiplayerManager: {fileID: 1839365331}
   TimerOnline: {fileID: 622119603}
   TimerOffline: {fileID: 973639832}
+  Canvas: {fileID: 612074863}
 --- !u!4 &1994379598
 Transform:
   m_ObjectHideFlags: 0

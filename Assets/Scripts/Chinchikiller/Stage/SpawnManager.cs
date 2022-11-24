@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject MultiplayerManager;
     public GameObject TimerOnline;
     public GameObject TimerOffline;
+    public GameObject Canvas;
 
     private void Awake()
     {
@@ -17,11 +18,15 @@ public class SpawnManager : MonoBehaviour
         {
             Destroy(PlayerManager);
             Destroy(TimerOffline);
+            Canvas.GetComponent<TagFinder>().enabled = false;
+            Canvas.GetComponent<TagFinderOnline>().enabled = true;
         }
         else
         {
             Destroy(MultiplayerManager);
             Destroy(TimerOnline);
+            Canvas.GetComponent<TagFinder>().enabled = true;
+            Canvas.GetComponent<TagFinderOnline>().enabled = false;
         }
     }
 }
