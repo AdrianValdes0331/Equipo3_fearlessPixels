@@ -7,6 +7,8 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject PlayerManager;
     public GameObject MultiplayerManager;
+    public GameObject TimerOnline;
+    public GameObject TimerOffline;
 
     private void Awake()
     {
@@ -14,10 +16,12 @@ public class SpawnManager : MonoBehaviour
         if (isOnline.Equals(1))
         {
             Destroy(PlayerManager);
+            Destroy(TimerOffline);
         }
         else
         {
             Destroy(MultiplayerManager);
+            Destroy(TimerOnline);
         }
     }
 }

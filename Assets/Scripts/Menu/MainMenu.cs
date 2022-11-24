@@ -30,7 +30,10 @@ public class MainMenu : MonoBehaviour
 
     public void EscenaMainMenu()
     {
-        NetworkManager.instance.DestroyBeforeLeave();
+        if (NetworkManager.instance != null)
+        {
+            NetworkManager.instance.DestroyBeforeLeave();
+        }
         SceneManager.LoadScene("MainMenu");
     }
 
