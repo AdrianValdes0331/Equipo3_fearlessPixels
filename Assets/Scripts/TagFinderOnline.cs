@@ -16,8 +16,11 @@ public class TagFinderOnline : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        coroutine = WaitAndPrint(0.5f);
-        StartCoroutine(coroutine);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            coroutine = WaitAndPrint(0.5f);
+            StartCoroutine(coroutine);
+        }
     }
 
     // Update is called once per frame
