@@ -35,6 +35,7 @@ public class SelectorAnim : MonoBehaviour
 
     private void OnMouseExit()
     {
+        Debug.Log("mouse exit");
         exit();
     }
 
