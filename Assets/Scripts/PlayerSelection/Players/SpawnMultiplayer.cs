@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SpawnMultiplayer : MonoBehaviourPunCallbacks
 {
@@ -79,16 +80,16 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
         {
             playerPosition = Position4.position;
         }
-        Debug.Log(playerPosition);
 
+        Debug.Log(playerPosition);
         Debug.Log(playerIndex);
+        
         GameObject instance1 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer.name, playerPosition, Quaternion.identity);
         instance1.name = playerName;
-        
-
 
         MultiplayerController playScript = instance1.GetComponent<MultiplayerController>();// Obtener script que controla al jugador
         playScript.photonView.RPC("Init", RpcTarget.All, PhotonNetwork.LocalPlayer); // Mandar ejecutar funcion de inicializador de player
 
     }
+  
 }
