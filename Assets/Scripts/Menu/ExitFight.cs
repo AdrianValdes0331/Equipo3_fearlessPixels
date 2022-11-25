@@ -24,8 +24,11 @@ public class ExitFight : MonoBehaviour
             }
 
             //Destroy network manager
-            PhotonNetwork.LeaveRoom();
-            NetworkManager.instance.DestroyBeforeLeave();
+            if (NetworkManager.instance != null)
+            {
+                PhotonNetwork.LeaveRoom();
+                NetworkManager.instance.DestroyBeforeLeave();
+            }
 
             SceneManager.LoadScene("MainMenu");
         }
