@@ -20,6 +20,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
     [Header("Lobby")]
     public Button StartGameBtn;
     public TextMeshProUGUI playertextList;
+    public TextMeshProUGUI roomCodeText;
 
 
     public override void OnConnectedToMaster()
@@ -42,7 +43,6 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     public void CreateOrJoinRoom()
     {
-        int type = PlayerPrefs.GetInt("MultiplayerType");
         if (PhotonNetwork.CurrentRoom != null)
         {
             ActivateLobbyWindow();
@@ -84,6 +84,11 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
     }
 
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
+    }
+
     public void GetPlayerName()
     {
         int playerNumber = PhotonNetwork.PlayerList.Length;
@@ -93,6 +98,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     private void ActivateLobbyWindow()
     {
+        UpdateRoomCode();
         Lobby.SetActive(true);
     }
 
@@ -113,6 +119,12 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         {
             StartGameBtn.interactable = false;
         }
+    }
+
+    
+    public void UpdateRoomCode()
+    {
+        roomCodeText.text = "Codigo: " + PhotonNetwork.CurrentRoom.Name;
     }
 
     public void LeaveLobby()
