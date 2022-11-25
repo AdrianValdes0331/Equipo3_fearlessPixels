@@ -20,6 +20,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
     [Header("Lobby")]
     public Button StartGameBtn;
     public TextMeshProUGUI playertextList;
+    public TextMeshProUGUI roomCodeText;
 
 
     public override void OnConnectedToMaster()
@@ -42,15 +43,15 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     public void CreateOrJoinRoom()
     {
-        int type = PlayerPrefs.GetInt("MultiplayerType");
         if (PhotonNetwork.CurrentRoom != null)
         {
             ActivateLobbyWindow();
-        } else
+        }
+        else
         {
             CreateRoom();
         }
-       
+
     }
 
     public void JoinRoom(TMP_InputField _roomName)
@@ -84,6 +85,11 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
     }
 
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        photonView.RPC("UpdatePlayerInfo", RpcTarget.All);
+    }
+
     public void GetPlayerName()
     {
         int playerNumber = PhotonNetwork.PlayerList.Length;
@@ -93,6 +99,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
 
     private void ActivateLobbyWindow()
     {
+        UpdateRoomCode();
         Lobby.SetActive(true);
     }
 
@@ -100,7 +107,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
     public void UpdatePlayerInfo()
     {
         playertextList.text = "";
-        foreach(Player player in PhotonNetwork.PlayerList)
+        foreach (Player player in PhotonNetwork.PlayerList)
         {
             playertextList.text += player.NickName + "\n";
         }
@@ -115,6 +122,12 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         }
     }
 
+
+    public void UpdateRoomCode()
+    {
+        roomCodeText.text = "Codigo: " + PhotonNetwork.CurrentRoom.Name;
+    }
+
     public void LeaveLobby()
     {
         PhotonNetwork.LeaveRoom();
@@ -127,6 +140,6 @@ public class MenuUIController : MonoBehaviourPunCallbacks
         Time.timeScale = 1f;
         int stageIndex = PlayerPrefs.GetInt("StageIndex");
         Debug.Log(stageIndex);
-        NetworkManager.instance.photonView.RPC("LoadScene", RpcTarget.All, SelectStage.Instance.stages[stageIndex].StageName); 
+        NetworkManager.instance.photonView.RPC("LoadScene", RpcTarget.All, SelectStage.Instance.stages[stageIndex].StageName);
     }
 }

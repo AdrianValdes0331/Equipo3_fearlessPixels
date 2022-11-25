@@ -61,8 +61,8 @@ EditorBuildSettings:
     guid: cd9665e8e95acae43a97e19da78d899d
   - enabled: 1
     path: Assets/Scenes/Multiplayer/MultiplayerCharacterSelect.unity
-    guid: cd20c1c32fd8845e782906d6ad67b597
+    guid: febcf72410dbb604cb1e0c334b44be1a
   - enabled: 1
     path: Assets/Scenes/Multiplayer/MultiplayerStageSelect.unity
-    guid: ad0656f2b15324143963c578ac8191ad
+    guid: e6c847a054d20ba4ba1eda6489647224
   m_configObjects: {}
