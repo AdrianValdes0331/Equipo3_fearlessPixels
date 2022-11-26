@@ -105,6 +105,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotateSpeed: 200
+  ItsAHit: {fileID: 4344038746741570550, guid: d0eff2cd35baa874eb0f227dd27e1dba, type: 3}
+  ItsNotAHit: {fileID: 479926494040748287, guid: 8c228b9c3105ca24eb085002758f1380,
+    type: 3}
   Cabooommmmm: {fileID: 1825517975772227231, guid: ad5933c983a1b4e4c8593aaf16f1f8a9,
     type: 3}
   isBang: 0

@@ -12,8 +12,9 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
 	public float rotateSpeed = 200f;
 
 	private Rigidbody2D rb;
-
-	public GameObject Cabooommmmm;
+    public GameObject ItsAHit;
+    public GameObject ItsNotAHit;
+    public GameObject Cabooommmmm;
     [SerializeField] private bool isBang;
     [SerializeField] private float TimeToChangeColor;
     [SerializeField] private float TimeToExplode;
@@ -104,20 +105,25 @@ public class HomingMissile : MonoBehaviour, IHitboxResponder
         Destroy(gameObject);
         Destroy(GameObject.FindWithTag("scope"));
         print("HITTTT");
+
         //Explosion();
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         if (hurtbox != null)
         {
             Debug.Log("Hit player");
+            GameObject EXSound = Instantiate(ItsAHit, transform.position, transform.rotation, transform.parent);
             GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation, transform.parent);
             cabom.GetComponent<Explode>().enabled = false;
             Destroy(cabom, 2.0f);
+            Destroy(EXSound, 2.0f);
             BangLvl bang = gameObject.transform.parent.GetComponent<BangLvl>();
             bang.bangUpdate(dmg, true);
             hurtbox.getHitBy(dmg, force, angle, transform.position.x);
         }
         else
         {
+            GameObject EXSound2 = Instantiate(ItsNotAHit, transform.position, transform.rotation, transform.parent);
+            Destroy(EXSound2, 2.0f);
             NoPlayersHurtbox noPlayersHurtbox = collider.GetComponent<NoPlayersHurtbox>();
             if (noPlayersHurtbox != null)
             {
