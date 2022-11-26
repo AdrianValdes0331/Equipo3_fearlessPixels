@@ -46,20 +46,19 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         int isOnline = PlayerPrefs.GetInt("isOnline");
         if (isOnline.Equals(1))
         {
-            photonView.RPC("ShowReadyFight", RpcTarget.All);
+            photonView.RPC("ShowReadyFightOnline", RpcTarget.All);
         }
         else
         {
-            ShowReadyFight();
+            ShowReadyFightOffline();
         }
     }
 
-    [PunRPC]
-    void ShowReadyFight()
+    void ShowReadyFightOffline()
     {
         StartCoroutine(WaitForPlayers());
         cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
-        timerScript = GameObject.Find("Timer").GetComponent<Timer>();
+        timerScript = GameObject.Find("TimerOffline").GetComponent<Timer>();
         ready.color = fadedTextColor;
         fight.color = fadedTextColor;
         winner.color = fadedTextColor;
@@ -68,6 +67,19 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         StartCoroutine(StartingHUDAnimation());
     }
 
+    [PunRPC]
+    void ShowReadyFightOnline()
+    {
+        StartCoroutine(WaitForPlayers());
+        cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
+        timerScript = GameObject.Find("TimerOnline").GetComponent<Timer>();
+        ready.color = fadedTextColor;
+        fight.color = fadedTextColor;
+        winner.color = fadedTextColor;
+        tie.color = fadedTextColor;
+        StartCoroutine(PlayFightIntro());
+        StartCoroutine(StartingHUDAnimation());
+    }
     IEnumerator WaitForPlayers()
     {
         yield return new WaitForSeconds(0.205f);

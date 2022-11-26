@@ -670,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7312956393361201532}
+  startingNumberLives: 0
   lives: 3
 --- !u!95 &7312956393361201525
 Animator:

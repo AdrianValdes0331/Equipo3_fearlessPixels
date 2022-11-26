@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2071701424864858738
 Transform:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotateSpeed: 200
-  Cabooommmmm: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
+  Cabooommmmm: {fileID: 1825517975772227231, guid: ad5933c983a1b4e4c8593aaf16f1f8a9,
     type: 3}
   isBang: 0
   TimeToChangeColor: 5
