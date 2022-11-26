@@ -106,7 +106,7 @@ MonoBehaviour:
   speed: 2
   rotateSpeed: 100
   ItsAHit: {fileID: 4344038746741570550, guid: d0eff2cd35baa874eb0f227dd27e1dba, type: 3}
-  ItsNotAHit: {fileID: 479926494040748287, guid: 8c228b9c3105ca24eb085002758f1380,
+  ItsNotAHit: {fileID: 4344038746741570550, guid: cfea9de9cadb8e94dba728afe8e1e80a,
     type: 3}
   Cabooommmmm: {fileID: 1825517975772227231, guid: 5f736c35204b51c42af65d9f1b53f8fc,
     type: 3}
