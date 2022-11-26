@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void EscenaGameHost()
     {
+        PlayerPrefs.SetInt("isOnline", 1);
         SceneManager.LoadScene("GameHost");
     }
 
@@ -29,6 +30,10 @@ public class MainMenu : MonoBehaviour
 
     public void EscenaMainMenu()
     {
+        if (NetworkManager.instance != null)
+        {
+            NetworkManager.instance.DestroyBeforeLeave();
+        }
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -44,6 +49,7 @@ public class MainMenu : MonoBehaviour
 
     public void EscenaFreePlaySeleccionStage()
     {
+        PlayerPrefs.SetInt("isOnline", 0);
         SceneManager.LoadScene("StageSelect");
     }
 

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Photon.Pun;
+using Photon.Realtime;
 using DG.Tweening;
 using TMPro;
 
-public class FightIntroEnding : MonoBehaviour
+public class FightIntroEnding : MonoBehaviourPunCallbacks
 {
     public Image ready, fight, winner, tie; //BF5959 FFFFFF
     List<GameObject> Drivers = new List<GameObject>();
@@ -40,6 +42,20 @@ public class FightIntroEnding : MonoBehaviour
     int livesNumber;
 
     void Start()
+    {
+        int isOnline = PlayerPrefs.GetInt("isOnline");
+        if (isOnline.Equals(1))
+        {
+            photonView.RPC("ShowReadyFight", RpcTarget.All);
+        }
+        else
+        {
+            ShowReadyFight();
+        }
+    }
+
+    [PunRPC]
+    void ShowReadyFight()
     {
         StartCoroutine(WaitForPlayers());
         cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
