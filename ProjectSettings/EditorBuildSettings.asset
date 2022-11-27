@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Modo Libre/GameHost.unity
     guid: 70c372f48f752a14c9e9e2c0ebd08c89
   - enabled: 1
-    path: Assets/Scenes/Modo Libre/Personalizacion.unity
-    guid: 75081cfe7769e2e458d1b7ea0e5eabcf
-  - enabled: 1
     path: Assets/Scenes/Training/TrainingCharacterSelect.unity
     guid: a7ac28289b2878649bb3ece2348ba65e
   - enabled: 1

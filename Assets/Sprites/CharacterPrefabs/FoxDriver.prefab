@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 8053664680471224262}
   - component: {fileID: 5790133651203138487}
   - component: {fileID: 5258254539492954362}
+  - component: {fileID: 1551455217879578913}
   - component: {fileID: 4647920126043395753}
   - component: {fileID: 1794346800759120109}
   - component: {fileID: 4542772186412123671}
@@ -243,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 5
   JumpSpeed: 15
-  RecoverySpeed: 0
+  RecoverySpeed: 25
   dirX: 0
   Animator: {fileID: 0}
   EnableDoubleJump: 1
@@ -378,6 +379,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 0}
   ToxSpit: {fileID: 5130089573596089491, guid: 14220cc649363e641a0504978deae366, type: 3}
+  point: {fileID: 3467332874739235066}
+--- !u!114 &1551455217879578913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647920126043395744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d04aac1b01181d4f91221cf3deda62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToxSpit: {fileID: 5130089573596089491, guid: af31f849e84f052419f86ac7d3d9d644, type: 3}
   point: {fileID: 3467332874739235066}
 --- !u!114 &4647920126043395753
 MonoBehaviour:
