@@ -10,6 +10,7 @@ public class TickTickBoom : MonoBehaviour
     public Rigidbody2D rbody;
     public float LaunchForce;
     public GameObject Cabooommmmm;
+    public GameObject timeup;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,10 @@ public class TickTickBoom : MonoBehaviour
     }
     void bamm()
     {
+        GameObject EXSound = Instantiate(timeup, transform.position, transform.rotation, transform.parent);
         GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation, transform.parent);
         Destroy(cabom, 2.0f);
+        Destroy(EXSound, 2.0f);
         Destroy(gameObject);
     }
 
