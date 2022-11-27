@@ -53,7 +53,6 @@ public class Chinkick : MonoBehaviour, IHitboxResponder
 
     public void CollisionedWith(Collider2D collider)
     {
-
         if(collider.transform.parent.transform.parent == transform.parent) { return; }
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         if (hurtbox != null)

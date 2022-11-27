@@ -39,5 +39,13 @@ public class Bang : Attack
     {
         throw new System.NotImplementedException();
     }
+    public override void OnNeutral(PlayerController player)
+    {}
+    public override void OnCharged(PlayerController player)
+    {}
+    public override void OnRecovery(PlayerController player)
+    {}
+    public override void OnHit(PlayerController player)
+    {}
 
 }

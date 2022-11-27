@@ -62,4 +62,23 @@ public class Jump : IPlayerBaseState
             doubleJump = false;
         }
     }
+
+    public void OnNeutral(PlayerController player)
+    {
+
+    }
+    public void OnCharged(PlayerController player)
+    {}
+    public void OnRecovery(PlayerController player)
+    {}
+    public void OnHit(PlayerController player)
+    {}
+    public bool hasGizmos()
+    {
+        return false;
+    }
+    public gizmo? gz()
+    {
+        return null;
+    }
 }

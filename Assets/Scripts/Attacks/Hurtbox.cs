@@ -13,7 +13,7 @@ public class Hurtbox : MonoBehaviour
     {
 
         BangLvl bang = transform.parent.transform.parent.GetComponent<BangLvl>();
-        bang.bangUpdate(damage, false);
+        //bang.bangUpdate(damage, false);
         //alreveza el angulo dependiendo si el ataque esta a la derecha o izquierda
         if (transform.position.x - xPos < 0) { angle = 180-angle; }
         float radian = angle * Mathf.Deg2Rad;
