@@ -18,7 +18,8 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         float force = 5000;
-        if (collision.gameObject.layer == 7)
+        int luck = Random.Range(0, 2);
+        if (collision.gameObject.layer == 7 && luck == 1)
         {
             Debug.Log("Bounce");
             Vector2 dir = collision.transform.position;

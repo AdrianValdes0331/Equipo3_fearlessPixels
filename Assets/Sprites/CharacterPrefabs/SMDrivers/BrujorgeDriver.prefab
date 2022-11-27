@@ -183,7 +183,7 @@ PrefabInstance:
     - target: {fileID: 3827476459431399572, guid: cf6e3890b318648f29ee80475396bbca,
         type: 3}
       propertyPath: tankiness
-      value: 2.5
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8904761068495514404, guid: cf6e3890b318648f29ee80475396bbca,
         type: 3}

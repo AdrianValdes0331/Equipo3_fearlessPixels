@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankiness: 3.5
+  tankiness: 3
   dmgPercent: 0
 --- !u!1 &3750781916421094074
 GameObject:
@@ -572,7 +572,7 @@ MonoBehaviour:
   AnimChinkick: Chinkick
   dmg: 5
   hitbox: {fileID: 916544361273405254}
-  force: 12000
+  force: 13000
   angle: 45
 --- !u!114 &8587081216298710676
 MonoBehaviour:
@@ -591,7 +591,7 @@ MonoBehaviour:
   AnimSword: GolpeBasicoCK
   dmg: 3
   hitbox: {fileID: 8314735753585191917}
-  force: 7000
+  force: 8000
   angle: 35
 --- !u!114 &3093057408407386448
 MonoBehaviour:

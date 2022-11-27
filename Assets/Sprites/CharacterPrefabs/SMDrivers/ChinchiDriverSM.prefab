@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 7645406238959252347, guid: a8a418229c4fb76458af16952b5811a9,
         type: 3}
       propertyPath: tankiness
-      value: 3.5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7380361777015331709, guid: a8a418229c4fb76458af16952b5811a9, type: 3}

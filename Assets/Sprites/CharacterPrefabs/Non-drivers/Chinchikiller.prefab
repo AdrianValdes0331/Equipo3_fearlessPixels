@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankiness: 3.5
+  tankiness: 3
   dmgPercent: 0
 --- !u!1 &3971590692082628746
 GameObject:

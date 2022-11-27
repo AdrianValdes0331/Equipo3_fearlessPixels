@@ -506,5 +506,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankiness: 2.5
+  tankiness: 2.3
   dmgPercent: 0
