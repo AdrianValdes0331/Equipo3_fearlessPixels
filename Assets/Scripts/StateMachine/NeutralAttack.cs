@@ -81,7 +81,8 @@ public class NeutralAttack : Attack
         }
 
     }
-    public override void LateUpdate(PlayerController player) { }
+    public override void LateUpdate(PlayerController player) 
+    {}
     public override void Move(PlayerController player, InputValue val, float speed)
     {}
     public override void Jump(PlayerController player, float speed)
@@ -98,7 +99,12 @@ public class NeutralAttack : Attack
         queued = true;
 
     }
-
+    public override void OnCharged(PlayerController player)
+    {}
+    public override void OnRecovery(PlayerController player)
+    {}
+    public override void OnHit(PlayerController player)
+    {}
     IEnumerator Active(PlayerController player, float t)
     {
 

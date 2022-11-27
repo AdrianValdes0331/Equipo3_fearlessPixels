@@ -67,6 +67,12 @@ public class Jump : IPlayerBaseState
     {
 
     }
+    public void OnCharged(PlayerController player)
+    {}
+    public void OnRecovery(PlayerController player)
+    {}
+    public void OnHit(PlayerController player)
+    {}
     public bool hasGizmos()
     {
         return false;

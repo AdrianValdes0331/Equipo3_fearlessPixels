@@ -23,6 +23,9 @@ public abstract class Attack : IPlayerBaseState, IHitboxResponder
     public abstract void Jump(PlayerController player, float speed);
     public abstract void OnCollisionEffects(); //Things to do after an attack hits dependent on implementation
     public abstract void OnNeutral(PlayerController player);
+    public abstract void OnCharged(PlayerController player);
+    public abstract void OnRecovery(PlayerController player);
+    public abstract void OnHit(PlayerController player);
     public gizmo? gz(){return g;}
     //All attacks have the same implementation for CollisionedWith
     public void CollisionedWith(Collider2D collider)

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public readonly Walk WalkState = new Walk();
     [HideInInspector] public readonly Jump JumpState = new Jump();
     public NeutralAttack NeutralAState = new NeutralAttack();
+    public ChargeAttack ChargeAState = new ChargeAttack();
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +64,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnWeakAttack(){
         currState.OnNeutral(this);
+    }
+    
+    public void OnStrongKick()
+    {
+        currState.OnCharged(this);
     }
 
     internal void TransitionToState(IPlayerBaseState state) {

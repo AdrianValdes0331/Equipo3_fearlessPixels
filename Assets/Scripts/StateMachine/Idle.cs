@@ -43,6 +43,14 @@ public class Idle : IPlayerBaseState
     {
         player.TransitionToState(player.NeutralAState);
     }
+    public void OnCharged(PlayerController player)
+    {
+        player.TransitionToState(player.ChargeAState);
+    }
+    public void OnRecovery(PlayerController player)
+    {}
+    public void OnHit(PlayerController player)
+    {}
     public bool hasGizmos()
     {
         return false;
