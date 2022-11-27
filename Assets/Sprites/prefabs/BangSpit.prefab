@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 395704986809124322}
   - component: {fileID: 8145478896534020887}
   - component: {fileID: -6343050158439572141}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BangSpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
