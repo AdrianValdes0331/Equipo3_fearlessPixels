@@ -7,6 +7,7 @@ public class Hurtbox : MonoBehaviour
 {
 
     private Collider2D hcollider;
+    public float tankiness = 2.0f;
     [HideInInspector] public float dmgPercent = 0.0f;
 
     public bool getHitBy(float damage, int force, int angle, float xPos)
@@ -23,7 +24,7 @@ public class Hurtbox : MonoBehaviour
         print("angulo = " + angle);
         print("Fuerza final = "+finalForce);
         dmgPercent += damage;
-        transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*((dmgPercent/100)/2));
+        transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*((dmgPercent/100)/ tankiness));
         Debug.Log(transform.parent);
         UpdateDmgPercentText();
         return true;

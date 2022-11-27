@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8904761068495514409}
+  startingNumberLives: 0
   lives: 3
 --- !u!114 &-8919026226711704134
 MonoBehaviour:
@@ -505,4 +506,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tankiness: 2.5
   dmgPercent: 0
