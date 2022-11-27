@@ -80,6 +80,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Recovery"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3a4654a-6626-420f-988b-f481ce90927f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -236,6 +245,138 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""WeakAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""92f28b6c-1316-4488-bdb9-640ccea11290"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""2ee12372-fde3-4bfa-8cb6-1dfa106690f9"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""f9f24d2b-90d8-4431-85da-2e889bbd20ca"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""803425c1-76aa-4ce8-bd02-f8b4890ad1ab"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""aa9938c4-c1e9-46ce-aa8f-a9d151adc305"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""52a7da4a-578a-4fbe-9f4a-f112b278a700"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""edc531ae-9568-41d2-814d-02c7d5d8723c"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""fd793283-ec83-4637-8ca3-815077443f6b"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""2bf29080-2441-4a6d-8424-3fb410d2ce26"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""a60a7ede-fd1f-4974-8da6-b2602d080f6e"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""965c3e2a-3960-4b37-b4b6-52078a16b60c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""c4be5db8-725b-4972-8bad-f08127e5262f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Recovery"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -273,6 +414,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Special = m_Player.FindAction("Special", throwIfNotFound: true);
         m_Player_Bang = m_Player.FindAction("Bang", throwIfNotFound: true);
         m_Player_WeakAttack = m_Player.FindAction("WeakAttack", throwIfNotFound: true);
+        m_Player_Recovery = m_Player.FindAction("Recovery", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -338,6 +480,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Special;
     private readonly InputAction m_Player_Bang;
     private readonly InputAction m_Player_WeakAttack;
+    private readonly InputAction m_Player_Recovery;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -348,6 +491,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Special => m_Wrapper.m_Player_Special;
         public InputAction @Bang => m_Wrapper.m_Player_Bang;
         public InputAction @WeakAttack => m_Wrapper.m_Player_WeakAttack;
+        public InputAction @Recovery => m_Wrapper.m_Player_Recovery;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -375,6 +519,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @WeakAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeakAttack;
                 @WeakAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeakAttack;
                 @WeakAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeakAttack;
+                @Recovery.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRecovery;
+                @Recovery.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRecovery;
+                @Recovery.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRecovery;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -397,6 +544,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @WeakAttack.started += instance.OnWeakAttack;
                 @WeakAttack.performed += instance.OnWeakAttack;
                 @WeakAttack.canceled += instance.OnWeakAttack;
+                @Recovery.started += instance.OnRecovery;
+                @Recovery.performed += instance.OnRecovery;
+                @Recovery.canceled += instance.OnRecovery;
             }
         }
     }
@@ -427,5 +577,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnSpecial(InputAction.CallbackContext context);
         void OnBang(InputAction.CallbackContext context);
         void OnWeakAttack(InputAction.CallbackContext context);
+        void OnRecovery(InputAction.CallbackContext context);
     }
 }
