@@ -28,6 +28,8 @@ public class ChargeAttackCharged : Attack
         transform = player.transform;
         hitbox.transform = transform;
         MonoBehaviour.print("Charging!");
+        player.SetAnimatorTrigger(PlayerController.AnimStates.Idle);
+
         startTime = Time.fixedTime;
 
         sr = player.transform.GetChild(0).GetComponent<SpriteRenderer>();
@@ -81,7 +83,14 @@ public class ChargeAttackCharged : Attack
 
         if (done)
         {
-            player.TransitionToState(player.IdleState);
+            if (i_movement.x == 0)
+            {
+                player.TransitionToState(player.IdleState);
+            }
+            else
+            {
+                player.TransitionToState(player.WalkState);
+            }
         }
     }
     public override void LateUpdate(PlayerController player)
@@ -93,7 +102,11 @@ public class ChargeAttackCharged : Attack
     public override void OnNeutral(PlayerController player)
     {}
     public override void OnCharged(PlayerController player)
-    {}
+    {
+        anim.Kill(true);
+        sr.color = start;
+        player.TransitionToState(player.ChargeAState);
+    }
     public override void OnChargedCharged(PlayerController player)
     {
         anim.Kill(true);
@@ -109,9 +122,19 @@ public class ChargeAttackCharged : Attack
         g.pos = hitbox.pos;
         player.StartCoroutine(Active(player, activeTime));
     }
+    public override void OnSpecial(PlayerController player)
+    {}
+    public override void OnSpecialHold(PlayerController player)
+    {}
+    public override void OnBang(PlayerController player)
+    {}
     public override void OnRecovery(PlayerController player)
     {}
     public override void OnHit(PlayerController player)
+    {}
+    public override void OnEnable(PlayerController player)
+    {}
+    public override void OnDisable(PlayerController player)
     {}
     IEnumerator Active(PlayerController player, float t)
     {

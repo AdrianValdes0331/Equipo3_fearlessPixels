@@ -15,8 +15,13 @@ public interface IPlayerBaseState
     public void OnNeutral(PlayerController player);
     public void OnCharged(PlayerController player);
     public void OnChargedCharged(PlayerController player);
+    public void OnSpecial(PlayerController player);
+    public void OnSpecialHold(PlayerController player);
+    public void OnBang(PlayerController player);
     public void OnRecovery(PlayerController player);
     public void OnHit(PlayerController player);
+    public void OnEnable(PlayerController player);
+    public void OnDisable(PlayerController player);
 
 
     public bool hasGizmos();

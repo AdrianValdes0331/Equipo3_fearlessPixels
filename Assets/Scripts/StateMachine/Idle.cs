@@ -13,12 +13,12 @@ public class Idle : IPlayerBaseState
 
     public void OnCollisionEnter(PlayerController player, Collision2D col)
     {
-        
+
     }
 
     public void OnTriggerEnter(PlayerController player, Collider2D col)
     {
-        
+
     }
 
     public void Update(PlayerController player)
@@ -51,9 +51,21 @@ public class Idle : IPlayerBaseState
     {
         player.TransitionToState(player.ChargeChargedState);
     }
+    public void OnSpecial(PlayerController player)
+    {
+        player.TransitionToState(player.SpecialAState);
+    }
+    public void OnSpecialHold(PlayerController player)
+    {}
+    public void OnBang(PlayerController player)
+    {}
     public void OnRecovery(PlayerController player)
     {}
     public void OnHit(PlayerController player)
+    {}
+    public void OnEnable(PlayerController player)
+    {}
+    public void OnDisable(PlayerController player)
     {}
     public bool hasGizmos()
     {

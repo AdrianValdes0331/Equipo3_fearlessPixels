@@ -45,9 +45,19 @@ public class Bang : Attack
     {}
     public override void OnChargedCharged(PlayerController player)
     {}
+    public override void OnSpecial(PlayerController player)
+    {}
+    public override void OnSpecialHold(PlayerController player)
+    {}
+    public override void OnBang(PlayerController player)
+    {}
     public override void OnRecovery(PlayerController player)
     {}
     public override void OnHit(PlayerController player)
+    {}
+    public override void OnEnable(PlayerController player)
+    {}
+    public override void OnDisable(PlayerController player)
     {}
 
 }

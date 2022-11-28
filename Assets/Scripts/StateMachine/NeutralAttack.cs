@@ -53,6 +53,7 @@ public class NeutralAttack : Attack
         g.color = hitbox.currColor;
 
         i_movement = player.i_movement;
+        
         player.rb.velocity = new Vector2(i_movement.x*player.speed, player.rb.velocity.y);
 
         if (i_movement.x < 0.0f)
@@ -103,9 +104,19 @@ public class NeutralAttack : Attack
     {}
     public override void OnChargedCharged(PlayerController player)
     {}
+    public override void OnSpecial(PlayerController player)
+    {}
+    public override void OnSpecialHold(PlayerController player)
+    {}
+    public override void OnBang(PlayerController player)
+    {}
     public override void OnRecovery(PlayerController player)
     {}
     public override void OnHit(PlayerController player)
+    {}
+    public override void OnEnable(PlayerController player)
+    {}
+    public override void OnDisable(PlayerController player)
     {}
     IEnumerator Active(PlayerController player, float t)
     {
