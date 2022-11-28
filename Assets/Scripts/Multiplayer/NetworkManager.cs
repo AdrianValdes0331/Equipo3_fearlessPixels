@@ -63,9 +63,4 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel(_nameScene); 
     }
 
-    public string GetRoomCode()
-    {
-
-        return "";
-    }
 }
