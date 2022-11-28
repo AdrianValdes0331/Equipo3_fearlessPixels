@@ -77,7 +77,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     [PunRPC]
     void ShowReadyFightOnline()
     {
-        StartCoroutine(WaitForPlayers());
+        StartCoroutine(WaitForPlayersOnline());
         cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
         timerOnlineScript = GameObject.Find("TimerOnline").GetComponent<TimerOnline>();
         ready.color = fadedTextColor;
@@ -86,6 +86,11 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         tie.color = fadedTextColor;
         StartCoroutine(PlayFightIntro());
         StartCoroutine(StartingHUDAnimation());
+    }
+
+    IEnumerator WaitForPlayersOnline()
+    {
+        yield return new WaitForSeconds(0.205f);
     }
 
     IEnumerator WaitForPlayers()
@@ -367,6 +372,8 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         if (isOnlineB)
         {
             timerOnlineScript.startTimer = true;
+
+
         } else
         {
             timerScript.TimerOn = true;

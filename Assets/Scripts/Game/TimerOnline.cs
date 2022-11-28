@@ -57,7 +57,8 @@ public class TimerOnline : MonoBehaviourPunCallbacks
             timeLeft = 0;
             Debug.Log("Time is UP!");
 
-            introEndingScript.CheckForWinnerWhenTimeUp();
+            ReturnToMainMenu();
+            //introEndingScript.CheckForWinnerWhenTimeUp();
 
         }
     }
