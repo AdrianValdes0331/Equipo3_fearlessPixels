@@ -8,7 +8,22 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        AudioSource menuMusic = GameObject.FindWithTag("MenuMusic").GetComponent<AudioSource>();
+        if (menuMusic)
+        {
+            if (!menuMusic.isPlaying)
+            {
+                menuMusic.Play();
+            }
+            else
+            {
+                Debug.Log("Esta reproduciendose la musica de menu");
+            }
+        }
+        else
+        {
+            Debug.Log("No encontre musica de menu");
+        }
     }
 
     // Update is called once per frame
