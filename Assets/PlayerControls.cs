@@ -89,6 +89,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChargeSpecial"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb595be3-2954-44cd-957b-93ea7669fb1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -377,6 +386,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Recovery"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56536c9d-7b77-459c-92ef-c9b29752399c"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": ""Tap,SlowTap(duration=0.3)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ChargeSpecial"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -415,6 +435,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Bang = m_Player.FindAction("Bang", throwIfNotFound: true);
         m_Player_WeakAttack = m_Player.FindAction("WeakAttack", throwIfNotFound: true);
         m_Player_Recovery = m_Player.FindAction("Recovery", throwIfNotFound: true);
+        m_Player_ChargeSpecial = m_Player.FindAction("ChargeSpecial", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -481,6 +502,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Bang;
     private readonly InputAction m_Player_WeakAttack;
     private readonly InputAction m_Player_Recovery;
+    private readonly InputAction m_Player_ChargeSpecial;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -492,6 +514,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Bang => m_Wrapper.m_Player_Bang;
         public InputAction @WeakAttack => m_Wrapper.m_Player_WeakAttack;
         public InputAction @Recovery => m_Wrapper.m_Player_Recovery;
+        public InputAction @ChargeSpecial => m_Wrapper.m_Player_ChargeSpecial;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -522,6 +545,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Recovery.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRecovery;
                 @Recovery.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRecovery;
                 @Recovery.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRecovery;
+                @ChargeSpecial.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeSpecial;
+                @ChargeSpecial.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeSpecial;
+                @ChargeSpecial.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeSpecial;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -547,6 +573,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Recovery.started += instance.OnRecovery;
                 @Recovery.performed += instance.OnRecovery;
                 @Recovery.canceled += instance.OnRecovery;
+                @ChargeSpecial.started += instance.OnChargeSpecial;
+                @ChargeSpecial.performed += instance.OnChargeSpecial;
+                @ChargeSpecial.canceled += instance.OnChargeSpecial;
             }
         }
     }
@@ -578,5 +607,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnBang(InputAction.CallbackContext context);
         void OnWeakAttack(InputAction.CallbackContext context);
         void OnRecovery(InputAction.CallbackContext context);
+        void OnChargeSpecial(InputAction.CallbackContext context);
     }
 }
