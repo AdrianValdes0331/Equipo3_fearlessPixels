@@ -41,7 +41,14 @@ public class TimerOnline : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (!startTimer) return;
+        if (!startTimer)
+        {
+            CustomeValue = new ExitGames.Client.Photon.Hashtable();
+            startTime = PhotonNetwork.Time;
+            CustomeValue.Add("StartTime", startTime);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
+            return;
+        }
         timeLeft = PhotonNetwork.Time - startTime;
         updateTimer(((float)timeLeft));
         if (timeLeft >= timer)

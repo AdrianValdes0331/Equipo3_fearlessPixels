@@ -46,10 +46,13 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     void Start()
     {
         int isOnline = PlayerPrefs.GetInt("isOnline");
-        if (isOnline.Equals(1) && PhotonNetwork.IsMasterClient)
+        if (isOnline.Equals(1))
         {
             isOnlineB = true;
-            photonView.RPC("ShowReadyFightOnline", RpcTarget.All);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                photonView.RPC("ShowReadyFightOnline", RpcTarget.All);
+            }
         }
         else
         {
@@ -367,27 +370,29 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         } else
         {
             timerScript.TimerOn = true;
-        }
-        for (int i = 0; i < Drivers.Count; i++)
-        {
-            PlayerInput currentPlayerInput = Drivers[i].GetComponent<PlayerInput>();
-            if (currentPlayerInput)
+
+            for (int i = 0; i < Drivers.Count; i++)
             {
-                currentPlayerInput.enabled = true;
+                PlayerInput currentPlayerInput = Drivers[i].GetComponent<PlayerInput>();
+                if (currentPlayerInput)
+                {
+                    currentPlayerInput.enabled = true;
+                }
+            }
+            for (int i = 0; i < Players.Count; i++)
+            {
+                PlayerInput currentPlayerInput = Players[i].GetComponent<PlayerInput>();
+                if (currentPlayerInput)
+                {
+                    currentPlayerInput.enabled = true;
+                }
+                else
+                {
+                    Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
+                    playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
+                }
             }
         }
-        for (int i = 0; i < Players.Count; i++)
-        {
-            PlayerInput currentPlayerInput = Players[i].GetComponent<PlayerInput>();
-            if (currentPlayerInput)
-            {
-                currentPlayerInput.enabled = true;
-            }
-            else
-            {
-                Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
-                playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
-            }
-        }
+       
     }
 }

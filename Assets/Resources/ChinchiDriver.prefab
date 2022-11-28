@@ -383,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmgPlayer: {fileID: 0}
   DmgManager: {fileID: 0}
+  DmgManagerScript: {fileID: 0}
   vidas: {fileID: 0}
 --- !u!1 &2622174065994261745
 GameObject:
