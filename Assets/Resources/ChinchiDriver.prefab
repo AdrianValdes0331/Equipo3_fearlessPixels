@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 5312814456470056724}
   - component: {fileID: 5350832696766477518}
   - component: {fileID: 4595204030135299920}
+  - component: {fileID: -500021678222002318}
   m_Layer: 0
   m_Name: ChinchiDriver
   m_TagString: Driver
@@ -368,6 +369,18 @@ MonoBehaviour:
   id: 0
   rig: {fileID: 7312956393361201523}
   nameText: {fileID: 5848244351438706663}
+--- !u!114 &-500021678222002318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953123337545008879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f6cadb6c8574ba2883cac3df9fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2622174065994261745
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tankiness: 2
   dmgPercent: 0
 --- !u!1 &3750781916421094074
 GameObject:

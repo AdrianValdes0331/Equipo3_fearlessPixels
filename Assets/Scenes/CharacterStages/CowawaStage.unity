@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11295304, g: 0.11399042, b: 0.09439707, a: 1}
+  m_IndirectSpecularColor: {r: 0.112952635, g: 0.1139901, b: 0.09439688, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -664,6 +664,54 @@ MonoBehaviour:
   yTarget: 1.9
   zTarget: 0
   portalUsageSound: {fileID: 1137852861}
+--- !u!1 &165913119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165913121}
+  - component: {fileID: 165913120}
+  m_Layer: 0
+  m_Name: DmgManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &165913120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165913119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2f0b2265ef04f76a8a578540f00a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgPlayer1: {fileID: 937486566518011861}
+  dmgPlayer2: {fileID: 8844751238913643028}
+  dmgPlayer3: {fileID: 8328341663564670912}
+  dmgPlayer4: {fileID: 4222366976461021197}
+--- !u!4 &165913121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165913119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192354102
 GameObject:
   m_ObjectHideFlags: 0

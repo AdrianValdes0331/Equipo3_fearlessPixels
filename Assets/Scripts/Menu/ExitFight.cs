@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,17 @@ public class ExitFight : MonoBehaviour
             {
                 GameObject.Destroy(splay);
             }
+
+            //Destroy network manager
+            if (PhotonNetwork.IsConnected)
+            {
+                PhotonNetwork.LeaveRoom();
+            }
+            if (NetworkManager.instance != null)
+            {
+                NetworkManager.instance.DestroyBeforeLeave();
+            }
+
             SceneManager.LoadScene("MainMenu");
         }
 
