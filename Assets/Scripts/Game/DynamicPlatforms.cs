@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class DynamicPlatforms : MonoBehaviour
 {
     GameObject collisionObject;
+/*    public static event Action<Rigidbody2D> playerOn;
+    public static event Action<Rigidbody2D> playerOff;*/
 
     private void OnCollisionEnter2D(Collision2D collisionDetected)
     {

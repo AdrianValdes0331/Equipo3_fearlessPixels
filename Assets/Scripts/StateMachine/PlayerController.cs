@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public NeutralAttack NeutralAState = new NeutralAttack();
     public ChargeAttack ChargeAState = new ChargeAttack();
     public ChargeAttackCharged ChargeChargedState = new ChargeAttackCharged();
+    public SpecialAttack SpecialAState = new SpecialAttack();
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
         //playerAct.Bang.performed += OnBang;
         playerAct.Jump.performed += ctx => OnJump();
         //playerAct.Recovery.performed += ctx => OnRecovery();
-        //playerAct.Special.performed += ctx => OnSpecial();
+        playerAct.Special.performed += ctx => OnSpecial();
         playerAct.StrongKick.started += 
             ctx =>
             {
@@ -61,7 +62,8 @@ public class PlayerController : MonoBehaviour
             {
                 if (ctx.interaction is SlowTapInteraction)
                 {
-                    TransitionToState(IdleState);
+                    Debug.Log("Charge Canceled!");
+                    OnStrongKick();
                 };
             };
         //playerAct.Stron
@@ -130,6 +132,11 @@ public class PlayerController : MonoBehaviour
     public void OnCharged()
     {
         currState.OnChargedCharged(this);
+    }
+
+    public void OnSpecial()
+    {
+        currState.OnSpecial(this);
     }
 
     internal void TransitionToState(IPlayerBaseState state) {

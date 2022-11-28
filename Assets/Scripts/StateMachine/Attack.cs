@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[System.Serializable]
 public abstract class Attack : IPlayerBaseState, IHitboxResponder
 {
     protected gizmo g;
@@ -28,6 +29,11 @@ public abstract class Attack : IPlayerBaseState, IHitboxResponder
     public abstract void OnChargedCharged(PlayerController player);
     public abstract void OnRecovery(PlayerController player);
     public abstract void OnHit(PlayerController player);
+    public abstract void OnEnable(PlayerController player);
+    public abstract void OnDisable(PlayerController player);
+    public abstract void OnSpecial(PlayerController player);
+    public abstract void OnSpecialHold(PlayerController player);
+    public abstract void OnBang(PlayerController player);
     public gizmo? gz(){return g;}
     //All attacks have the same implementation for CollisionedWith
     public void CollisionedWith(Collider2D collider)

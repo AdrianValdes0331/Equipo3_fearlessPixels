@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5684642480910207388}
   - component: {fileID: 7608125607237908021}
   - component: {fileID: -7371780813645477133}
+  - component: {fileID: 6492952185170642619}
   m_Layer: 0
   m_Name: ChinchiDriverSM
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
     dmg: 0
     force: 0
     angle: 0
-    activeTime: 1
+    activeTime: 0.4
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
@@ -117,7 +118,26 @@ MonoBehaviour:
     dmg: 0
     force: 0
     angle: 0
-    activeTime: 1
+    activeTime: 0.4
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames: []
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 1, y: 1}
+      colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+      colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
+      offset: {x: 1, y: 1}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+  SpecialAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
@@ -132,6 +152,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
+    special: {fileID: 6492952185170642619}
 --- !u!114 &-7371780813645477133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +184,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6492952185170642619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9b5b1b62ec5c74e9fcf9a8f0d2ba1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scope: {fileID: 2958596743105387105, guid: 0c22a1e954dd6134fa89dff6f55930ac, type: 3}
+  Misil: {fileID: -4581194291345101244, guid: 35c08ad94737cd7469b27e4b840f781e, type: 3}
+  ScopeSpawn: {fileID: 7175194703810286711}
+  FirePoint: {fileID: 4193354659676784615}
+  speed: 5
 --- !u!1 &6056643571745745033
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +375,12 @@ PrefabInstance:
     - {fileID: 1152052443330942353, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
     - {fileID: 7380361777015331651, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
+--- !u!4 &4193354659676784615 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1152483338795286354, guid: a8a418229c4fb76458af16952b5811a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3877520826910734517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &6026932628281615344 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7380361777015331653, guid: a8a418229c4fb76458af16952b5811a9,
@@ -346,6 +390,12 @@ Animator:
 --- !u!4 &6026932628281615349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7380361777015331648, guid: a8a418229c4fb76458af16952b5811a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3877520826910734517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7175194703810286711 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6223078809941388482, guid: a8a418229c4fb76458af16952b5811a9,
     type: 3}
   m_PrefabInstance: {fileID: 3877520826910734517}
   m_PrefabAsset: {fileID: 0}
