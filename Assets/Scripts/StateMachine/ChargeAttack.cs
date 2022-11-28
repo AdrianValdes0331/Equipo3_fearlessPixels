@@ -92,7 +92,9 @@ public class ChargeAttack : Attack
     public override void OnRecovery(PlayerController player)
     {}
     public override void OnHit(PlayerController player)
-    {}
+    {
+        player.TransitionToState(player.HitState);
+    }
     public override void OnEnable(PlayerController player)
     {}
     public override void OnDisable(PlayerController player)

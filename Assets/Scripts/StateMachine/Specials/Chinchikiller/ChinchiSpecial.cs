@@ -25,7 +25,10 @@ public class ChinchiSpecial : Special
 
     public override void SpecialUpdate(PlayerController player)
     {
-        i_movement = player.i_movement;
-        scope.GetComponent<Rigidbody2D>().velocity = i_movement*speed;
+        if(scope != null)
+        {
+            i_movement = player.i_movement;
+            scope.GetComponent<Rigidbody2D>().velocity = i_movement*speed;
+        }
     }
 }

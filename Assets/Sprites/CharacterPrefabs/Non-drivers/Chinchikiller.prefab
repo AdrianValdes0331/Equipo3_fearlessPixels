@@ -72,7 +72,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3523882755743024440}
   - component: {fileID: 2637077286465384280}
-  - component: {fileID: 7645406238959252347}
   m_Layer: 6
   m_Name: ChinchiHurtbox
   m_TagString: Untagged
@@ -121,20 +120,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.3, y: 8.7}
   m_EdgeRadius: 0
---- !u!114 &7645406238959252347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2842701128288544449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tankiness: 3
-  dmgPercent: 0
 --- !u!1 &3971590692082628746
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,17 +161,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7380361777015331648}
   - component: {fileID: 7380361777015331649}
-  - component: {fileID: 7380361777015331651}
   - component: {fileID: 7380361777015331707}
-  - component: {fileID: 7380361777015331709}
-  - component: {fileID: 7380361777015331705}
-  - component: {fileID: 7380361777015331711}
-  - component: {fileID: -6198035394745140384}
   - component: {fileID: 8102953108323609053}
-  - component: {fileID: 8375543191964759204}
   - component: {fileID: 7380361777015331653}
   - component: {fileID: 7380361777015331710}
-  - component: {fileID: 1152052443330942353}
   m_Layer: 3
   m_Name: Chinchikiller
   m_TagString: Player
@@ -265,27 +243,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &7380361777015331651
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 20
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 5
-  m_Material: {fileID: 6200000, guid: 63ee9ced27e33884d9d491f91d9d079a, type: 2}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &7380361777015331707
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,88 +269,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.2, y: 8.7}
   m_EdgeRadius: 0
---- !u!114 &7380361777015331709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb08b9701e7eb3e4a90a8c4d87e14421, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxSpeed: 5
-  JumpSpeed: 15
-  RecoverySpeed: 0
-  dirX: 0
-  Animator: {fileID: 0}
-  EnableDoubleJump: 1
-  EnableRecovery: 1
-  AnimJumpName: brinco
-  AnimRecoveryName: none
-  AnimWalk: Walk
-  i_movement: {x: 0, y: 0}
---- !u!114 &7380361777015331705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71be3ef7c778e0f4793dcd3c7f9a4007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirePoint: {fileID: 0}
-  ScopeSpawn: {fileID: 0}
-  Scope: {fileID: 2958596743105387105, guid: 16e0fbce0eb11d0499f3d6d6881e50a7, type: 3}
-  Misile: {fileID: 2071701424864858739, guid: afb4e37ab1aa3bc428ed5acf0a0cf624, type: 3}
-  SearchForTag: scope
-  AnimChinsil: Chinmisil
-  GMove: {fileID: 7380361777015331709}
-  CSAnim: {fileID: 0}
---- !u!114 &7380361777015331711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67a494f24715d2e4e9896d5a1bd10f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GMove: {fileID: 7380361777015331709}
-  CKAnim: {fileID: 0}
-  AnimChinkick: Chinkick
-  dmg: 5
-  hitbox: {fileID: 8102953108323609053}
-  force: 5000
-  angle: 45
---- !u!114 &-6198035394745140384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57395ec5df4df1c42934c8117c62191d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirePoint: {fileID: 0}
-  ScopeSpawn: {fileID: 0}
-  Scope: {fileID: 2958596743105387105, guid: 16e0fbce0eb11d0499f3d6d6881e50a7, type: 3}
-  Misile: {fileID: 2071701424864858739, guid: fd3958873a15a814aa9bfd181e5be85a, type: 3}
-  SearchForTag: scope
-  AnimChinsil: Chinmisil
-  GMove: {fileID: 7380361777015331709}
-  CSAnim: {fileID: 0}
 --- !u!114 &8102953108323609053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,25 +292,6 @@ MonoBehaviour:
   colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
   colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
   offset: {x: 0.8, y: -0.2}
---- !u!114 &8375543191964759204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef02961654e2ebe42a651303c339bac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GMove: {fileID: 7380361777015331709}
-  SWAnim: {fileID: 0}
-  AnimSword: GolpeBasicoCK
-  dmg: 3
-  hitbox: {fileID: 8102953108323609053}
-  force: 4000
-  angle: 35
 --- !u!95 &7380361777015331653
 Animator:
   serializedVersion: 4
@@ -519,20 +375,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1152052443330942353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7380361777015331660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cd: 5
-  normal: {fileID: 0}
-  Bang1: {fileID: 0}
-  Bang2: {fileID: 0}
-  Bang3: {fileID: 0}

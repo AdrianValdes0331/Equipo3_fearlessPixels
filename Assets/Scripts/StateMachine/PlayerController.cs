@@ -6,7 +6,11 @@ using UnityEngine.InputSystem.Interactions;
 
 public class PlayerController : MonoBehaviour
 {
+    PlayerInput playerInput;
+    public NHurtbox hb;
     [HideInInspector] public Vector2 i_movement;
+    [HideInInspector] public float stunTime;
+    [HideInInspector] public Vector2 hitForce;
     public float speed;
     public float jspeed;
     public Animator animator;
@@ -20,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public readonly Idle IdleState = new Idle();
     [HideInInspector] public readonly Walk WalkState = new Walk();
     [HideInInspector] public readonly Jump JumpState = new Jump();
+    [HideInInspector] public readonly Hit HitState = new Hit();
     public NeutralAttack NeutralAState = new NeutralAttack();
     public ChargeAttack ChargeAState = new ChargeAttack();
     public ChargeAttackCharged ChargeChargedState = new ChargeAttackCharged();
@@ -27,16 +32,17 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        playerControls = new PlayerControls();
-        playerAct = playerControls.Player;
+        playerInput = GetComponent<PlayerInput>();
+        // playerControls = new PlayerControls();
+        // playerAct = playerControls.Player;
 
-        playerAct.Movement.performed += ctx => OnMovement(playerAct.Movement.ReadValue<Vector2>());
-        playerAct.Movement.canceled += ctx => OnMovement(Vector2.zero);
+        playerInput.actions["Movement"].performed += ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
+        playerInput.actions["Movement"].canceled += ctx => OnMovement(Vector2.zero);
         //playerAct.Bang.performed += OnBang;
-        playerAct.Jump.performed += ctx => OnJump();
+        playerInput.actions["Jump"].performed += ctx => OnJump();
         //playerAct.Recovery.performed += ctx => OnRecovery();
-        playerAct.Special.performed += ctx => OnSpecial();
-        playerAct.StrongKick.started += 
+        playerInput.actions["Special"].performed += ctx => OnSpecial();
+        playerInput.actions["StrongKick"].started += 
             ctx =>
             {
                 if (ctx.interaction is SlowTapInteraction)
@@ -44,7 +50,7 @@ public class PlayerController : MonoBehaviour
                     OnCharged();
                 }
             };
-        playerAct.StrongKick.performed += 
+        playerInput.actions["StrongKick"].performed += 
             ctx =>
             {
                 if(ctx.interaction is SlowTapInteraction)
@@ -57,7 +63,7 @@ public class PlayerController : MonoBehaviour
                     OnStrongKick();
                 }
             };
-        playerAct.StrongKick.canceled +=
+        playerInput.actions["StrongKick"].canceled +=
             ctx =>
             {
                 if (ctx.interaction is SlowTapInteraction)
@@ -67,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 };
             };
         //playerAct.Stron
-        playerAct.WeakAttack.performed += ctx => OnWeakAttack();
+        playerInput.actions["WeakAttack"].performed += ctx => OnWeakAttack();
 
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
@@ -76,12 +82,14 @@ public class PlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        playerAct.Enable();
+        //playerAct.Enable();
+        hb.HitReact += OnHit;
     }
 
     void OnDisable()
     {
-        playerAct.Disable();
+        //playerAct.Disable();
+        hb.HitReact -= OnHit;
     }
 
     // Update is called once per frame
@@ -139,6 +147,23 @@ public class PlayerController : MonoBehaviour
         currState.OnSpecial(this);
     }
 
+    public void OnHit(Vector2 force)
+    {
+        hitForce = force;
+        if(force.magnitude == 0)
+        {
+            stunTime = 0;
+            currState.OnHit(this);
+        }
+        else
+        {
+            stunTime = 1f + (force.magnitude-59)*(1.5f/(8000-59));
+            stunTime = Mathf.Clamp(stunTime, 1f, 2.5f);
+            Debug.Log("stun: "+stunTime);
+            currState.OnHit(this);
+        }
+    }
+
     internal void TransitionToState(IPlayerBaseState state) {
         currState = state;
         draw = currState.hasGizmos();
@@ -153,7 +178,8 @@ public class PlayerController : MonoBehaviour
         Charge = 4,
         Special = 5,
         Bang = 6,
-        Hitreact =7
+        Hitreact = 7,
+        Recovery = 8
     }
 
     public void SetAnimatorTrigger(AnimStates state) {

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7940068445227844124}
   - component: {fileID: 5684642480910207388}
   - component: {fileID: 7608125607237908021}
-  - component: {fileID: -7371780813645477133}
   - component: {fileID: 6492952185170642619}
+  - component: {fileID: 6439259193547726018}
+  - component: {fileID: 4948538590230774904}
   m_Layer: 0
   m_Name: ChinchiDriverSM
   m_TagString: Untagged
@@ -70,7 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24ddbcb709b8634e91efaf8e4a4ee65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hb: {fileID: 1127072911723161740}
   i_movement: {x: 0, y: 0}
+  stunTime: 0
+  hitForce: {x: 0, y: 0}
   speed: 5
   jspeed: 15
   animator: {fileID: 6026932628281615344}
@@ -79,7 +83,7 @@ MonoBehaviour:
     dmg: 3
     force: 7000
     angle: 35
-    activeTime: 0.1
+    activeTime: 0.2
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
@@ -153,37 +157,6 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
     special: {fileID: 6492952185170642619}
---- !u!114 &-7371780813645477133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5310105209126317939}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 97c21df527d6cc04a9f0f0ce342e1c7a,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &6492952185170642619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +174,54 @@ MonoBehaviour:
   ScopeSpawn: {fileID: 7175194703810286711}
   FirePoint: {fileID: 4193354659676784615}
   speed: 5
+--- !u!114 &6439259193547726018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cd: 60
+  normal: {fileID: 21300000, guid: d1a0018a044de3941b02311a32f44669, type: 3}
+  Bang1: {fileID: 21300000, guid: 3eb92e12eb7cb1f4f92a2122bfb28a35, type: 3}
+  Bang2: {fileID: 21300000, guid: b2b0a8bb39357c64b89745e8893ec28b, type: 3}
+  Bang3: {fileID: 21300000, guid: d845e214432761245bfe48fbba120159, type: 3}
+--- !u!114 &4948538590230774904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 97c21df527d6cc04a9f0f0ce342e1c7a,
+    type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &6056643571745745033
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1149644326328833897
 Transform:
   m_ObjectHideFlags: 0
@@ -240,7 +261,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6056643571745745033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -259,6 +280,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &8868231564820038217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66427735093103423}
+  m_Layer: 3
+  m_Name: Tag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &66427735093103423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8868231564820038217}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6026932628281615349}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3877520826910734517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,20 +413,28 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7645406238959252347, guid: a8a418229c4fb76458af16952b5811a9,
-        type: 3}
-      propertyPath: tankiness
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7380361777015331709, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
-    - {fileID: 7380361777015331705, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
-    - {fileID: 7380361777015331711, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
-    - {fileID: -6198035394745140384, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
-    - {fileID: 8375543191964759204, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
-    - {fileID: 1152052443330942353, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
-    - {fileID: 7380361777015331651, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
+--- !u!1 &1350223611369938548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2842701128288544449, guid: a8a418229c4fb76458af16952b5811a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3877520826910734517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1127072911723161740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350223611369938548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankiness: 3
+  dmgPercent: 0
 --- !u!4 &4193354659676784615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1152483338795286354, guid: a8a418229c4fb76458af16952b5811a9,
@@ -393,6 +453,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3877520826910734517}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6026932628281615353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7380361777015331660, guid: a8a418229c4fb76458af16952b5811a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3877520826910734517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &819095500647917767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026932628281615353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6026932628281615353}
+  startingNumberLives: 3
+  lives: 3
 --- !u!4 &7175194703810286711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6223078809941388482, guid: a8a418229c4fb76458af16952b5811a9,

@@ -53,7 +53,9 @@ public class SpecialAttack : Attack
     public override void OnRecovery(PlayerController player)
     {}
     public override void OnHit(PlayerController player)
-    {}
+    {
+        player.TransitionToState(player.HitState);
+    }
     public override void OnEnable(PlayerController player)
     {
 
