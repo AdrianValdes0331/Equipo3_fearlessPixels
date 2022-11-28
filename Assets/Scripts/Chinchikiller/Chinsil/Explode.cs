@@ -1,4 +1,6 @@
 using System.Collections;
+using Photon.Pun;
+using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,28 +26,28 @@ public class Explode : MonoBehaviour, IHitboxResponder
         hitbox.hitboxUpdate();
     }
 
- /*   private void explode()
-    {
-        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, radio);
-        foreach (Collider2D collisionador in objects)
-        {
-            Rigidbody2D rb2D = collisionador.GetComponent<Rigidbody2D>();
-            if (rb2D != null)
-            {
-                //Vector2 direction = collisionador.transform.position - transform.position;
-                //collisionador.GetComponent<Rigidbody2D>().AddForce(direction * force);
-                Vector2 direction = collisionador.transform.position - transform.position;
-                float distance = 1 + direction.magnitude;
-                float finalForce = force / distance;
-                Debug.Log(rb2D.name);
-                Debug.Log(finalForce);
-                rb2D.AddForce(direction * finalForce);
-            }
+    /*   private void explode()
+       {
+           Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, radio);
+           foreach (Collider2D collisionador in objects)
+           {
+               Rigidbody2D rb2D = collisionador.GetComponent<Rigidbody2D>();
+               if (rb2D != null)
+               {
+                   //Vector2 direction = collisionador.transform.position - transform.position;
+                   //collisionador.GetComponent<Rigidbody2D>().AddForce(direction * force);
+                   Vector2 direction = collisionador.transform.position - transform.position;
+                   float distance = 1 + direction.magnitude;
+                   float finalForce = force / distance;
+                   Debug.Log(rb2D.name);
+                   Debug.Log(finalForce);
+                   rb2D.AddForce(direction * finalForce);
+               }
 
-        }
-        DestroyBullet();
-    }*/
-
+           }
+           DestroyBullet();
+       }*/
+    [PunRPC]
     public void CollisionedWith(Collider2D collider)
     {
         Vector2 direction = collider.transform.position - transform.position;

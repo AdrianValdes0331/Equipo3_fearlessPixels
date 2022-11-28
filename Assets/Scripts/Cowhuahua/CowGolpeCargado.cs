@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine.Playables;
 using System.Collections;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using System;
 
@@ -33,6 +35,7 @@ public class CowGolpeCargado : MonoBehaviour, IHitboxResponder
     }
 
     // Update is called once per frame
+    [PunRPC]
     void OnWeakAttack()
     {
         //kick

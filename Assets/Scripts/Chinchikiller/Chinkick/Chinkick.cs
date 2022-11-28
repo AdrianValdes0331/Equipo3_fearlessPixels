@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine.Playables;
 using System.Collections;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using System;
 
@@ -28,10 +30,11 @@ public class Chinkick : MonoBehaviour, IHitboxResponder
         {
             hitbox.hitboxUpdate();
         }
-    
+
     }
 
     // Update is called once per frame
+    [PunRPC]
     void OnStrongKick()
     {
         //kick
