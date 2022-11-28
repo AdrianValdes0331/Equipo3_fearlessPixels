@@ -381,6 +381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f6cadb6c8574ba2883cac3df9fb9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmgPlayer: {fileID: 0}
+  DmgManager: {fileID: 0}
+  vidas: {fileID: 0}
 --- !u!1 &2622174065994261745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1021,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7312956393361201532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
   m_Name: 
@@ -1155,6 +1158,9 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 2
     Name: GolpeBasicoCK
+  - Type: 4
+    SynchronizeType: 0
+    Name: RecoverCK
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

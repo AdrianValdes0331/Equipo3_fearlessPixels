@@ -22,6 +22,8 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     Color brightLifeColor = new Color(1f, 1f, 1f);
     DynamicCamera cameraScript;
     Timer timerScript;
+    bool isOnlineB;
+    TimerOnline timerOnlineScript;
     public AudioSource readySound, fightSound, winSound, win2Sound, win3Sound, tieSound;
     float normalReadyDuration = 0.75f;
     float fastReadyDuration = 0.1f;
@@ -44,12 +46,14 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     void Start()
     {
         int isOnline = PlayerPrefs.GetInt("isOnline");
-        if (isOnline.Equals(1))
+        if (isOnline.Equals(1) && PhotonNetwork.IsMasterClient)
         {
+            isOnlineB = true;
             photonView.RPC("ShowReadyFightOnline", RpcTarget.All);
         }
         else
         {
+            isOnlineB = false;
             ShowReadyFightOffline();
         }
     }
@@ -72,7 +76,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     {
         StartCoroutine(WaitForPlayers());
         cameraScript = GameObject.Find("Main Camera").GetComponent<DynamicCamera>();
-        timerScript = GameObject.Find("TimerOnline").GetComponent<Timer>();
+        timerOnlineScript = GameObject.Find("TimerOnline").GetComponent<TimerOnline>();
         ready.color = fadedTextColor;
         fight.color = fadedTextColor;
         winner.color = fadedTextColor;
@@ -80,6 +84,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         StartCoroutine(PlayFightIntro());
         StartCoroutine(StartingHUDAnimation());
     }
+
     IEnumerator WaitForPlayers()
     {
         yield return new WaitForSeconds(0.205f);
@@ -102,7 +107,13 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         AlivedPlayers.AddRange(GameObject.FindGameObjectsWithTag("Player"));
         if (AlivedPlayers.Count - 1 == 1)
         {
-            timerScript.TimerOn = false;
+            if (isOnlineB)
+            {
+                timerOnlineScript.startTimer = false;
+            } else
+            {
+                timerScript.TimerOn = false;
+            }
             FreezePlayers(AlivedPlayers);
             cameraScript.FocusWinner(null);
             StartCoroutine(PlayEnding(true));
@@ -180,7 +191,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     //Corrutina para animar el HUD al comienzo de la partida
     IEnumerator StartingHUDAnimation()
     {
-        //Se hace una pequeña pausa para darle tiempo a la instanciación de elementos de la UI
+        //Se hace una pequeï¿½a pausa para darle tiempo a la instanciaciï¿½n de elementos de la UI
         yield return new WaitForSeconds(introDelay);
         HUDElements.AddRange(GameObject.FindGameObjectsWithTag("HUD"));
         //Todos los elementos encontrados con la etiqueta "HUD" y sus hijos son mandados a hacer FadeIn
@@ -198,7 +209,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         }
 
         PlayerImages.AddRange(GameObject.FindGameObjectsWithTag("PlayerImage"));
-        //Todos los elementos encontrados con la etiqueta "PlayerImage" (ilustración de peleadores) son mandados a escalarse
+        //Todos los elementos encontrados con la etiqueta "PlayerImage" (ilustraciï¿½n de peleadores) son mandados a escalarse
         foreach (GameObject playerImage in PlayerImages)
         {
             ScaleHUDTransform(playerImage.transform, 1.25f, 1f);
@@ -214,7 +225,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         }
     }
 
-    //Aplica el FadeIn a todos los hijos del Transform mandado y hace recursión para hacerlo extensivamente
+    //Aplica el FadeIn a todos los hijos del Transform mandado y hace recursiï¿½n para hacerlo extensivamente
     public void FadeInChilds(Transform element)
     {
         foreach (Transform child in element)
@@ -222,7 +233,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
             Image childImage = child.gameObject.GetComponent<Image>();
             if (childImage)
             {
-                //Si se reconoce un componente Image en el elemento, se manda a llamar FadeIn con su respectiva función
+                //Si se reconoce un componente Image en el elemento, se manda a llamar FadeIn con su respectiva funciï¿½n
                 FadeInHUDImage(childImage);
             }
             else
@@ -230,11 +241,11 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
                 TextMeshProUGUI childText = child.gameObject.GetComponent<TextMeshProUGUI>();
                 if (childText)
                 {
-                    //Si se reconoce un componente TextMeshProUGUI en el elemento, se manda a llamar FadeIn con su respectiva función
+                    //Si se reconoce un componente TextMeshProUGUI en el elemento, se manda a llamar FadeIn con su respectiva funciï¿½n
                     FadeInHUDText(childText);
                 }
             }
-            //Aquí se aplica la recursión mandando a llamar la función nuevamente con cada hijo
+            //Aquï¿½ se aplica la recursiï¿½n mandando a llamar la funciï¿½n nuevamente con cada hijo
             FadeInChilds(child);
         }
     }
@@ -258,37 +269,37 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     //Aplica un Scale de Transform con DOTween - DOScale
     public void ScaleHUDTransform(Transform transform, float bigScale, float finalScale)
     {
-        /*Previamente, los elementos a los que se aplica la transición son escalados con un tamaño menor
-        al estándar final. La animación comienza escalando el transform a un tamaño un poco mayor al deseado (bigScale),
-        con una curva InQuad (cada vez más rápida) y un pequeño delay. Luego, al completarse la transición pasada, 
-        el elemento se escala a su tamaño final correcto (finalScale), con una curva OutExpo, comenzando con una 
-        velocidad rápida y finalizando con una lenta (tangente horizontalmente)*/
+        /*Previamente, los elementos a los que se aplica la transiciï¿½n son escalados con un tamaï¿½o menor
+        al estï¿½ndar final. La animaciï¿½n comienza escalando el transform a un tamaï¿½o un poco mayor al deseado (bigScale),
+        con una curva InQuad (cada vez mï¿½s rï¿½pida) y un pequeï¿½o delay. Luego, al completarse la transiciï¿½n pasada, 
+        el elemento se escala a su tamaï¿½o final correcto (finalScale), con una curva OutExpo, comenzando con una 
+        velocidad rï¿½pida y finalizando con una lenta (tangente horizontalmente)*/
         transform.DOScale(bigScale, scaleHUDDuration).SetEase(Ease.InQuad).SetDelay(scaleHUDDelay).OnComplete(
                     () => transform.DOScale(finalScale, scaleHUDDuration / 2).SetEase(Ease.OutExpo)
                 );
     }
 
-    //Corrutina que aplica un Color Change de Image con DOTween - DOColor cierto número de veces
+    //Corrutina que aplica un Color Change de Image con DOTween - DOColor cierto nï¿½mero de veces
     IEnumerator ChangeColorHUDImage(Image image)
     {
-        //Se hace una pequeña pausa para aplicar el delay de animación deseado
+        //Se hace una pequeï¿½a pausa para aplicar el delay de animaciï¿½n deseado
         yield return new WaitForSeconds(changeColorHUDDelay);
-        //La animación se realiza cierto número de veces por medio de un ciclo for
+        //La animaciï¿½n se realiza cierto nï¿½mero de veces por medio de un ciclo for
         for (int i = 0; i < lifeColorChangeTimes; i ++)
         {
-            /*Si el index del for es par, se hace la transición a un color brillante de la vida.
-            si es impar, se hace la transición al color opaco de la vida*/
+            /*Si el index del for es par, se hace la transiciï¿½n a un color brillante de la vida.
+            si es impar, se hace la transiciï¿½n al color opaco de la vida*/
             if (i % 2 == 0)
             {
-                /*La transición se realiza con una curva InOutCubic y una duración corta*/
+                /*La transiciï¿½n se realiza con una curva InOutCubic y una duraciï¿½n corta*/
                 image.DOColor(brightLifeColor, changeColorHUDDuration).SetEase(Ease.InOutCubic);
             }
             else
             {
-                /*La transición se realiza con una curva OutQuart y una duración corta*/
+                /*La transiciï¿½n se realiza con una curva OutQuart y una duraciï¿½n corta*/
                 image.DOColor(opaqueLifeColor, changeColorHUDDuration).SetEase(Ease.OutQuart);
             }
-            //Se hace una pausa después de cada vuelta en el for para darle tiempo a la transición en ejecución de terminar antes de la siguiente
+            //Se hace una pausa despuï¿½s de cada vuelta en el for para darle tiempo a la transiciï¿½n en ejecuciï¿½n de terminar antes de la siguiente
             yield return new WaitForSeconds(changeColorHUDDuration + 0.1f);
         }
     }
@@ -296,16 +307,16 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     //Corrutina que aplica un FadeIn y FadeOut intermitente de Image con DOTween - DOFade
     IEnumerator BlinkImage(Image textImage, float normalDuration, float fastDuration, int numberOfTimes)
     {
-        //La animación se realiza cierto número de veces por medio de un ciclo for
+        //La animaciï¿½n se realiza cierto nï¿½mero de veces por medio de un ciclo for
         for (int i = 0; i < numberOfTimes; i++)
         {
             /*Previamente, la imagen es puesta con su alpha en 0f para lograr conseguir el efecto esperado.
-            La transicion comienza haciendo FadeIn con una duracion rápida y una curva InQuint. Al finalizar,
-            la animación continúa haciendo FadeOut con una duración corta y la misma curva InQuint*/
+            La transicion comienza haciendo FadeIn con una duracion rï¿½pida y una curva InQuint. Al finalizar,
+            la animaciï¿½n continï¿½a haciendo FadeOut con una duraciï¿½n corta y la misma curva InQuint*/
             textImage.DOFade(1f, fastDuration).SetEase(Ease.InQuint).OnComplete(
                     () => textImage.DOFade(0f, normalDuration).SetEase(Ease.InQuint)
                 );
-            //Se hace una pausa después de cada vuelta en el for para darle tiempo a las 2 transiciones antes de repetirlas
+            //Se hace una pausa despuï¿½s de cada vuelta en el for para darle tiempo a las 2 transiciones antes de repetirlas
             yield return new WaitForSeconds(normalDuration + fastDuration);
         }
     }
@@ -327,7 +338,14 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
             tie.color = normalTextColor;
         }
         yield return new WaitForSeconds(3f);
-        timerScript.ReturnToMainMenu();
+        if (isOnlineB)
+        {
+            timerOnlineScript.ReturnToMainMenu();
+        }
+        else
+        {
+            timerScript.ReturnToMainMenu();
+        }
     }
 
     IEnumerator PlayFightIntro()
@@ -343,7 +361,13 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         fightSound.Play();
         //Se hace una pausa para darle tiempo al blink de Fight! de terminar
         yield return new WaitForSeconds(fightTimes * (normalFightDuration + fastFightDuration) + 0.1f);
-        timerScript.TimerOn = true;
+        if (isOnlineB)
+        {
+            timerOnlineScript.startTimer = true;
+        } else
+        {
+            timerScript.TimerOn = true;
+        }
         for (int i = 0; i < Drivers.Count; i++)
         {
             PlayerInput currentPlayerInput = Drivers[i].GetComponent<PlayerInput>();

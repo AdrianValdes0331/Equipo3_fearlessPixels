@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7654766051254027661}
   - component: {fileID: -3026953817183530484}
   - component: {fileID: 5167488926691104611}
+  - component: {fileID: -235357211621922310}
   m_Layer: 0
   m_Name: CowDriver
   m_TagString: Driver
@@ -91,6 +92,21 @@ MonoBehaviour:
   id: 0
   rig: {fileID: 4647920126043395758}
   nameText: {fileID: 7688716127035169974}
+--- !u!114 &-235357211621922310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852462224302812658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f6cadb6c8574ba2883cac3df9fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmgPlayer: {fileID: 0}
+  DmgManager: {fileID: 0}
+  vidas: {fileID: 0}
 --- !u!1 &2430091309730222117
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +596,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647920126043395744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
   m_Name: 
@@ -786,6 +802,12 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 2
     Name: CowColpeCargado
+  - Type: 9
+    SynchronizeType: 0
+    Name: CowSpit
+  - Type: 4
+    SynchronizeType: 0
+    Name: Recover
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -973,6 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tankiness: 2
   dmgPercent: 0
 --- !u!1 &5056602874310747850
 GameObject:

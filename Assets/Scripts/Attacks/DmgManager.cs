@@ -11,15 +11,9 @@ public class DmgManager : MonoBehaviour
     public TextMeshProUGUI dmgPlayer3;
     public TextMeshProUGUI dmgPlayer4;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject vidasPlayer1;
+    public GameObject vidasPlayer2;
+    public GameObject vidasPlayer3;
+    public GameObject vidasPlayer4;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

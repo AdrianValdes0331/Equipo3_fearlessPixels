@@ -10,20 +10,22 @@ public class TimerOnline : MonoBehaviourPunCallbacks
 {
     public TextMeshProUGUI TimerTxt;
 
-    bool startTimer = false;
+    [HideInInspector] public bool startTimer = false;
 
     double timeLeft;
     double startTime;
     [SerializeField] float timer = 20f;
     ExitGames.Client.Photon.Hashtable CustomeValue;
 
+    FightIntroEnding introEndingScript;
+
     void Start()
     {
+        introEndingScript = GameObject.Find("Intro&EndingManager").GetComponent<FightIntroEnding>();
         if (PhotonNetwork.IsMasterClient)
         {
             CustomeValue = new ExitGames.Client.Photon.Hashtable();
             startTime = PhotonNetwork.Time;
-            startTimer = true;
             CustomeValue.Add("StartTime", startTime);
             PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
         }
@@ -34,7 +36,6 @@ public class TimerOnline : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsMasterClient)
         {
             startTime = (double)(PhotonNetwork.CurrentRoom.CustomProperties["StartTime"]);
-            startTimer = true;
         }
     }
 
@@ -46,14 +47,21 @@ public class TimerOnline : MonoBehaviourPunCallbacks
         if (timeLeft >= timer)
         {
             startTimer = false;
+            timeLeft = 0;
             Debug.Log("Time is UP!");
 
-            //Destroy network manager
-            PhotonNetwork.LeaveRoom();
-            NetworkManager.instance.DestroyBeforeLeave();
+            introEndingScript.CheckForWinnerWhenTimeUp();
 
-            SceneManager.LoadScene("MainMenu");
         }
+    }
+
+    public void ReturnToMainMenu()
+    {
+        //Destroy network manager
+        PhotonNetwork.LeaveRoom();
+        NetworkManager.instance.DestroyBeforeLeave();
+
+        SceneManager.LoadScene("MainMenu");
     }
 
     void updateTimer(float currentTime)

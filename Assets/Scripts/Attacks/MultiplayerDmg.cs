@@ -60,15 +60,15 @@ public class MultiplayerDmg : MonoBehaviourPunCallbacks
                 Player1.transform.Find("PlayerIndex_1").transform.position = PIndexPos + transform.position;
                 Livepos.x = a + (i + 1) * d + Fixedx;
 
-                Player1.transform.Find("vida1").transform.position = Livepos + transform.position;
+                Player1.transform.Find("vidasP1").Find("vida1").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player1.transform.Find("vida2").transform.position = Livepos + transform.position;
+                Player1.transform.Find("vidasP1").Find("vida2").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player1.transform.Find("vida3").transform.position = Livepos + transform.position;
+                Player1.transform.Find("vidasP1").Find("vida3").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
             }
 
@@ -79,15 +79,15 @@ public class MultiplayerDmg : MonoBehaviourPunCallbacks
                 Player2.transform.Find("PlayerIndex_2").transform.position = PIndexPos + transform.position;
                 Livepos.x = a + (i + 1) * d + Fixedx;
 
-                Player2.transform.Find("vida1").transform.position = Livepos + transform.position;
+                Player2.transform.Find("vidasP2").Find("vida1").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player2.transform.Find("vida2").transform.position = Livepos + transform.position;
+                Player2.transform.Find("vidasP2").Find("vida2").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player2.transform.Find("vida3").transform.position = Livepos + transform.position;
+                Player2.transform.Find("vidasP2").Find("vida3").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
             }
 
@@ -98,15 +98,15 @@ public class MultiplayerDmg : MonoBehaviourPunCallbacks
                 Player3.transform.Find("PlayerIndex_3").transform.position = PIndexPos + transform.position;
                 Livepos.x = a + (i + 1) * d + Fixedx;
 
-                Player3.transform.Find("vida1").transform.position = Livepos + transform.position;
+                Player3.transform.Find("vidasP3").Find("vida1").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player3.transform.Find("vida2").transform.position = Livepos + transform.position;
+                Player3.transform.Find("vidasP3").Find("vida2").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player3.transform.Find("vida3").transform.position = Livepos + transform.position;
+                Player3.transform.Find("vidasP3").Find("vida3").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
             }
 
@@ -117,15 +117,15 @@ public class MultiplayerDmg : MonoBehaviourPunCallbacks
                 Player4.transform.Find("PlayerIndex_4").transform.position = PIndexPos + transform.position;
                 Livepos.x = a + (i + 1) * d + Fixedx;
 
-                Player4.transform.Find("vida1").transform.position = Livepos + transform.position;
+                Player4.transform.Find("vidasP4").Find("vida1").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player4.transform.Find("vida2").transform.position = Livepos + transform.position;
+                Player4.transform.Find("vidasP4").Find("vida2").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
 
                 Livepos.x = a + (i + 1) * d + Fixedx;
-                Player4.transform.Find("vida3").transform.position = Livepos + transform.position;
+                Player4.transform.Find("vidasP4").Find("vida3").transform.position = Livepos + transform.position;
                 Fixedx = Fixedx + canvasTransform.localScale.x * 25.0f;
             }
         }
