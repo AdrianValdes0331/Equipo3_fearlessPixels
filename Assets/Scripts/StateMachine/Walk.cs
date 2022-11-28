@@ -83,7 +83,9 @@ public class Walk : IPlayerBaseState
     public void OnRecovery(PlayerController player)
     {}
     public void OnHit(PlayerController player)
-    {}
+    {
+        player.TransitionToState(player.HitState);
+    }
     public void OnEnable(PlayerController player)
     {}
     public void OnDisable(PlayerController player)

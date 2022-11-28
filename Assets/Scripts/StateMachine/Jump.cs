@@ -13,7 +13,7 @@ public class Jump : IPlayerBaseState
     {
         doubleJump = true;
         pSize = System.Math.Abs(player.transform.localScale.x);
-        MonoBehaviour.print("Entering jump");
+        MonoBehaviour.print(player.name+": Entering jump");
         player.SetAnimatorTrigger(PlayerController.AnimStates.Jump);
     }
 
@@ -80,7 +80,9 @@ public class Jump : IPlayerBaseState
     public void OnRecovery(PlayerController player)
     {}
     public void OnHit(PlayerController player)
-    {}
+    {
+        player.TransitionToState(player.HitState);
+    }
     public void OnEnable(PlayerController player)
     {}
     public void OnDisable(PlayerController player)

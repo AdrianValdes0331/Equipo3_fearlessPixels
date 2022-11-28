@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d8629f462d3a54cb8c535f45218d28, type: 3}
   m_Name: Chinchikiller
   m_EditorClassIdentifier: 
-  playablePlayer: {fileID: 1953123337545008879, guid: 3ffbe73b028b02d4abbcbd0e1c15484d,
+  playablePlayer: {fileID: 5310105209126317939, guid: 8df32d2fca2319f4fa97be23a2980a11,
     type: 3}
   image: {fileID: 21300000, guid: 06c8841d9f46a614988d19b9babaf1fd, type: 3}
   name: Chinchikiller

@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Idle : IPlayerBaseState
+public class Hit : IPlayerBaseState
 {
+    bool done;
+    float t;
     public void EnterState(PlayerController player)
     {
-        MonoBehaviour.print("Entering idle");
-        player.SetAnimatorTrigger(PlayerController.AnimStates.Idle);
+        done = false;
+        t = player.stunTime;
+        MonoBehaviour.print(player.name+": Entering Hitreact");
+        player.SetAnimatorTrigger(PlayerController.AnimStates.Hitreact);
+        player.rb.velocity = new Vector2(0, player.rb.velocity.y);
+        player.rb.AddForce(player.hitForce);
+        player.StartCoroutine(Active(player, t));
     }
 
     public void OnCollisionEnter(PlayerController player, Collision2D col)
     {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Floor") && col.GetContact(0).normal.y >= 0.9)
+        {
+            player.stunTime = 0;
+            player.hitForce = Vector2.zero;
+            if (player.i_movement.x == 0) { player.TransitionToState(player.IdleState); }
+            else { player.TransitionToState(player.WalkState); }
+        }
 
     }
 
@@ -23,7 +36,12 @@ public class Idle : IPlayerBaseState
 
     public void Update(PlayerController player)
     {
-        if (player.rb.velocity.x != 0) { player.rb.velocity = new Vector2(0, player.rb.velocity.y); }
+        if (done) 
+        { 
+            player.stunTime = 0;
+            player.hitForce = Vector2.zero;
+            player.TransitionToState(player.JumpState);        
+        }
     }
 
     public void LateUpdate(PlayerController player) { }
@@ -34,10 +52,7 @@ public class Idle : IPlayerBaseState
     }
 
     public void Jump(PlayerController player, float speed)
-    {
-        player.rb.velocity = new Vector2(player.rb.velocity.x, speed);
-        player.TransitionToState(player.JumpState);
-    }
+    {}
 
     public void OnNeutral(PlayerController player)
     {
@@ -77,5 +92,12 @@ public class Idle : IPlayerBaseState
     {
         return null;
     }
+    IEnumerator Active(PlayerController player, float t)
+    {
 
+        //uHitbox = false;
+        yield return new WaitForSeconds(t);
+        done = true;
+
+    }
 }

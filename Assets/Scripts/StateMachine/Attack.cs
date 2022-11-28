@@ -42,7 +42,7 @@ public abstract class Attack : IPlayerBaseState, IHitboxResponder
         //if the collider's grandparent is the parent of the attack's gameObject
         //return without doing anything
         if(collider.transform.parent.transform.parent == transform) { return; } 
-        Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
+        NHurtbox hurtbox = collider.GetComponent<NHurtbox>();
         //if the collider has a hurtbox
         if (hurtbox != null)
         {
