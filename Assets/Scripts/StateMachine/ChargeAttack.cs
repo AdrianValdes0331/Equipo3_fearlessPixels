@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class ChargeAttack : Attack
 {
     //bool uHitbox = false;
-    bool queued;
     bool done;
     Vector2 i_movement;
     float pSize;
@@ -15,11 +14,10 @@ public class ChargeAttack : Attack
     public override void EnterState(PlayerController player)
     {
         pSize = System.Math.Abs(player.transform.localScale.x);
-        queued = false;
         done = false;
         transform = player.transform;
         hitbox.transform = transform;
-        MonoBehaviour.print("Entering Charged");
+        MonoBehaviour.print("Entering TapCharge");
         player.SetAnimatorTrigger(PlayerController.AnimStates.Charge);
         hitbox.Start();
         hitbox.setResponder(this);
@@ -68,13 +66,15 @@ public class ChargeAttack : Attack
     }
     public override void LateUpdate(PlayerController player) 
     {}
-    public override void Move(PlayerController player, InputValue val, float speed)
+    public override void Move(PlayerController player, Vector2 val, float speed)
     {}
     public override void Jump(PlayerController player, float speed)
     {}
     public override void OnNeutral(PlayerController player)
     {}
     public override void OnCharged(PlayerController player)
+    {}
+    public override void OnChargedCharged(PlayerController player)
     {}
     public override void OnRecovery(PlayerController player)
     {}

@@ -31,13 +31,15 @@ public class SpecialAttack : Attack
         throw new System.NotImplementedException();
     }
     public override void LateUpdate(PlayerController player) { }
-    public override void Move(PlayerController player, InputValue val, float speed)
+    public override void Move(PlayerController player, Vector2 val, float speed)
     {}
     public override void Jump(PlayerController player, float speed)
     {}
     public override void OnNeutral(PlayerController player)
     {}
     public override void OnCharged(PlayerController player)
+    {}
+    public override void OnChargedCharged(PlayerController player)
     {}
     public override void OnRecovery(PlayerController player)
     {}

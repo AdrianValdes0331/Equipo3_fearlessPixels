@@ -12,6 +12,7 @@ public abstract class Attack : IPlayerBaseState, IHitboxResponder
     [SerializeField] protected float activeTime;
     [SerializeField] protected NHitbox hitbox = new NHitbox();
     protected Transform transform;
+    protected float multiplier = 1f;
 
 
     public abstract void EnterState(PlayerController player);
@@ -19,11 +20,12 @@ public abstract class Attack : IPlayerBaseState, IHitboxResponder
     public abstract void LateUpdate(PlayerController player);
     public abstract void OnTriggerEnter(PlayerController player, Collider2D col);
     public abstract void OnCollisionEnter(PlayerController player, Collision2D col);
-    public abstract void Move(PlayerController player, InputValue val, float speed);
+    public abstract void Move(PlayerController player, Vector2 val, float speed);
     public abstract void Jump(PlayerController player, float speed);
     public abstract void OnCollisionEffects(); //Things to do after an attack hits dependent on implementation
     public abstract void OnNeutral(PlayerController player);
     public abstract void OnCharged(PlayerController player);
+    public abstract void OnChargedCharged(PlayerController player);
     public abstract void OnRecovery(PlayerController player);
     public abstract void OnHit(PlayerController player);
     public gizmo? gz(){return g;}
@@ -41,7 +43,7 @@ public abstract class Attack : IPlayerBaseState, IHitboxResponder
             //BangLvl bang = transform.parent.GetComponent<BangLvl>();
             //bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
-            hurtbox.getHitBy(dmg, force, angle, transform.position.x);
+            hurtbox.getHitBy(dmg*multiplier, (int)(force * multiplier), angle, transform.position.x);
         }
     }
     public bool hasGizmos()

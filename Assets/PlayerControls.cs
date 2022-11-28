@@ -162,7 +162,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""59ceaaa7-701d-4471-8803-37cdb098df50"",
                     ""path"": ""<Keyboard>/z"",
-                    ""interactions"": ""Tap"",
+                    ""interactions"": ""Tap,SlowTap"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""StrongKick"",

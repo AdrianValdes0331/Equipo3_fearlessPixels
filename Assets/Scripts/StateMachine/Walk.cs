@@ -49,7 +49,7 @@ public class Walk : IPlayerBaseState
         if (i_movement.x == 0) { player.TransitionToState(player.IdleState); }
     }
 
-    public void Move(PlayerController player, InputValue val, float speed)
+    public void Move(PlayerController player, Vector2 val, float speed)
     {
         
     }
@@ -68,6 +68,11 @@ public class Walk : IPlayerBaseState
     {
         player.rb.velocity = Vector3.zero;
         player.TransitionToState(player.ChargeAState);
+    }
+    public void OnChargedCharged(PlayerController player)
+    {
+        player.rb.velocity = Vector3.zero;
+        player.TransitionToState(player.ChargeChargedState);
     }
     public void OnRecovery(PlayerController player)
     {}

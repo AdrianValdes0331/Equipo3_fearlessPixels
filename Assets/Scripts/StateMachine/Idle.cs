@@ -28,7 +28,7 @@ public class Idle : IPlayerBaseState
 
     public void LateUpdate(PlayerController player) { }
 
-    public void Move(PlayerController player, InputValue val, float speed)
+    public void Move(PlayerController player, Vector2 val, float speed)
     {
         player.TransitionToState(player.WalkState);
     }
@@ -46,6 +46,10 @@ public class Idle : IPlayerBaseState
     public void OnCharged(PlayerController player)
     {
         player.TransitionToState(player.ChargeAState);
+    }
+    public void OnChargedCharged(PlayerController player)
+    {
+        player.TransitionToState(player.ChargeChargedState);
     }
     public void OnRecovery(PlayerController player)
     {}

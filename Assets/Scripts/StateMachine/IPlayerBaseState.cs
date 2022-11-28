@@ -10,10 +10,11 @@ public interface IPlayerBaseState
     public void LateUpdate(PlayerController player);
     public void OnTriggerEnter(PlayerController player, Collider2D col);
     public void OnCollisionEnter(PlayerController player, Collision2D col);
-    public void Move(PlayerController player, InputValue val, float speed);
+    public void Move(PlayerController player, Vector2 val, float speed);
     public void Jump(PlayerController player, float speed);
     public void OnNeutral(PlayerController player);
     public void OnCharged(PlayerController player);
+    public void OnChargedCharged(PlayerController player);
     public void OnRecovery(PlayerController player);
     public void OnHit(PlayerController player);
 

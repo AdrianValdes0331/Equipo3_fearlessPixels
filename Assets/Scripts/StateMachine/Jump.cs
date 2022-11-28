@@ -49,7 +49,7 @@ public class Jump : IPlayerBaseState
 
     public void LateUpdate(PlayerController player) { }
 
-    public void Move(PlayerController player, InputValue val, float speed)
+    public void Move(PlayerController player, Vector2 val, float speed)
     {
         
     }
@@ -68,6 +68,8 @@ public class Jump : IPlayerBaseState
 
     }
     public void OnCharged(PlayerController player)
+    {}
+    public void OnChargedCharged(PlayerController player)
     {}
     public void OnRecovery(PlayerController player)
     {}

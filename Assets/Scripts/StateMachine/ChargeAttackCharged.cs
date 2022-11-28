@@ -2,35 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEditor;
+using DG.Tweening;
 
 [System.Serializable]
-public class NeutralAttack : Attack
+public class ChargeAttackCharged : Attack
 {
     //bool uHitbox = false;
-    bool queued;
     bool done;
     Vector2 i_movement;
     float pSize;
+    float startTime;
+    float dT;
+    float dmgScale = 0.8f;
+    float tScale = 0.2f;
+    float flashInt;
+    Sequence anim;
+    SpriteRenderer sr;
+    Color c = new Color(1.0f, 1.0f, 0.57f, 1);
+    Color start = new Color(1, 1, 1, 1);
 
     public override void EnterState(PlayerController player)
     {
         pSize = System.Math.Abs(player.transform.localScale.x);
-        queued = false;
         done = false;
         transform = player.transform;
         hitbox.transform = transform;
-        MonoBehaviour.print("Entering Neutral");
-        player.SetAnimatorTrigger(PlayerController.AnimStates.Neutral);
-        hitbox.Start();
-        hitbox.setResponder(this);
-        hitbox.openCollissionCheck();
+        MonoBehaviour.print("Charging!");
+        startTime = Time.fixedTime;
 
-        g.sz = hitbox.sz;
-        g.isSphere = hitbox.isSphere;
-        g.radius = hitbox.radius;
-        g.pos = hitbox.pos;
-        player.StartCoroutine(Active(player, activeTime));
+        sr = player.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        anim = DOTween.Sequence();
+        flashInt = 0.3f;
+        anim.Append(sr.DOColor(c, flashInt));
+        anim.Append(sr.DOColor(start, flashInt));
+        anim.SetLoops(-1, LoopType.Restart);
 
     }
 
@@ -45,6 +50,17 @@ public class NeutralAttack : Attack
 
     public override void Update(PlayerController player)
     {
+        dT = Time.fixedTime - startTime;
+        dT = Mathf.Clamp(dT, 0.0f, 2.5f);
+
+        if (dT >= 2.5f && !done)
+        {
+            anim.Kill(true);
+            sr.color = c;
+        }
+
+        multiplier = 1 + dmgScale * dT;
+
         hitbox.hitboxUpdate();
         g.sz = hitbox.sz;
         g.isSphere = hitbox.isSphere;
@@ -53,7 +69,6 @@ public class NeutralAttack : Attack
         g.color = hitbox.currColor;
 
         i_movement = player.i_movement;
-        player.rb.velocity = new Vector2(i_movement.x*player.speed, player.rb.velocity.y);
 
         if (i_movement.x < 0.0f)
         {
@@ -64,45 +79,36 @@ public class NeutralAttack : Attack
             player.transform.localScale = new Vector3(pSize, pSize, pSize);
         }
 
-        if(done)
+        if (done)
         {
-            if(queued)
-            {
-                player.TransitionToState(player.NeutralAState);
-            }
-            else if(player.rb.velocity.x == 0)
-            {
-                player.TransitionToState(player.IdleState);
-            }
-            else
-            {
-                player.TransitionToState(player.WalkState);
-            }
+            player.TransitionToState(player.IdleState);
         }
-
     }
-    public override void LateUpdate(PlayerController player) 
+    public override void LateUpdate(PlayerController player)
     {}
     public override void Move(PlayerController player, Vector2 val, float speed)
     {}
     public override void Jump(PlayerController player, float speed)
-    {
-
-        hitbox.closeCollissionCheck();
-        player.rb.velocity = new Vector2(player.rb.velocity.x, speed);
-        player.TransitionToState(player.JumpState);
-
-    }
+    {}
     public override void OnNeutral(PlayerController player)
-    {
-
-        queued = true;
-
-    }
+    {}
     public override void OnCharged(PlayerController player)
     {}
     public override void OnChargedCharged(PlayerController player)
-    {}
+    {
+        anim.Kill(true);
+        Debug.Log("Charged!");
+        player.SetAnimatorTrigger(PlayerController.AnimStates.Charge);
+        hitbox.Start();
+        hitbox.setResponder(this);
+        hitbox.openCollissionCheck();
+
+        g.sz = hitbox.sz;
+        g.isSphere = hitbox.isSphere;
+        g.radius = hitbox.radius;
+        g.pos = hitbox.pos;
+        player.StartCoroutine(Active(player, activeTime));
+    }
     public override void OnRecovery(PlayerController player)
     {}
     public override void OnHit(PlayerController player)
@@ -114,6 +120,7 @@ public class NeutralAttack : Attack
         yield return new WaitForSeconds(t);
         hitbox.closeCollissionCheck();
         done = true;
+        sr.DOColor(start, 0.2f);
 
     }
 
