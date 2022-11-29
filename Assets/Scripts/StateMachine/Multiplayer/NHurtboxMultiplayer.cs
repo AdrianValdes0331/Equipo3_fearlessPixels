@@ -12,6 +12,7 @@ public class NHurtboxMultiplayer : MonoBehaviourPunCallbacks
     [HideInInspector] public float dmgPercent = 0.0f;
     [HideInInspector] public event Action<Vector2> HitReact;
 
+    [PunRPC]
     public bool getHitBy(float damage, int force, int angle, float xPos)
     {
 
@@ -29,7 +30,8 @@ public class NHurtboxMultiplayer : MonoBehaviourPunCallbacks
         //transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*((dmgPercent/100)/ tankiness));
         HitReact?.Invoke(finalForce * ((dmgPercent / 100) / tankiness));
         Debug.Log(transform.parent);
-        photonView.RPC("UpdateDmgPercentText", RpcTarget.All);
+        //photonView.RPC("UpdateDmgPercentText", RpcTarget.All);
+        UpdateDmgPercentText();
         return true;
 
     }
@@ -37,8 +39,6 @@ public class NHurtboxMultiplayer : MonoBehaviourPunCallbacks
     [PunRPC]
     public void UpdateDmgPercentText()
     {
-        Debug.Log("photonView.IsMine: " + photonView.IsMine);
-        if (photonView.IsMine) return;
         if (PhotonNetwork.NickName.Equals("Player 1"))
         {
             DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P2");
