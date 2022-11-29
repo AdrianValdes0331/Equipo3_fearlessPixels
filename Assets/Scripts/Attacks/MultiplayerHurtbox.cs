@@ -36,14 +36,14 @@ public class MultiplayerHurtbox : MonoBehaviourPunCallbacks
     [PunRPC]
     public void UpdateDmgPercentText()
     {
-        if (!photonView.IsMine) return;
+        if (photonView.IsMine) return;
         if(PhotonNetwork.NickName.Equals("Player 1"))
         {
-            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P1");
+            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P2");
         }
         else if (PhotonNetwork.NickName.Equals("Player 2"))
         {
-            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P2");
+            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P1");
         }
 
     }
