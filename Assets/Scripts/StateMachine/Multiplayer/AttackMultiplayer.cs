@@ -49,7 +49,8 @@ public abstract class AttackMultiplayer : IMultiplayerBaseState, IHitboxResponde
             BangLvl bang = transform.gameObject.GetComponent<BangLvl>();
             bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
-            hurtbox.getHitBy(dmg*multiplier, (int)(force * multiplier), angle, transform.position.x);
+            hurtbox.photonView.RPC("getHitBy", Photon.Pun.RpcTarget.All, dmg * multiplier, ((int)(force * multiplier)), angle, transform.position.x);
+            //hurtbox.getHitBy(dmg*multiplier, (int)(force * multiplier), angle, transform.position.x);
         }
     }
     public bool hasGizmos()
