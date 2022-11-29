@@ -155,6 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7577653424828940449}
   - component: {fileID: 3534391390186649305}
+  - component: {fileID: 3515724542517329851}
   m_Layer: 0
   m_Name: DummyDriverSM
   m_TagString: Driver
@@ -195,6 +196,22 @@ MonoBehaviour:
   Bang1: {fileID: 21300000, guid: eea606db97fe66a44a7c91ce3d289496, type: 3}
   Bang2: {fileID: 21300000, guid: eea606db97fe66a44a7c91ce3d289496, type: 3}
   Bang3: {fileID: 21300000, guid: eea606db97fe66a44a7c91ce3d289496, type: 3}
+--- !u!114 &3515724542517329851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5886959263386654046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7901658210412213037}
+  hurtbox: {fileID: 7613871465114879381}
+  startingNumberLives: 3
+  lives: 3
 --- !u!1 &7613871465114879381
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +226,7 @@ GameObject:
   - component: {fileID: 2255002921702037937}
   - component: {fileID: 8408761187919287220}
   - component: {fileID: 7197578128109446783}
-  - component: {fileID: 770195589971247784}
+  - component: {fileID: 3200017770903865751}
   m_Layer: 6
   m_Name: DummyHurtbox
   m_TagString: Untagged
@@ -484,7 +501,7 @@ PolygonCollider2D:
       - {x: -0.11065939, y: -0.29175937}
       - {x: 0.1151188, y: -0.2873}
       - {x: 0.3000251, y: 0.09943858}
---- !u!114 &770195589971247784
+--- !u!114 &3200017770903865751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -493,7 +510,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7613871465114879381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tankiness: 2
@@ -510,7 +527,6 @@ GameObject:
   - component: {fileID: 7901658210412213073}
   - component: {fileID: 7901658210412213038}
   - component: {fileID: 7901658210412213039}
-  - component: {fileID: 5043901898402533936}
   - component: {fileID: 1584175010196136758}
   - component: {fileID: 687875322999849488}
   - component: {fileID: 6565398227197077917}
@@ -683,22 +699,6 @@ PolygonCollider2D:
       - {x: 0.2620494, y: 0.11967231}
       - {x: 0.12618858, y: 0.12348375}
       - {x: 0.10237713, y: 0.11729519}
---- !u!114 &5043901898402533936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7901658210412213037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 7901658210412213037}
-  hurtbox: {fileID: 7613871465114879381}
-  startingNumberLives: 0
-  lives: 3
 --- !u!114 &1584175010196136758
 MonoBehaviour:
   m_ObjectHideFlags: 0
