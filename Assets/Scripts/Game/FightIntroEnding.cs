@@ -123,7 +123,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
                 currentPlayerInput.enabled = false;
             }
         }
-        FreezePlayers(Players);
+        FreezePlayers(Drivers);
     }
 
     public void CheckForWinner()

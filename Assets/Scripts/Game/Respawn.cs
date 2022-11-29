@@ -17,7 +17,7 @@ public class Respawn : MonoBehaviour
     PolygonCollider2D dummyHurtbox;
     AudioSource lostLifeSound, respawnSound;
     SpriteRenderer playerSprite;
-    Hurtbox hurtboxScript;
+    NHurtbox hurtboxScript;
     DynamicCamera cameraScript;
     Camera mainCamera;
     FightIntroEnding introEndingScript;
@@ -39,7 +39,7 @@ public class Respawn : MonoBehaviour
             if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
             {
                 playerHurtbox = child.gameObject.GetComponent<BoxCollider2D>();
-                hurtboxScript = child.gameObject.GetComponent<Hurtbox>();
+                hurtboxScript = child.gameObject.GetComponent<NHurtbox>();
                 if (!playerHurtbox)
                 {
                     dummyHurtbox = child.gameObject.GetComponent<PolygonCollider2D>();
