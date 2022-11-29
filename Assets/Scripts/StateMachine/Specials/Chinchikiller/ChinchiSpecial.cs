@@ -18,17 +18,39 @@ public class ChinchiSpecial : Special
 
     public override void SpecialStart(PlayerController player)
     {
+        done = false;
         scope = Instantiate(Scope, ScopeSpawn.position, Quaternion.identity);
         misil = Instantiate(Misil, FirePoint.position, Quaternion.identity);
-        misil.target = scope.transform;
+        misil.target = scope;
+        misil.bang = player.gameObject.GetComponent<BangLvl>();
+        misil.player = player.transform;
+        misil.exit += ExitState;
     }
 
     public override void SpecialUpdate(PlayerController player)
     {
-        if(scope != null)
+        i_movement = player.i_movement;
+        if (done)
         {
-            i_movement = player.i_movement;
+            misil.exit -= ExitState;
+            if (i_movement.x == 0)
+            {
+                player.TransitionToState(player.IdleState);
+            }
+            else
+            {
+                player.TransitionToState(player.WalkState);
+            }
+        }
+        else if (scope != null)
+        {
             scope.GetComponent<Rigidbody2D>().velocity = i_movement*speed;
         }
     }
+
+    public void ExitState()
+    {
+        done = true;
+    }
+
 }

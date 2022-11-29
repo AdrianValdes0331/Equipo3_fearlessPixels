@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2071701424864858738}
   - component: {fileID: 2071701424864858741}
-  - component: {fileID: 2071701424864858742}
   - component: {fileID: 2071701424864858743}
   - component: {fileID: 2071701424864858740}
   - component: {fileID: 2071701424864858744}
@@ -90,31 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2071701424864858742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071701424864858739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rot: 0
-  maskNames:
-  - Default
-  - Hurtbox
-  - Floor
-  isSphere: 0
-  isProjectile: 1
-  radius: 0
-  sz: {x: 1.6, y: 0.8}
-  colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
-  colorClosed: {r: 0.9622642, g: 0.19517623, b: 0.19517623, a: 0.50980395}
-  colorColliding: {r: 0.3529412, g: 0.3941065, b: 0.84313726, a: 0.50980395}
-  offset: {x: 0.15, y: 0}
 --- !u!61 &2071701424864858743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -302,8 +276,25 @@ MonoBehaviour:
   TimeToChangeColor: 5
   TimeToExplode: 7
   dmg: 10.5
-  hitbox: {fileID: 0}
+  hitbox:
+    pos: {x: 0, y: 0}
+    rot: 0
+    maskNames:
+    - Default
+    - Hurtbox
+    - Floor
+    isSphere: 0
+    isProjectile: 1
+    radius: 0
+    sz: {x: 1.6, y: 0.8}
+    colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+    colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+    colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
+    offset: {x: 0.15, y: 0}
+    currColor: {r: 0, g: 0, b: 0, a: 0}
+    transform: {fileID: 0}
   radio: 1
   force: 24000
   colorToTurnTo: {r: 1, g: 0, b: 0, a: 1}
   angle: 45
+  bang: {fileID: 0}
