@@ -382,8 +382,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgPlayer: {fileID: 0}
-  DmgManager: {fileID: 0}
-  DmgManagerScript: {fileID: 0}
   vidas: {fileID: 0}
 --- !u!1 &2622174065994261745
 GameObject:
@@ -395,7 +393,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3744673016875435784}
   - component: {fileID: 2848631385922268520}
-  - component: {fileID: 7568695554051502411}
+  - component: {fileID: 4301095398661363671}
+  - component: {fileID: 7096812617158448932}
   m_Layer: 6
   m_Name: ChinchiHurtbox
   m_TagString: Untagged
@@ -444,7 +443,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.3, y: 8.7}
   m_EdgeRadius: 0
---- !u!114 &7568695554051502411
+--- !u!114 &4301095398661363671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,11 +452,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 2622174065994261745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ef06a056625c44148dd8b180c75ae70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tankiness: 2
   dmgPercent: 0
+--- !u!114 &7096812617158448932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622174065994261745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &3750781916421094074
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +752,7 @@ GameObject:
   - component: {fileID: 7312956393361201483}
   - component: {fileID: 7312956393361201485}
   - component: {fileID: 7312956393361201481}
-  - component: {fileID: 7312956393361201487}
+  - component: {fileID: 6752104166784760382}
   - component: {fileID: 8587081216298710676}
   - component: {fileID: 3093057408407386448}
   - component: {fileID: 8314735753585191917}
@@ -911,7 +932,7 @@ MonoBehaviour:
   AnimChinsil: Chinmisil
   GMove: {fileID: 7312956393361201485}
   CSAnim: {fileID: 0}
---- !u!114 &7312956393361201487
+--- !u!114 &6752104166784760382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -920,7 +941,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7312956393361201532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67a494f24715d2e4e9896d5a1bd10f21, type: 3}
+  m_Script: {fileID: 11500000, guid: d983c4a549c3b4470807372c928c12cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GMove: {fileID: 7312956393361201485}
@@ -1160,7 +1181,7 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: GolpeBasicoCK
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: RecoverCK
   m_SynchronizeLayers:
   - SynchronizeType: 0

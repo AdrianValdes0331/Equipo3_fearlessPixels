@@ -57,7 +57,7 @@ public class MenuUIController : MonoBehaviourPunCallbacks
     {
         Debug.Log("Conectado a room");
         Debug.Log(_roomName != null);
-        NetworkManager.instance.JoinRoom(_roomName.text);
+        NetworkManager.instance.JoinRoom(_roomName.text.ToUpper());
         if (PhotonNetwork.IsMasterClient)
         {
             photonView.RPC("UpdatePlayerInfo", RpcTarget.All);

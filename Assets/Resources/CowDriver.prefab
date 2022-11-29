@@ -105,8 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgPlayer: {fileID: 0}
-  DmgManager: {fileID: 0}
-  DmgManagerScript: {fileID: 0}
   vidas: {fileID: 0}
 --- !u!1 &2430091309730222117
 GameObject:
@@ -352,7 +350,7 @@ GameObject:
   - component: {fileID: 7487213089619097385}
   - component: {fileID: 7567507854574851456}
   - component: {fileID: 9077496157484446339}
-  - component: {fileID: 4731404992729256608}
+  - component: {fileID: 9169334602234094981}
   - component: {fileID: 8053664680471224262}
   - component: {fileID: 4647920126043395753}
   - component: {fileID: 1794346800759120109}
@@ -571,7 +569,7 @@ MonoBehaviour:
   hitbox: {fileID: 7487213089619097385}
   force: 6000
   angle: 45
---- !u!114 &4731404992729256608
+--- !u!114 &9169334602234094981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,7 +578,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4647920126043395744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2aba69935921040ad21c7df9ee55ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e463a5bdb3c9473a8e3f399dd6334c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GMove: {fileID: 4647920126043395752}
@@ -824,7 +822,8 @@ GameObject:
   - component: {fileID: 4647920126743478312}
   - component: {fileID: 4647920126743478294}
   - component: {fileID: 4647920126743478295}
-  - component: {fileID: 1011416789848403229}
+  - component: {fileID: 6536575262507362062}
+  - component: {fileID: 3266100329051569632}
   m_Layer: 6
   m_Name: hurtbox
   m_TagString: Untagged
@@ -984,7 +983,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1011416789848403229
+--- !u!114 &6536575262507362062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -993,11 +992,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 4647920126743478314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ef06a056625c44148dd8b180c75ae70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tankiness: 2
   dmgPercent: 0
+--- !u!114 &3266100329051569632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647920126743478314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &5056602874310747850
 GameObject:
   m_ObjectHideFlags: 0

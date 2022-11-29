@@ -2866,7 +2866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 725.845, y: -38.165}
+  m_AnchoredPosition: {x: 725.845, y: -38.16501}
   m_SizeDelta: {x: 597.03, y: 76.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &973014193
@@ -6097,10 +6097,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CODIGO: UWU2I3'
+  m_text: 'CODIGO: AB1L2'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4ece92b3209799d4fa8ef4457dbf19fc, type: 2}
-  m_sharedMaterial: {fileID: 1163841353935780180, guid: 4ece92b3209799d4fa8ef4457dbf19fc,
+  m_fontAsset: {fileID: 11400000, guid: a8abf1152c5fc450e8b73d381c30407f, type: 2}
+  m_sharedMaterial: {fileID: 6927247964986531692, guid: a8abf1152c5fc450e8b73d381c30407f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6131,7 +6131,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

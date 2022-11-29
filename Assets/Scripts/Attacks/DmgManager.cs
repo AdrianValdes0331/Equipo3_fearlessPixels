@@ -8,6 +8,9 @@ using UnityEngine;
 public class DmgManager : MonoBehaviourPunCallbacks
 {
 
+    //Singleton
+    public static DmgManager instance;
+
     public TextMeshProUGUI dmgPlayer1;
     public TextMeshProUGUI dmgPlayer2;
     public TextMeshProUGUI dmgPlayer3;
@@ -18,7 +21,19 @@ public class DmgManager : MonoBehaviourPunCallbacks
     public GameObject vidasPlayer3;
     public GameObject vidasPlayer4;
 
-    
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
     public void updateDmgPercentTxt(string dmg, string player)
     {
         if (player.Equals("P1"))
