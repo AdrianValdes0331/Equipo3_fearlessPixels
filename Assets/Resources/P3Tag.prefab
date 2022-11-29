@@ -120,7 +120,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: -2552355814217702181}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -156,7 +156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7303784100366331941
 Transform:
   m_ObjectHideFlags: 0
