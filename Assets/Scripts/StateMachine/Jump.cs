@@ -21,7 +21,7 @@ public class Jump : IPlayerBaseState
     {
         Debug.Log(col.GetContact(0).normal.y);
 
-        if (col.gameObject.layer == LayerMask.NameToLayer("Floor") && col.GetContact(0).normal.y >= 0.9)
+        if (col.gameObject.layer == LayerMask.NameToLayer("Floor") && col.GetContact(0).normal.y >= 0.8)
         {
             if (player.rb.velocity.x == 0) { player.TransitionToState(player.IdleState); }
             else { player.TransitionToState(player.WalkState); }
