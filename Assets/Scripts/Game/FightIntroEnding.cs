@@ -114,7 +114,6 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(0.205f);
         Drivers.AddRange(GameObject.FindGameObjectsWithTag("Driver"));
-        Players.AddRange(GameObject.FindGameObjectsWithTag("Player"));
         for (int i = 0; i < Drivers.Count; i++)
         {
             PlayerInput currentPlayerInput = Drivers[i].GetComponent<PlayerInput>();
@@ -129,7 +128,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     public void CheckForWinner()
     {
         List<GameObject> AlivedPlayers = new List<GameObject>();
-        AlivedPlayers.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        AlivedPlayers.AddRange(GameObject.FindGameObjectsWithTag("Driver"));
         if (AlivedPlayers.Count - 1 == 1)
         {
             if (isOnlineB)
@@ -148,7 +147,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     public void CheckForWinnerWhenTimeUp()
     {
         List<GameObject> AlivedPlayers = new List<GameObject>();
-        AlivedPlayers.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        AlivedPlayers.AddRange(GameObject.FindGameObjectsWithTag("Driver"));
         FreezePlayers(AlivedPlayers);
         livesNumber = AlivedPlayers[0].GetComponent<Respawn>().startingNumberLives;
         int[] livesOfPlayers = new int[AlivedPlayers.Count];
@@ -176,7 +175,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     {
         for (int i = 0; i < AlivedPlayers.Count; i++)
         {
-            PlayerInput currentPlayerInput = AlivedPlayers[i].GetComponent<PlayerInput>();
+            PlayerInput currentPlayerInput = AlivedPlayers[i].transform.GetComponent<PlayerInput>();
             if (currentPlayerInput)
             {
                 currentPlayerInput.enabled = false;
@@ -389,8 +388,6 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         if (isOnlineB)
         {
             timerOnlineScript.startTimer = true;
-
-
         } else
         {
             timerScript.TimerOn = true;
@@ -403,19 +400,19 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
                     currentPlayerInput.enabled = true;
                 }
             }
-            for (int i = 0; i < Players.Count; i++)
-            {
-                PlayerInput currentPlayerInput = Players[i].GetComponent<PlayerInput>();
-                if (currentPlayerInput)
-                {
-                    currentPlayerInput.enabled = true;
-                }
-                else
-                {
-                    Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
-                    playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
-                }
-            }
+            //for (int i = 0; i < Players.Count; i++)
+            //{
+            //    PlayerInput currentPlayerInput = Players[i].GetComponent<PlayerInput>();
+            //    if (currentPlayerInput)
+            //    {
+            //        currentPlayerInput.enabled = true;
+            //    }
+            //    else
+            //    {
+            //        Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
+            //        playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
+            //    }
+            //}
         }
        
     }

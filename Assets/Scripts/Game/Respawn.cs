@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Respawn : MonoBehaviour
 {
 
-    [SerializeField] public GameObject player;
+    public GameObject player, hurtbox;
     List<Transform> respawnPoints = new List<Transform>();
     float upperLimit, bottomLimit, leftLimit, rightLimit;
     Vector3 playerPos = new Vector3();
@@ -30,28 +30,34 @@ public class Respawn : MonoBehaviour
 
     void Start()
     {
-        playerRigidbody = player.GetComponent<Rigidbody2D>();
+        playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        playerInput = gameObject.GetComponent<PlayerInput>();
         playerSprite = player.GetComponent<SpriteRenderer>();
-        playerInput = player.GetComponent<PlayerInput>();
+        playerHurtbox = hurtbox.GetComponent<BoxCollider2D>();
+        hurtboxScript = hurtbox.GetComponent<NHurtbox>();
         startingNumberLives = lives;
-        foreach (Transform child in player.transform)
-        {
-            if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
-            {
-                playerHurtbox = child.gameObject.GetComponent<BoxCollider2D>();
-                hurtboxScript = child.gameObject.GetComponent<NHurtbox>();
-                if (!playerHurtbox)
-                {
-                    dummyHurtbox = child.gameObject.GetComponent<PolygonCollider2D>();
-                    spawnProtectionColor = new Color(1f, 0f, 0f, 0.3f);
-                    normalPlayerColor = new Color(1f, 0f, 0f, 1f);
-                }
-                break;
-            }
-        }
+        //foreach (Transform child in player.transform)
+        //{
+        //    if (child.gameObject.tag == "Player")
+        //    {
+        //        playerSprite = player.GetComponent<SpriteRenderer>();
+        //    }
+        //    if (LayerMask.LayerToName(child.gameObject.layer) == "Hurtbox")
+        //    {
+        //        playerHurtbox = child.gameObject.GetComponent<BoxCollider2D>();
+        //        hurtboxScript = child.gameObject.GetComponent<NHurtbox>();
+        //        if (!playerHurtbox)
+        //        {
+        //            dummyHurtbox = child.gameObject.GetComponent<PolygonCollider2D>();
+        //            spawnProtectionColor = new Color(1f, 0f, 0f, 0.3f);
+        //            normalPlayerColor = new Color(1f, 0f, 0f, 1f);
+        //        }
+        //        break;
+        //    }
+        //}
 
         respawnPositions = GameObject.Find("RespawnPositions");
-        if (respawnPoints != null)
+        if (respawnPositions != null)
         {
             foreach (Transform child in respawnPositions.transform)
             {
@@ -72,7 +78,7 @@ public class Respawn : MonoBehaviour
         GameObject fightIntroEnding = GameObject.Find("Intro&EndingManager");
         if (fightIntroEnding)
         {
-            introEndingScript = GameObject.Find("Intro&EndingManager").GetComponent<FightIntroEnding>();
+            introEndingScript = fightIntroEnding.GetComponent<FightIntroEnding>();
         }
     }
 
@@ -81,25 +87,23 @@ public class Respawn : MonoBehaviour
     {
         if (upperLimit != 0f && bottomLimit != 0f && leftLimit != 0f && rightLimit != 0f)
         {
-            playerPos = player.transform.position;
+            playerPos = transform.position;
             if ((playerPos.y < bottomLimit || playerPos.y > upperLimit || playerPos.x < leftLimit || playerPos.x > rightLimit) && lives > 0)
             {
-                lives --;
+                StartCoroutine(RespawnPoint());
+                lives--;
                 lostLifeSound.Play();
                 hurtboxScript.dmgPercent = 0.0f;
                 hurtboxScript.UpdateDmgPercentText();
-                StartCoroutine(RespawnPoint());
-                Transform removeLives = GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.name].transform.Find("vida"+lives);
-                Debug.Log(removeLives);
-
-                Destroy(removeLives.gameObject);
+                Transform lifeLost = GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.name].transform.Find("vida" + lives);
+                Destroy(lifeLost.gameObject);
             }
         }
 
         if (lives <= 0)
         {
             cameraScript.DecreasePlayersCountByOne();
-            Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
             if (introEndingScript)
             {
                 introEndingScript.CheckForWinner();
@@ -114,19 +118,15 @@ public class Respawn : MonoBehaviour
         {
             playerHurtbox.enabled = false;
         }
-        else
-        {
-            dummyHurtbox.enabled = false;
-        }
+        //else
+        //{
+        //    dummyHurtbox.enabled = false;
+        //}
 
         if (respawnPoints.Count > 0)
         {
             randomSpawn = Random.Range(0, respawnPoints.Count);
-            player.transform.position = respawnPoints[randomSpawn].position;
-        }
-        else
-        {
-            player.transform.position = new Vector2(0, 10);
+            transform.position = respawnPoints[randomSpawn].position;
         }
 
         if (playerInput)
@@ -137,7 +137,6 @@ public class Respawn : MonoBehaviour
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
         yield return new WaitForSeconds(2.5f);
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
         playerRigidbody.WakeUp();
         respawnSound.Play();
         yield return new WaitForSeconds(0.5f);
@@ -177,10 +176,10 @@ public class Respawn : MonoBehaviour
             {
                 playerHurtbox.enabled = true;
             }
-            else
-            {
-                dummyHurtbox.enabled = true;
-            }
+            //else
+            //{
+            //    dummyHurtbox.enabled = true;
+            //}
         }
     }
 }

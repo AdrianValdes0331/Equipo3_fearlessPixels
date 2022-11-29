@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d8629f462d3a54cb8c535f45218d28, type: 3}
   m_Name: Dummy
   m_EditorClassIdentifier: 
-  playablePlayer: {fileID: 5886959263386654046, guid: 656561f8a8a48c44dbfb89a742a2763b,
+  playablePlayer: {fileID: 5886959263386654046, guid: 2249a79f3d1781f42bc1c0863d8bd73c,
     type: 3}
   image: {fileID: 21300000, guid: d3c12760143023c4f801ea20a9df1a0a, type: 3}
   name: Dummy
