@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d8629f462d3a54cb8c535f45218d28, type: 3}
   m_Name: Brujorge
   m_EditorClassIdentifier: 
-  playablePlayer: {fileID: 7723059031884419303, guid: 42687de7158cf43619329346f345552d,
+  playablePlayer: {fileID: 7723059031884419303, guid: 1775a2778ac30c048ab6955180a2b6cf,
     type: 3}
   image: {fileID: 21300000, guid: 3a579ac0244428746bee91d474bee1a7, type: 3}
   name: Brujorge
