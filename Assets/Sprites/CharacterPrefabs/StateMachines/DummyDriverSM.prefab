@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7901658210412213037}
+  hurtbox: {fileID: 7613871465114879381}
   startingNumberLives: 0
   lives: 3
 --- !u!114 &1584175010196136758
