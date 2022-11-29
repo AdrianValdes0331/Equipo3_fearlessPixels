@@ -6,12 +6,13 @@ using UnityEngine;
 public class AudioSettings : MonoBehaviour
 {
     VolumeSlider a;
+    AudioSource music;
+    private AudioSource[] allAudioSources;
 
     public static AudioSettings instance;
 
     private void Awake()
     {
-
         DontDestroyOnLoad(this.gameObject);
 
         AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
@@ -25,6 +26,4 @@ public class AudioSettings : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

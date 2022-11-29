@@ -19,6 +19,7 @@ TagManager:
   - HUD
   - PlayerImage
   - LifeImage
+  - MenuMusic
   layers:
   - Default
   - TransparentFX

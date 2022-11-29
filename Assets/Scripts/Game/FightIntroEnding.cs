@@ -24,7 +24,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     Timer timerScript;
     bool isOnlineB;
     TimerOnline timerOnlineScript;
-    public AudioSource readySound, fightSound, winSound, win2Sound, win3Sound, tieSound;
+    public AudioSource readySound, fightSound, winSound, win2Sound, win3Sound, tieSound, backgroundMusic;
     float normalReadyDuration = 0.75f;
     float fastReadyDuration = 0.1f;
     float normalFightDuration = 0.25f;
@@ -42,9 +42,17 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
     int winnerTimes = 7;
     int lifeColorChangeTimes = 11;
     int livesNumber;
+    private AudioSource[] allAudioSources;
+
+    void Awake()
+    {
+        StopAllAudio();
+    }
 
     void Start()
     {
+        backgroundMusic = GameObject.Find("Scenery/Sounds/BackgroundMusic").GetComponent<AudioSource>();
+        backgroundMusic.Play();
         int isOnline = PlayerPrefs.GetInt("isOnline");
         if (isOnline.Equals(1))
         {
@@ -58,6 +66,15 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
         {
             isOnlineB = false;
             ShowReadyFightOffline();
+        }
+    }
+
+    void StopAllAudio()
+    {
+        allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Stop();
         }
     }
 
