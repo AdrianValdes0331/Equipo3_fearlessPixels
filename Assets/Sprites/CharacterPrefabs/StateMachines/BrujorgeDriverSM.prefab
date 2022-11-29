@@ -628,7 +628,7 @@ MonoBehaviour:
   i_movement: {x: 0, y: 0}
   stunTime: 0
   hitForce: {x: 0, y: 0}
-  speed: 5
+  speed: 7
   jspeed: 15
   animator: {fileID: 3096781160245778116}
   rb: {fileID: 0}
