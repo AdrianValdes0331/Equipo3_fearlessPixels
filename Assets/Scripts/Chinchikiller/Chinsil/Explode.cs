@@ -1,6 +1,6 @@
 using System.Collections;
-using Photon.Pun;
-using Photon.Realtime;
+//using Photon.Pun;
+//using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,7 +47,7 @@ public class Explode : MonoBehaviour, IHitboxResponder
            }
            DestroyBullet();
        }*/
-    [PunRPC]
+    //[PunRPC]
     public void CollisionedWith(Collider2D collider)
     {
         Vector2 direction = collider.transform.position - transform.position;

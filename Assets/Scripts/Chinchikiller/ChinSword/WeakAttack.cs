@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine.Playables;
 using System.Collections;
-using Photon.Pun;
-using Photon.Realtime;
+//using Photon.Pun;
+//using Photon.Realtime;
 using UnityEngine;
 using System;
 
@@ -37,7 +37,7 @@ public class WeakAttack : MonoBehaviour, IHitboxResponder
         }*/
     }
 
-    [PunRPC]
+    //[PunRPC]
     // Update is called once per frame
     void OnWeakAttack()
     {
