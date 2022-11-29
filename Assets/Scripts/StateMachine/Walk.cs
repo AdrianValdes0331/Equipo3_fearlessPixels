@@ -75,11 +75,15 @@ public class Walk : IPlayerBaseState
         player.TransitionToState(player.ChargeChargedState);
     }
     public void OnSpecial(PlayerController player)
-    {}
+    {
+        player.TransitionToState(player.SpecialAState);
+    }
     public void OnSpecialHold(PlayerController player)
     {}
     public void OnBang(PlayerController player)
-    {}
+    {
+        player.TransitionToState(player.BangAState);
+    }
     public void OnRecovery(PlayerController player)
     {}
     public void OnHit(PlayerController player)

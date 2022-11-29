@@ -58,7 +58,9 @@ public class Idle : IPlayerBaseState
     public void OnSpecialHold(PlayerController player)
     {}
     public void OnBang(PlayerController player)
-    {}
+    {
+        player.TransitionToState(player.BangAState);
+    }
     public void OnRecovery(PlayerController player)
     {}
     public void OnHit(PlayerController player)

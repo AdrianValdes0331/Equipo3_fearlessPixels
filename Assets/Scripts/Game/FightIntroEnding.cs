@@ -182,7 +182,7 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
             }
             else
             {
-                Rigidbody2D playerRigidbody = AlivedPlayers[i].GetComponent<Rigidbody2D>();
+                Rigidbody2D playerRigidbody = AlivedPlayers[i].transform.GetChild(0).GetComponent<Rigidbody2D>();
                 playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
             }
         }
@@ -399,20 +399,12 @@ public class FightIntroEnding : MonoBehaviourPunCallbacks
                 {
                     currentPlayerInput.enabled = true;
                 }
+                else
+                {
+                    Rigidbody2D playerRigidbody = Drivers[i].transform.GetChild(0).GetComponent<Rigidbody2D>();
+                    playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
+                }
             }
-            //for (int i = 0; i < Players.Count; i++)
-            //{
-            //    PlayerInput currentPlayerInput = Players[i].GetComponent<PlayerInput>();
-            //    if (currentPlayerInput)
-            //    {
-            //        currentPlayerInput.enabled = true;
-            //    }
-            //    else
-            //    {
-            //        Rigidbody2D playerRigidbody = Players[i].GetComponent<Rigidbody2D>();
-            //        playerRigidbody.constraints &= ~RigidbodyConstraints2D.FreezeAll;
-            //    }
-            //}
         }
        
     }

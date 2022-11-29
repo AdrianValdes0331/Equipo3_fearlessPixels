@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7654766051254027661}
   - component: {fileID: 1061935594356471325}
   - component: {fileID: 5493472817007760424}
+  - component: {fileID: 8898685391622948964}
   m_Layer: 0
   m_Name: CowDriverSM
   m_TagString: Driver
@@ -158,8 +159,27 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
-    special: {fileID: 6492952185170642619, guid: 8df32d2fca2319f4fa97be23a2980a11,
-      type: 3}
+    special: {fileID: 8898685391622948964}
+  BangAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames: []
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0, y: 0}
+      colorOpen: {r: 0, g: 0, b: 0, a: 0}
+      colorClosed: {r: 0, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0, b: 0, a: 0}
+      offset: {x: 0, y: 0}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+    bangAttack: {fileID: 0}
 --- !u!114 &7654766051254027661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +252,20 @@ MonoBehaviour:
   hurtbox: {fileID: 4647920126743478314}
   startingNumberLives: 3
   lives: 3
+--- !u!114 &8898685391622948964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852462224302812658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84977eebe6bf9f748bc0297be1b1b12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToxSpit: {fileID: 7610511892540972733, guid: df41367b56ed2274bb7dd11ccbd4c22a, type: 3}
+  point: {fileID: 1598197954139454199}
 --- !u!1 &2430091309730222117
 GameObject:
   m_ObjectHideFlags: 0

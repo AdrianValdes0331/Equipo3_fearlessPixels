@@ -29,16 +29,17 @@ public class PlayerController : MonoBehaviour
     public ChargeAttack ChargeAState = new ChargeAttack();
     public ChargeAttackCharged ChargeChargedState = new ChargeAttackCharged();
     public SpecialAttack SpecialAState = new SpecialAttack();
+    public Bang BangAState = new Bang();
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         // playerControls = new PlayerControls();
         // playerAct = playerControls.Player;
-        
+
         playerInput.actions["Movement"].performed += ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
         playerInput.actions["Movement"].canceled += ctx => OnMovement(Vector2.zero);
-        //playerAct.Bang.performed += OnBang;
+        playerInput.actions["Bang"].performed += ctx => OnBang();
         playerInput.actions["Jump"].performed += ctx => OnJump();
         //playerAct.Recovery.performed += ctx => OnRecovery();
         playerInput.actions["Special"].performed += ctx => OnSpecial();
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
         playerInput.actions["Movement"].performed -= ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
         playerInput.actions["Movement"].canceled -= ctx => OnMovement(Vector2.zero);
-        //playerAct.Bang.performed -= OnBang;
+        playerInput.actions["Bang"].performed -= ctx => OnBang();
         playerInput.actions["Jump"].performed -= ctx => OnJump();
         //playerAct.Recovery.performed -= ctx => OnRecovery();
         playerInput.actions["Special"].performed -= ctx => OnSpecial();
@@ -186,6 +187,21 @@ public class PlayerController : MonoBehaviour
     public void OnSpecial()
     {
         currState.OnSpecial(this);
+    }
+
+    public void OnSpecialHold()
+    {
+        currState.OnSpecialHold(this);
+    }
+
+    public void OnBang()
+    {
+        currState.OnBang(this);
+    }
+
+    public void OnRecovery()
+    {
+        currState.OnRecovery(this);
     }
 
     public void OnHit(Vector2 force)

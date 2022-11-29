@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 2071701424864858740}
   - component: {fileID: 2071701424864858744}
   - component: {fileID: -1074044123889540631}
-  - component: {fileID: -4581194291345101244}
+  - component: {fileID: -1352055889856132557}
   m_Layer: 7
-  m_Name: RegMisilSM
-  m_TagString: Chinsil
+  m_Name: ChinchiBangSM
+  m_TagString: ChinchiBang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2071701424864858739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,10 +99,10 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: 0.32, y: 0.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.2, y: 1.6}
+  m_Size: {x: 3.2, y: 1.4}
   m_EdgeRadius: 0
 --- !u!50 &2071701424864858740
 Rigidbody2D:
@@ -166,7 +166,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 14c91dc332ef16b41a117b7c096dbe78, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c77b63a8d52f7f743b3d7a1e41aaa877, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1.05
@@ -252,7 +252,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-4581194291345101244
+--- !u!114 &-1352055889856132557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,18 +265,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 5
-  rotateSpeed: 200
+  speed: 2
+  rotateSpeed: 100
   ItsAHit: {fileID: 4344038746741570550, guid: d0eff2cd35baa874eb0f227dd27e1dba, type: 3}
-  ItsNotAHit: {fileID: 479926494040748287, guid: 8c228b9c3105ca24eb085002758f1380,
+  ItsNotAHit: {fileID: 4344038746741570550, guid: cfea9de9cadb8e94dba728afe8e1e80a,
     type: 3}
-  Cabooommmmm: {fileID: 1825517975772227231, guid: ad5933c983a1b4e4c8593aaf16f1f8a9,
+  Cabooommmmm: {fileID: 1825517975772227231, guid: 5f736c35204b51c42af65d9f1b53f8fc,
     type: 3}
   player: {fileID: 0}
-  isBang: 0
-  TimeToChangeColor: 5
-  TimeToExplode: 7
-  dmg: 10.5
+  isBang: 1
+  TimeToChangeColor: 15
+  TimeToExplode: 20
+  dmg: 80
   hitbox:
     pos: {x: 0, y: 0}
     rot: 0
@@ -287,15 +287,15 @@ MonoBehaviour:
     isSphere: 0
     isProjectile: 1
     radius: 0
-    sz: {x: 1.6, y: 0.8}
+    sz: {x: 1.6, y: 0.7}
     colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
     colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
     colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
-    offset: {x: 0.15, y: 0}
+    offset: {x: -0.32, y: -0.07}
     currColor: {r: 0, g: 0, b: 0, a: 0}
     transform: {fileID: 0}
-  radio: 1
-  force: 24000
+  radio: 5
+  force: 50000
   colorToTurnTo: {r: 1, g: 0, b: 0, a: 1}
   angle: 45
   bang: {fileID: 0}
