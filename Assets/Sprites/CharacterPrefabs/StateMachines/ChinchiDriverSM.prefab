@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6492952185170642619}
   - component: {fileID: 6439259193547726018}
   - component: {fileID: 4948538590230774904}
+  - component: {fileID: 603681524132285614}
   m_Layer: 0
   m_Name: ChinchiDriverSM
   m_TagString: Driver
@@ -225,6 +226,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &603681524132285614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6026932628281615353}
+  hurtbox: {fileID: 1350223611369938548}
+  startingNumberLives: 3
+  lives: 3
 --- !u!1 &6056643571745745033
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,21 +479,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3877520826910734517}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &819095500647917767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026932628281615353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 6026932628281615353}
-  startingNumberLives: 3
-  lives: 3
 --- !u!4 &7175194703810286711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6223078809941388482, guid: a8a418229c4fb76458af16952b5811a9,

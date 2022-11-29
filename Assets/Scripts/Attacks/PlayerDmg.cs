@@ -102,7 +102,7 @@ public class PlayerDmg : MonoBehaviour
             }
             k++;
             Fixedx = canvasTransform.localScale.x;
-            int lives = players[0].GetComponent<Respawn>().lives;
+            int lives = players[0].transform.parent.GetComponent<Respawn>().lives;
             Debug.Log(a);
             Debug.Log(b);
             Debug.Log(a + (i + 1) * d);

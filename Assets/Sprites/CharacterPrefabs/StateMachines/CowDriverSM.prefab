@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1200611252051774667}
   - component: {fileID: 7654766051254027661}
   - component: {fileID: 1061935594356471325}
+  - component: {fileID: 5493472817007760424}
   m_Layer: 0
   m_Name: CowDriverSM
   m_TagString: Driver
@@ -215,6 +216,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5493472817007760424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852462224302812658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4647920126043395744}
+  hurtbox: {fileID: 4647920126743478314}
+  startingNumberLives: 3
+  lives: 3
 --- !u!1 &2430091309730222117
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +274,6 @@ GameObject:
   - component: {fileID: 4647920126043395756}
   - component: {fileID: 4647920126043395757}
   - component: {fileID: 4647920126043395759}
-  - component: {fileID: 8053664680471224262}
   - component: {fileID: 1794346800759120109}
   - component: {fileID: 4542772186412123671}
   m_Layer: 3
@@ -364,21 +380,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.4911566, y: 3.0928316}
   m_EdgeRadius: 0
---- !u!114 &8053664680471224262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647920126043395744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 4647920126043395744}
-  startingNumberLives: 3
-  lives: 3
 --- !u!95 &1794346800759120109
 Animator:
   serializedVersion: 4
