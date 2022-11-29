@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5167488926691104611}
   - component: {fileID: -235357211621922310}
   m_Layer: 0
-  m_Name: CowDriver
+  m_Name: CowDriverSM
   m_TagString: Driver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
