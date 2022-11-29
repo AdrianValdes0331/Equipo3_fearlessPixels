@@ -42,7 +42,7 @@ public abstract class AttackMultiplayer : IMultiplayerBaseState, IHitboxResponde
         //if the collider's grandparent is the parent of the attack's gameObject
         //return without doing anything
         if(collider.transform.parent.transform.parent == transform) { return; } 
-        NHurtbox hurtbox = collider.GetComponent<NHurtbox>();
+        NHurtboxMultiplayer hurtbox = collider.GetComponent<NHurtboxMultiplayer>();
         //if the collider has a hurtbox
         if (hurtbox != null)
         {

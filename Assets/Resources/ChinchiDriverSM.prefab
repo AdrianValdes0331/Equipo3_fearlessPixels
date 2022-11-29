@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 2098499987582787881}
   - component: {fileID: 613707982140608068}
   - component: {fileID: 8392852684779794350}
+  - component: {fileID: 24391863309129302}
   m_Layer: 0
   m_Name: ChinchiDriverSM
   m_TagString: Driver
@@ -352,6 +353,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8392852684779794350}
+  - {fileID: 24391863309129302}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -371,6 +373,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &24391863309129302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &6056643571745745033
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +926,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8102953108323609053, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
 --- !u!1 &1350223611369938548 stripped
 GameObject:
@@ -961,12 +980,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026932628281615353}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1811dc9ee297c40844578f3053a5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6026932628281615353}
+  hurtbox: {fileID: 0}
   startingNumberLives: 3
   lives: 3
 --- !u!114 &3193689190882546131

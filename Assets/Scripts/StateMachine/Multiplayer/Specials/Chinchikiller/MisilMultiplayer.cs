@@ -90,7 +90,7 @@ public class MisilMultiplayer : MonoBehaviour, IHitboxResponder
         print("HITTTT");
 
         //Explosion();
-        NHurtbox hurtbox = collider.GetComponent<NHurtbox>();
+        NHurtboxMultiplayer hurtbox = collider.GetComponent<NHurtboxMultiplayer>();
         if (hurtbox != null)
         {
             GameObject EXSound = Instantiate(ItsAHit, transform.position, transform.rotation);

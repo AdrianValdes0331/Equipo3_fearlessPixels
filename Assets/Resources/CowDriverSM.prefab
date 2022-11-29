@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2687187215577736313}
   - component: {fileID: 4245816303663533672}
   - component: {fileID: 2601083854795343329}
+  - component: {fileID: 8597312066731171603}
   m_Layer: 0
   m_Name: CowDriverSM
   m_TagString: Driver
@@ -249,6 +250,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2601083854795343329}
+  - {fileID: 8597312066731171603}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -268,6 +270,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &8597312066731171603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852462224302812658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &2716930609335807734
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4647920126043395744}
+  hurtbox: {fileID: 0}
   startingNumberLives: 3
   lives: 3
 --- !u!95 &1794346800759120109

@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 3609687241175428025}
   - component: {fileID: 3609687241175428024}
   - component: {fileID: 3609687241175428026}
-  - component: {fileID: 1549090334046636604}
   - component: {fileID: 2115786420158800595}
   - component: {fileID: 5599520860988149030}
   - component: {fileID: 5590021489680153346}
@@ -306,29 +305,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.4772687, y: 9.745625}
   m_EdgeRadius: 0
---- !u!114 &1549090334046636604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609687241175428021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rot: 0
-  maskNames:
-  - Hurtbox
-  isSphere: 0
-  isProjectile: 0
-  radius: 0
-  sz: {x: 1, y: 2}
-  colorOpen: {r: 0.069517374, g: 1, b: 0, a: 0}
-  colorClosed: {r: 1, g: 0, b: 0, a: 0}
-  colorColliding: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
-  offset: {x: 0.8, y: -0.2}
 --- !u!114 &2115786420158800595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3609687241175428021}
+  hurtbox: {fileID: 0}
   startingNumberLives: 3
   lives: 3
 --- !u!114 &5599520860988149030
@@ -360,7 +337,7 @@ MonoBehaviour:
   CWAnim: {fileID: 0}
   AnimBrujPunch: GolpeBasico
   dmg: 7
-  hitbox: {fileID: 1549090334046636604}
+  hitbox: {fileID: 0}
   force: 7000
   angle: 50
 --- !u!82 &5590021489680153346
@@ -869,6 +846,7 @@ GameObject:
   - component: {fileID: 5769359942854480950}
   - component: {fileID: 8894156935012564842}
   - component: {fileID: 999934340765620212}
+  - component: {fileID: 2294019070854323267}
   m_Layer: 0
   m_Name: BrujorgeDriverSM
   m_TagString: Driver
@@ -1147,6 +1125,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 999934340765620212}
+  - {fileID: 2294019070854323267}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1166,6 +1145,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!114 &2294019070854323267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723059031884419303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1001 &1199905876797008513
 PrefabInstance:
   m_ObjectHideFlags: 0
