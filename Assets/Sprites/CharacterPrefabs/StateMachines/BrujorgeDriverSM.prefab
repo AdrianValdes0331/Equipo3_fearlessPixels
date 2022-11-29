@@ -724,7 +724,7 @@ MonoBehaviour:
     dmg: 7
     force: 8000
     angle: 52
-    activeTime: 0.2
+    activeTime: 0.5
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
@@ -744,7 +744,7 @@ MonoBehaviour:
     dmg: 7
     force: 8000
     angle: 52
-    activeTime: 0.2
+    activeTime: 0.5
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
