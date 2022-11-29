@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d8629f462d3a54cb8c535f45218d28, type: 3}
   m_Name: FoxHunter
   m_EditorClassIdentifier: 
-  playablePlayer: {fileID: 1852462224302812658, guid: cabee39557667f747ae0313faba2dc9e,
+  playablePlayer: {fileID: 1852462224302812658, guid: 99c0d78bf9ec4ab47baf4af75b02181e,
     type: 3}
   image: {fileID: 21300000, guid: 5f403947d16494043b6d257cc3f0179d, type: 3}
   name: FoxHunter
