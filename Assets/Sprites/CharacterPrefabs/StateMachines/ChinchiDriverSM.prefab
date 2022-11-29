@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6492952185170642619}
   - component: {fileID: 6439259193547726018}
   - component: {fileID: 4948538590230774904}
+  - component: {fileID: 7447261503228888061}
   m_Layer: 0
   m_Name: ChinchiDriverSM
   m_TagString: Driver
@@ -160,6 +161,26 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
     special: {fileID: 6492952185170642619}
+  BangAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames: []
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0, y: 0}
+      colorOpen: {r: 0, g: 0, b: 0, a: 0}
+      colorClosed: {r: 0, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0, b: 0, a: 0}
+      offset: {x: 0, y: 0}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+    bangAttack: {fileID: 7447261503228888061}
 --- !u!114 &6492952185170642619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +246,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7447261503228888061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a402caaf631fe6c4582e5c79f94b8170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scope: {fileID: 2958596743105387105, guid: 0c22a1e954dd6134fa89dff6f55930ac, type: 3}
+  Misil: {fileID: -1352055889856132557, guid: e1e2ee879890eaa47bc42d0a2e7f830c, type: 3}
+  ScopeSpawn: {fileID: 7175194703810286711}
+  FirePoint: {fileID: 957400976289567715}
+  speed: 5
 --- !u!1 &6056643571745745033
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +456,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a418229c4fb76458af16952b5811a9, type: 3}
+--- !u!4 &957400976289567715 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4073197692114398038, guid: a8a418229c4fb76458af16952b5811a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3877520826910734517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350223611369938548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2842701128288544449, guid: a8a418229c4fb76458af16952b5811a9,
