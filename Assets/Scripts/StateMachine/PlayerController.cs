@@ -30,12 +30,12 @@ public class PlayerController : MonoBehaviour
     public ChargeAttackCharged ChargeChargedState = new ChargeAttackCharged();
     public SpecialAttack SpecialAState = new SpecialAttack();
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         // playerControls = new PlayerControls();
         // playerAct = playerControls.Player;
-
+        
         playerInput.actions["Movement"].performed += ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
         playerInput.actions["Movement"].canceled += ctx => OnMovement(Vector2.zero);
         //playerAct.Bang.performed += OnBang;
@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
             };
         //playerAct.Stron
         playerInput.actions["WeakAttack"].performed += ctx => OnWeakAttack();
+        
 
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
@@ -84,12 +85,52 @@ public class PlayerController : MonoBehaviour
     {
         //playerAct.Enable();
         hb.HitReact += OnHit;
+
     }
 
     void OnDisable()
     {
         //playerAct.Disable();
         hb.HitReact -= OnHit;
+
+        playerInput.actions["Movement"].performed -= ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
+        playerInput.actions["Movement"].canceled -= ctx => OnMovement(Vector2.zero);
+        //playerAct.Bang.performed -= OnBang;
+        playerInput.actions["Jump"].performed -= ctx => OnJump();
+        //playerAct.Recovery.performed -= ctx => OnRecovery();
+        playerInput.actions["Special"].performed -= ctx => OnSpecial();
+        playerInput.actions["StrongKick"].started -= 
+            ctx =>
+            {
+                if (ctx.interaction is SlowTapInteraction)
+                {
+                    OnCharged();
+                }
+            };
+        playerInput.actions["StrongKick"].performed -= 
+            ctx =>
+            {
+                if(ctx.interaction is SlowTapInteraction)
+                {
+                    OnCharged();
+                }
+                else
+                {
+                    Debug.Log("Tapped");
+                    OnStrongKick();
+                }
+            };
+        playerInput.actions["StrongKick"].canceled -=
+            ctx =>
+            {
+                if (ctx.interaction is SlowTapInteraction)
+                {
+                    Debug.Log("Charge Canceled!");
+                    OnStrongKick();
+                };
+            };
+        //playerAct.Stron
+        playerInput.actions["WeakAttack"].performed -= ctx => OnWeakAttack();
     }
 
     // Update is called once per frame

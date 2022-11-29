@@ -66,6 +66,17 @@ public class Misil : MonoBehaviour, IHitboxResponder
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radio);
+        Gizmos.color = hitbox.currColor;
+        Gizmos.matrix = Matrix4x4.TRS(hitbox.pos, transform.rotation, transform.localScale);
+        if (!hitbox.isSphere)
+        {
+            Gizmos.DrawCube(Vector3.zero, new Vector3(hitbox.sz.x * 2, hitbox.sz.y * 2, 0)); // Because size is halfExtents
+        }
+        else
+        {
+            Gizmos.DrawSphere(Vector3.zero, hitbox.radius);
+        }
+
     }
 
     private void ChangeColor()

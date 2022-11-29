@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Bang : Attack
 {
+    public BangAttack bangAttack;
     public override void EnterState(PlayerController player)
     {
-        MonoBehaviour.print("Entering idle");
-        player.SetAnimatorTrigger(PlayerController.AnimStates.Idle);
+        MonoBehaviour.print("Entering Bang");
+        player.SetAnimatorTrigger(PlayerController.AnimStates.Bang);
+        bangAttack.BangStart(player);    
     }
 
     public override void OnCollisionEffects()
