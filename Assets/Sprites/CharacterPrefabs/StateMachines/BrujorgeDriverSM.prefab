@@ -628,65 +628,68 @@ MonoBehaviour:
   i_movement: {x: 0, y: 0}
   stunTime: 0
   hitForce: {x: 0, y: 0}
-  speed: 5
+  speed: 7
   jspeed: 15
   animator: {fileID: 3096781160245778116}
   rb: {fileID: 0}
   NeutralAState:
-    dmg: 6
+    dmg: 5
     force: 6000
     angle: 50
     activeTime: 0.2
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
-      sz: {x: 0, y: 0}
-      colorOpen: {r: 0, g: 0, b: 0, a: 0}
-      colorClosed: {r: 0, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0, b: 0, a: 0}
-      offset: {x: 0, y: 0}
+      sz: {x: 0.5, y: 0.5}
+      colorOpen: {r: 0, g: 1, b: 0.0076596737, a: 0}
+      colorClosed: {r: 1, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0.57222366, b: 1, a: 0}
+      offset: {x: 0.5, y: 0.1}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
   ChargeAState:
-    dmg: 0
-    force: 0
-    angle: 0
+    dmg: 7
+    force: 8000
+    angle: 52
     activeTime: 0.2
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
-      sz: {x: 0, y: 0}
-      colorOpen: {r: 0, g: 0, b: 0, a: 0}
-      colorClosed: {r: 0, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0, b: 0, a: 0}
-      offset: {x: 0, y: 0}
+      sz: {x: 0.5, y: 0.5}
+      colorOpen: {r: 0, g: 1, b: 0.007843138, a: 0}
+      colorClosed: {r: 1, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0.57254905, b: 1, a: 0}
+      offset: {x: 0.5, y: 0.1}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
   ChargeChargedState:
-    dmg: 0
-    force: 0
-    angle: 0
-    activeTime: 0
+    dmg: 7
+    force: 8000
+    angle: 52
+    activeTime: 0.2
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
-      sz: {x: 0, y: 0}
-      colorOpen: {r: 0, g: 0, b: 0, a: 0}
-      colorClosed: {r: 0, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0, b: 0, a: 0}
-      offset: {x: 0, y: 0}
+      sz: {x: 0.5, y: 0.5}
+      colorOpen: {r: 0, g: 1, b: 0.007843138, a: 0}
+      colorClosed: {r: 1, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0.57254905, b: 1, a: 0}
+      offset: {x: 0.5, y: 0.1}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
   SpecialAState:
@@ -697,14 +700,15 @@ MonoBehaviour:
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
       sz: {x: 0, y: 0}
-      colorOpen: {r: 0, g: 0, b: 0, a: 0}
-      colorClosed: {r: 0, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0, b: 0, a: 0}
+      colorOpen: {r: 0, g: 1, b: 0.007843138, a: 0}
+      colorClosed: {r: 1, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0.57254905, b: 1, a: 0}
       offset: {x: 0, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
