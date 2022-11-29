@@ -46,8 +46,8 @@ public abstract class Attack : IPlayerBaseState, IHitboxResponder
         //if the collider has a hurtbox
         if (hurtbox != null)
         {
-            //BangLvl bang = transform.parent.GetComponent<BangLvl>();
-            //bang.bangUpdate(dmg, true);
+            BangLvl bang = transform.gameObject.GetComponent<BangLvl>();
+            bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
             hurtbox.getHitBy(dmg*multiplier, (int)(force * multiplier), angle, transform.position.x);
         }
