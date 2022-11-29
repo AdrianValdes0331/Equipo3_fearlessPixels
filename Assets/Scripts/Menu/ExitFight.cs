@@ -24,7 +24,8 @@ public class ExitFight : MonoBehaviour
             }
 
             //Destroy network manager
-            if (PhotonNetwork.IsConnected)
+            int isOnline = PlayerPrefs.GetInt("isOnline");
+            if (isOnline.Equals(1))
             {
                 PhotonNetwork.LeaveRoom();
             }

@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 4595204030135299920}
   - component: {fileID: -500021678222002318}
   m_Layer: 0
-  m_Name: ChinchiDriver
+  m_Name: ChinchiDriverSM
   m_TagString: Driver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
