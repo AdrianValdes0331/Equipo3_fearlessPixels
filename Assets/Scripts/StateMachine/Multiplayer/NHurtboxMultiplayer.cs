@@ -42,11 +42,19 @@ public class NHurtboxMultiplayer : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.NickName.Equals("Player 1"))
         {
-            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P2");
+            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P1");
         }
         else if (PhotonNetwork.NickName.Equals("Player 2"))
         {
-            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P1");
+            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P2");
+        }
+        else if (PhotonNetwork.NickName.Equals("Player 3"))
+        {
+            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P3");
+        }
+        else if (PhotonNetwork.NickName.Equals("Player 4"))
+        {
+            DmgManager.instance.updateDmgPercentTxt(System.Math.Round(dmgPercent, 2) + "%", "P4");
         }
 
     }
