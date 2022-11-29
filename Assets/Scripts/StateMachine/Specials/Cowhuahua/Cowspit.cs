@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class Cowspit : MonoBehaviour, IHitboxResponder
 {
+    [HideInInspector] public Transform player;
     [SerializeField] private float dmg;
-    [SerializeField] private Hitbox hitbox;
+    [SerializeField] private NHitbox hitbox;
     [SerializeField] private int force;
     [SerializeField] private int angle;
     private Rigidbody2D rbody;
     private bool uHitbox;
     public float LaunchForce;
+    [HideInInspector] public Vector3 scale;
 
     // Start is called before the first frame update
     void Start()
     {
         uHitbox = false;
-        hitbox.setResponder(this);
         //Animator = GetComponent<Animator>();
+        rbody = GetComponent<Rigidbody2D>();
         rbody.freezeRotation = true;
         Debug.Log(transform.parent.transform.rotation.x);
-        Vector3 scale = transform.parent.transform.GetChild(0).transform.localScale;
         rbody.gravityScale = 5;
         rbody.velocity = new Vector3(LaunchForce * scale.x * (1 / scale.y), 10, 0);
+        hitbox.transform = transform;
+        hitbox.Start();
+        hitbox.setResponder(this);
+        hitbox.openCollissionCheck();
 
     }
     void Update()
@@ -53,7 +58,7 @@ public class Cowspit : MonoBehaviour, IHitboxResponder
     {
 
         if (collider.transform.parent.transform.parent == transform.parent) { return; }
-        Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
+        NHurtbox hurtbox = collider.GetComponent<NHurtbox>();
         if (hurtbox != null)
         {
             BangLvl bang = transform.parent.GetComponent<BangLvl>();

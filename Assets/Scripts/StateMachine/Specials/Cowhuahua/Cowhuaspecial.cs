@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Cowhuaspecial : Special
 {
-    public GameObject ToxSpit;
+    public Cowspit ToxSpit;
+    private Cowspit spit;
     public Transform point;
     Vector2 i_movement;
     float pSize;
@@ -12,7 +13,9 @@ public class Cowhuaspecial : Special
     public override void SpecialStart(PlayerController player)
     {
         pSize = System.Math.Abs(player.transform.localScale.x);
-        Instantiate(ToxSpit, point.position, point.rotation, transform.parent);
+        spit = Instantiate(ToxSpit, point.position, point.rotation, transform.parent);
+        spit.scale = player.transform.localScale;
+        spit.player = player.transform;
     }
     public override void SpecialUpdate(PlayerController player)
     {

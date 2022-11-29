@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14720422, y: 0}
+  m_Offset: {x: 0, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.168707, y: 1.6985056}
+  m_Size: {x: 3.2, y: 1.6}
   m_EdgeRadius: 0
 --- !u!50 &2071701424864858740
 Rigidbody2D:
@@ -272,6 +272,7 @@ MonoBehaviour:
     type: 3}
   Cabooommmmm: {fileID: 1825517975772227231, guid: ad5933c983a1b4e4c8593aaf16f1f8a9,
     type: 3}
+  player: {fileID: 0}
   isBang: 0
   TimeToChangeColor: 5
   TimeToExplode: 7
