@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3609687240552152380}
   - component: {fileID: 3609687240552152381}
-  - component: {fileID: 8976188523421257736}
   - component: {fileID: 3609687240552152323}
+  - component: {fileID: 9179285885787565531}
   - component: {fileID: 3609687240552152322}
   m_Layer: 6
   m_Name: hurtbox
@@ -48,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.7564783, y: -2.9829836}
+  m_Offset: {x: -0.15216708, y: -0.7523241}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -59,22 +59,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4325562, y: 8.373711}
+  m_Size: {x: 3.2609673, y: 8.030533}
   m_EdgeRadius: 0
---- !u!114 &8976188523421257736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609687240552152383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fdab03876b5684bbd15d10280b05c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tankiness: 2.3
-  dmgPercent: 0
 --- !u!114 &3609687240552152323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +76,20 @@ MonoBehaviour:
   audioSource: {fileID: 3609687240552152322}
   clip: {fileID: 8300000, guid: 37de8fd4ca0464a40bc51ac29875bc31, type: 3}
   volume: 1.5
+--- !u!114 &9179285885787565531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3609687240552152383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankiness: 2.3
+  dmgPercent: 0
 --- !u!82 &3609687240552152322
 AudioSource:
   m_ObjectHideFlags: 0
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24ddbcb709b8634e91efaf8e4a4ee65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hb: {fileID: 0}
+  hb: {fileID: 9179285885787565531}
   i_movement: {x: 0, y: 0}
   stunTime: 0
   hitForce: {x: 0, y: 0}
