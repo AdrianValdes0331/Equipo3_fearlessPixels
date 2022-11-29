@@ -30,7 +30,7 @@ public class Respawn : MonoBehaviour
 
     void Start()
     {
-        playerRigidbody = player.GetComponent<Rigidbody2D>();
+        playerRigidbody = player.transform.parent.GetComponent<Rigidbody2D>();
         playerSprite = player.GetComponent<SpriteRenderer>();
         playerInput = player.GetComponent<PlayerInput>();
         startingNumberLives = lives;
