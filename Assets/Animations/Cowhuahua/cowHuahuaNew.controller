@@ -64,7 +64,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.75
   m_HasExitTime: 0
@@ -453,7 +453,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Charge
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 784172570217395465}
@@ -637,13 +637,13 @@ AnimatorStateMachine:
     m_Position: {x: -150, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4751100280028088345}
-    m_Position: {x: 640, y: 0, z: 0}
+    m_Position: {x: 700, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2902978423556515478}
     m_Position: {x: 720, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 195193199339585401}
-    m_Position: {x: 420, y: -80, z: 0}
+    m_Position: {x: 510, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3872088546050096764}
     m_Position: {x: 160, y: 30, z: 0}
@@ -737,7 +737,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ddfe723fef860f34382266653597f331, type: 2}
+  m_Motion: {fileID: 7400000, guid: f542993c202ac5a4eb2dc1c30c679270, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
