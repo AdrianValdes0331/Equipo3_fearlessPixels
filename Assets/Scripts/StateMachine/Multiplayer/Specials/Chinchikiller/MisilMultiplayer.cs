@@ -26,7 +26,7 @@ public class MisilMultiplayer : MonoBehaviour, IHitboxResponder
     [SerializeField] private int force;
     [SerializeField] private Color colorToTurnTo = Color.red;
     [SerializeField] private int angle;
-    [HideInInspector] public BangLvl bang;
+    [HideInInspector] public BangLvlMultiplayer bang;
 
     // Use this for initialization
     void Start()

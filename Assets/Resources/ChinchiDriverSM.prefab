@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5684642480910207388}
   - component: {fileID: 6760093250783947726}
   - component: {fileID: 7631180274044601501}
-  - component: {fileID: 6439259193547726018}
+  - component: {fileID: 8696576793697705983}
   - component: {fileID: 4948538590230774904}
   - component: {fileID: 2098499987582787881}
   - component: {fileID: 613707982140608068}
@@ -270,23 +270,24 @@ MonoBehaviour:
   ScopeSpawn: {fileID: 7175194703810286711}
   FirePoint: {fileID: 4193354659676784615}
   speed: 5
---- !u!114 &6439259193547726018
+--- !u!114 &8696576793697705983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5310105209126317939}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fee9c1f936b2493ab45b6810f5b849c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cd: 60
-  normal: {fileID: 21300000, guid: d1a0018a044de3941b02311a32f44669, type: 3}
-  Bang1: {fileID: 21300000, guid: 3eb92e12eb7cb1f4f92a2122bfb28a35, type: 3}
-  Bang2: {fileID: 21300000, guid: b2b0a8bb39357c64b89745e8893ec28b, type: 3}
-  Bang3: {fileID: 21300000, guid: d845e214432761245bfe48fbba120159, type: 3}
+  normal: 0
+  Bang1: 1
+  Bang2: 2
+  Bang3: 3
+  actualPlayer: 
 --- !u!114 &4948538590230774904
 MonoBehaviour:
   m_ObjectHideFlags: 0

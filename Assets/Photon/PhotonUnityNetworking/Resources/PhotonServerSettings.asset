@@ -57,6 +57,10 @@ MonoBehaviour:
   - updateplayer4Dmg
   - UpdateDmgPercentText
   - getHitBy
+  - updatePlayer1BangImg
+  - updatePlayer2BangImg
+  - updatePlayer3BangImg
+  - updatePlayer4BangImg
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

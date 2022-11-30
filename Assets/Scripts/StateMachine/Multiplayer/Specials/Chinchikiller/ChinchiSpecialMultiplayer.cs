@@ -22,7 +22,7 @@ public class ChinchiSpecialMultiplayer : SpecialMultiplayer
         scope = Instantiate(Scope, ScopeSpawn.position, Quaternion.identity);
         misil = Instantiate(Misil, FirePoint.position, Quaternion.identity);
         misil.target = scope;
-        misil.bang = player.gameObject.GetComponent<BangLvl>();
+        misil.bang = player.gameObject.GetComponent<BangLvlMultiplayer>();
         misil.player = player.transform;
         misil.exit += ExitState;
     }

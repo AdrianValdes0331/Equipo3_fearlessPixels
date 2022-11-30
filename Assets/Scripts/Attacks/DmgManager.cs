@@ -4,12 +4,20 @@ using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DmgManager : MonoBehaviourPunCallbacks
 {
 
     //Singleton
     public static DmgManager instance;
+
+    public Image imagePlayer1;
+    public Image imagePlayer2;
+    public Image imagePlayer3;
+    public Image imagePlayer4;
+
+    public Sprite[] playerSprites;
 
     public TextMeshProUGUI dmgPlayer1;
     public TextMeshProUGUI dmgPlayer2;
@@ -34,6 +42,26 @@ public class DmgManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public void updateBangSprite(int sprite, string player)
+    {
+        if (player.Equals("P1"))
+        {
+            photonView.RPC("updatePlayer1BangImg", RpcTarget.All, sprite);
+        }
+        else if (player.Equals("P2"))
+        {
+            photonView.RPC("updatePlayer2BangImg", RpcTarget.All, sprite);
+        }
+        else if (player.Equals("P3"))
+        {
+            photonView.RPC("updatePlayer3BangImg", RpcTarget.All, sprite);
+        }
+        else if (player.Equals("P4"))
+        {
+            photonView.RPC("updatePlayer4BangImg", RpcTarget.All, sprite);
+        }
+    }
+
     public void updateDmgPercentTxt(string dmg, string player)
     {
         if (player.Equals("P1"))
@@ -49,6 +77,30 @@ public class DmgManager : MonoBehaviourPunCallbacks
         {
             photonView.RPC("updateplayer4Dmg", RpcTarget.All, dmg);
         }
+    }
+
+    [PunRPC]
+    void updatePlayer1BangImg(int sprite)
+    {
+        imagePlayer1.sprite = playerSprites[sprite];
+    }
+
+    [PunRPC]
+    void updatePlayer2BangImg(int sprite)
+    {
+        imagePlayer2.sprite = playerSprites[sprite];
+    }
+
+    [PunRPC]
+    void updatePlayer3BangImg(int sprite)
+    {
+        imagePlayer3.sprite = playerSprites[sprite];
+    }
+
+    [PunRPC]
+    void updatePlayer4BangImg(int sprite)
+    {
+        imagePlayer4.sprite = playerSprites[sprite];
     }
 
     [PunRPC]

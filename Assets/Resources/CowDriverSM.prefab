@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7654766051254027660}
   - component: {fileID: 7097076682254449340}
   - component: {fileID: 8536563564646051622}
-  - component: {fileID: 7654766051254027661}
+  - component: {fileID: 8791630122788876383}
   - component: {fileID: 1061935594356471325}
   - component: {fileID: 2687187215577736313}
   - component: {fileID: 4245816303663533672}
@@ -159,23 +159,24 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
     special: {fileID: 0}
---- !u!114 &7654766051254027661
+--- !u!114 &8791630122788876383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852462224302812658}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fee9c1f936b2493ab45b6810f5b849c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cd: 60
-  normal: {fileID: 21300000, guid: 229cde96c28e14e8fa9287d449da375f, type: 3}
-  Bang1: {fileID: 21300000, guid: dceef3224e0e9457286fd75686e6b268, type: 3}
-  Bang2: {fileID: 21300000, guid: be48e8a1ea41a402aa64263e6d0e366d, type: 3}
-  Bang3: {fileID: 21300000, guid: 324a3772f8a4f4bcbbcc7f76ba39bdde, type: 3}
+  normal: 4
+  Bang1: 5
+  Bang2: 6
+  Bang3: 7
+  actualPlayer: 
 --- !u!114 &1061935594356471325
 MonoBehaviour:
   m_ObjectHideFlags: 0
