@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fury: 1
   ItsAHit: {fileID: 4344038746741570550, guid: d0eff2cd35baa874eb0f227dd27e1dba, type: 3}
   tankiness: 2.3
   dmgPercent: 0
@@ -612,6 +613,7 @@ GameObject:
   - component: {fileID: 3007561717218172455}
   - component: {fileID: 5922014157574863006}
   - component: {fileID: 2763418503758769682}
+  - component: {fileID: 372151128996784517}
   m_Layer: 0
   m_Name: BrujorgeDriverSM
   m_TagString: Driver
@@ -647,6 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAvailable: 0
   cd: 60
   normal: {fileID: 21300000, guid: 103ab687fd6814b46a3a65e9626c197d, type: 3}
   Bang1: {fileID: 21300000, guid: a6650993338f147d691c2e068016ecbf, type: 3}
@@ -853,7 +856,7 @@ MonoBehaviour:
     m_ActionId: eb595be3-2954-44cd-957b-93ea7669fb1d
     m_ActionName: Player/ChargeSpecial[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -901,3 +904,16 @@ MonoBehaviour:
   miauPrefab: {fileID: 2278170926001958996, guid: 655276f27c9313443ac34da4d4cbe992,
     type: 3}
   point: {fileID: 5690377831235258041}
+--- !u!114 &372151128996784517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723059031884419303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child: {fileID: 3515218842174160673}

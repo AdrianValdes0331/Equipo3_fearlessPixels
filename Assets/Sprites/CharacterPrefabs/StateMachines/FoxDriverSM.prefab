@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAvailable: 0
   cd: 60
   normal: {fileID: 21300000, guid: 439462f5c5f9ccc4baece40795801d22, type: 3}
   Bang1: {fileID: 21300000, guid: a7af07fb1ed8a8547beef68ec164e227, type: 3}
@@ -223,8 +224,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -768,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fury: 1
   ItsAHit: {fileID: 479159805710416469, guid: 9906e6a2275d52241b3e56ea3f3411cd, type: 3}
   tankiness: 2.6
   dmgPercent: 0

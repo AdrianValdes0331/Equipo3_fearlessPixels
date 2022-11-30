@@ -46,8 +46,8 @@ public class NHurtbox : MonoBehaviour
         }
         //transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*((dmgPercent/100)/ tankiness));
         HitReact?.Invoke(finalForce*((dmgPercent/100)/ tankiness));
-        //GameObject EXSound = Instantiate(ItsAHit, transform.position, transform.rotation, transform.parent);
-        //Destroy(EXSound, 2.0f);
+        GameObject EXSound = Instantiate(ItsAHit, transform.position, transform.rotation, transform.parent);
+        Destroy(EXSound, 2.0f);
         Debug.Log(transform.parent);
         UpdateDmgPercentText();
         return true;
