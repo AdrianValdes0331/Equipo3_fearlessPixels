@@ -90,7 +90,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -102,41 +102,43 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
   ChargeAState:
-    dmg: 0
-    force: 0
-    angle: 0
-    activeTime: 0.4
+    dmg: 5
+    force: 9000
+    angle: 50
+    activeTime: 0.2
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
-      sz: {x: 0, y: 0}
-      colorOpen: {r: 0, g: 0, b: 0, a: 0}
-      colorClosed: {r: 0, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0, b: 0, a: 0}
-      offset: {x: 0, y: 0}
+      sz: {x: 0.5, y: 0.5}
+      colorOpen: {r: 0.23921569, g: 0.6666667, b: 0.2901961, a: 0}
+      colorClosed: {r: 0.95686275, g: 0.19607843, b: 0.19607843, a: 0}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0}
+      offset: {x: 0.5, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
   ChargeChargedState:
-    dmg: 0
-    force: 0
-    angle: 0
-    activeTime: 0.4
+    dmg: 5
+    force: 9000
+    angle: 50
+    activeTime: 0.2
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
-      sz: {x: 1, y: 1}
+      sz: {x: 0.5, y: 0.5}
       colorOpen: {r: 0.2392157, g: 0.6666667, b: 0.2901961, a: 0}
       colorClosed: {r: 0.9568628, g: 0.19607845, b: 0.19607845, a: 0}
       colorColliding: {r: 0.3529412, g: 0.3921569, b: 0.8431373, a: 0}
-      offset: {x: 1, y: 1}
+      offset: {x: 0.5, y: 0.5}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
   SpecialAState:
@@ -147,7 +149,8 @@ MonoBehaviour:
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0

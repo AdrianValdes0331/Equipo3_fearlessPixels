@@ -976,7 +976,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -996,7 +996,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -1016,7 +1016,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -1036,7 +1036,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
