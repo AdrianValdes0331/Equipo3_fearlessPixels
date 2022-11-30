@@ -17,28 +17,38 @@ public class BangLvlMultiplayer : MonoBehaviourPunCallbacks
     public int Bang1;
     public int Bang2;
     public int Bang3;
-    public string actualPlayer;
+    string actualPlayer;
+    string objectName;
     
 
     void Start()
     {
+        actualPlayer = "P1";
+        objectName = "Player1";
+        if (PhotonNetwork.NickName.Equals("Player 2"))
+        {
+            actualPlayer = "P2";
+            objectName = "Player2";
+        }
+        else if (PhotonNetwork.NickName.Equals("Player 3"))
+        {
+            actualPlayer = "P3";
+            objectName = "Player3";
+        }
+        else if (PhotonNetwork.NickName.Equals("Player 4"))
+        {
+            actualPlayer = "P4";
+            objectName = "Player4";
+        }
+
+        if (!gameObject.name.Equals(objectName)) return;
         bangLvl = 0;
         totalDmgDiff = 0;
         isAvailable = true;
         coroutine = WaitAndPrint(0.3f);
         StartCoroutine(coroutine);
 
-        actualPlayer = "P1";
-        if(PhotonNetwork.NickName.Equals("Player 2"))
-        {
-            actualPlayer = "P2";
-        } else if (PhotonNetwork.NickName.Equals("Player 3"))
-        {
-            actualPlayer = "P3";
-        } else if(PhotonNetwork.NickName.Equals("Player 4"))
-        {
-            actualPlayer = "P4";
-        }
+        Debug.Log("actualPlayer: " + actualPlayer);
     }
 
     // Update is called once per frame
@@ -51,6 +61,8 @@ public class BangLvlMultiplayer : MonoBehaviourPunCallbacks
     {
 
         //Debug.Log(GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[gameObject.name]);
+        Debug.Log("actualPlayerUpdate: " + actualPlayer);
+        Debug.Log("imgUpdate: " + img);
         DmgManager.instance.updateBangSprite(img, actualPlayer);
         //nImg = img;
 
