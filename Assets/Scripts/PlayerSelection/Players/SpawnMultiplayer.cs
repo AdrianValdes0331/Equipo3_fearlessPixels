@@ -48,6 +48,12 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
         }
     }
 
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        object[] instantiationData = info.photonView.InstantiationData;
+        // ...
+    }
+
     void SpawnPlayer()
     {
         int playerIndex = PlayerPrefs.GetInt("PlayerIndex");
@@ -83,7 +89,8 @@ public class SpawnMultiplayer : MonoBehaviourPunCallbacks
 
         Debug.Log(playerPosition);
         Debug.Log(playerIndex);
-        
+
+        //object[] myCustomInitData = GetInitData();
         GameObject instance1 = PhotonNetwork.Instantiate(SelectPlayers.Instance.players[playerIndex].playablePlayer.name, playerPosition, Quaternion.identity);
         instance1.name = playerName;
 

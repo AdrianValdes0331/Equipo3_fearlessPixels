@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine;
 
-[System.Serializable]
-public class ChinchiSpecialMultiplayer : SpecialMultiplayer
+public class ChinchibangMultiplayer : BangAttackMultiplayer
 {
     bool done;
     Vector2 i_movement;
@@ -18,23 +17,25 @@ public class ChinchiSpecialMultiplayer : SpecialMultiplayer
     MisilMultiplayer misil;
     public float speed;
 
-
-    public override void SpecialStart(MultiplayerControllerSM player)
+    public override void BangStart(MultiplayerControllerSM player)
     {
-        misil = PhotonNetwork.Instantiate(Misil.name, FirePoint.position, Quaternion.identity).GetComponent<MisilMultiplayer>();
         done = false;
+        misil = PhotonNetwork.Instantiate(Misil.name, FirePoint.position, Quaternion.identity).GetComponent<MisilMultiplayer>();
         scope = PhotonNetwork.Instantiate(Scope.name, ScopeSpawn.position, Quaternion.identity);
         misil.exit += ExitState;
         if (photonView.IsMine)
         {
             misil.photonView.RPC("updateMisilObject", RpcTarget.All, scope.tag, player.name);
         }
-
     }
 
-    public override void SpecialUpdate(MultiplayerControllerSM player)
+    public override void BangUpdate(MultiplayerControllerSM player)
     {
         i_movement = player.i_movement;
+        if(player.rb.velocity.x != 0)
+        {
+            player.rb.velocity = new Vector2(0, player.rb.velocity.y);
+        }
         if (done)
         {
             misil.exit -= ExitState;
@@ -57,5 +58,4 @@ public class ChinchiSpecialMultiplayer : SpecialMultiplayer
     {
         done = true;
     }
-
 }

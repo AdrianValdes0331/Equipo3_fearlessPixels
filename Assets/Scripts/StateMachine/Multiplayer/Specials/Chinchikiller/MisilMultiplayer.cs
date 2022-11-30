@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Photon.Pun;
+using Photon.Realtime;
+using Unity.VisualScripting;
 
-public class MisilMultiplayer : MonoBehaviour, IHitboxResponder
+public class MisilMultiplayer : MonoBehaviourPunCallbacks, IHitboxResponder
 {
     [HideInInspector] public GameObject target;
 
@@ -44,6 +47,21 @@ public class MisilMultiplayer : MonoBehaviour, IHitboxResponder
         hitbox.openCollissionCheck();
         Invoke("ChangeColor", TimeToChangeColor);
         Invoke("DestroyBullet", TimeToExplode);
+    }
+
+    [PunRPC]
+    public void updateMisilObject(string scopeS, string playerString)
+    {
+        GameObject scope = GameObject.FindWithTag(scopeS);
+        MultiplayerControllerSM playerSM = GameObject.Find(playerString).gameObject.GetComponent<MultiplayerControllerSM>();
+        Debug.Log("FUNCION RPC");
+        if (!photonView.IsMine)
+        {
+            Debug.Log("other players");
+        }
+        target = scope;
+        bang = playerSM.GetComponent<BangLvlMultiplayer>();
+        player = playerSM.transform;
     }
 
     void FixedUpdate()

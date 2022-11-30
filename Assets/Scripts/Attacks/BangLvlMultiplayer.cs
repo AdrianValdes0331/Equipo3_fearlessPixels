@@ -24,21 +24,21 @@ public class BangLvlMultiplayer : MonoBehaviourPunCallbacks
     void Start()
     {
         actualPlayer = "P1";
-        objectName = "Player1";
+        objectName = "Player 1";
         if (PhotonNetwork.NickName.Equals("Player 2"))
         {
             actualPlayer = "P2";
-            objectName = "Player2";
+            objectName = "Player 2";
         }
         else if (PhotonNetwork.NickName.Equals("Player 3"))
         {
             actualPlayer = "P3";
-            objectName = "Player3";
+            objectName = "Player 3";
         }
         else if (PhotonNetwork.NickName.Equals("Player 4"))
         {
             actualPlayer = "P4";
-            objectName = "Player4";
+            objectName = "Player 4";
         }
 
         if (!gameObject.name.Equals(objectName)) return;
@@ -110,7 +110,7 @@ public class BangLvlMultiplayer : MonoBehaviourPunCallbacks
 
     public bool tryBang()
     {
-
+        Debug.Log("BANG: " + bangLvl);
         if(bangLvl != 0 && isAvailable)
         {
             StartCoroutine(cooldown());

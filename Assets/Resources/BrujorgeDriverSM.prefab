@@ -871,7 +871,6 @@ GameObject:
   - component: {fileID: 5769359942854480950}
   - component: {fileID: 8894156935012564842}
   - component: {fileID: 999934340765620212}
-  - component: {fileID: 2294019070854323267}
   - component: {fileID: 2071953279979854840}
   m_Layer: 0
   m_Name: BrujorgeDriverSM
@@ -1168,7 +1167,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 999934340765620212}
-  - {fileID: 2294019070854323267}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1188,22 +1187,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
---- !u!114 &2294019070854323267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723059031884419303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &2071953279979854840
 MonoBehaviour:
   m_ObjectHideFlags: 0

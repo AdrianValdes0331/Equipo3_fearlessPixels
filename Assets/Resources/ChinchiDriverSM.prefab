@@ -104,12 +104,12 @@ GameObject:
   - component: {fileID: 5684642480910207388}
   - component: {fileID: 6760093250783947726}
   - component: {fileID: 7631180274044601501}
+  - component: {fileID: 688559843102455823}
   - component: {fileID: 8696576793697705983}
   - component: {fileID: 4948538590230774904}
   - component: {fileID: 2098499987582787881}
   - component: {fileID: 613707982140608068}
   - component: {fileID: 8392852684779794350}
-  - component: {fileID: 24391863309129302}
   - component: {fileID: 6602641899309035256}
   m_Layer: 0
   m_Name: ChinchiDriverSM
@@ -257,6 +257,27 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
     special: {fileID: 7631180274044601501}
+  BangAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames:
+      - Hurtbox
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0, y: 0}
+      colorOpen: {r: 0, g: 0, b: 0, a: 0}
+      colorClosed: {r: 0, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0, b: 0, a: 0}
+      offset: {x: 0, y: 0}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+    bangAttack: {fileID: 688559843102455823}
 --- !u!114 &7631180274044601501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +288,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9db34650d70ed4ae2b4e7585d489ef55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scope: {fileID: 2958596743105387105, guid: 0c22a1e954dd6134fa89dff6f55930ac, type: 3}
+  Misil: {fileID: 1387728804135131531, guid: 2f3306d9a82e84006aeec413a4bba346, type: 3}
+  ScopeSpawn: {fileID: 7175194703810286711}
+  FirePoint: {fileID: 4193354659676784615}
+  speed: 5
+--- !u!114 &688559843102455823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e02c4dea2eb64cca89b8d8203bdad21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Scope: {fileID: 2958596743105387105, guid: 0c22a1e954dd6134fa89dff6f55930ac, type: 3}
@@ -357,7 +395,6 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8392852684779794350}
-  - {fileID: 24391863309129302}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -377,22 +414,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
---- !u!114 &24391863309129302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5310105209126317939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &6602641899309035256
 MonoBehaviour:
   m_ObjectHideFlags: 0

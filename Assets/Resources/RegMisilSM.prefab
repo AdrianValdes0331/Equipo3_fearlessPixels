@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 1387728804135131531}
   - component: {fileID: 1713443657264253210}
   - component: {fileID: 9072997057224670723}
-  - component: {fileID: -8034611397136381107}
   m_Layer: 7
   m_Name: RegMisilSM
   m_TagString: Chinsil
@@ -284,9 +283,9 @@ MonoBehaviour:
     pos: {x: 0, y: 0}
     rot: 0
     maskNames:
-    - 
-    - 
-    - 
+    - Default
+    - Hurtbox
+    - Floor
     isSphere: 0
     isProjectile: 1
     radius: 0
@@ -341,19 +340,3 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
---- !u!114 &-8034611397136381107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071701424864858739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
