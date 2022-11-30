@@ -115,9 +115,9 @@ MonoBehaviour:
       isProjectile: 0
       radius: 0
       sz: {x: 0.8, y: 1}
-      colorOpen: {r: 0.23529413, g: 0.6666667, b: 0.29411766, a: 0}
-      colorClosed: {r: 0.9607844, g: 0.19607845, b: 0.19607845, a: 0}
-      colorColliding: {r: 0.3529412, g: 0.3921569, b: 0.8431373, a: 0}
+      colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+      colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
       offset: {x: 0.8, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}

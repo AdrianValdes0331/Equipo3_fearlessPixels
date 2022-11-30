@@ -7,11 +7,17 @@ using UnityEngine.InputSystem;
 public class SpecialAttack : Attack
 {
     public Special special;
+    bool done;
     public override void EnterState(PlayerController player)
     {
+        done = false;
         MonoBehaviour.print("Entering Special");
         player.SetAnimatorTrigger(PlayerController.AnimStates.Special);
         special.SpecialStart(player);
+        if (activeTime > 0)
+        {
+            player.StartCoroutine(Active(player, activeTime));
+        }
     }
 
     public override void OnCollisionEffects()
@@ -31,6 +37,17 @@ public class SpecialAttack : Attack
 
     public override void Update(PlayerController player)
     {
+        if (done)
+        {
+            if (player.i_movement.x == 0)
+            {
+                player.TransitionToState(player.IdleState);
+            }
+            else
+            {
+                player.TransitionToState(player.WalkState);
+            }
+        }
         special.SpecialUpdate(player);
     }
     public override void LateUpdate(PlayerController player) { }
@@ -62,5 +79,15 @@ public class SpecialAttack : Attack
     }
     public override void OnDisable(PlayerController player)
     {}
+
+    IEnumerator Active(PlayerController player, float t)
+    {
+
+        //uHitbox = false;
+        yield return new WaitForSeconds(t);
+        hitbox.closeCollissionCheck();
+        done = true;
+
+    }
 
 }

@@ -270,7 +270,7 @@ MonoBehaviour:
   ItsAHit: {fileID: 4344038746741570550, guid: d0eff2cd35baa874eb0f227dd27e1dba, type: 3}
   ItsNotAHit: {fileID: 479926494040748287, guid: 8c228b9c3105ca24eb085002758f1380,
     type: 3}
-  Cabooommmmm: {fileID: 1825517975772227231, guid: ad5933c983a1b4e4c8593aaf16f1f8a9,
+  Cabooommmmm: {fileID: 1825517975772227231, guid: 066729e68af70074a851476d250e1132,
     type: 3}
   player: {fileID: 0}
   isBang: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
     isSphere: 0
     isProjectile: 1
     radius: 0
-    sz: {x: 1.6, y: 0.8}
+    sz: {x: 0.6, y: 0.3}
     colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
     colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
     colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}

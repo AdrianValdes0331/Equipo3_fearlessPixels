@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -8639584803344811873}
   - component: {fileID: -5496297325144200844}
   - component: {fileID: -6343050158439572141}
-  - component: {fileID: 7610511892540972733}
+  - component: {fileID: 8674892593076118062}
+  - component: {fileID: 4788417931085132928}
   m_Layer: 7
-  m_Name: SpitSM
+  m_Name: BangSpitSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5130089573596089491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.43020153, y: 0.12532198, z: 0.461449}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -145,7 +146,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7610511892540972733
+--- !u!114 &8674892593076118062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,11 +155,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5130089573596089491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc0a97642f9f5d44b85438c006fac01, type: 3}
+  m_Script: {fileID: 11500000, guid: 603a60cc1bee41340a59f9859e0b093a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cabooommmmm: {fileID: 1825517975772227231, guid: 565ea6cfc4cf8234c80d4335c89355f2,
+    type: 3}
   player: {fileID: 0}
-  dmg: 0.2
+  dmg: 4
   hitbox:
     pos: {x: 0, y: 0}
     rot: 0
@@ -167,14 +170,42 @@ MonoBehaviour:
     isSphere: 0
     isProjectile: 1
     radius: 0
-    sz: {x: 1, y: 0.5}
+    sz: {x: 4, y: 2}
     colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
     colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
     colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
     offset: {x: 0, y: 0}
     currColor: {r: 0, g: 0, b: 0, a: 0}
     transform: {fileID: 0}
-  force: 0
-  angle: 0
+  force: 10000
+  angle: 55
+  isBang: 1
   LaunchForce: 20
+  SpitName: Sploosh
   scale: {x: 0, y: 0, z: 0}
+--- !u!61 &4788417931085132928
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130089573596089491}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.78, y: 0.32}
+    newSize: {x: 0.78, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.78, y: 0.32}
+  m_EdgeRadius: 0

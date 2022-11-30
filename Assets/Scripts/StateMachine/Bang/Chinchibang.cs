@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Chinchibang : BangAttack
 {
-    bool done;
     Vector2 i_movement;
     float pSize;
     [SerializeField] GameObject Scope;
@@ -49,10 +48,5 @@ public class Chinchibang : BangAttack
         {
             scope.GetComponent<Rigidbody2D>().velocity = i_movement*speed;
         }
-    }
-
-    public void ExitState()
-    {
-        done = true;
     }
 }

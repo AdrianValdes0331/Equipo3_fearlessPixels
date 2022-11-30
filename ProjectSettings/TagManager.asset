@@ -20,6 +20,7 @@ TagManager:
   - PlayerImage
   - LifeImage
   - MenuMusic
+  - Fireball
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - Postprocessing
   - Floor
   - Objects
-  - 
+  - Fireball
   - 
   - 
   - 

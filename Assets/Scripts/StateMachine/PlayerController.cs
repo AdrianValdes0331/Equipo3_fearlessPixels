@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public static event Action startBang;
+
     PlayerInput playerInput;
     public NHurtbox hb;
     [HideInInspector] public Vector2 i_movement;
@@ -39,7 +42,12 @@ public class PlayerController : MonoBehaviour
 
         playerInput.actions["Movement"].performed += ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
         playerInput.actions["Movement"].canceled += ctx => OnMovement(Vector2.zero);
-        playerInput.actions["Bang"].performed += ctx => OnBang();
+        playerInput.actions["Bang"].performed +=
+            ctx =>
+            {
+                startBang?.Invoke();
+                OnBang();
+            };
         playerInput.actions["Jump"].performed += ctx => OnJump();
         //playerAct.Recovery.performed += ctx => OnRecovery();
         playerInput.actions["Special"].performed += ctx => OnSpecial();

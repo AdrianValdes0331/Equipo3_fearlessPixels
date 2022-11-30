@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class BangLvl : MonoBehaviour
 {
@@ -16,9 +17,11 @@ public class BangLvl : MonoBehaviour
     public Sprite Bang1;
     public Sprite Bang2;
     public Sprite Bang3;
+    int livesStart;
 
     void Start()
     {
+        PlayerController.startBang += countLives;
         bangLvl = 0;
         totalDmgDiff = 0;
         isAvailable = true;
@@ -105,8 +108,11 @@ public class BangLvl : MonoBehaviour
 
     public IEnumerator cooldown()
     {
+        SpriteRenderer sr = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        sr.DOColor(new Color(0.4f, 1, 0.4f, 1), 0.2f);
         isAvailable = false;
         yield return new WaitForSeconds(cd);
+        sr.DOColor(new Color(1, 1, 1, 1), 0.2f);
         bangLvl = 0;
         totalDmgDiff = 0;
         isAvailable = true;
@@ -118,6 +124,13 @@ public class BangLvl : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
         updateBangImage(normal);
+    }
+
+    public void countLives() 
+    {
+
+        livesStart = gameObject.GetComponent<Respawn>().lives;
+
     }
 
 }

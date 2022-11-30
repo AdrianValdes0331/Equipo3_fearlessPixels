@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class ChinchiSpecial : Special
 {
-    bool done;
     Vector2 i_movement;
     float pSize;
     [SerializeField] GameObject Scope;
@@ -46,11 +45,6 @@ public class ChinchiSpecial : Special
         {
             scope.GetComponent<Rigidbody2D>().velocity = i_movement*speed;
         }
-    }
-
-    public void ExitState()
-    {
-        done = true;
     }
 
 }

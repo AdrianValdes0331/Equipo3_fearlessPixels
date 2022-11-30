@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cowhuaspecial : Special
+public class Cowhuabang : BangAttack
 {
-    public Cowspit ToxSpit;
-    private Cowspit spit;
+    public Cowhuasplode ToxSpit;
+    private Cowhuasplode spit;
     public Transform point;
     Vector2 i_movement;
     float pSize;
 
-    public override void SpecialStart(PlayerController player)
+    public override void BangStart(PlayerController player)
     {
         done = false;
         pSize = System.Math.Abs(player.transform.localScale.x);
@@ -19,11 +19,20 @@ public class Cowhuaspecial : Special
         spit.player = player.transform;
         spit.exit += ExitState;
     }
-    public override void SpecialUpdate(PlayerController player)
+
+    public override void BangUpdate(PlayerController player)
     {
         i_movement = player.i_movement;
-        
-        player.rb.velocity = new Vector2(i_movement.x*player.speed, player.rb.velocity.y);
+        player.rb.velocity = new Vector2(i_movement.x * player.speed, player.rb.velocity.y);
+
+        if (i_movement.x < 0.0f)
+        {
+            player.transform.localScale = new Vector3(-pSize, pSize, pSize);
+        }
+        else if (i_movement.x > 0.0f)
+        {
+            player.transform.localScale = new Vector3(pSize, pSize, pSize);
+        }
 
         if (done)
         {
@@ -37,15 +46,5 @@ public class Cowhuaspecial : Special
                 player.TransitionToState(player.WalkState);
             }
         }
-
-        if (i_movement.x < 0.0f)
-        {
-            player.transform.localScale = new Vector3(-pSize, pSize, pSize);
-        }
-        else if (i_movement.x > 0.0f)
-        {
-            player.transform.localScale = new Vector3(pSize, pSize, pSize);
-        }
-
     }
 }

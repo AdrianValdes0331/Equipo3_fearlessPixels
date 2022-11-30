@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &580105951365903277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5690377831235258041}
+  m_Layer: 3
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5690377831235258041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580105951365903277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.5, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3609687241175428025}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3609687240552152383
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,8 +228,6 @@ GameObject:
   - component: {fileID: 3609687241175428025}
   - component: {fileID: 3609687241175428024}
   - component: {fileID: 3609687241175428026}
-  - component: {fileID: 1549090334046636604}
-  - component: {fileID: 5599520860988149030}
   - component: {fileID: 5590021489680153346}
   - component: {fileID: 3096781160245778116}
   m_Layer: 3
@@ -223,6 +252,7 @@ Transform:
   - {fileID: 3609687240552152380}
   - {fileID: 3515218842174160673}
   - {fileID: 3581010718752462093}
+  - {fileID: 5690377831235258041}
   m_Father: {fileID: 1775444079849945241}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -304,48 +334,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.4772687, y: 9.745625}
   m_EdgeRadius: 0
---- !u!114 &1549090334046636604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609687241175428021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6d64b65f45acd4b99698ba2c718c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rot: 0
-  maskNames:
-  - Hurtbox
-  isSphere: 0
-  isProjectile: 0
-  radius: 0
-  sz: {x: 1, y: 2}
-  colorOpen: {r: 0.069517374, g: 1, b: 0, a: 0}
-  colorClosed: {r: 1, g: 0, b: 0, a: 0}
-  colorColliding: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
-  offset: {x: 0.8, y: -0.2}
---- !u!114 &5599520860988149030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609687241175428021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91e02096b0a84374aa785aa951814e12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GMove: {fileID: 0}
-  CWAnim: {fileID: 0}
-  AnimBrujPunch: GolpeBasico
-  dmg: 7
-  hitbox: {fileID: 1549090334046636604}
-  force: 7000
-  angle: 50
 --- !u!82 &5590021489680153346
 AudioSource:
   m_ObjectHideFlags: 0
@@ -617,11 +605,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1775444079849945241}
   - component: {fileID: 1775444079849945240}
-  - component: {fileID: 3884059822235303689}
   - component: {fileID: 1568471373642249110}
   - component: {fileID: 4148514257663119144}
   - component: {fileID: 987114123257018085}
   - component: {fileID: 3007561717218172455}
+  - component: {fileID: 5922014157574863006}
+  - component: {fileID: 2763418503758769682}
   m_Layer: 0
   m_Name: BrujorgeDriverSM
   m_TagString: Driver
@@ -662,24 +651,6 @@ MonoBehaviour:
   Bang1: {fileID: 21300000, guid: a6650993338f147d691c2e068016ecbf, type: 3}
   Bang2: {fileID: 21300000, guid: 9cb832538c65b47ddb20b6fb81fa0e45, type: 3}
   Bang3: {fileID: 21300000, guid: 794b19e2e642c4acd93e895577af0017, type: 3}
---- !u!114 &3884059822235303689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723059031884419303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56fee035f7815924a8983f5c2ac81286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireBall: {fileID: 3283382801620305355, guid: 964ff738a51bb8040a585c7621c69be7,
-    type: 3}
-  FireBallArrow: {fileID: 5121393382024382056, guid: 57965541d180a1741ab8412beefdc42a,
-    type: 3}
-  actionReference: {fileID: 2188733204971546107, guid: 97c21df527d6cc04a9f0f0ce342e1c7a,
-    type: 3}
 --- !u!114 &1568471373642249110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,9 +685,9 @@ MonoBehaviour:
       isProjectile: 0
       radius: 0
       sz: {x: 0.5, y: 0.5}
-      colorOpen: {r: 0, g: 1, b: 0.0076596737, a: 0}
-      colorClosed: {r: 1, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0.57222366, b: 1, a: 0}
+      colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+      colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
       offset: {x: 0.5, y: 0.1}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
@@ -734,9 +705,9 @@ MonoBehaviour:
       isProjectile: 0
       radius: 0
       sz: {x: 0.5, y: 0.5}
-      colorOpen: {r: 0, g: 1, b: 0.007843138, a: 0}
-      colorClosed: {r: 1, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0.57254905, b: 1, a: 0}
+      colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+      colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
       offset: {x: 0.5, y: 0.1}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
@@ -754,9 +725,9 @@ MonoBehaviour:
       isProjectile: 0
       radius: 0
       sz: {x: 0.5, y: 0.5}
-      colorOpen: {r: 0, g: 1, b: 0.007843138, a: 0}
-      colorClosed: {r: 1, g: 0, b: 0, a: 0}
-      colorColliding: {r: 0, g: 0.57254905, b: 1, a: 0}
+      colorOpen: {r: 0.23529412, g: 0.6666667, b: 0.29411766, a: 0.50980395}
+      colorClosed: {r: 0.9607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0.50980395}
       offset: {x: 0.5, y: 0.1}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
@@ -764,7 +735,7 @@ MonoBehaviour:
     dmg: 0
     force: 0
     angle: 0
-    activeTime: 0
+    activeTime: 0.3
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
@@ -780,7 +751,27 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
-    special: {fileID: 0}
+    special: {fileID: 5922014157574863006}
+  BangAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0.2
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames: []
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0, y: 0}
+      colorOpen: {r: 0, g: 0, b: 0, a: 0}
+      colorClosed: {r: 0, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0, b: 0, a: 0}
+      offset: {x: 0, y: 0}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+    bangAttack: {fileID: 2763418503758769682}
 --- !u!50 &4148514257663119144
 Rigidbody2D:
   serializedVersion: 4
@@ -881,3 +872,31 @@ MonoBehaviour:
   hurtbox: {fileID: 3609687240552152383}
   startingNumberLives: 3
   lives: 3
+--- !u!114 &5922014157574863006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723059031884419303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434d1b461af8436449f7b633c8e1df40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fb: {fileID: 353785178698677700, guid: acc504f36d0ab1745b26ff212ec504ac, type: 3}
+--- !u!114 &2763418503758769682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723059031884419303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acff037ace5405468d9700e385fa485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miauPrefab: {fileID: 2278170926001958996, guid: 655276f27c9313443ac34da4d4cbe992,
+    type: 3}
+  point: {fileID: 5690377831235258041}
