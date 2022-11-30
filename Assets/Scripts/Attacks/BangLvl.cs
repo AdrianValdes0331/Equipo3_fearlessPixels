@@ -18,10 +18,25 @@ public class BangLvl : MonoBehaviour
     public Sprite Bang2;
     public Sprite Bang3;
     int livesStart;
+    int livesEnd;
+
+    private void OnEnable()
+    {
+        PlayerController.startBang += countLives;
+        Miauterito.bangEnd += countLivesAfter;
+        Cowhuasplode.bangEnd += countLivesAfter;
+        Misil.bangEnd += countLivesAfter;
+    }
+    private void OnDisable()
+    {
+        PlayerController.startBang -= countLives;
+        Miauterito.bangEnd -= countLivesAfter;
+        Cowhuasplode.bangEnd -= countLivesAfter;
+        Misil.bangEnd -= countLivesAfter;
+    }
 
     void Start()
     {
-        PlayerController.startBang += countLives;
         bangLvl = 0;
         totalDmgDiff = 0;
         isAvailable = true;
@@ -131,6 +146,11 @@ public class BangLvl : MonoBehaviour
 
         livesStart = gameObject.GetComponent<Respawn>().lives;
 
+    }
+
+    public void countLivesAfter()
+    {
+        livesEnd = gameObject.GetComponent<Respawn>().lives;
     }
 
 }

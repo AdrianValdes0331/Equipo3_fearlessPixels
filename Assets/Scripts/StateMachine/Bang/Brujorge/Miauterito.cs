@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Miauterito : MonoBehaviour, IHitboxResponder
 {
+    public static event Action bangEnd;
+
     [HideInInspector] public GameObject target;
 
     public float speed = 5f;
@@ -85,6 +88,7 @@ public class Miauterito : MonoBehaviour, IHitboxResponder
     {
         GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation);
         cabom.GetComponent<ExplodSM>().player = player;
+        checkBang();
         Destroy(gameObject);
         Destroy(cabom, 2.0f);
     }
@@ -92,6 +96,7 @@ public class Miauterito : MonoBehaviour, IHitboxResponder
     public void CollisionedWith(Collider2D collider)
     {
         if (collider.transform.parent.transform.parent == player) { return; }
+        checkBang();
         Destroy(gameObject);
         print("HITTTT");
 
@@ -122,4 +127,19 @@ public class Miauterito : MonoBehaviour, IHitboxResponder
             cabom.GetComponent<ExplodSM>().player = player;
         }
     }
+
+    public void checkBang() 
+    {
+        if (GameObject.FindGameObjectsWithTag("Miau").Length > 1)
+        {
+            StartCoroutine(waitAfterBang());
+        }
+    }
+
+    IEnumerator waitAfterBang()
+    {
+        yield return new WaitForSeconds(2);
+        bangEnd?.Invoke();
+    }
+
 }

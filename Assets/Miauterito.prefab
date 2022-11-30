@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2278170926001958996}
   m_Layer: 13
   m_Name: Miauterito
-  m_TagString: Fireball
+  m_TagString: Miau
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

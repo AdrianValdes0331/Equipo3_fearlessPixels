@@ -7,6 +7,7 @@ public class Misil : MonoBehaviour, IHitboxResponder
 {
     [HideInInspector] public GameObject target;
 
+    public static event Action bangEnd;
     public event Action exit;
 
     public float speed = 5f;
@@ -88,6 +89,7 @@ public class Misil : MonoBehaviour, IHitboxResponder
     {
         GameObject cabom = Instantiate(Cabooommmmm, transform.position, transform.rotation);
         cabom.GetComponent<ExplodSM>().player = player;
+        checkBang();
         Destroy(gameObject);
         Destroy(cabom, 2.0f);
         Destroy(target);
@@ -97,6 +99,7 @@ public class Misil : MonoBehaviour, IHitboxResponder
     public void CollisionedWith(Collider2D collider)
     {
         if (collider.transform.parent.transform.parent == player) { return; }
+        checkBang();
         Destroy(gameObject);
         Destroy(GameObject.FindWithTag("scope"));
         print("HITTTT");
@@ -130,4 +133,18 @@ public class Misil : MonoBehaviour, IHitboxResponder
             exit?.Invoke();
         }
     }
+    public void checkBang()
+    {
+        if (GameObject.FindGameObjectsWithTag("Miau").Length > 1)
+        {
+            StartCoroutine(waitAfterBang());
+        }
+    }
+
+    IEnumerator waitAfterBang()
+    {
+        yield return new WaitForSeconds(2);
+        bangEnd?.Invoke();
+    }
+
 }
