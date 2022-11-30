@@ -6,24 +6,23 @@ using UnityEngine;
 public class DynamicPlatforms : MonoBehaviour
 {
     GameObject collisionObject;
-/*    public static event Action<Rigidbody2D> playerOn;
-    public static event Action<Rigidbody2D> playerOff;*/
 
     private void OnCollisionEnter2D(Collision2D collisionDetected)
     {
         collisionObject = collisionDetected.gameObject;
-        if (collisionObject.CompareTag("Player"))
+        if (collisionObject.CompareTag("Driver"))
         {
-            collisionObject.transform.parent.parent = transform;
+            collisionObject.transform.parent = transform;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collisionDetected)
     {
-        GameObject collisionObject = collisionDetected.gameObject;
-        if (collisionObject.CompareTag("Player"))
+        collisionObject = collisionDetected.gameObject;
+        if (collisionObject.CompareTag("Driver"))
         {
-            collisionObject.transform.parent.parent = null;
+            collisionObject.transform.parent = null;
+            collisionObject.transform.localScale = new Vector3(1, 1, 1);
         }
     }
 }

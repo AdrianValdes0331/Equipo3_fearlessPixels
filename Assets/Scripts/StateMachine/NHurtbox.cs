@@ -6,6 +6,7 @@ using System;
 
 public class NHurtbox : MonoBehaviour
 {
+    public GameObject ItsAHit;
     private Collider2D hcollider;
     public float tankiness = 2.0f;
     [HideInInspector] public float dmgPercent = 0.0f;
@@ -27,6 +28,8 @@ public class NHurtbox : MonoBehaviour
         dmgPercent += damage;
         //transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*((dmgPercent/100)/ tankiness));
         HitReact?.Invoke(finalForce*((dmgPercent/100)/ tankiness));
+        GameObject EXSound = Instantiate(ItsAHit, transform.position, transform.rotation, transform.parent);
+        Destroy(EXSound, 2.0f);
         Debug.Log(transform.parent);
         UpdateDmgPercentText();
         return true;

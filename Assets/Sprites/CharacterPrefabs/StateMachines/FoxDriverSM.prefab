@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -6525414229967021562}
   - component: {fileID: 8383247388731997802}
   - component: {fileID: 7792282287249871099}
+  - component: {fileID: 6528957596838553116}
   m_Layer: 0
   m_Name: FoxDriverSM
   m_TagString: Driver
@@ -138,6 +139,26 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
     special: {fileID: 0}
+  BangAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames: []
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0, y: 0}
+      colorOpen: {r: 0, g: 0, b: 0, a: 0}
+      colorClosed: {r: 0, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0, b: 0, a: 0}
+      offset: {x: 0, y: 0}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+    bangAttack: {fileID: 0}
 --- !u!114 &7654766051254027661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +244,19 @@ MonoBehaviour:
   hurtbox: {fileID: 4647920126743478314}
   startingNumberLives: 3
   lives: 3
+--- !u!114 &6528957596838553116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852462224302812658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child: {fileID: 5623478688413296428}
 --- !u!1 &2430091309730222117
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +303,6 @@ GameObject:
   - component: {fileID: 7567507854574851456}
   - component: {fileID: 9077496157484446339}
   - component: {fileID: 4731404992729256608}
-  - component: {fileID: 5790133651203138487}
   - component: {fileID: 5258254539492954362}
   - component: {fileID: 1551455217879578913}
   - component: {fileID: 4647920126043395753}
@@ -463,19 +496,6 @@ MonoBehaviour:
   hitbox: {fileID: 7567507854574851456}
   force: 4000
   angle: 35
---- !u!114 &5790133651203138487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647920126043395744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  child: {fileID: 5623478688413296428}
 --- !u!114 &5258254539492954362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItsAHit: {fileID: 479159805710416469, guid: 9906e6a2275d52241b3e56ea3f3411cd, type: 3}
   tankiness: 2.6
   dmgPercent: 0
 --- !u!82 &4647920126743478295
@@ -890,7 +911,7 @@ GameObject:
   - component: {fileID: 8993180509147186621}
   - component: {fileID: 6855292608936521905}
   - component: {fileID: 1304447063247023240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -28,6 +28,7 @@ public class MultiplayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Init(Player player)
     {
+        name = player.NickName;
         photonPlayer = player;// Asignar el player actual
         id = player.ActorNumber;//Guardar el id del player
         SpawnMultiplayer.instance.players[id - 1] = this;// Asiganarlo a las lista de player dentro del game controller

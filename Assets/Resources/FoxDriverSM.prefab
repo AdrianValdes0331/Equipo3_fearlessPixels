@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7654766051254027660}
   - component: {fileID: 4710378694981432844}
-  - component: {fileID: 7654766051254027661}
+  - component: {fileID: 6420203260305373199}
   - component: {fileID: -6525414229967021562}
   - component: {fileID: 8383247388731997802}
   - component: {fileID: 285299837004662955}
   - component: {fileID: 1005381926283278196}
-  - component: {fileID: 5799104456920688612}
+  - component: {fileID: 7296858080183827142}
   m_Layer: 0
   m_Name: FoxDriverSM
   m_TagString: Driver
@@ -68,7 +68,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -127,7 +127,8 @@ MonoBehaviour:
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -139,23 +140,23 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
     special: {fileID: 0}
---- !u!114 &7654766051254027661
+--- !u!114 &6420203260305373199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852462224302812658}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fee9c1f936b2493ab45b6810f5b849c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cd: 60
-  normal: {fileID: 21300000, guid: 439462f5c5f9ccc4baece40795801d22, type: 3}
-  Bang1: {fileID: 21300000, guid: a7af07fb1ed8a8547beef68ec164e227, type: 3}
-  Bang2: {fileID: 21300000, guid: c931d0db46c2e8d448df981dab8bd2af, type: 3}
-  Bang3: {fileID: 21300000, guid: 1e55e6960ac4a7c4d96ec79943144f6a, type: 3}
+  normal: 12
+  Bang1: 13
+  Bang2: 14
+  Bang3: 15
 --- !u!50 &-6525414229967021562
 Rigidbody2D:
   serializedVersion: 4
@@ -242,11 +243,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 5799104456920688612}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5799104456920688612
+--- !u!114 &7296858080183827142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,13 +256,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1852462224302812658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
+  child: {fileID: 1017661422102481106}
 --- !u!1 &4647920126043395744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1186,7 @@ GameObject:
   - component: {fileID: 8993180509147186621}
   - component: {fileID: 6855292608936521905}
   - component: {fileID: 1304447063247023240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

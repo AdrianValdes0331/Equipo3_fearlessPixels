@@ -17,7 +17,7 @@ public class NHurtboxMultiplayer : MonoBehaviourPunCallbacks
     {
         Debug.Log("photonView.IsMine: " + photonView.IsMine);
         if (!photonView.IsMine) return false;
-        BangLvl bang = transform.parent.transform.parent.GetComponent<BangLvl>();
+        BangLvlMultiplayer bang = transform.parent.transform.parent.GetComponent<BangLvlMultiplayer>();
         bang.bangUpdate(damage, false);
         //alreveza el angulo dependiendo si el ataque esta a la derecha o izquierda
         if (transform.position.x - xPos < 0) { angle = 180 - angle; }

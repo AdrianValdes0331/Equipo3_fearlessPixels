@@ -29,6 +29,7 @@ public class MultiplayerControllerSM : MonoBehaviour
     public ChargeAttackMultiplayer ChargeAState = new ChargeAttackMultiplayer();
     public ChargeAttackChargedMultiplayer ChargeChargedState = new ChargeAttackChargedMultiplayer();
     public SpecialAttackMultiplayer SpecialAState = new SpecialAttackMultiplayer();
+    public BangMultiplayer BangAState = new BangMultiplayer();
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,7 +39,7 @@ public class MultiplayerControllerSM : MonoBehaviour
 
         playerInput.actions["Movement"].performed += ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
         playerInput.actions["Movement"].canceled += ctx => OnMovement(Vector2.zero);
-        //playerAct.Bang.performed += OnBang;
+        playerInput.actions["Bang"].performed += ctx => OnBang();
         playerInput.actions["Jump"].performed += ctx => OnJump();
         //playerAct.Recovery.performed += ctx => OnRecovery();
         playerInput.actions["Special"].performed += ctx => OnSpecial();
@@ -147,6 +148,22 @@ public class MultiplayerControllerSM : MonoBehaviour
     public void OnSpecial()
     {
         currState.OnSpecial(this);
+    }
+
+    public void OnSpecialHold()
+    {
+        currState.OnSpecialHold(this);
+    }
+
+    public void OnBang()
+    {
+        Debug.Log("bang state");
+        currState.OnBang(this);
+    }
+
+    public void OnRecovery()
+    {
+        currState.OnRecovery(this);
     }
 
     public void OnHit(Vector2 force)

@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7654766051254027660}
   - component: {fileID: 7097076682254449340}
   - component: {fileID: 8536563564646051622}
-  - component: {fileID: 7654766051254027661}
+  - component: {fileID: 8791630122788876383}
   - component: {fileID: 1061935594356471325}
   - component: {fileID: 2687187215577736313}
   - component: {fileID: 4245816303663533672}
   - component: {fileID: 2601083854795343329}
-  - component: {fileID: 8597312066731171603}
+  - component: {fileID: 501607173690347408}
   m_Layer: 0
   m_Name: CowDriverSM
   m_TagString: Driver
@@ -90,7 +90,7 @@ MonoBehaviour:
       pos: {x: 0, y: 0}
       rot: 0
       maskNames:
-      - 
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -102,14 +102,55 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
   ChargeAState:
-    dmg: 0
-    force: 0
-    angle: 0
-    activeTime: 0.4
+    dmg: 5
+    force: 9000
+    angle: 50
+    activeTime: 0.2
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0.5, y: 0.5}
+      colorOpen: {r: 0.23921569, g: 0.6666667, b: 0.2901961, a: 0}
+      colorClosed: {r: 0.95686275, g: 0.19607843, b: 0.19607843, a: 0}
+      colorColliding: {r: 0.3529412, g: 0.39215687, b: 0.84313726, a: 0}
+      offset: {x: 0.5, y: 0}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+  ChargeChargedState:
+    dmg: 5
+    force: 9000
+    angle: 50
+    activeTime: 0.2
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames:
+      - Hurtbox
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0.5, y: 0.5}
+      colorOpen: {r: 0.2392157, g: 0.6666667, b: 0.2901961, a: 0}
+      colorClosed: {r: 0.9568628, g: 0.19607845, b: 0.19607845, a: 0}
+      colorColliding: {r: 0.3529412, g: 0.3921569, b: 0.8431373, a: 0}
+      offset: {x: 0.5, y: 0.5}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+  SpecialAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -120,26 +161,8 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
-  ChargeChargedState:
-    dmg: 0
-    force: 0
-    angle: 0
-    activeTime: 0.4
-    hitbox:
-      pos: {x: 0, y: 0}
-      rot: 0
-      maskNames: []
-      isSphere: 0
-      isProjectile: 0
-      radius: 0
-      sz: {x: 1, y: 1}
-      colorOpen: {r: 0.2392157, g: 0.6666667, b: 0.2901961, a: 0}
-      colorClosed: {r: 0.9568628, g: 0.19607845, b: 0.19607845, a: 0}
-      colorColliding: {r: 0.3529412, g: 0.3921569, b: 0.8431373, a: 0}
-      offset: {x: 1, y: 1}
-      currColor: {r: 0, g: 0, b: 0, a: 0}
-      transform: {fileID: 0}
-  SpecialAState:
+    special: {fileID: 0}
+  BangAState:
     dmg: 0
     force: 0
     angle: 0
@@ -158,24 +181,24 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
-    special: {fileID: 0}
---- !u!114 &7654766051254027661
+    bangAttack: {fileID: 0}
+--- !u!114 &8791630122788876383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852462224302812658}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a952c507d956a142b7d5d4a17ca3608, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fee9c1f936b2493ab45b6810f5b849c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cd: 60
-  normal: {fileID: 21300000, guid: 229cde96c28e14e8fa9287d449da375f, type: 3}
-  Bang1: {fileID: 21300000, guid: dceef3224e0e9457286fd75686e6b268, type: 3}
-  Bang2: {fileID: 21300000, guid: be48e8a1ea41a402aa64263e6d0e366d, type: 3}
-  Bang3: {fileID: 21300000, guid: 324a3772f8a4f4bcbbcc7f76ba39bdde, type: 3}
+  normal: 4
+  Bang1: 5
+  Bang2: 6
+  Bang3: 7
 --- !u!114 &1061935594356471325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +273,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2601083854795343329}
-  - {fileID: 8597312066731171603}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -270,7 +293,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
---- !u!114 &8597312066731171603
+--- !u!114 &501607173690347408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,13 +302,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1852462224302812658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
+  child: {fileID: 5563036187520327796}
 --- !u!1 &2716930609335807734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1184,7 @@ GameObject:
   - component: {fileID: 8993180509147186621}
   - component: {fileID: 6855292608936521905}
   - component: {fileID: 1304447063247023240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

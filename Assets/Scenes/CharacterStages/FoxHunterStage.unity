@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.167349, g: 0.19761032, b: 0.22831646, a: 1}
+  m_IndirectSpecularColor: {r: 0.16735533, g: 0.19762194, b: 0.22833794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -733,6 +733,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2f0b2265ef04f76a8a578540f00a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imagePlayer1: {fileID: 5877451820755903521}
+  imagePlayer2: {fileID: 8920120827509258953}
+  imagePlayer3: {fileID: 9102844430930767448}
+  imagePlayer4: {fileID: 104885939125186067}
+  playerSprites:
+  - {fileID: 21300000, guid: d1a0018a044de3941b02311a32f44669, type: 3}
+  - {fileID: 21300000, guid: 3eb92e12eb7cb1f4f92a2122bfb28a35, type: 3}
+  - {fileID: 21300000, guid: b2b0a8bb39357c64b89745e8893ec28b, type: 3}
+  - {fileID: 21300000, guid: d845e214432761245bfe48fbba120159, type: 3}
+  - {fileID: 21300000, guid: 229cde96c28e14e8fa9287d449da375f, type: 3}
+  - {fileID: 21300000, guid: dceef3224e0e9457286fd75686e6b268, type: 3}
+  - {fileID: 21300000, guid: be48e8a1ea41a402aa64263e6d0e366d, type: 3}
+  - {fileID: 21300000, guid: 324a3772f8a4f4bcbbcc7f76ba39bdde, type: 3}
+  - {fileID: 21300000, guid: 103ab687fd6814b46a3a65e9626c197d, type: 3}
+  - {fileID: 21300000, guid: a6650993338f147d691c2e068016ecbf, type: 3}
+  - {fileID: 21300000, guid: 9cb832538c65b47ddb20b6fb81fa0e45, type: 3}
+  - {fileID: 21300000, guid: 794b19e2e642c4acd93e895577af0017, type: 3}
+  - {fileID: 21300000, guid: 439462f5c5f9ccc4baece40795801d22, type: 3}
+  - {fileID: 21300000, guid: a7af07fb1ed8a8547beef68ec164e227, type: 3}
+  - {fileID: 21300000, guid: c931d0db46c2e8d448df981dab8bd2af, type: 3}
+  - {fileID: 21300000, guid: 1e55e6960ac4a7c4d96ec79943144f6a, type: 3}
   dmgPlayer1: {fileID: 1682468119220787018}
   dmgPlayer2: {fileID: 4396382112055511458}
   dmgPlayer3: {fileID: 4078704743566187827}
@@ -1209,7 +1230,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58694
+  m_Name: pb_Mesh266926
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2376,8 +2397,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335835261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.778197, y: 0.37949577, z: -1.9005246}
-  m_LocalScale: {x: 0.4937852, y: 0.76482457, z: 1.1770382}
+  m_LocalPosition: {x: 1.786, y: 0.415, z: -1.9005246}
+  m_LocalScale: {x: 0.5, y: 0.57, z: 1.176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640162233}
@@ -2426,7 +2447,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.755}
+  m_Size: {x: 0.76, y: 0.9}
   m_EdgeRadius: 0
 --- !u!114 &335835265
 MonoBehaviour:
@@ -4877,8 +4898,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772700087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1336586, y: 0.5668409, z: -1.9005246}
-  m_LocalScale: {x: 0.4937852, y: 0.76482457, z: 1.1770382}
+  m_LocalPosition: {x: 1.1336586, y: 0.567, z: -1.9005246}
+  m_LocalScale: {x: 0.5, y: 0.57, z: 1.176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640162233}
@@ -4927,7 +4948,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9, y: 1.2}
+  m_Size: {x: 1.8, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &772700091
 MonoBehaviour:
@@ -7591,8 +7612,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345755610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.30622464, y: 0.306, z: -1.9005246}
-  m_LocalScale: {x: 0.4937852, y: 0.76482457, z: 1.1770382}
+  m_LocalPosition: {x: 0.338, y: 0.315, z: -1.9005246}
+  m_LocalScale: {x: 0.5, y: 0.57, z: 1.176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640162233}
@@ -7641,7 +7662,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.6}
+  m_Size: {x: 1.4, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &1345755614
 MonoBehaviour:
@@ -21571,7 +21592,7 @@ Transform:
   m_GameObject: {fileID: 1640162226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4, y: 24, z: -5.65}
-  m_LocalScale: {x: 2.1192663, y: 1.7618417, z: 0.83173376}
+  m_LocalScale: {x: 2, y: 1.75, z: 0.85}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 335835262}
@@ -23985,9 +24006,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d0297c83877ec7b41bbb73f995c57dc0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 52938a395be26d940a06190e585dbc9f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24507,8 +24528,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147471789}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.226, y: 0.223, z: -1.9005246}
-  m_LocalScale: {x: 0.4937852, y: 0.76482457, z: 1.1770382}
+  m_LocalPosition: {x: 2.249, y: 0.25, z: -1.9005246}
+  m_LocalScale: {x: 0.5, y: 0.57, z: 1.176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640162233}
@@ -24569,7 +24590,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 0.45}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
 --- !u!33 &15115274315353803
 MeshFilter:

@@ -46,7 +46,7 @@ public abstract class AttackMultiplayer : IMultiplayerBaseState, IHitboxResponde
         //if the collider has a hurtbox
         if (hurtbox != null)
         {
-            BangLvl bang = transform.gameObject.GetComponent<BangLvl>();
+            BangLvlMultiplayer bang = transform.gameObject.GetComponent<BangLvlMultiplayer>();
             bang.bangUpdate(dmg, true);
             Debug.Log("Hit player");
             hurtbox.photonView.RPC("getHitBy", Photon.Pun.RpcTarget.All, dmg * multiplier, ((int)(force * multiplier)), angle, transform.position.x);

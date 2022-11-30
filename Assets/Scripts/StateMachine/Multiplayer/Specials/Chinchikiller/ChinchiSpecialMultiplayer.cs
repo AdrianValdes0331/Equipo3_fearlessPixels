@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 [System.Serializable]
 public class ChinchiSpecialMultiplayer : SpecialMultiplayer
@@ -16,15 +18,18 @@ public class ChinchiSpecialMultiplayer : SpecialMultiplayer
     MisilMultiplayer misil;
     public float speed;
 
+
     public override void SpecialStart(MultiplayerControllerSM player)
     {
+        misil = PhotonNetwork.Instantiate(Misil.name, FirePoint.position, Quaternion.identity).GetComponent<MisilMultiplayer>();
         done = false;
-        scope = Instantiate(Scope, ScopeSpawn.position, Quaternion.identity);
-        misil = Instantiate(Misil, FirePoint.position, Quaternion.identity);
-        misil.target = scope;
-        misil.bang = player.gameObject.GetComponent<BangLvl>();
-        misil.player = player.transform;
+        scope = PhotonNetwork.Instantiate(Scope.name, ScopeSpawn.position, Quaternion.identity);
         misil.exit += ExitState;
+        if (photonView.IsMine)
+        {
+            misil.photonView.RPC("updateMisilObject", RpcTarget.All, scope.tag, player.name);
+        }
+
     }
 
     public override void SpecialUpdate(MultiplayerControllerSM player)
