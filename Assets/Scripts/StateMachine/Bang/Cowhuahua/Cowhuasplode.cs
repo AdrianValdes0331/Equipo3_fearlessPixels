@@ -5,7 +5,7 @@ using System;
 
 public class Cowhuasplode : MonoBehaviour, IHitboxResponder
 {
-    public static event Action bangEnd;
+    public static event Action<int> bangEnd;
     public event Action exit;
 
     public GameObject Cabooommmmm;
@@ -64,7 +64,8 @@ public class Cowhuasplode : MonoBehaviour, IHitboxResponder
             rbody.velocity = Vector3.zero;
             anim.SetTrigger(SpitName);
             InvokeRepeating("Tick", 0, 0.5f);
-            StartCoroutine(waitAfterBang());
+            bangEnd?.Invoke(7);
+            // StartCoroutine(waitAfterBang());
             Destroy(gameObject, 5f);
         }
     }
@@ -114,10 +115,10 @@ public class Cowhuasplode : MonoBehaviour, IHitboxResponder
         hitbox.openCollissionCheck();
     }
 
-    IEnumerator waitAfterBang()
-    {
-        yield return new WaitForSeconds(7);
-        bangEnd?.Invoke();
-    }
+    // IEnumerator waitAfterBang()
+    // {
+    //     // yield return new WaitForSeconds(7);
+    //     // bangEnd?.Invoke();
+    // }
 
 }

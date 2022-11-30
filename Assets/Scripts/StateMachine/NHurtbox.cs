@@ -6,11 +6,22 @@ using System;
 
 public class NHurtbox : MonoBehaviour
 {
+    [HideInInspector] public float fury = 1.0f;
     public GameObject ItsAHit;
     private Collider2D hcollider;
     public float tankiness = 2.0f;
     [HideInInspector] public float dmgPercent = 0.0f;
     [HideInInspector] public event Action<Vector2> HitReact;
+
+    void OnEnable()
+    {
+        BangLvl.endFury += returnToNormal;
+    }
+
+    void OnDisable()
+    {
+        BangLvl.endFury -= returnToNormal;
+    }
 
     public bool getHitBy(float damage, int force, int angle, float xPos)
     {
@@ -25,11 +36,18 @@ public class NHurtbox : MonoBehaviour
         print("Fuerza base = " + force);
         print("angulo = " + angle);
         print("Fuerza final = "+finalForce);
-        dmgPercent += damage;
+        if(!bang.isAvailable)
+        {
+            dmgPercent += damage*fury;
+        }
+        else
+        {
+            dmgPercent += damage;
+        }
         //transform.parent.GetComponent<Rigidbody2D>().AddForce(finalForce*((dmgPercent/100)/ tankiness));
         HitReact?.Invoke(finalForce*((dmgPercent/100)/ tankiness));
-        GameObject EXSound = Instantiate(ItsAHit, transform.position, transform.rotation, transform.parent);
-        Destroy(EXSound, 2.0f);
+        //GameObject EXSound = Instantiate(ItsAHit, transform.position, transform.rotation, transform.parent);
+        //Destroy(EXSound, 2.0f);
         Debug.Log(transform.parent);
         UpdateDmgPercentText();
         return true;
@@ -40,4 +58,10 @@ public class NHurtbox : MonoBehaviour
     {
         GameObject.Find("Canvas").GetComponent<PlayerDmg>().playerProfile[transform.parent.transform.parent.name].transform.Find("dmgPercent").GetComponent<TextMeshProUGUI>().text = System.Math.Round(dmgPercent, 2) + "%";
     }
+
+    public void returnToNormal()
+    {
+        fury = 1.0f;
+    }
+
 }

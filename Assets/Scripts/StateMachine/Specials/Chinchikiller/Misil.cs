@@ -7,7 +7,7 @@ public class Misil : MonoBehaviour, IHitboxResponder
 {
     [HideInInspector] public GameObject target;
 
-    public static event Action bangEnd;
+    public static event Action<int> bangEnd;
     public event Action exit;
 
     public float speed = 5f;
@@ -135,16 +135,21 @@ public class Misil : MonoBehaviour, IHitboxResponder
     }
     public void checkBang()
     {
-        if (GameObject.FindGameObjectsWithTag("Miau").Length > 1)
+        Debug.Log("checking bang!");
+        if (isBang)
         {
-            StartCoroutine(waitAfterBang());
+            Debug.Log("Is bang!");
+            // StartCoroutine(waitAfterBang());
+            bangEnd?.Invoke(2);
         }
     }
 
-    IEnumerator waitAfterBang()
-    {
-        yield return new WaitForSeconds(2);
-        bangEnd?.Invoke();
-    }
+    // IEnumerator waitAfterBang()
+    // {
+    //     // Debug.Log("Waiting!");
+    //     // yield return new WaitForSeconds(2);
+    //     // Debug.Log("Waited!");
+    //     // bangEnd?.Invoke();
+    // }
 
 }

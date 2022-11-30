@@ -5,7 +5,7 @@ using System;
 
 public class Miauterito : MonoBehaviour, IHitboxResponder
 {
-    public static event Action bangEnd;
+    public static event Action<int> bangEnd;
 
     [HideInInspector] public GameObject target;
 
@@ -132,14 +132,15 @@ public class Miauterito : MonoBehaviour, IHitboxResponder
     {
         if (GameObject.FindGameObjectsWithTag("Miau").Length > 1)
         {
-            StartCoroutine(waitAfterBang());
+            // StartCoroutine(waitAfterBang());
+            bangEnd?.Invoke(2);
         }
     }
 
-    IEnumerator waitAfterBang()
-    {
-        yield return new WaitForSeconds(2);
-        bangEnd?.Invoke();
-    }
+    // IEnumerator waitAfterBang()
+    // {
+    //     // yield return new WaitForSeconds(2);
+    //     // bangEnd?.Invoke();
+    // }
 
 }

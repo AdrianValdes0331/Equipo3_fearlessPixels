@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 using System;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -94,6 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         //playerAct.Enable();
         hb.HitReact += OnHit;
+        BangLvl.endFury += returnToNormal;
 
     }
 
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         //playerAct.Disable();
         hb.HitReact -= OnHit;
+        BangLvl.endFury -= returnToNormal;
 
         playerInput.actions["Movement"].performed -= ctx => OnMovement(playerInput.actions["Movement"].ReadValue<Vector2>());
         playerInput.actions["Movement"].canceled -= ctx => OnMovement(Vector2.zero);
@@ -265,6 +268,12 @@ public class PlayerController : MonoBehaviour
                 Gizmos.DrawSphere(Vector3.zero, g.radius);
             }
         }
+    }
+
+    public void returnToNormal()
+    {
+        SpriteRenderer sr = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        sr.DOColor(new Color(1, 1, 1, 1), 0.2f);
     }
 
 }
