@@ -170,7 +170,8 @@ public class PlayerController : MonoBehaviour
         currState.Jump(this, jspeed);
     }
 
-    public void OnWeakAttack(){
+    public void OnWeakAttack()
+    {
         currState.OnNeutral(this);
     }
     
