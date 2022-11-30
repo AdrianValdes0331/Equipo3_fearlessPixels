@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 285299837004662955}
   - component: {fileID: 1005381926283278196}
   - component: {fileID: 5799104456920688612}
+  - component: {fileID: 7296858080183827142}
   m_Layer: 0
   m_Name: FoxDriverSM
   m_TagString: Driver
@@ -157,7 +158,6 @@ MonoBehaviour:
   Bang1: 13
   Bang2: 14
   Bang3: 15
-  actualPlayer: 
 --- !u!50 &-6525414229967021562
 Rigidbody2D:
   serializedVersion: 4
@@ -264,6 +264,19 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &7296858080183827142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852462224302812658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child: {fileID: 1017661422102481106}
 --- !u!1 &4647920126043395744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1203,7 @@ GameObject:
   - component: {fileID: 8993180509147186621}
   - component: {fileID: 6855292608936521905}
   - component: {fileID: 1304447063247023240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
