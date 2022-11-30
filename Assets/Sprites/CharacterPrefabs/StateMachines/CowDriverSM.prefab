@@ -233,7 +233,7 @@ MonoBehaviour:
     m_ActionId: f93c0fdc-a596-472c-9d78-8a8e617bdf0c
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Controller
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -729,6 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItsAHit: {fileID: 4902019621918303428, guid: b3a57d056921c4644b0980778372fa95, type: 3}
   tankiness: 2
   dmgPercent: 0
 --- !u!1 &5518186379001739268
