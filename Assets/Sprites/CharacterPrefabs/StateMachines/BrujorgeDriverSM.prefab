@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 8147401445875708512}
   - component: {fileID: 8449938849618074823}
   - component: {fileID: 5420902866432650906}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 4148514257663119144}
   - component: {fileID: 987114123257018085}
   - component: {fileID: 3007561717218172455}
+  - component: {fileID: 314728797127208283}
   m_Layer: 0
   m_Name: BrujorgeDriverSM
   m_TagString: Driver
@@ -781,6 +782,26 @@ MonoBehaviour:
       currColor: {r: 0, g: 0, b: 0, a: 0}
       transform: {fileID: 0}
     special: {fileID: 0}
+  BangAState:
+    dmg: 0
+    force: 0
+    angle: 0
+    activeTime: 0
+    hitbox:
+      pos: {x: 0, y: 0}
+      rot: 0
+      maskNames: []
+      isSphere: 0
+      isProjectile: 0
+      radius: 0
+      sz: {x: 0, y: 0}
+      colorOpen: {r: 0, g: 0, b: 0, a: 0}
+      colorClosed: {r: 0, g: 0, b: 0, a: 0}
+      colorColliding: {r: 0, g: 0, b: 0, a: 0}
+      offset: {x: 0, y: 0}
+      currColor: {r: 0, g: 0, b: 0, a: 0}
+      transform: {fileID: 0}
+    bangAttack: {fileID: 0}
 --- !u!50 &4148514257663119144
 Rigidbody2D:
   serializedVersion: 4
@@ -881,3 +902,16 @@ MonoBehaviour:
   hurtbox: {fileID: 3609687240552152383}
   startingNumberLives: 3
   lives: 3
+--- !u!114 &314728797127208283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723059031884419303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child: {fileID: 3515218842174160673}

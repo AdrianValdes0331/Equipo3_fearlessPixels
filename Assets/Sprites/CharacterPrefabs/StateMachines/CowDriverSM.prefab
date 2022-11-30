@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1061935594356471325}
   - component: {fileID: 5493472817007760424}
   - component: {fileID: 8898685391622948964}
+  - component: {fileID: 6229236695042413729}
   m_Layer: 0
   m_Name: CowDriverSM
   m_TagString: Driver
@@ -266,6 +267,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToxSpit: {fileID: 7610511892540972733, guid: df41367b56ed2274bb7dd11ccbd4c22a, type: 3}
   point: {fileID: 1598197954139454199}
+--- !u!114 &6229236695042413729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852462224302812658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child: {fileID: 5623478688413296428}
 --- !u!1 &2430091309730222117
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +774,7 @@ GameObject:
   - component: {fileID: 8993180509147186621}
   - component: {fileID: 6855292608936521905}
   - component: {fileID: 1304447063247023240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6439259193547726018}
   - component: {fileID: 4948538590230774904}
   - component: {fileID: 603681524132285614}
+  - component: {fileID: 3176600332616562499}
   m_Layer: 0
   m_Name: ChinchiDriverSM
   m_TagString: Driver
@@ -170,7 +171,8 @@ MonoBehaviour:
     hitbox:
       pos: {x: 0, y: 0}
       rot: 0
-      maskNames: []
+      maskNames:
+      - Hurtbox
       isSphere: 0
       isProjectile: 0
       radius: 0
@@ -280,6 +282,19 @@ MonoBehaviour:
   hurtbox: {fileID: 1350223611369938548}
   startingNumberLives: 3
   lives: 3
+--- !u!114 &3176600332616562499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5310105209126317939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6dd8da3b6bea447aa5a44f745081c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  child: {fileID: 66427735093103423}
 --- !u!1 &5963627500413096823
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +308,7 @@ GameObject:
   - component: {fileID: 1314984104604860405}
   - component: {fileID: 8223625727699795556}
   - component: {fileID: 3820258670861460999}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
