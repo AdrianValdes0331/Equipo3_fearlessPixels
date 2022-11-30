@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528a47c2499df754b92df87d1ff44604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItsAHit: {fileID: 1332226157324922913, guid: 838ab3ace03dbbf4683da3e1bbdfd42e, type: 3}
   tankiness: 3
   dmgPercent: 0
 --- !u!1 &4276945488858486778
